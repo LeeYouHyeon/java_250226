@@ -14,7 +14,7 @@ public class SaleMain {
 
 	public static void main(String[] args) {
 		/* Kiosk
-		 * 메뉴(메뉴명, 가격) / 주문(메뉴를 상속 / 수량, 금액)
+		 * 메뉴(메뉴명, 가격) / 주문(메뉴를 상속? / 수량, 금액)
 		 * 
 		 * -- menu --
 		 * 1. 메뉴 등록 | 2. 메뉴 삭제 | 3. 가격 수정
