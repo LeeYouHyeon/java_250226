@@ -1,22 +1,19 @@
 package sale;
 
-public class Order {
-	private Menu menu;
+public class Order extends Menu {
 	private int count;
+	private int total;
 	
 	public Order() {;}
 	public Order(Menu menu, int count) {
-		this.menu = menu;
+		super(menu.getName(), menu.getPrice());
 		this.count = count;
+		this.total = count*this.getPrice();
 	}
 	
 	@Override
 	public String toString() {
-		return String.format("%s(%d) * %d = %d", menu.getName(), menu.getPrice(), count, getTotal());
-	}
-	
-	public String getName() {
-		return menu.getName();
+		return String.format("%s(%d) * %d = %d", this.getName(), this.getPrice(), count, getTotal());
 	}
 	
 	public int getCount() {
@@ -26,6 +23,6 @@ public class Order {
 		this.count = count;
 	}
 	public int getTotal() {
-		return menu.getPrice()*count;
+		return total;
 	}
 }

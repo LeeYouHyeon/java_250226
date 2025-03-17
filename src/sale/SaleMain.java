@@ -33,7 +33,7 @@ public class SaleMain {
 			try {
 				// 옵션 출력
 				System.out.println("--menu--");
-				System.out.println("1. 메뉴등록 | 2. 메뉴삭제 | 3. 가격수정 | 4. 메뉴보기 | 5. 주문 및 수정 | 6. 주문내역출력 | 7. 종료");
+				System.out.println("1. 메뉴등록 | 2. 메뉴삭제 | 3. 가격수정 | 4. 메뉴보기 | 5. 주문 | 6. 주문내역출력 | 7. 종료");
 				System.out.print("> ");
 
 				// 옵션 입력
@@ -68,16 +68,8 @@ public class SaleMain {
 					idx = Integer.parseInt(scan.nextLine()) - 1;
 
 					// 2-2. 해당 메뉴를 menus에서 삭제
-					Menu removed = menus.remove(idx);
+					menus.remove(idx);
 					System.out.println("메뉴가 삭제되었습니다.");
-
-					// 2-3. 만약 해당 메뉴를 주문했다면 주문 기록도 삭제
-					for (int i = 0; i < orders.size(); i++) {
-						if (orders.get(i).getName().equals(removed.getName())) {
-							orders.remove(i);
-							System.out.println("해당 메뉴를 주문한 기록이 있어, 주문도 같이 삭제되었습니다.");
-						}
-					}
 					break;
 
 				case 3:
@@ -118,33 +110,13 @@ public class SaleMain {
 					// 5-2. 수량 입력
 					System.out.print("수량> ");
 					int count = Integer.parseInt(scan.nextLine());
-
-					// 5-3. 이미 주문한 메뉴인지 확인
-					int ordered = -1;
-					for (int i = 0; i < orders.size(); i++) {
-						if (orders.get(i).getName().equals(menus.get(idx).getName())) {
-							ordered = i;
-						}
+					
+					// 5-3. 주문 등록
+					if(count <= 0) {
+						throw new Exception("주문 수량이 0 이하입니다.");
 					}
-
-					// 5-4. 메뉴 주문
-					if (ordered == -1) {
-						//5-4-1. 주문한 적이 없다면 orders에 추가
-						orders.add(new Order(menus.get(idx), count));
-					} else {
-						// 5-4-2. 이미 주문한 메뉴라면 주문을 수정(누적)
-						int updatedCount = orders.get(ordered).getCount() + count;
-						if (updatedCount == 0) {
-							// count가 0이면 삭제 처리
-							orders.remove(ordered);
-							System.out.println("총 주문 수량이 0이 되어 주문 내역에서 삭제되었습니다.");
-						} else if (updatedCount < 0) {
-							// count는 음수일 수 있으나, 이미 주문한 수량과의 합계가 음수일 수는 없음
-							throw new Exception("수량이 음수가 될 수 없습니다.");
-						} else {
-							orders.get(ordered).setCount(updatedCount);
-						}
-					}
+					orders.add(new Order(menus.get(idx), count));
+					
 					break;
 
 				case 6:
