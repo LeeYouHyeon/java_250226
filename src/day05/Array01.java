@@ -2,6 +2,7 @@ package day05;
 
 public class Array01 {
 
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		/* 배열 : 같은 타입, 같은 의미를 가지는 변수들의 집합 (참조 변수)
 		 * 객체를 생성하는 키워드 => new

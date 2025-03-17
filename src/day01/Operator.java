@@ -1,6 +1,7 @@
 package day01;
 
 public class Operator {
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		// 연산자
 		/* 대입 연산자: =, +=, -=, ...

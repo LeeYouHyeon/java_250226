@@ -2,6 +2,7 @@ package day01;
 
 public class HelloWorld {
 
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 //		// 주석: 프로그램이 읽지 않는 라인 ctrl + / => 한 줄 주석
 		/* 여러 줄 주석
