@@ -55,7 +55,7 @@ public class WordMain {
 		System.out.println("Á¾·á");
 		scan.close();
 	}
-
+	
 }
 
 class WordController {
