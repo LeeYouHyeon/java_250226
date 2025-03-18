@@ -1,16 +1,9 @@
 package sale;
 
 import java.util.InputMismatchException;
-import java.util.List;
 import java.util.Scanner;
 
 public class SaleMain {
-	public static void print(List<Menu> menus) {
-		for (int i = 0; i < menus.size(); i++) {
-			System.out.println(i + 1 + " " + menus.get(i).toString());
-		}
-	}
-
 	public static void main(String[] args) {
 		/* Kiosk
 		 * 메뉴(메뉴명, 가격) / 주문(메뉴를 상속? / 수량, 금액)
