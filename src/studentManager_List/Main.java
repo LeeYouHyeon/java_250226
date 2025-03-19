@@ -3,13 +3,16 @@ package studentManager_List;
 import java.util.Scanner;
 
 public class Main {
-	public static int getInt(Scanner scan) {
-		return Integer.parseInt(scan.nextLine());
-	}
 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
-		StudentController sc = new StudentController();
+		String subCode[] = { "101", "102", "103" }, subName[] = { "공공데이터", "java", "python" };
+		Subject subs[] = new Subject[subCode.length];
+		for(int i = 0; i < subCode.length; i++) {
+			subs[i] = new Subject(subCode[i], subName[i]);
+		}
+		
+		StudentController sc = new StudentController(subs);
 		Exception inputError = new Exception("잘못된 입력");
 
 		int menu = 0;
@@ -17,7 +20,8 @@ public class Main {
 			try {
 				// 메뉴 출력
 				System.out.println("1. 학생등록 | 2. 학생목록 | 3. 학생검색 | 4. 수강신청 | 5. 수강철회 | 6. 종료");
-				menu = getInt(scan);
+				System.out.print("> ");
+				menu = Integer.parseInt(scan.nextLine());
 				switch (menu) {
 				case 1:
 					sc.insertStudent(scan);

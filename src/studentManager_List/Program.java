@@ -11,7 +11,7 @@ public interface Program {
 	 * 6. Á¾·á
 	 * */
 
-	void insertStudent(Scanner scan);
+	void insertStudent(Scanner scan) throws Exception;
 
 	void printStudents();
 

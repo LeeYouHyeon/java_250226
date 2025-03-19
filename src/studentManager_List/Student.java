@@ -7,12 +7,13 @@ public class Student {
 	private String stdCode, stdName, stdPhone, stdAddress;
 	private int stdAge;
 	private List<Subject> subjects;
-	
+
 	// 생성자
-	public Student() {;}
+	public Student() {
+	}
+
 	public Student(String stdCode, String stdName, String stdPhone, String stdAddress, int stdAge,
 			List<Subject> subjects) {
-		super();
 		this.stdCode = stdCode;
 		this.stdName = stdName;
 		this.stdPhone = stdPhone;
@@ -20,75 +21,100 @@ public class Student {
 		this.stdAge = stdAge;
 		this.subjects = subjects;
 	}
+
 	public Student(String stdCode, String stdName) {
 		super();
 		this.stdCode = stdCode;
 		this.stdName = stdName;
 	}
+	
+	@Override
+	public String toString() {
+		String answer = stdCode + ". " + stdName;
+		if(subjects.isEmpty()) {
+			return answer;
+		}
+		answer += " : " + subjects.get(0).getSubCode();
+		for(int i = 1; i < subjects.size(); i++) {
+			answer += ", " + subjects.get(i).getSubCode();
+		}
+		return answer;
+	}
 
 	// 과목을 받으면 수강한 과목인지 확인
 	public boolean contains(Subject subject) {
-		for(Subject sub : subjects) {
-			if(sub.getSubCode().equals(subject.getSubCode())) {
+		for (Subject sub : subjects) {
+			if (sub.getSubCode().equals(subject.getSubCode())) {
 				return true;
 			}
 		}
 		return false;
 	}
-	
+
 	// 수강신청
 	public void insertSubject(Subject s) {
-		if(contains(s)) {
+		if (contains(s)) {
 			System.out.println("이미 수강한 과목입니다.");
 			return;
 		}
 		subjects.add(s);
 		System.out.println("신청되었습니다.");
 	}
-	
+
 	// 수강신청 취소
 	public void cancelSubject(Subject s) {
-		if(subjects.remove(s)) {
+		if (subjects.remove(s)) {
 			System.out.println("취소되었습니다.");
 		} else {
 			System.out.println("신청하지 않은 과목입니다.");
 		}
 	}
-	
+
 	// getter/setter
 	public String getStdCode() {
 		return stdCode;
 	}
+
 	public void setStdCode(String stdCode) {
 		this.stdCode = stdCode;
 	}
+
 	public String getStdName() {
 		return stdName;
 	}
+
 	public void setStdName(String stdName) {
 		this.stdName = stdName;
 	}
+
 	public String getStdPhone() {
 		return stdPhone;
 	}
+
 	public void setStdPhone(String stdPhone) {
 		this.stdPhone = stdPhone;
 	}
+
 	public String getStdAddress() {
 		return stdAddress;
 	}
+
 	public void setStdAddress(String stdAddress) {
 		this.stdAddress = stdAddress;
 	}
+
 	public int getStdAge() {
 		return stdAge;
 	}
+
 	public void setStdAge(int stdAge) {
 		this.stdAge = stdAge;
 	}
+
 	public List<Subject> getSubjects() {
 		return subjects;
 	}
+
 	public void setSubjects(List<Subject> subjects) {
 		this.subjects = subjects;
 	}

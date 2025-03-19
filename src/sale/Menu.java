@@ -6,7 +6,6 @@ public class Menu {
 	
 	public Menu() {;}
 	public Menu(String name, int price) {
-		super();
 		this.name = name;
 		this.price = price;
 	}
