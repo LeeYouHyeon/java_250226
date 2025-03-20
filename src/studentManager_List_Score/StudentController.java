@@ -1,4 +1,4 @@
-package studentManager_List;
+package studentManager_List_Score;
 
 import java.util.ArrayList;
 import java.util.List;

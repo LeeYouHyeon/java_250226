@@ -1,4 +1,4 @@
-package studentManager_List;
+package studentManager_List_Score;
 
 public class Subject {
 	// 과목코드, 과목명, 학점, 시수, 교수명, 시간표, 강의장...
