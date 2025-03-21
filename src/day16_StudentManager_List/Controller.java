@@ -10,7 +10,7 @@ public class Controller implements TODO {
 	private List<Student> stds;
 	private List<Subject> subs;
 	private Exception wrongAge;
-	private HashMap<String, Double> valueOfScore;
+	private HashMap<String, Double> valueOfScore; // 4.3¡° ±‚¡ÿ
 
 	public Controller() {
 		stds = new ArrayList<Student>();

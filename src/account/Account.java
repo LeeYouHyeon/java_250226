@@ -1,39 +1,62 @@
 package account;
 
 public class Account {
-	private String id;
+	private String id; // ï¿½ßºï¿½ï¿½Ò°ï¿½
 	private String password;
+	private String name;
+	private String phone;
+	private String address;
 	private String email;
-	// ÇÊ¿äÇÏ¸é °³ÀÎÁ¤º¸ Ãß°¡
 	
-	public Account(String id, String password, String email) {
+	public Account() {}
+	public Account(String id, String password, String name, String phone, String address, String email) {
 		this.id = id;
 		this.password = password;
+		this.name = name;
+		this.phone = phone;
+		this.address = address;
 		this.email = email;
 	}
-	
-	// ºñ¹Ð¹øÈ£°¡ ¸Â´ÂÁö È®ÀÎ
-	public boolean equals(String word) {
+
+	// ï¿½ï¿½Ð¹ï¿½È£ï¿½ï¿½ ï¿½Â´ï¿½ï¿½ï¿½ È®ï¿½ï¿½
+	public boolean passCheck(String word) {
 		return password.equals(word);
 	}
-
+	
+	// ï¿½Ê¿ï¿½ï¿½Ï¸ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½ ï¿½ß°ï¿½
+	
+	// getter/setter
 	public String getPassword() {
 		return password;
 	}
-
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
-	public String getId() {
-		return id;
+	public String getName() {
+		return name;
 	}
-
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
 	public String getEmail() {
 		return email;
 	}
-
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	public String getId() {
+		return id;
 	}
 }
