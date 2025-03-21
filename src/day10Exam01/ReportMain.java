@@ -5,38 +5,38 @@ import java.util.Scanner;
 public class ReportMain {
 
 	public static void main(String[] args) {
-		// MultiArrayEx01À» Student Å¬·¡½º¸¦ ÀÌ¿ëÇØ ±¸Çö
+		// MultiArrayEx01ì„ Student í´ë˜ìŠ¤ë¥¼ ì´ìš©í•´ êµ¬í˜„
 		
-		System.out.print("¼ºÀûÀ» ÀÔ·ÂÇÒ ÇĞ»ı ¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä.> ");
+		System.out.print("ì„±ì ì„ ì…ë ¥í•  í•™ìƒ ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš”.> ");
 		Scanner scan = new Scanner(System.in);
 		int numOfStudents = scan.nextInt();
 		
-		// ÇĞ»ı Á¤º¸¸¦ ¹Ş¾Æ ÀÌ¸§, Á¡¼ö °è»ê
-		// ÃÑÁ¡, Æò±ÕÀº Á¡¼ö setter¿¡ ³»ÀåµÇ¾îÀÖÀ½
+		// í•™ìƒ ì •ë³´ë¥¼ ë°›ì•„ ì´ë¦„, ì ìˆ˜ ê³„ì‚°
+		// ì´ì , í‰ê· ì€ ì ìˆ˜ setterì— ë‚´ì¥ë˜ì–´ìˆìŒ
 		Report[] students = new Report[numOfStudents];
-		System.out.println("ÇĞ»ıÀÇ ÀÌ¸§, ±¹¾î, ¿µ¾î, ¼öÇĞ Á¡¼ö¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+		System.out.println("í•™ìƒì˜ ì´ë¦„, êµ­ì–´, ì˜ì–´, ìˆ˜í•™ ì ìˆ˜ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”.");
 		for (int i = 0; i < numOfStudents; i++) {
-			// ÀÔ·Â
-			System.out.println(i + 1 + "¹øÂ° ÇĞ»ı");
-			scan.nextLine(); // nextInt()¿¡¼­ Ã³¸®µÇÁö ¾ÊÀº ¿£ÅÍÅ°¸¦ ¹ö¸²
+			// ì…ë ¥
+			System.out.println(i + 1 + "ë²ˆì§¸ í•™ìƒ");
+			scan.nextLine(); // nextInt()ì—ì„œ ì²˜ë¦¬ë˜ì§€ ì•Šì€ ì—”í„°í‚¤ë¥¼ ë²„ë¦¼
 			
 			String name;
 			int kor, eng, math;
 			
-			System.out.print("ÀÌ¸§> ");
+			System.out.print("ì´ë¦„> ");
 			name = scan.nextLine();
-			System.out.print("±¹¾î Á¡¼ö> ");
+			System.out.print("êµ­ì–´ ì ìˆ˜> ");
 			kor = scan.nextInt();
-			System.out.print("¿µ¾î Á¡¼ö> ");
+			System.out.print("ì˜ì–´ ì ìˆ˜> ");
 			eng = scan.nextInt();
-			System.out.print("¼öÇĞ Á¡¼ö> ");
+			System.out.print("ìˆ˜í•™ ì ìˆ˜> ");
 			math = scan.nextInt();
 			
 			students[i] = new Report(name, kor, eng, math);
 		}
 		scan.close();
 		
-		// ÃÑÁ¡À» ±âÁØÀ¸·Î ¼®Â÷ °è»ê
+		// ì´ì ì„ ê¸°ì¤€ìœ¼ë¡œ ì„ì°¨ ê³„ì‚°
 		for(Report a : students) {
 			for(Report b : students) {
 				if(a.sum() < b.sum()) {
@@ -46,7 +46,7 @@ public class ReportMain {
 		}
 		
 		System.out.println("=============================================");
-		System.out.printf("ÀÌ¸§\t±¹¾î\t¿µ¾î\t¼öÇĞ\tÃÑÁ¡\tÆò±Õ\t¼®Â÷\n");
+		System.out.printf("ì´ë¦„\têµ­ì–´\tì˜ì–´\tìˆ˜í•™\tì´ì \tí‰ê· \tì„ì°¨\n");
 		for(Report s : students) {
 			s.print();
 		}

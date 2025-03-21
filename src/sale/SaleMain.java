@@ -6,12 +6,12 @@ import java.util.Scanner;
 public class SaleMain {
 	public static void main(String[] args) {
 		/* Kiosk
-		 * ¸Ş´º(¸Ş´º¸í, °¡°İ) / ÁÖ¹®(¸Ş´º¸¦ »ó¼Ó? / ¼ö·®, ±İ¾×)
+		 * ë©”ë‰´(ë©”ë‰´ëª…, ê°€ê²©) / ì£¼ë¬¸(ë©”ë‰´ë¥¼ ìƒì†? / ìˆ˜ëŸ‰, ê¸ˆì•¡)
 		 * 
 		 * -- menu --
-		 * 1. ¸Ş´º µî·Ï | 2. ¸Ş´º »èÁ¦ | 3. °¡°İ ¼öÁ¤
-		 * 4. ¸Ş´º º¸±â(ÀüÃ¼ ¸Ş´º Ãâ·Â) | 5. ÁÖ¹® | 6. ÁÖ¹® ³»¿ª Ãâ·Â(¿µ¼öÁõ)
-		 * 7. Á¾·á
+		 * 1. ë©”ë‰´ ë“±ë¡ | 2. ë©”ë‰´ ì‚­ì œ | 3. ê°€ê²© ìˆ˜ì •
+		 * 4. ë©”ë‰´ ë³´ê¸°(ì „ì²´ ë©”ë‰´ ì¶œë ¥) | 5. ì£¼ë¬¸ | 6. ì£¼ë¬¸ ë‚´ì—­ ì¶œë ¥(ì˜ìˆ˜ì¦)
+		 * 7. ì¢…ë£Œ
 		 * */
 
 		Scanner scan = new Scanner(System.in);
@@ -20,15 +20,15 @@ public class SaleMain {
 		
 		do {
 			try {
-				// ¼±ÅÃÁö Ãâ·Â
+				// ì„ íƒì§€ ì¶œë ¥
 				System.out.println("--menu--");
-				System.out.println("1. ¸Ş´ºµî·Ï | 2. ¸Ş´º»èÁ¦ | 3. °¡°İ¼öÁ¤ | 4. ¸Ş´ºº¸±â | 5. ÁÖ¹® | 6. ÁÖ¹®³»¿ªÃâ·Â | 7. Á¾·á");
+				System.out.println("1. ë©”ë‰´ë“±ë¡ | 2. ë©”ë‰´ì‚­ì œ | 3. ê°€ê²©ìˆ˜ì • | 4. ë©”ë‰´ë³´ê¸° | 5. ì£¼ë¬¸ | 6. ì£¼ë¬¸ë‚´ì—­ì¶œë ¥ | 7. ì¢…ë£Œ");
 				System.out.print("> ");
 
-				// ¼±ÅÃÁö ÀÔ·Â
+				// ì„ íƒì§€ ì…ë ¥
 				input = Integer.parseInt(scan.nextLine());
 
-				// ¼±ÅÃÁö Ã³¸®
+				// ì„ íƒì§€ ì²˜ë¦¬
 				switch (input) {
 				case 1:
 					c.add();
@@ -54,15 +54,15 @@ public class SaleMain {
 					throw new InputMismatchException();
 				}
 			} catch (InputMismatchException e) {
-				System.out.println("Àß¸øµÈ ÀÔ·Â");
+				System.out.println("ì˜ëª»ëœ ì…ë ¥");
 			} catch (IndexOutOfBoundsException e) {
-				System.out.println("ÇØ´çÇÏ´Â ¸Ş´º°¡ ¾ø½À´Ï´Ù.");
+				System.out.println("í•´ë‹¹í•˜ëŠ” ë©”ë‰´ê°€ ì—†ìŠµë‹ˆë‹¤.");
 			} catch (Exception e) {
 				System.out.println(e.getMessage());
 			}
 		} while (input != 7);
 
-		System.out.println("Á¾·á");
+		System.out.println("ì¢…ë£Œ");
 		scan.close();
 	}
 

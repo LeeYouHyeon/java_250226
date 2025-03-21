@@ -8,10 +8,10 @@ import java.util.Scanner;
 public class WordMain {
 
 	public static void main(String[] args) {
-		/* mapÀ» ÀÌ¿ëÇÑ ´Ü¾îÀå ÇÁ·Î±×·¥
-		 * 1. ´Ü¾î µî·Ï | 2. ´Ü¾î °Ë»ö | 3. ¶æ ¼öÁ¤ |
-		 * 4. ´Ü¾î ¸ñ·Ï Ãâ·Â | 5. ´Ü¾î »èÁ¦ | 6. Á¾·á
-		 * WordController¸¦ »ı¼ºÇÏ¿© ¸Ş¼­µå ±¸Çö
+		/* mapì„ ì´ìš©í•œ ë‹¨ì–´ì¥ í”„ë¡œê·¸ë¨
+		 * 1. ë‹¨ì–´ ë“±ë¡ | 2. ë‹¨ì–´ ê²€ìƒ‰ | 3. ëœ» ìˆ˜ì • |
+		 * 4. ë‹¨ì–´ ëª©ë¡ ì¶œë ¥ | 5. ë‹¨ì–´ ì‚­ì œ | 6. ì¢…ë£Œ
+		 * WordControllerë¥¼ ìƒì„±í•˜ì—¬ ë©”ì„œë“œ êµ¬í˜„
 		 * */
 		WordController wc = new WordController();
 		Scanner scan = new Scanner(System.in);
@@ -19,7 +19,7 @@ public class WordMain {
 
 		while (cont) {
 			try {
-				System.out.println("1. ´Ü¾î µî·Ï | 2. ´Ü¾î °Ë»ö | 3. ¶æ ¼öÁ¤ | 4. ´Ü¾î Ãâ·Â | 5. ´Ü¾î »èÁ¦ | 6. Á¾·á");
+				System.out.println("1. ë‹¨ì–´ ë“±ë¡ | 2. ë‹¨ì–´ ê²€ìƒ‰ | 3. ëœ» ìˆ˜ì • | 4. ë‹¨ì–´ ì¶œë ¥ | 5. ë‹¨ì–´ ì‚­ì œ | 6. ì¢…ë£Œ");
 				System.out.print("> ");
 				switch (Integer.parseInt(scan.nextLine())) {
 				case 1:
@@ -44,15 +44,15 @@ public class WordMain {
 					throw new InputMismatchException();
 				}
 			} catch (InputMismatchException e) {
-				System.out.println("Àß¸øµÈ ÀÔ·Â");
+				System.out.println("ì˜ëª»ëœ ì…ë ¥");
 			} catch (NumberFormatException e) {
-				System.out.println("Àß¸øµÈ ÀÔ·Â");
+				System.out.println("ì˜ëª»ëœ ì…ë ¥");
 			} catch (Exception e) {
 				System.out.println(e.getMessage());
 			}
 		}
 
-		System.out.println("Á¾·á");
+		System.out.println("ì¢…ë£Œ");
 		scan.close();
 	}
 	
@@ -64,70 +64,70 @@ class WordController {
 	public WordController() {
 		words = new HashMap<>();
 
-		// ±âº»°ªµé
-		words.put("apple", "»ç°ú");
-		words.put("calculate", "°è»êÇÏ´Ù");
-		words.put("tree", "³ª¹«");
+		// ê¸°ë³¸ê°’ë“¤
+		words.put("apple", "ì‚¬ê³¼");
+		words.put("calculate", "ê³„ì‚°í•˜ë‹¤");
+		words.put("tree", "ë‚˜ë¬´");
 	}
 
-	// 1. ´Ü¾î µî·Ï
+	// 1. ë‹¨ì–´ ë“±ë¡
 	public void addWord(Scanner scan) throws Exception {
 		String word, meaning;
 
-		// 1. ´Ü¾î ÀÔ·Â
-		System.out.print("´Ü¾î> ");
+		// 1. ë‹¨ì–´ ì…ë ¥
+		System.out.print("ë‹¨ì–´> ");
 		word = scan.nextLine().trim();
-		// 1-1. Áßº¹ Ã³¸®
+		// 1-1. ì¤‘ë³µ ì²˜ë¦¬
 		if (words.containsKey(word)) {
-			throw new Exception("ÀÌ¹Ì µî·ÏµÈ ´Ü¾îÀÔ´Ï´Ù.");
+			throw new Exception("ì´ë¯¸ ë“±ë¡ëœ ë‹¨ì–´ì…ë‹ˆë‹¤.");
 		}
 
-		// 2. ¶æ ÀÔ·Â
-		System.out.print("¶æ> ");
+		// 2. ëœ» ì…ë ¥
+		System.out.print("ëœ»> ");
 		meaning = scan.nextLine().trim();
 		words.put(word, meaning);
-		System.out.println("µî·Ï ¿Ï·á");
+		System.out.println("ë“±ë¡ ì™„ë£Œ");
 	}
 
-	// 2. ´Ü¾î °Ë»ö
+	// 2. ë‹¨ì–´ ê²€ìƒ‰
 	public void search(Scanner scan) {
-		// 1. ´Ü¾î ÀÔ·Â
-		System.out.print("´Ü¾î> ");
+		// 1. ë‹¨ì–´ ì…ë ¥
+		System.out.print("ë‹¨ì–´> ");
 		String word = scan.nextLine().trim();
 
-		// 2. ´Ü¾î°¡ ÀÖÀ¸¸é ¶æ Ãâ·Â
+		// 2. ë‹¨ì–´ê°€ ìˆìœ¼ë©´ ëœ» ì¶œë ¥
 		if (words.containsKey(word)) {
 			System.out.println(word + " : " + words.get(word));
 		} else {
-			System.out.println("µî·ÏµÇÁö ¾ÊÀº ´Ü¾îÀÔ´Ï´Ù.");
+			System.out.println("ë“±ë¡ë˜ì§€ ì•Šì€ ë‹¨ì–´ì…ë‹ˆë‹¤.");
 		}
 	}
 
-	// 3. ´Ü¾î ¼öÁ¤
+	// 3. ë‹¨ì–´ ìˆ˜ì •
 	public void update(Scanner scan) {
-		// 1. ´Ü¾î ÀÔ·Â
-		System.out.print("¼öÁ¤ÇÒ ´Ü¾î> ");
+		// 1. ë‹¨ì–´ ì…ë ¥
+		System.out.print("ìˆ˜ì •í•  ë‹¨ì–´> ");
 		String word = scan.nextLine().trim();
 
-		// 1-1. ´Ü¾î°¡ ¾øÀ¸¸é ¿À·ù ¸Ş½ÃÁö Ãâ·Â ÈÄ Á¾·á
+		// 1-1. ë‹¨ì–´ê°€ ì—†ìœ¼ë©´ ì˜¤ë¥˜ ë©”ì‹œì§€ ì¶œë ¥ í›„ ì¢…ë£Œ
 		if (!words.containsKey(word)) {
-			System.out.println("µî·ÏµÇÁö ¾ÊÀº ´Ü¾îÀÔ´Ï´Ù.");
+			System.out.println("ë“±ë¡ë˜ì§€ ì•Šì€ ë‹¨ì–´ì…ë‹ˆë‹¤.");
 			return;
 		}
 
-		// 2. ¼öÁ¤ÇÒ ¶æ ÀÔ·Â
-		System.out.print("¶æ> ");
+		// 2. ìˆ˜ì •í•  ëœ» ì…ë ¥
+		System.out.print("ëœ»> ");
 		String meaning = scan.nextLine().trim();
 
-		// 3. ´Ü¾î ¼öÁ¤
+		// 3. ë‹¨ì–´ ìˆ˜ì •
 		words.put(word, meaning);
-		System.out.println("¼öÁ¤ ¿Ï·á");
+		System.out.println("ìˆ˜ì • ì™„ë£Œ");
 	}
 
-	// 4. ´Ü¾î Ãâ·Â
+	// 4. ë‹¨ì–´ ì¶œë ¥
 	public void printWords(Scanner scan) {
 		if (words.isEmpty()) {
-			System.out.println("µî·ÏµÈ ´Ü¾î°¡ ¾ø½À´Ï´Ù.");
+			System.out.println("ë“±ë¡ëœ ë‹¨ì–´ê°€ ì—†ìŠµë‹ˆë‹¤.");
 		} else {
 			for (String word : words.keySet()) {
 				System.out.println(word + " : " + words.get(word));
@@ -135,17 +135,17 @@ class WordController {
 		}
 	}
 
-	// 5. ´Ü¾î »èÁ¦
+	// 5. ë‹¨ì–´ ì‚­ì œ
 	public void deleteWord(Scanner scan) {
-		// 1. ´Ü¾î ÀÔ·Â
-		System.out.print("»èÁ¦ÇÒ ´Ü¾î> ");
+		// 1. ë‹¨ì–´ ì…ë ¥
+		System.out.print("ì‚­ì œí•  ë‹¨ì–´> ");
 		String word = scan.nextLine().trim();
 
-		// 2. »èÁ¦ ÈÄ °á°ú Ãâ·Â
+		// 2. ì‚­ì œ í›„ ê²°ê³¼ ì¶œë ¥
 		if (words.remove(word) == null) {
-			System.out.println("µî·ÏµÇÁö ¾ÊÀº ´Ü¾îÀÔ´Ï´Ù.");
+			System.out.println("ë“±ë¡ë˜ì§€ ì•Šì€ ë‹¨ì–´ì…ë‹ˆë‹¤.");
 		} else {
-			System.out.println("»èÁ¦ ¿Ï·á");
+			System.out.println("ì‚­ì œ ì™„ë£Œ");
 		}
 	}
 }

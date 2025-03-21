@@ -1,79 +1,79 @@
 package day09_Exam02;
 
 public class Student {
-	/* ÇĞ»ıÁ¤º¸¸¦ °ü¸®ÇÏ±â À§ÇÑ Å¬·¡½º »ı¼º (Student)
-	 * - ÇĞ»ı ±âº»Á¤º¸ : ÀÌ¸§, »ı³â¿ùÀÏ, ÀüÈ­¹øÈ£, ³ªÀÌ
-	 * - ÇĞ¿ø Á¤º¸ : ÇĞ¿ø¸í="KOREAIT"(final), ÁöÁ¡
-	 * - ¼ö°­ Á¤º¸ : ¼ö°­°ú¸ñ, ±â°£ 
-	 *    => ¿©·¯°ú¸ñÀ» µéÀ» ¼ö ÀÖÀ½.[5] (¹è¿­·Î Ã³¸® 5°ú¸ñ±îÁö¸¸ °¡´É)
+	/* í•™ìƒì •ë³´ë¥¼ ê´€ë¦¬í•˜ê¸° ìœ„í•œ í´ë˜ìŠ¤ ìƒì„± (Student)
+	 * - í•™ìƒ ê¸°ë³¸ì •ë³´ : ì´ë¦„, ìƒë…„ì›”ì¼, ì „í™”ë²ˆí˜¸, ë‚˜ì´
+	 * - í•™ì› ì •ë³´ : í•™ì›ëª…="KOREAIT"(final), ì§€ì 
+	 * - ìˆ˜ê°• ì •ë³´ : ìˆ˜ê°•ê³¼ëª©, ê¸°ê°„ 
+	 *    => ì—¬ëŸ¬ê³¼ëª©ì„ ë“¤ì„ ìˆ˜ ìˆìŒ.[5] (ë°°ì—´ë¡œ ì²˜ë¦¬ 5ê³¼ëª©ê¹Œì§€ë§Œ ê°€ëŠ¥)
 	 * */
-	//1. ¸â¹öº¯¼ö ¼±¾ğ / 2. »ı¼ºÀÚ / 3. getter/setter / 4. ¸Ş¼­µå »ı¼º
+	//1. ë©¤ë²„ë³€ìˆ˜ ì„ ì–¸ / 2. ìƒì„±ì / 3. getter/setter / 4. ë©”ì„œë“œ ìƒì„±
 	private String name;
 	private String birth;
 	private String phone;
 	private int age;
-	private final String COMPANY = "KOREAIT"; // finalÀº ´ë¹®ÀÚ Ã³¸®
+	private final String COMPANY = "KOREAIT"; // finalì€ ëŒ€ë¬¸ì ì²˜ë¦¬
 	private String branch;
-	private String[] course = new String[5]; //¼ö°­°ú¸ñ
-	private String[] period = new String[5]; //±â°£
-	private int cnt; // ¹è¿­ÀÇ index Ã³¸®¿ë
+	private String[] course = new String[5]; //ìˆ˜ê°•ê³¼ëª©
+	private String[] period = new String[5]; //ê¸°ê°„
+	private int cnt; // ë°°ì—´ì˜ index ì²˜ë¦¬ìš©
 	
-	// »ı¼ºÀÚ
-	public Student() {} //±âº»»ı¼ºÀÚ
+	// ìƒì„±ì
+	public Student() {} //ê¸°ë³¸ìƒì„±ì
 	public Student(String name, String phone, String branch) {
 		this.name = name;
 		this.phone = phone;
 		this.branch = branch;
 	}
-	// »ı¼ºÀÚ ¿À¹ö·Îµù
+	// ìƒì„±ì ì˜¤ë²„ë¡œë”©
 	public Student(String name, String birth, String phone, 
 			int age, String branch) {
-		//»ı¼ºÀÚ È£Ãâ : »ı¼ºÀÚÀÇ Ã¹¶óÀÎ¿¡¼­¸¸ È£Ãâ °¡´É
+		//ìƒì„±ì í˜¸ì¶œ : ìƒì„±ìì˜ ì²«ë¼ì¸ì—ì„œë§Œ í˜¸ì¶œ ê°€ëŠ¥
 		this(name, phone, branch);
 		this.age = age;
 		this.birth = birth;
 	}
 	
 	//method
-	//- ÇĞ»ıÀÇ ±âº»Á¤º¸¸¦ Ãâ·ÂÇÏ´Â ¸Ş¼­µå
+	//- í•™ìƒì˜ ê¸°ë³¸ì •ë³´ë¥¼ ì¶œë ¥í•˜ëŠ” ë©”ì„œë“œ
 	public void printInfo() {
-		System.out.println("--ÇĞ»ıÁ¤º¸--");
-		System.out.println("ÀÌ¸§:"+name+"("+age+"¼¼"+"/"+birth+") "+phone);
+		System.out.println("--í•™ìƒì •ë³´--");
+		System.out.println("ì´ë¦„:"+name+"("+age+"ì„¸"+"/"+birth+") "+phone);
 	}
 	
-	//- ÇĞ»ıÀÇ ÇĞ¿øÁ¤º¸¸¦ Ãâ·ÂÇÏ´Â ¸Ş¼­µå
+	//- í•™ìƒì˜ í•™ì›ì •ë³´ë¥¼ ì¶œë ¥í•˜ëŠ” ë©”ì„œë“œ
 	public void printCompany() {
 		System.out.println(COMPANY+"("+branch+")");
 		System.out.println("--------------------------");
 	}
 	
-	//- ÇĞ»ıÀÇ ¼ö°­Á¤º¸¸¦ Ãâ·ÂÇÏ´Â ¸Ş¼­µå
+	//- í•™ìƒì˜ ìˆ˜ê°•ì •ë³´ë¥¼ ì¶œë ¥í•˜ëŠ” ë©”ì„œë“œ
 	public void printCourse() {
-		if(cnt==0) { //µî·ÏÇÑ °ú¸ñÀÌ ¾øÀ½.
-			System.out.println("¼ö°­°ú¸ñÀÌ ¾ø½À´Ï´Ù.");
+		if(cnt==0) { //ë“±ë¡í•œ ê³¼ëª©ì´ ì—†ìŒ.
+			System.out.println("ìˆ˜ê°•ê³¼ëª©ì´ ì—†ìŠµë‹ˆë‹¤.");
 			return;
 		}
-		//cnt±îÁö¸¸ Ãâ·Â => µî·ÏµÇÁö ¾ÊÀº ºó°ªÀº Ãâ·Â X
+		//cntê¹Œì§€ë§Œ ì¶œë ¥ => ë“±ë¡ë˜ì§€ ì•Šì€ ë¹ˆê°’ì€ ì¶œë ¥ X
 		for(int i=0; i<cnt; i++) {
 			System.out.println(course[i]+"("+period[i]+")");
 		}
 	}
 	
-	//- ÇĞ»ıÀÇ ¼ö°­Á¤º¸¸¦ Ãß°¡ÇÏ´Â ¸Ş¼­µå
-	// ¸Å°³º¯¼ö : ¼ö°­°ú¸ñ, ±â°£ => ¹è¿­¿¡ Ãß°¡ / ¸®ÅÏÅ¸ÀÔ : void
+	//- í•™ìƒì˜ ìˆ˜ê°•ì •ë³´ë¥¼ ì¶”ê°€í•˜ëŠ” ë©”ì„œë“œ
+	// ë§¤ê°œë³€ìˆ˜ : ìˆ˜ê°•ê³¼ëª©, ê¸°ê°„ => ë°°ì—´ì— ì¶”ê°€ / ë¦¬í„´íƒ€ì… : void
 	public void insertCourse(String coures, String period) {
-		//cnt = 0 => ¾ÆÁ÷ Ãß°¡µÈ °ªÀÌ ¾øÀ½. 
+		//cnt = 0 => ì•„ì§ ì¶”ê°€ëœ ê°’ì´ ì—†ìŒ. 
 		if(cnt>=5) {
-//			System.out.println("´õ ÀÌ»ó ¼ö°­ÇÏ½Ç ¼ö ¾ø½À´Ï´Ù.");
+//			System.out.println("ë” ì´ìƒ ìˆ˜ê°•í•˜ì‹¤ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 //			return;
 			
-			// ´õÀÌ»ó ´ãÀ» °ø°£ÀÌ ¾øÀ½ => ¹è¿­À» º¹»ç ´Ù½Ã »ı¼º (¹è¿­º¹»ç)
+			// ë”ì´ìƒ ë‹´ì„ ê³µê°„ì´ ì—†ìŒ => ë°°ì—´ì„ ë³µì‚¬ ë‹¤ì‹œ ìƒì„± (ë°°ì—´ë³µì‚¬)
 			String courseTmp[] = new String[course.length+5];
 			String periodTmp[] = new String[this.period.length+5];
 			// arraycopy
 			System.arraycopy(course, 0, courseTmp, 0, course.length);
 			System.arraycopy(this.period, 0, periodTmp, 0, this.period.length);
-			// ±âÁ¸ ¹è¿­ÀÇ ÂüÁ¶º¯¼ö¿Í °´Ã¼¸¦ ¹Ù²ãÄ¡±â
+			// ê¸°ì¡´ ë°°ì—´ì˜ ì°¸ì¡°ë³€ìˆ˜ì™€ ê°ì²´ë¥¼ ë°”ê¿”ì¹˜ê¸°
 			this.course = courseTmp;
 			this.period = periodTmp;
 		}

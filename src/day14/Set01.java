@@ -9,14 +9,14 @@ import java.util.List;
 
 public class Set01 {
 	public static void main(String[] args) {
-		/* Set : ¼ø¼­¸¦ º¸ÀåÇÏÁö ¾ÊÀ½ (index°¡ ¾øÀ½)
-		 * 	=> Áßº¹, Á¤·Ä ºÒ°¡´É
-		 * HashSet(´ëÇ¥) / TreeSet(Á¤·ÄÀÌ °¡´ÉÇÑ set)
+		/* Set : ìˆœì„œë¥¼ ë³´ì¥í•˜ì§€ ì•ŠìŒ (indexê°€ ì—†ìŒ)
+		 * 	=> ì¤‘ë³µ, ì •ë ¬ ë¶ˆê°€ëŠ¥
+		 * HashSet(ëŒ€í‘œ) / TreeSet(ì •ë ¬ì´ ê°€ëŠ¥í•œ set)
 		 * */
 		
 		HashSet<String> set = new HashSet<String>();
 		
-		//add() : set¿¡ °´Ã¼ Ãß°¡
+		//add() : setì— ê°ì²´ ì¶”ê°€
 		set.add("apple");
 		set.add("banana");
 		set.add("apple");
@@ -25,26 +25,26 @@ public class Set01 {
 		set.add("apple");
 		System.out.println(set);
 		
-		// get(), set() µîµî index¸¦ ¾²´Â ¸Ş¼­µå¸¦ ¾µ ¼ö ¾øÀ½
+		// get(), set() ë“±ë“± indexë¥¼ ì“°ëŠ” ë©”ì„œë“œë¥¼ ì“¸ ìˆ˜ ì—†ìŒ
 		for(String fruit : set) {
 			System.out.println(fruit);
 		}
 		System.out.println();
 		
-		// Iterator Ãâ·Â °¡´É
+		// Iterator ì¶œë ¥ ê°€ëŠ¥
 		Iterator<String> it = set.iterator();
 		while(it.hasNext()) {
 			System.out.println(it.next());
 		}
 		
 		System.out.println();
-		// Á¤·Ä : setÀº ¼ø¼­°¡ ¾ø±â ¶§¹®¿¡ Á¤·Ä ºÒ°¡´É
-		// set => list·Î º¯È¯ÇÏ¿© Á¤·Ä
+		// ì •ë ¬ : setì€ ìˆœì„œê°€ ì—†ê¸° ë•Œë¬¸ì— ì •ë ¬ ë¶ˆê°€ëŠ¥
+		// set => listë¡œ ë³€í™˜í•˜ì—¬ ì •ë ¬
 		List<String> list = new ArrayList<String>(set);
 		Collections.sort(list);
 		System.out.println(list);
 		
-		// list.sort()·Î ³»¸²Â÷¼ø Á¤·Ä
+		// list.sort()ë¡œ ë‚´ë¦¼ì°¨ìˆœ ì •ë ¬
 		list.sort(new Comparator<String>() {
 
 			@Override

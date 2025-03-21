@@ -7,11 +7,11 @@ public class Exam01 {
 		Scanner scan = new Scanner(System.in);
 		int input, sum = 0;
 		double count = 0.0;
-		String total = ""; // ¼ö½Ä Á¦°ø
+		String total = ""; // ìˆ˜ì‹ ì œê³µ
 
-		System.out.println("Á¤¼ö¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä.");
-		System.out.println("0ÀÌ³ª À½¼ö¸¦ ÀÔ·ÂÇÒ ¶§±îÁö °è¼Ó ÀÔ·ÂÇÒ ¼ö ÀÖÀ¸¸ç,");
-		System.out.println("Á÷Àü ÀÔ·Â±îÁöÀÇ ÇÕ°ú Æò±ÕÀÌ Ãâ·ÂµË´Ï´Ù.");
+		System.out.println("ì •ìˆ˜ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”.");
+		System.out.println("0ì´ë‚˜ ìŒìˆ˜ë¥¼ ì…ë ¥í•  ë•Œê¹Œì§€ ê³„ì† ì…ë ¥í•  ìˆ˜ ìˆìœ¼ë©°,");
+		System.out.println("ì§ì „ ì…ë ¥ê¹Œì§€ì˜ í•©ê³¼ í‰ê· ì´ ì¶œë ¥ë©ë‹ˆë‹¤.");
 
 		while (true) {
 			System.out.print("> ");
@@ -27,52 +27,52 @@ public class Exam01 {
 		scan.close();
 
 		if (count == 0.0) {
-			System.out.println("¾ç¼ö¸¦ ÀÔ·Â¹ŞÁö ¸øÇß½À´Ï´Ù. Á¾·áÇÕ´Ï´Ù.");
+			System.out.println("ì–‘ìˆ˜ë¥¼ ì…ë ¥ë°›ì§€ ëª»í–ˆìŠµë‹ˆë‹¤. ì¢…ë£Œí•©ë‹ˆë‹¤.");
 		} else {
-			System.out.println("°è»ê½Ä : " + total.substring(1));
-			System.out.println("ÇÕ°è : " + sum);
-			System.out.println("Æò±Õ : " + sum / count);
+			System.out.println("ê³„ì‚°ì‹ : " + total.substring(1));
+			System.out.println("í•©ê³„ : " + sum);
+			System.out.println("í‰ê·  : " + sum / count);
 		}
 	}
 
 	public static void main(String[] args) {
 		extra();
 
-//		// ¼ıÀÚ¸¦ ÀÔ·Â¹Ş¾Æ (0ÀÌ³ª À½¼ö¸¦ ÀÔ·Â¹ŞÀ¸¸é Á¾·á)
-//		// ÀÔ·Â¹ŞÀº ¼ıÀÚÀÇ ÇÕ°è¿Í Æò±ÕÀ» Ãâ·Â
+//		// ìˆ«ìë¥¼ ì…ë ¥ë°›ì•„ (0ì´ë‚˜ ìŒìˆ˜ë¥¼ ì…ë ¥ë°›ìœ¼ë©´ ì¢…ë£Œ)
+//		// ì…ë ¥ë°›ì€ ìˆ«ìì˜ í•©ê³„ì™€ í‰ê· ì„ ì¶œë ¥
 //		
 //		Scanner scan = new Scanner(System.in);
 //		int input, sum = 0;
 //		double count = 0.0;
 //		
-//		// »çÀü Ãâ·Â
-//		System.out.println("Á¤¼ö¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä.");
-//		System.out.println("0ÀÌ³ª À½¼ö¸¦ ÀÔ·ÂÇÒ ¶§±îÁö °è¼Ó ÀÔ·ÂÇÒ ¼ö ÀÖÀ¸¸ç,");
-//		System.out.println("Á÷Àü ÀÔ·Â±îÁöÀÇ ÇÕ°ú Æò±ÕÀÌ Ãâ·ÂµË´Ï´Ù.");
+//		// ì‚¬ì „ ì¶œë ¥
+//		System.out.println("ì •ìˆ˜ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”.");
+//		System.out.println("0ì´ë‚˜ ìŒìˆ˜ë¥¼ ì…ë ¥í•  ë•Œê¹Œì§€ ê³„ì† ì…ë ¥í•  ìˆ˜ ìˆìœ¼ë©°,");
+//		System.out.println("ì§ì „ ì…ë ¥ê¹Œì§€ì˜ í•©ê³¼ í‰ê· ì´ ì¶œë ¥ë©ë‹ˆë‹¤.");
 //		
-//		// Á¤¼ö ÀÔ·Â
+//		// ì •ìˆ˜ ì…ë ¥
 //		System.out.print("> ");
 //		input = scan.nextInt();
 //		while (input <= 0) {
-//			System.out.println("Ã¹ ÀÔ·ÂÀº ¹İµå½Ã ¾ç¼ö¿©¾ß ÇÕ´Ï´Ù.");
+//			System.out.println("ì²« ì…ë ¥ì€ ë°˜ë“œì‹œ ì–‘ìˆ˜ì—¬ì•¼ í•©ë‹ˆë‹¤.");
 //			System.out.print("> ");
 //			input = scan.nextInt();
-//		} // Ã¹ ÀÔ·ÂÀº ¹İµå½Ã ¾ç¼ö
+//		} // ì²« ì…ë ¥ì€ ë°˜ë“œì‹œ ì–‘ìˆ˜
 //		
 //		do {
-//			// ÀÔ·Â¹ŞÀº ¼ö¸¦ count¿Í sum¿¡ ¹İ¿µ
+//			// ì…ë ¥ë°›ì€ ìˆ˜ë¥¼ countì™€ sumì— ë°˜ì˜
 //			count++;
 //			sum += input;
 //			
-//			// ´ÙÀ½ Á¤¼ö ÀÔ·Â
+//			// ë‹¤ìŒ ì •ìˆ˜ ì…ë ¥
 //			System.out.print("> ");
 //			input = scan.nextInt();
 //		} while (input > 0);
 //		
 //		scan.close();
 //		
-//		System.out.println("ÇÕ°è : " + sum);
-//		System.out.println("Æò±Õ : " + sum/count);
+//		System.out.println("í•©ê³„ : " + sum);
+//		System.out.println("í‰ê·  : " + sum/count);
 	}
 
 }

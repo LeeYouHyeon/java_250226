@@ -4,11 +4,11 @@ import java.util.Calendar;
 
 public class Date01 {
 	public static void main(String[] args) {
-		/* ³¯Â¥/½Ã°£ Å¬·¡½º
-		 * Date Å¬·¡½º(Deprecated) / Calendar Å¬·¡½º / LocalDateTime Å¬·¡½º
+		/* ë‚ ì§œ/ì‹œê°„ í´ë˜ìŠ¤
+		 * Date í´ë˜ìŠ¤(Deprecated) / Calendar í´ë˜ìŠ¤ / LocalDateTime í´ë˜ìŠ¤
 		 * 
-		 * Calendar : Ãß»ó Å¬·¡½º => new °´Ã¼¸¦ »ı¼ºÇÒ ¼ö ¾øÀ½.
-		 * 	- ½Ì±ÛÅÏ ÆĞÅÏ : °´Ã¼¸¦ »ı¼ºÇÏÁö ¾Ê°í Å¬·¡½º¸í.getInstance() ¸Ş¼­µå·Î ¾ò¾î¿È => static
+		 * Calendar : ì¶”ìƒ í´ë˜ìŠ¤ => new ê°ì²´ë¥¼ ìƒì„±í•  ìˆ˜ ì—†ìŒ.
+		 * 	- ì‹±ê¸€í„´ íŒ¨í„´ : ê°ì²´ë¥¼ ìƒì„±í•˜ì§€ ì•Šê³  í´ë˜ìŠ¤ëª….getInstance() ë©”ì„œë“œë¡œ ì–»ì–´ì˜´ => static
 		 * 
 		 * */
 		
@@ -19,21 +19,21 @@ public class Date01 {
 		
 		System.out.println(c.get(Calendar.MONTH) + 1);		//0~11
 		System.out.println(c.get(Calendar.DAY_OF_MONTH));
-		System.out.println(c.get(Calendar.DAY_OF_WEEK));	//1(ÀÏ)~7(Åä)
+		System.out.println(c.get(Calendar.DAY_OF_WEEK));	//1(ì¼)~7(í† )
 		
-		// 2025-03-14(±İ)
+		// 2025-03-14(ê¸ˆ)
 //		System.out.println(c.get(Calendar.YEAR) + "-" + c.get(Calendar.MONTH) + "-" + c.get(Calendar.DAY_OF_MONTH) + "("
-//				+ new char[] {'ÀÏ', '¿ù', 'È­', '¼ö', '¸ñ', '±İ', 'Åä'}[c.get(Calendar.DAY_OF_WEEK) - 1] + ")");
+//				+ new char[] {'ì¼', 'ì›”', 'í™”', 'ìˆ˜', 'ëª©', 'ê¸ˆ', 'í† '}[c.get(Calendar.DAY_OF_WEEK) - 1] + ")");
 		
 		System.out.println(String.format("%d-%02d-%d(%c)",
 				c.get(Calendar.YEAR),
 				c.get(Calendar.MONTH) + 1,
 				c.get(Calendar.DAY_OF_MONTH),
-				new char[] {'ÀÏ', '¿ù', 'È­', '¼ö', '¸ñ', '±İ', 'Åä'}[c.get(Calendar.DAY_OF_WEEK) - 1]));
+				new char[] {'ì¼', 'ì›”', 'í™”', 'ìˆ˜', 'ëª©', 'ê¸ˆ', 'í† '}[c.get(Calendar.DAY_OF_WEEK) - 1]));
 		System.out.println();
 		
-		System.out.println(String.format("%s %d½Ã %dºĞ %02dÃÊ", 
-				(c.get(Calendar.AM_PM) == Calendar.AM ? "¿ÀÀü" : "¿ÀÈÄ"),
+		System.out.println(String.format("%s %dì‹œ %dë¶„ %02dì´ˆ", 
+				(c.get(Calendar.AM_PM) == Calendar.AM ? "ì˜¤ì „" : "ì˜¤í›„"),
 				c.get(Calendar.HOUR), c.get(Calendar.MINUTE), c.get(Calendar.SECOND)));
 		
 		

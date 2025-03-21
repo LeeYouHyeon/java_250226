@@ -6,20 +6,20 @@ public class Main {
 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
-		String subCode[] = { "101", "102", "103", "104", "105" }, subName[] = { "∞¯∞¯µ•¿Ã≈Õ", "java", "python", "javascript", "DB" };
+		String subCode[] = { "101", "102", "103", "104", "105" }, subName[] = { "Í≥µÍ≥µÎç∞Ïù¥ÌÑ∞", "java", "python", "javascript", "DB" };
 		Subject subs[] = new Subject[subCode.length];
 		for(int i = 0; i < subCode.length; i++) {
 			subs[i] = new Subject(subCode[i], subName[i]);
 		}
 		
 		StudentController sc = new StudentController(subs);
-		Exception inputError = new Exception("¿ﬂ∏¯µ» ¿‘∑¬");
+		Exception inputError = new Exception("ÏûòÎ™ªÎêú ÏûÖÎ†•");
 
 		int menu = 0;
 		do {
 			try {
-				// ∏ﬁ¥∫ √‚∑¬
-				System.out.println("1. «–ª˝µÓ∑œ | 2. «–ª˝∏Ò∑œ | 3. «–ª˝∞Àªˆ | 4. ºˆ∞≠Ω≈√ª | 5. ºˆ∞≠√∂»∏ | 6. ¡æ∑·");
+				// Î©îÎâ¥ Ï∂úÎ†•
+				System.out.println("1. ÌïôÏÉùÎì±Î°ù | 2. ÌïôÏÉùÎ™©Î°ù | 3. ÌïôÏÉùÍ≤ÄÏÉâ | 4. ÏàòÍ∞ïÏã†Ï≤≠ | 5. ÏàòÍ∞ïÏ≤†Ìöå | 6. Ï¢ÖÎ£å");
 				System.out.print("> ");
 				menu = Integer.parseInt(scan.nextLine());
 				switch (menu) {

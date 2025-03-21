@@ -7,18 +7,18 @@ import memos.Randoms;
 public class MethodEx03 {
 	public static Randoms r = new Randoms();
 
-	/* ¹è¿­ Ãâ·Â ¸Ş¼­µå
+	/* ë°°ì—´ ì¶œë ¥ ë©”ì„œë“œ
 	 * user : 1 2 3 4 5 6
-	 * ´çÃ· : 1 2 3 4 5 6 [7]
+	 * ë‹¹ì²¨ : 1 2 3 4 5 6 [7]
 	 * */
 	public static void printLotto(int[] arr) {
 		if (arr.length < 5 || arr.length > 8)
 			return;
 
 		if (arr.length == 7) {
-			System.out.print("´çÃ· ¹øÈ£ : ");
+			System.out.print("ë‹¹ì²¨ ë²ˆí˜¸ : ");
 		} else {
-			System.out.print("ÀÔ·Â ¹øÈ£ : ");
+			System.out.print("ì…ë ¥ ë²ˆí˜¸ : ");
 		}
 
 		for (int i = 0; i < 6; i++) {
@@ -32,68 +32,68 @@ public class MethodEx03 {
 		}
 	}
 
-	/* µî¼ö È®ÀÎ ¸Ş¼­µå
-	 * ´çÃ· ¹øÈ£¿Í »ç¿ëÀÚ ¹øÈ£ ºñ±³ ÈÄ µî¼ö ÃßÃâ
-	 * 6°³ ¸ğµÎ ÀÏÄ¡ : 1µî
-	 * 5°³ ÀÏÄ¡ + º¸³Ê½º : 2µî
-	 * 5°³ ÀÏÄ¡ : 3µî
-	 * 4°³ ÀÏÄ¡ : 4µî
-	 * 3°³ ÀÏÄ¡ : 5µî
-	 * ³ª¸ÓÁö : ²Î 
+	/* ë“±ìˆ˜ í™•ì¸ ë©”ì„œë“œ
+	 * ë‹¹ì²¨ ë²ˆí˜¸ì™€ ì‚¬ìš©ì ë²ˆí˜¸ ë¹„êµ í›„ ë“±ìˆ˜ ì¶”ì¶œ
+	 * 6ê°œ ëª¨ë‘ ì¼ì¹˜ : 1ë“±
+	 * 5ê°œ ì¼ì¹˜ + ë³´ë„ˆìŠ¤ : 2ë“±
+	 * 5ê°œ ì¼ì¹˜ : 3ë“±
+	 * 4ê°œ ì¼ì¹˜ : 4ë“±
+	 * 3ê°œ ì¼ì¹˜ : 5ë“±
+	 * ë‚˜ë¨¸ì§€ : ê½ 
 	 * */
 	public static String rank(int[] lotto, int[] user) {
 		if (lotto.length != 7 || user.length != 6) {
-			return "¿¡·¯°¡ ¹ß»ıÇß½À´Ï´Ù. º»»ç¿¡ ¹®ÀÇÇØÁÖ¼¼¿ä.";
+			return "ì—ëŸ¬ê°€ ë°œìƒí–ˆìŠµë‹ˆë‹¤. ë³¸ì‚¬ì— ë¬¸ì˜í•´ì£¼ì„¸ìš”.";
 		}
 
-		int count = 0; // user°¡ ¸ÂÃá ±âº» ¹øÈ£ÀÇ ¼ö
+		int count = 0; // userê°€ ë§ì¶˜ ê¸°ë³¸ ë²ˆí˜¸ì˜ ìˆ˜
 
-		// ±âº»¹øÈ£µé(lotto[0] ~ lotto[5])À» user¿¡¼­ Ã£¾Æ ±× ¼ö¸¦ count¿¡ ÀúÀå
+		// ê¸°ë³¸ë²ˆí˜¸ë“¤(lotto[0] ~ lotto[5])ì„ userì—ì„œ ì°¾ì•„ ê·¸ ìˆ˜ë¥¼ countì— ì €ì¥
 		for (int i = 0; i < 6; i++) {
 			if (r.contains(user, lotto[i])) {
 				count++;
 			}
 		}
 
-		// µî¼ö Ã³¸®
+		// ë“±ìˆ˜ ì²˜ë¦¬
 		switch (count) {
 			case 6:
-				return "1µî";
+				return "1ë“±";
 			case 5:
-				return r.contains(user, lotto[6]) ? "2µî" : "3µî";
+				return r.contains(user, lotto[6]) ? "2ë“±" : "3ë“±";
 			case 4:
-				return "4µî";
+				return "4ë“±";
 			case 3:
-				return "5µî";
+				return "5ë“±";
 			default:
-				return "²Î";
+				return "ê½";
 		}
 	}
 
 	public static void main(String[] args) {
-		// 1. ´çÃ· ¹øÈ£ »ı¼º
+		// 1. ë‹¹ì²¨ ë²ˆí˜¸ ìƒì„±
 		int lotto[] = r.randomsD(7, 1, 45), user[] = new int[6];
 		boolean manual;
 
 		Scanner scan = new Scanner(System.in);
 
-		System.out.println("·Î¶Ç¸¦ ±¸¸ÅÇØÁÖ¼Å¼­ °¨»çÇÕ´Ï´Ù.");
-		System.out.print("¹øÈ£¸¦ Á÷Á¢ ÀÔ·ÂÇÏ½Ã°Ú½À´Ï±î? ");
+		System.out.println("ë¡œë˜ë¥¼ êµ¬ë§¤í•´ì£¼ì…”ì„œ ê°ì‚¬í•©ë‹ˆë‹¤.");
+		System.out.print("ë²ˆí˜¸ë¥¼ ì§ì ‘ ì…ë ¥í•˜ì‹œê² ìŠµë‹ˆê¹Œ? ");
 
-		// 2. ¿É¼Ç È®ÀÎ
+		// 2. ì˜µì…˜ í™•ì¸
 		option: while (true) {
 			while (true) {
 				String choice = "";
-				System.out.println("Y/NÀ¸·Î ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+				System.out.println("Y/Nìœ¼ë¡œ ì…ë ¥í•´ì£¼ì„¸ìš”.");
 
-				// 2-1. À¯Àú ÀÔ·Â. °ø¹éÀº ¹«½Ã
+				// 2-1. ìœ ì € ì…ë ¥. ê³µë°±ì€ ë¬´ì‹œ
 				while (choice.isBlank()) {
 					choice = scan.nextLine().trim().toLowerCase();
 				}
 				char first = choice.charAt(0);
 
-				// 2-2. ÀÔ·Â °ËÁõ
-				// 2-2-1. ÀÔ·ÂÀÌ "Y", "N", "y", "n"ÀÌ¶ó¸é manual¿¡ °ªÀ» ÀúÀåÇÏ°í option while¹®À» Å»Ãâ
+				// 2-2. ì…ë ¥ ê²€ì¦
+				// 2-2-1. ì…ë ¥ì´ "Y", "N", "y", "n"ì´ë¼ë©´ manualì— ê°’ì„ ì €ì¥í•˜ê³  option whileë¬¸ì„ íƒˆì¶œ
 				if (choice.length() == 1) {
 					switch (first) {
 						case 'y':
@@ -106,19 +106,19 @@ public class MethodEx03 {
 					}
 				}
 
-				// 2-2-2. ¾Æ´Ï¶ó¸é ´Ù½Ã ÀÔ·Â
-				System.out.print("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù. ");
+				// 2-2-2. ì•„ë‹ˆë¼ë©´ ë‹¤ì‹œ ì…ë ¥
+				System.out.print("ì˜ëª»ëœ ì…ë ¥ì…ë‹ˆë‹¤. ");
 			}
 		}
 
-		// 3. ¹øÈ£ »ı¼º
+		// 3. ë²ˆí˜¸ ìƒì„±
 		if (manual) {
-			// 3-1. Á÷Á¢ ÀÔ·Â
-			System.out.println("·Î¶Ç ¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä. ¹øÈ£´Â 1~45ÀÔ´Ï´Ù.");
+			// 3-1. ì§ì ‘ ì…ë ¥
+			System.out.println("ë¡œë˜ ë²ˆí˜¸ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”. ë²ˆí˜¸ëŠ” 1~45ì…ë‹ˆë‹¤.");
 			for (int i = 0; i < user.length; i++) {
 				while (true) {
-					// 3-1-1. ¼ıÀÚ ÀÔ·ÂÀ» ¹ŞÀ½ => input
-					// ÀÌ¹Ì ÀÔ·ÂÇÑ ¼ıÀÚµéÀ» È®ÀÎÇÏ±â ½±µµ·Ï ÀÌÀü±îÁö ÀÔ·Â¹ŞÀº ¼ıÀÚµéÀ» ¾Õ¿¡ Ãâ·Â
+					// 3-1-1. ìˆ«ì ì…ë ¥ì„ ë°›ìŒ => input
+					// ì´ë¯¸ ì…ë ¥í•œ ìˆ«ìë“¤ì„ í™•ì¸í•˜ê¸° ì‰½ë„ë¡ ì´ì „ê¹Œì§€ ì…ë ¥ë°›ì€ ìˆ«ìë“¤ì„ ì•ì— ì¶œë ¥
 					if (i == 0) {
 						System.out.print("> ");
 					} else {
@@ -128,31 +128,31 @@ public class MethodEx03 {
 					}
 					int input = scan.nextInt();
 
-					// 3-1-2. inputÀÇ ¹üÀ§ È®ÀÎ
+					// 3-1-2. inputì˜ ë²”ìœ„ í™•ì¸
 					if (input < 1 || input > 45) {
-						System.out.println("¹üÀ§(1~45)¸¦ ¹ş¾î³µ½À´Ï´Ù. ´Ù½Ã ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+						System.out.println("ë²”ìœ„(1~45)ë¥¼ ë²—ì–´ë‚¬ìŠµë‹ˆë‹¤. ë‹¤ì‹œ ì…ë ¥í•´ì£¼ì„¸ìš”.");
 						continue;
 					}
 
-					// 3-1-3. inputÀÇ Áßº¹ È®ÀÎ
+					// 3-1-3. inputì˜ ì¤‘ë³µ í™•ì¸
 					if (r.contains(user, input)) {
-						System.out.println("ÀÌ¹Ì »ç¿ëÇÑ ¹øÈ£ÀÔ´Ï´Ù. ´Ù½Ã ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+						System.out.println("ì´ë¯¸ ì‚¬ìš©í•œ ë²ˆí˜¸ì…ë‹ˆë‹¤. ë‹¤ì‹œ ì…ë ¥í•´ì£¼ì„¸ìš”.");
 						continue;
 					}
 
-					// 3-1-4. À¯È¿ÇÑ ÀÔ·ÂÀÌ¶ó¸é user¿¡ ¼ıÀÚ¸¦ ³Ö°í while¹® Á¾·á
+					// 3-1-4. ìœ íš¨í•œ ì…ë ¥ì´ë¼ë©´ userì— ìˆ«ìë¥¼ ë„£ê³  whileë¬¸ ì¢…ë£Œ
 					user[i] = input;
 					break;
 				}
-				scan.nextLine(); // ÇÑ ¹ø¿¡ ÇÑ ¼ıÀÚ¾¿¸¸ ÀÔ·Â¹ŞÀ½
+				scan.nextLine(); // í•œ ë²ˆì— í•œ ìˆ«ìì”©ë§Œ ì…ë ¥ë°›ìŒ
 			}
 		} else {
-			// 3-2. ·£´ı »ı¼º
-			System.out.println("ÄÄÇ»ÅÍ°¡ ¼ıÀÚ¸¦ »Ì½À´Ï´Ù.");
+			// 3-2. ëœë¤ ìƒì„±
+			System.out.println("ì»´í“¨í„°ê°€ ìˆ«ìë¥¼ ë½‘ìŠµë‹ˆë‹¤.");
 			r.randomsD(user, 1, 45);
 		}
 
-		// 3. Ãâ·Â
+		// 3. ì¶œë ¥
 		printLotto(lotto);
 		printLotto(user);
 		System.out.println(rank(lotto, user));

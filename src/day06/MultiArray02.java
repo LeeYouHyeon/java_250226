@@ -2,7 +2,7 @@ package day06;
 
 public class MultiArray02 {
 	public static void main(String[] args) {
-		/* 2Â÷¿ø ¹è¿­
+		/* 2ì°¨ì› ë°°ì—´
 		 * 1 2 3
 		 * 4 5 6
 		 * 7 8 9
@@ -27,7 +27,7 @@ public class MultiArray02 {
 		System.out.println("--------------------------");
 
 		int arr1[][] = new int[5][3];
-		// 1~50±îÁöÀÇ ·£´ı ¼ö¸¦ Ã¤¿ö Ãâ·Â
+		// 1~50ê¹Œì§€ì˜ ëœë¤ ìˆ˜ë¥¼ ì±„ì›Œ ì¶œë ¥
 		for (int i = 0; i < arr1.length; i++) {
 			for (int j = 0; j < arr1[0].length; j++) {
 				arr1[i][j] = (int) (Math.random() * 50 + 1);

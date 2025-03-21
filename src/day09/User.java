@@ -2,7 +2,7 @@ package day09;
 
 public class User {
 	private Card[] deck;
-	private int count; // ±âº»°ª 0
+	private int count; // ê¸°ë³¸ê°’ 0
 	
 	public User() {
 		this(5);

@@ -4,17 +4,17 @@ import java.util.Arrays;
 
 public class Stream02 {
 	public static void main(String[] args) {
-		/* ¹è¿­¿¡¼­ Â¦¼ö¸¸ Á¤·ÄÇÏ¿© Ãâ·Â
+		/* ë°°ì—´ì—ì„œ ì§ìˆ˜ë§Œ ì •ë ¬í•˜ì—¬ ì¶œë ¥
 		 * */
 		
 		int arr[] = new memos.Randoms().randoms(20, 1, 20);
 		
-		// Ãâ·Â
+		// ì¶œë ¥
 		Arrays.stream(arr)
 			.forEach(n -> System.out.print(n + " "));
 		System.out.println();
 		
-		// Áßº¹ Á¦°Å, Á¤·Ä ÈÄ Â¦¼ö¸¸ Ãâ·Â
+		// ì¤‘ë³µ ì œê±°, ì •ë ¬ í›„ ì§ìˆ˜ë§Œ ì¶œë ¥
 		Arrays.stream(arr)
 			.distinct()
 			.filter(n -> n % 2 == 0)
@@ -22,7 +22,7 @@ public class Stream02 {
 			.forEach(n -> System.out.print(n + " "));
 		System.out.println();
 		
-		// ½ºÆ®¸²À¸·Î »ý¼ºÇÏ¿©, Áßº¹ Á¦°ÅÇÏ°í Á¤·ÄÇÏ¿© È¦¼ö¸¸ ¹è¿­·Î ¸®ÅÏ
+		// ìŠ¤íŠ¸ë¦¼ìœ¼ë¡œ ìƒì„±í•˜ì—¬, ì¤‘ë³µ ì œê±°í•˜ê³  ì •ë ¬í•˜ì—¬ í™€ìˆ˜ë§Œ ë°°ì—´ë¡œ ë¦¬í„´
 		int arr2[] = Arrays.stream(arr)
 				.filter(n -> n % 2 == 1)
 				.distinct()

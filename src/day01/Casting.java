@@ -2,25 +2,25 @@ package day01;
 
 public class Casting {
 	public static void main(String[] args) {
-		/* casting : ÀÚ·áÇü º¯È¯
-		 * a = b¿¡¼­ µÎ º¯¼öÀÇ ÀÚ·áÇüÀÌ ¸ÂÁö ¾Ê´Ù¸é ¿À·ù
-		 * ¾çÂÊÀÇ ÀÚ·áÇüÀ» ¸ÂÃçÁÖ´Â ¿ªÇÒ
+		/* casting : ìë£Œí˜• ë³€í™˜
+		 * a = bì—ì„œ ë‘ ë³€ìˆ˜ì˜ ìë£Œí˜•ì´ ë§ì§€ ì•Šë‹¤ë©´ ì˜¤ë¥˜
+		 * ì–‘ìª½ì˜ ìë£Œí˜•ì„ ë§ì¶°ì£¼ëŠ” ì—­í• 
 		 * 
-		 * ÀÚµ¿ ÀÚ·áÇü º¯È¯(auto casting)
+		 * ìë™ ìë£Œí˜• ë³€í™˜(auto casting)
 		 * byte < short < char < int < long < float < double
 		 * 
-		 * ¸í½ÃÀû ÀÚ·áÇü º¯È¯: ¸®ÅÍ·² °ª ¾Õ¿¡ (Å¸ÀÔ)
+		 * ëª…ì‹œì  ìë£Œí˜• ë³€í™˜: ë¦¬í„°ëŸ´ ê°’ ì•ì— (íƒ€ì…)
 		 * */
 		
 		byte b = 1;
-		short sh = b; // ÀÚµ¿ Çüº¯È¯
+		short sh = b; // ìë™ í˜•ë³€í™˜
 		System.out.println(sh);
 		
-		char ch = (char)sh; // ¸í½ÃÀû Çüº¯È¯
+		char ch = (char)sh; // ëª…ì‹œì  í˜•ë³€í™˜
 		System.out.println(ch);
 		
 		double num1 = 3.64;
-		int num = (int)num1; // ¼Ò¼ıÁ¡ÀÌ ³¯¾Æ°¨
+		int num = (int)num1; // ì†Œìˆ«ì ì´ ë‚ ì•„ê°
 		System.out.println(num1);
 		System.out.println(num);
 		
@@ -40,19 +40,19 @@ public class Casting {
 		System.out.println(l2);
 		System.out.println(i2);
 		System.out.println(ch2);
-		// ½ÇÇà ½Ã Å©±â°¡ ¹üÀ§¸¦ ÃÊ°úÇÒ °æ¿ì Ç¥½Ã°¡ ¾È µÊ, error
+		// ì‹¤í–‰ ì‹œ í¬ê¸°ê°€ ë²”ìœ„ë¥¼ ì´ˆê³¼í•  ê²½ìš° í‘œì‹œê°€ ì•ˆ ë¨, error
 		short sh2 = (short)ch2;
 		System.out.println(sh2);
 		byte b2 = (byte)257;
 		System.out.println(b2);
 		
-		// ¹®ÀÚ¸¦ ¼ıÀÚ·Î
+		// ë¬¸ìë¥¼ ìˆ«ìë¡œ
 		String str = "1234";
 		int strNum = Integer.parseInt(str);
 		System.out.println(str + 10);
 		System.out.println(strNum + 10);
 		
-		// ¼ıÀÚ¸¦ ¹®ÀÚ·Î
+		// ìˆ«ìë¥¼ ë¬¸ìë¡œ
 		int numStr = 123456;
 		String numStr2 = String.valueOf(numStr);
 		System.out.println(numStr2 + 10);

@@ -6,77 +6,77 @@ import java.util.List;
 public class Collection01 {
 	@SuppressWarnings({ "unused", "rawtypes" })
 	public static void main(String[] args) {
-		/* ÄÃ·º¼Ç ÇÁ·¹ÀÓ¿öÅ© : Ç¥ÁØÈ­µÈ ¹æ½ÄÀÇ ÀÚ·á±¸Á¶
-		 * List, Set, Map => ÀÎÅÍÆäÀÌ½º. ¹Ýµå½Ã ±¸Çö Å¬·¡½º·Î °´Ã¼¸¦ »ý¼º
-		 * µ¥ÀÌÅÍ¸¦ ¹­¾î¼­ °ü¸®ÇÒ ¶§ »ç¿ë
-		 * ÁÖ·Î ¹è¿­ ´ë½Å »ç¿ë
+		/* ì»¬ë ‰ì…˜ í”„ë ˆìž„ì›Œí¬ : í‘œì¤€í™”ëœ ë°©ì‹ì˜ ìžë£Œêµ¬ì¡°
+		 * List, Set, Map => ì¸í„°íŽ˜ì´ìŠ¤. ë°˜ë“œì‹œ êµ¬í˜„ í´ëž˜ìŠ¤ë¡œ ê°ì²´ë¥¼ ìƒì„±
+		 * ë°ì´í„°ë¥¼ ë¬¶ì–´ì„œ ê´€ë¦¬í•  ë•Œ ì‚¬ìš©
+		 * ì£¼ë¡œ ë°°ì—´ ëŒ€ì‹  ì‚¬ìš©
 		 * 
-		 * List(¹è¿­°ú µ¿ÀÏ)
-		 * - °ªÀ» ÇÏ³ª¾¿ ÀúÀå
-		 * - ¼ø¼­¸¦ º¸Àå (index)
-		 * - Áßº¹ Çã¿ë
-		 * - ¹è¿­ ´ë½Å¿¡ °¡Àå ¸¹ÀÌ »ç¿ëÇÏ´Â ±¸Á¶
+		 * List(ë°°ì—´ê³¼ ë™ì¼)
+		 * - ê°’ì„ í•˜ë‚˜ì”© ì €ìž¥
+		 * - ìˆœì„œë¥¼ ë³´ìž¥ (index)
+		 * - ì¤‘ë³µ í—ˆìš©
+		 * - ë°°ì—´ ëŒ€ì‹ ì— ê°€ìž¥ ë§Žì´ ì‚¬ìš©í•˜ëŠ” êµ¬ì¡°
 		 * 
 		 * Set
-		 * - °ªÀ» ÇÏ³ª¾¿ ÀúÀå
-		 * - ¼ø¼­¸¦ º¸ÀåÇÏÁö ¾ÊÀ½(index°¡ ¾øÀ½)
-		 * - Áßº¹À» Çã¿ëÇÏÁö ¾ÊÀ½(°°Àº ÀÚ·á°¡ ÀÔ·ÂµÇ¸é ¹ö·ÁÁü)
+		 * - ê°’ì„ í•˜ë‚˜ì”© ì €ìž¥
+		 * - ìˆœì„œë¥¼ ë³´ìž¥í•˜ì§€ ì•ŠìŒ(indexê°€ ì—†ìŒ)
+		 * - ì¤‘ë³µì„ í—ˆìš©í•˜ì§€ ì•ŠìŒ(ê°™ì€ ìžë£Œê°€ ìž…ë ¥ë˜ë©´ ë²„ë ¤ì§)
 		 * 
 		 * Map
-		 * - °ªÀ» µÎ °³¾¿ key/value ½ÖÀ¸·Î ¹­¾î¼­ ÀúÀå
-		 * - ¼ø¼­¸¦ º¸ÀåÇÏÁö ¾ÊÀ½(index°¡ ¾øÀ½)
-		 * - key Áßº¹ ºÒ°¡´É / value Áßº¹ °¡´É
-		 * - key°¡ Áßº¹µÇ¸é key¿¡ ÇØ´çµÇ´Â value¸¦ µ¤¾î¾¸
-		 * - ¹°°Ç¸í/°¡°Ý	¾ÆÀÌµð/ÆÐ½º¿öµå	ÇÐ»ý¸í/¼ºÀû
-		 * - µÎ °ªÀ» ÇÏ³ªÀÇ ÀÚ·á·Î ¹­¾î¼­ »ç¿ëÇØ¾ß ÇÒ ¶§ »ç¿ë
+		 * - ê°’ì„ ë‘ ê°œì”© key/value ìŒìœ¼ë¡œ ë¬¶ì–´ì„œ ì €ìž¥
+		 * - ìˆœì„œë¥¼ ë³´ìž¥í•˜ì§€ ì•ŠìŒ(indexê°€ ì—†ìŒ)
+		 * - key ì¤‘ë³µ ë¶ˆê°€ëŠ¥ / value ì¤‘ë³µ ê°€ëŠ¥
+		 * - keyê°€ ì¤‘ë³µë˜ë©´ keyì— í•´ë‹¹ë˜ëŠ” valueë¥¼ ë®ì–´ì”€
+		 * - ë¬¼ê±´ëª…/ê°€ê²©	ì•„ì´ë””/íŒ¨ìŠ¤ì›Œë“œ	í•™ìƒëª…/ì„±ì 
+		 * - ë‘ ê°’ì„ í•˜ë‚˜ì˜ ìžë£Œë¡œ ë¬¶ì–´ì„œ ì‚¬ìš©í•´ì•¼ í•  ë•Œ ì‚¬ìš©
 		 * 
-		 * ¹è¿­Àº ±âº» ÀÚ·áÇü, Å¬·¡½º ÀÚ·áÇü °¡´É (¿©·¯ °¡Áö ±¸¼ºÀÌ °¡´É)
+		 * ë°°ì—´ì€ ê¸°ë³¸ ìžë£Œí˜•, í´ëž˜ìŠ¤ ìžë£Œí˜• ê°€ëŠ¥ (ì—¬ëŸ¬ ê°€ì§€ êµ¬ì„±ì´ ê°€ëŠ¥)
 		 * 	- int arr[], String arr[], Student arr[]
 		 * 
-		 * Collection¿¡¼­´Â Å¬·¡½º ÀÚ·áÇü¸¸ °¡´É(±âº» ÀÚ·áÇü X)
-		 * ±âº» ÀÚ·áÇü¿¡ ´ëÀÀµÇ´Â Å¬·¡½º ÀÚ·áÇü(wrapper class)À» »ç¿ë
+		 * Collectionì—ì„œëŠ” í´ëž˜ìŠ¤ ìžë£Œí˜•ë§Œ ê°€ëŠ¥(ê¸°ë³¸ ìžë£Œí˜• X)
+		 * ê¸°ë³¸ ìžë£Œí˜•ì— ëŒ€ì‘ë˜ëŠ” í´ëž˜ìŠ¤ ìžë£Œí˜•(wrapper class)ì„ ì‚¬ìš©
 		 * 
-		 * Wrapper Class : ±âº» Å¸ÀÔ¿¡ ´ëÀÀµÇ´Â Å¬·¡½º Å¸ÀÔ
-		 * ±âº» Å¸ÀÔ		·¡ÆÛ Å¬·¡½º
+		 * Wrapper Class : ê¸°ë³¸ íƒ€ìž…ì— ëŒ€ì‘ë˜ëŠ” í´ëž˜ìŠ¤ íƒ€ìž…
+		 * ê¸°ë³¸ íƒ€ìž…		ëž˜í¼ í´ëž˜ìŠ¤
 		 * int			Integer
 		 * char			Character
-		 * ³ª¸ÓÁö ±âº» ÀÚ·áÇüÀÇ ·¡ÆÛ Å¬·¡½º´Â Ã¹ ±ÛÀÚ¸¸ ´ë¹®ÀÚ·Î ¹Ù²Ù¸é µÈ´Ù.
+		 * ë‚˜ë¨¸ì§€ ê¸°ë³¸ ìžë£Œí˜•ì˜ ëž˜í¼ í´ëž˜ìŠ¤ëŠ” ì²« ê¸€ìžë§Œ ëŒ€ë¬¸ìžë¡œ ë°”ê¾¸ë©´ ëœë‹¤.
 		 * 
-		 * ±âº» Å¸ÀÔ => Å¬·¡½º Å¸ÀÔ : ¹Ú½Ì(Boxing)
-		 * Å¬·¡½º Å¸ÀÔ => ±âº» Å¸ÀÔ : ¾ð¹Ú½Ì(Unboxing)
+		 * ê¸°ë³¸ íƒ€ìž… => í´ëž˜ìŠ¤ íƒ€ìž… : ë°•ì‹±(Boxing)
+		 * í´ëž˜ìŠ¤ íƒ€ìž… => ê¸°ë³¸ íƒ€ìž… : ì–¸ë°•ì‹±(Unboxing)
 		 * 
-		 * - ¾ð¹Ú½Ì ÀÌÀ¯
-		 * 	·¡ÆÛ Å¬·¡½º´Â »ê¼ú ¿¬»êÀ» À§ÇØ Á¤ÀÇµÈ Å¬·¡½º°¡ ¾Æ´Ô.
-		 * 	°´Ã¼ÀÇ °ª¸¸ ÂüÁ¶ÇÒ ¼ö ÀÖ±â ¶§¹®¿¡, ±× ¾ÈÀÇ ÀúÀåµÈ °ªÀº Á÷Á¢ º¯°æÀÌ ºÒ°¡´É
-		 *	·¡ÆÛ Å¬·¡½º¸¦ ¾ð¹Ú½ÌÇÑ µÚ °ªÀ» º¯°æÇÑ ÈÄ ´Ù½Ã ¹Ú½ÌÇØ¾ß ÇÔ
+		 * - ì–¸ë°•ì‹± ì´ìœ 
+		 * 	ëž˜í¼ í´ëž˜ìŠ¤ëŠ” ì‚°ìˆ  ì—°ì‚°ì„ ìœ„í•´ ì •ì˜ëœ í´ëž˜ìŠ¤ê°€ ì•„ë‹˜.
+		 * 	ê°ì²´ì˜ ê°’ë§Œ ì°¸ì¡°í•  ìˆ˜ ìžˆê¸° ë•Œë¬¸ì—, ê·¸ ì•ˆì˜ ì €ìž¥ëœ ê°’ì€ ì§ì ‘ ë³€ê²½ì´ ë¶ˆê°€ëŠ¥
+		 *	ëž˜í¼ í´ëž˜ìŠ¤ë¥¼ ì–¸ë°•ì‹±í•œ ë’¤ ê°’ì„ ë³€ê²½í•œ í›„ ë‹¤ì‹œ ë°•ì‹±í•´ì•¼ í•¨
 		 *
-		 * List<Å¬·¡½º¸í> °´Ã¼¸í = new ±¸ÇöÅ¬·¡½º<Å¬·¡½º¸í>();
-		 * ÀÎÅÍÆäÀÌ½º	±¸Çö Å¬·¡½º
+		 * List<í´ëž˜ìŠ¤ëª…> ê°ì²´ëª… = new êµ¬í˜„í´ëž˜ìŠ¤<í´ëž˜ìŠ¤ëª…>();
+		 * ì¸í„°íŽ˜ì´ìŠ¤	êµ¬í˜„ í´ëž˜ìŠ¤
 		 * List		ArrayList, LinkedList, ...
 		 * Set		HashSet, TreeSet, ...
 		 * Map		HashMap, TreeMap, ...
 		 * */
 		
-		/* ArrayList : °Ë»öÀÌ ºü¸£´Ù. (¹è¿­°ú ºñ½Á)
-		 *  - ¹Ì¸® ±æÀÌ¸¦ ÁöÁ¤ÇÏÁö ¾ÊÀ½
-		 *  - Ãß°¡µÇ¸é ÀÚµ¿ ´Ã¾î³²
-		 *  - »èÁ¦µÇ¸é ÀÚµ¿ ÁÙ¾îµê
-		 *  - Ãß°¡, »èÁ¦°¡ ½¬¿ò.(¼Óµµ´Â ´À¸²), °Ë»öÀÌ ½±°í ºü¸§.
+		/* ArrayList : ê²€ìƒ‰ì´ ë¹ ë¥´ë‹¤. (ë°°ì—´ê³¼ ë¹„ìŠ·)
+		 *  - ë¯¸ë¦¬ ê¸¸ì´ë¥¼ ì§€ì •í•˜ì§€ ì•ŠìŒ
+		 *  - ì¶”ê°€ë˜ë©´ ìžë™ ëŠ˜ì–´ë‚¨
+		 *  - ì‚­ì œë˜ë©´ ìžë™ ì¤„ì–´ë“¦
+		 *  - ì¶”ê°€, ì‚­ì œê°€ ì‰¬ì›€.(ì†ë„ëŠ” ëŠë¦¼), ê²€ìƒ‰ì´ ì‰½ê³  ë¹ ë¦„.
 		 *  
 		 * LinkedList
-		 * - Ãß°¡, »èÁ¦°¡ ºü¸§. °Ë»öÀÌ ´À¸².
+		 * - ì¶”ê°€, ì‚­ì œê°€ ë¹ ë¦„. ê²€ìƒ‰ì´ ëŠë¦¼.
 		 * */
 		
-		// ºÎ¸ð¸¦ ±âÁØÀ¸·Î ÀÚ½ÄÀ» »ý¼º
+		// ë¶€ëª¨ë¥¼ ê¸°ì¤€ìœ¼ë¡œ ìžì‹ì„ ìƒì„±
 		List<Integer> list = new ArrayList<Integer>();
 		
-		// ÀÚ½ÄÀ» ±âÁØÀ¸·Î ÀÚ½ÄÀ» »ý¼º
+		// ìžì‹ì„ ê¸°ì¤€ìœ¼ë¡œ ìžì‹ì„ ìƒì„±
 		ArrayList<Integer> list2 = new ArrayList<Integer>();
 		
-		// Å¬·¡½º¸íÀ» »ý·«ÇÏ°í »ý¼º
-		ArrayList list3 = new ArrayList(); // ÃÖ»óÀ§ °´Ã¼ÀÎ ObjectÀÇ list·Î »ý¼º
+		// í´ëž˜ìŠ¤ëª…ì„ ìƒëžµí•˜ê³  ìƒì„±
+		ArrayList list3 = new ArrayList(); // ìµœìƒìœ„ ê°ì²´ì¸ Objectì˜ listë¡œ ìƒì„±
 		
-		// ¾Õ¿¡ Å¬·¡½º¸¦ ÁöÁ¤ÇßÀ¸¸é µÞÂÊ Å¬·¡½º´Â »ý·« °¡´É
+		// ì•žì— í´ëž˜ìŠ¤ë¥¼ ì§€ì •í–ˆìœ¼ë©´ ë’·ìª½ í´ëž˜ìŠ¤ëŠ” ìƒëžµ ê°€ëŠ¥
 		ArrayList<Integer> list4 = new ArrayList<>();
 	}
 }

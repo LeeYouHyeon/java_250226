@@ -4,45 +4,45 @@ import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class MethodEx01_Another {
-	// ¸Ş´º Ãâ·Â ¹× ÀÔ·Â
-	// 1~6À» ÀÔ·Â¹ŞÀ» ¶§±îÁö ¹İº¹
+	// ë©”ë‰´ ì¶œë ¥ ë° ì…ë ¥
+	// 1~6ì„ ì…ë ¥ë°›ì„ ë•Œê¹Œì§€ ë°˜ë³µ
 	public static int getMenu(Scanner scan) {
 		int menu;
 		while (true) {
-			// ¸Ş´º Ãâ·Â
+			// ë©”ë‰´ ì¶œë ¥
 			System.out.println("--menu--");
-			System.out.println("1. µ¡¼À | 2. »¬¼À | 3. °ö¼À | 4. ³ª´°¼À | 5. ³ª¸ÓÁö | 6. Á¾·á");
+			System.out.println("1. ë§ì…ˆ | 2. ëº„ì…ˆ | 3. ê³±ì…ˆ | 4. ë‚˜ëˆ—ì…ˆ | 5. ë‚˜ë¨¸ì§€ | 6. ì¢…ë£Œ");
 
-			// ¸Ş´º ÀÔ·Â
-			System.out.print(">> ¸Ş´º¼±ÅÃ> ");
+			// ë©”ë‰´ ì…ë ¥
+			System.out.print(">> ë©”ë‰´ì„ íƒ> ");
 			menu = scan.nextInt();
 
-			// Á¤»óÀûÀÎ ÀÔ·ÂÀÌ¶ó¸é return
+			// ì •ìƒì ì¸ ì…ë ¥ì´ë¼ë©´ return
 			if (menu >= 1 && menu <= 6) {
 				return menu;
 			}
 
-			// Àß¸øµÈ ÀÔ·ÂÀÌ¶ó¸é °æ°í¹®À» Ãâ·ÂÇÑ ÈÄ ´Ù½Ã ÀÔ·Â¹ŞÀ½
-			System.out.println("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù.");
+			// ì˜ëª»ëœ ì…ë ¥ì´ë¼ë©´ ê²½ê³ ë¬¸ì„ ì¶œë ¥í•œ í›„ ë‹¤ì‹œ ì…ë ¥ë°›ìŒ
+			System.out.println("ì˜ëª»ëœ ì…ë ¥ì…ë‹ˆë‹¤.");
 		}
 	}
 
-	// µÎ ¼ö¸¦ ÀÔ·Â¹Ş¾Æ array ÇüÅÂ·Î return
-	// ³ª´°¼ÀÀÌ³ª ³ª¸ÓÁö¸¦ °ñ¶úÀ» °æ¿ì, µÎ¹øÂ° ÀÔ·Â(== answer[1])ÀÌ 0ÀÌ ¾Æ´Ïµµ·Ï ÇÔ
+	// ë‘ ìˆ˜ë¥¼ ì…ë ¥ë°›ì•„ array í˜•íƒœë¡œ return
+	// ë‚˜ëˆ—ì…ˆì´ë‚˜ ë‚˜ë¨¸ì§€ë¥¼ ê³¨ëì„ ê²½ìš°, ë‘ë²ˆì§¸ ì…ë ¥(== answer[1])ì´ 0ì´ ì•„ë‹ˆë„ë¡ í•¨
 	public static int[] getNums(Scanner scan, int menu) {
 		int[] answer = new int[2];
 
-		// Ã¹¹øÂ° ¼ıÀÚ ÀÔ·Â
-		System.out.print("Ã¹¹øÂ° ¼ıÀÚ ÀÔ·Â> ");
+		// ì²«ë²ˆì§¸ ìˆ«ì ì…ë ¥
+		System.out.print("ì²«ë²ˆì§¸ ìˆ«ì ì…ë ¥> ");
 		answer[0] = scan.nextInt();
 
-		// µÎ¹øÂ° ¼ıÀÚ ÀÔ·Â
-		System.out.print("µÎ¹øÂ° ¼ıÀÚ ÀÔ·Â> ");
+		// ë‘ë²ˆì§¸ ìˆ«ì ì…ë ¥
+		System.out.print("ë‘ë²ˆì§¸ ìˆ«ì ì…ë ¥> ");
 		answer[1] = scan.nextInt();
-		// ³ª´°¼ÀÀÌ³ª ³ª¸ÓÁö °è»êÀÏ °æ¿ì, µÎ¹øÂ° ÀÔ·ÂÀÌ 0ÀÌ ¾Æ´Ò ¶§±îÁö ´Ù½Ã ÀÔ·Â¹ŞÀ½
+		// ë‚˜ëˆ—ì…ˆì´ë‚˜ ë‚˜ë¨¸ì§€ ê³„ì‚°ì¼ ê²½ìš°, ë‘ë²ˆì§¸ ì…ë ¥ì´ 0ì´ ì•„ë‹ ë•Œê¹Œì§€ ë‹¤ì‹œ ì…ë ¥ë°›ìŒ
 		if (menu == 4 || menu == 5) {
 			while (answer[1] == 0) {
-				System.out.print("0À¸·Î ³ª´­ ¼ö ¾ø½À´Ï´Ù. ´Ù½Ã ÀÔ·ÂÇÏ¼¼¿ä.> ");
+				System.out.print("0ìœ¼ë¡œ ë‚˜ëˆŒ ìˆ˜ ì—†ìŠµë‹ˆë‹¤. ë‹¤ì‹œ ì…ë ¥í•˜ì„¸ìš”.> ");
 				answer[1] = scan.nextInt();
 			}
 		}
@@ -50,9 +50,9 @@ public class MethodEx01_Another {
 		return answer;
 	}
 
-	// ¿¬»êÀÚ¿Í ¼ıÀÚ¸¦ °¡Áö°í °è»ê
-	// ¿¹¿ÜÃ³¸®´Â getNums¿¡¼­ ÇÏ¹Ç·Î º°µµ·Î Ã³¸®ÇÏÁö ¾ÊÀ½
-	// ³ª´°¼ÀÀ» Æ÷ÇÔÇÏ±â À§ÇØ double·Î returnÇÏ°í, ÀÌÈÄ printResult¿¡¼­ ÀÌ¸¦ Ã³¸®ÇÔ
+	// ì—°ì‚°ìì™€ ìˆ«ìë¥¼ ê°€ì§€ê³  ê³„ì‚°
+	// ì˜ˆì™¸ì²˜ë¦¬ëŠ” getNumsì—ì„œ í•˜ë¯€ë¡œ ë³„ë„ë¡œ ì²˜ë¦¬í•˜ì§€ ì•ŠìŒ
+	// ë‚˜ëˆ—ì…ˆì„ í¬í•¨í•˜ê¸° ìœ„í•´ doubleë¡œ returní•˜ê³ , ì´í›„ printResultì—ì„œ ì´ë¥¼ ì²˜ë¦¬í•¨
 	public static double calc(int menu, int[] num) {
 		int num1 = num[0], num2 = num[1];
 		switch (menu) {
@@ -66,27 +66,27 @@ public class MethodEx01_Another {
 				return Method03.div(num1, num2);
 			case 5:
 				return Method03.mod(num1, num2);
-			default: // µµ´Ş ºÒ°¡´É
+			default: // ë„ë‹¬ ë¶ˆê°€ëŠ¥
 				return -1;
 		}
 	}
 
-	// ¾ç¼ö¸é ±×´ë·Î, À½¼ö¸é ¼Ò°ıÈ£¸¦ ºÙÀÓ
+	// ì–‘ìˆ˜ë©´ ê·¸ëŒ€ë¡œ, ìŒìˆ˜ë©´ ì†Œê´„í˜¸ë¥¼ ë¶™ì„
 	public static String addBracket(int num) {
 		return (num >= 0) ? num + "" : "(" + num + ")";
 	}
 
-	// ¿¬»êÀÚ¿Í ¼ıÀÚ¸¦ ¹Ş¾Æ¿Í¼­ °á°ú¸¦ Ãâ·Â
+	// ì—°ì‚°ìì™€ ìˆ«ìë¥¼ ë°›ì•„ì™€ì„œ ê²°ê³¼ë¥¼ ì¶œë ¥
 	public static void printResult(int menu, int[] num) {
 		String[] oper = { " + ", " - ", "*", "/", " % " };
-		double result = calc(menu, num); // °è»ê °á°ú¸¦ double·Î ¹Ş¾Æ¿È
+		double result = calc(menu, num); // ê³„ì‚° ê²°ê³¼ë¥¼ doubleë¡œ ë°›ì•„ì˜´
 
-		// ¿¹½Ã
+		// ì˜ˆì‹œ
 		// 1. "2/(-3) = "
 		// 2. "(-7) + 15 = "
 		String output = addBracket(num[0]) + oper[menu - 1] + addBracket(num[1]) + " = ";
 
-		// ³ª´°¼ÀÀÌ¸é resultÀÇ ¼Ò¼ıÁ¡À» µÑÂ° ÀÚ¸®±îÁö »ì¸®°í, ¾Æ´Ï¸é Á¤¼ö·Î Ã³¸®
+		// ë‚˜ëˆ—ì…ˆì´ë©´ resultì˜ ì†Œìˆ«ì ì„ ë‘˜ì§¸ ìë¦¬ê¹Œì§€ ì‚´ë¦¬ê³ , ì•„ë‹ˆë©´ ì •ìˆ˜ë¡œ ì²˜ë¦¬
 		if (menu == 4) {
 			output += new DecimalFormat("0.00").format(result);
 		} else {
@@ -96,24 +96,24 @@ public class MethodEx01_Another {
 	}
 
 	public static void main(String[] args) {
-		/* °è»ê±â ¸¸µé±â
+		/* ê³„ì‚°ê¸° ë§Œë“¤ê¸°
 		 * 
 		 * --menu--
-		 * 1. µ¡¼À | 2. »¬¼À | 3. °ö¼À | 4. ³ª´°¼À | 5. ³ª¸ÓÁö | 6. Á¾·á
-		 * >> ¸Ş´º¼±ÅÃ 1
-		 * >> ¼ıÀÚ ÀÔ·Â > 1 5
-		 * °á°ú : 1 + 5 = 6
+		 * 1. ë§ì…ˆ | 2. ëº„ì…ˆ | 3. ê³±ì…ˆ | 4. ë‚˜ëˆ—ì…ˆ | 5. ë‚˜ë¨¸ì§€ | 6. ì¢…ë£Œ
+		 * >> ë©”ë‰´ì„ íƒ 1
+		 * >> ìˆ«ì ì…ë ¥ > 1 5
+		 * ê²°ê³¼ : 1 + 5 = 6
 		 * */
 		Scanner scan = new Scanner(System.in);
 		int menu;
 
 		while (true) {
-			// ¸Ş´º Ãâ·Â ¹× ¼±ÅÃ
+			// ë©”ë‰´ ì¶œë ¥ ë° ì„ íƒ
 			menu = getMenu(scan);
 
-			// ¸Ş´º Ã³¸®
+			// ë©”ë‰´ ì²˜ë¦¬
 			if (menu == 6) {
-				System.out.println("Á¾·áÇÕ´Ï´Ù.");
+				System.out.println("ì¢…ë£Œí•©ë‹ˆë‹¤.");
 				break;
 			} else {
 				printResult(menu, getNums(scan, menu));

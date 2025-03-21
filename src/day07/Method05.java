@@ -2,7 +2,7 @@ package day07;
 
 public class Method05 {
 
-	// µÎ Á¤¼ö¸¦ ÀÔ·Â¹Ş¾Æ, ÃÖ´ë°ø¾à¼ö¸¦ return
+	// ë‘ ì •ìˆ˜ë¥¼ ì…ë ¥ë°›ì•„, ìµœëŒ€ê³µì•½ìˆ˜ë¥¼ return
 	public static int gcd(int num1, int num2) {
 		if (num1 <= 0 || num2 <= 0) {
 			return 0;
@@ -17,7 +17,7 @@ public class Method05 {
 		}
 	}
 
-	// µÎ Á¤¼ö¸¦ ÀÔ·Â¹Ş¾Æ, ÃÖ¼Ò°ø¹è¼ö¸¦ return
+	// ë‘ ì •ìˆ˜ë¥¼ ì…ë ¥ë°›ì•„, ìµœì†Œê³µë°°ìˆ˜ë¥¼ return
 	public static int lcm(int num1, int num2) {
 		if (num1 <= 0 || num2 <= 0) {
 			return 0;
@@ -33,7 +33,7 @@ public class Method05 {
 	}
 
 	public static void main(String[] args) {
-		/* ÃÖ´ë°ø¾à¼ö¿Í ÃÖ¼Ò°ø¹è¼ö¸¦ return
+		/* ìµœëŒ€ê³µì•½ìˆ˜ì™€ ìµœì†Œê³µë°°ìˆ˜ë¥¼ return
 		 * */
 		int num1, num2;
 		num1 = (int) (Math.random() * 100) + 1;

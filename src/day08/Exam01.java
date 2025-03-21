@@ -2,22 +2,22 @@ package day08;
 
 public class Exam01 {
 	public static void main(String[] args) {
-		/* TV Å¬·¡½º »ı¼º
-		 * ¸â¹öº¯¼ö : brand, power, ch(1~30), vol(0~10)(À½¼Ò°Å)
+		/* TV í´ë˜ìŠ¤ ìƒì„±
+		 * ë©¤ë²„ë³€ìˆ˜ : brand, power, ch(1~30), vol(0~10)(ìŒì†Œê±°)
 		 * 
-		 * ¸Ş¼­µå
+		 * ë©”ì„œë“œ
 		 * power()
 		 * chUp() / chDown()
-		 * - 1¾¿ Áõ°¨
-		 * - 1~30À» ¹ş¾î³ª¸é ¼øÈ¯
+		 * - 1ì”© ì¦ê°
+		 * - 1~30ì„ ë²—ì–´ë‚˜ë©´ ìˆœí™˜
 		 * 
 		 * volUp() / volDown()
-		 * - 1¾¿ Áõ°¨ 
-		 * - 0~10À» ¹ş¾î³ª¸é ¸ØÃã
-		 * - 0ÀÌ¸é À½¼Ò°Å¶ó Ãâ·Â
+		 * - 1ì”© ì¦ê° 
+		 * - 0~10ì„ ë²—ì–´ë‚˜ë©´ ë©ˆì¶¤
+		 * - 0ì´ë©´ ìŒì†Œê±°ë¼ ì¶œë ¥
 		 * */
 
-		TV tv = new TV("»ï¼º");
+		TV tv = new TV("ì‚¼ì„±");
 
 		tv.power();
 		tv.chUp();
@@ -53,14 +53,14 @@ public class Exam01 {
 }
 
 class TV {
-	// »ó¼ö : º¯ÇÏÁö ¾Ê´Â °ª => final
-	// ÀÏ¹İÀûÀÎ º¯¼öµé°ú ±¸ºĞÇÏ±â À§ÇØ º¯¼ö¸íÀ» ´ë¹®ÀÚ¸¸À¸·Î ÀÛ¼º
-	// final º¯¼ö´Â setter¸¦ °¡ÁöÁö ¾ÊÀ½
+	// ìƒìˆ˜ : ë³€í•˜ì§€ ì•ŠëŠ” ê°’ => final
+	// ì¼ë°˜ì ì¸ ë³€ìˆ˜ë“¤ê³¼ êµ¬ë¶„í•˜ê¸° ìœ„í•´ ë³€ìˆ˜ëª…ì„ ëŒ€ë¬¸ìë§Œìœ¼ë¡œ ì‘ì„±
+	// final ë³€ìˆ˜ëŠ” setterë¥¼ ê°€ì§€ì§€ ì•ŠìŒ
 	private final String BRAND;
 	private boolean power;
 	private int ch, vol;
 
-	// »ı¼ºÀÚ
+	// ìƒì„±ì
 	public TV(String brand) {
 		this.BRAND = brand;
 		ch = 1;
@@ -76,12 +76,12 @@ class TV {
 	}
 
 
-	// ¸Ş¼­µå
+	// ë©”ì„œë“œ
 	public void power() {
 		if (power) {
-			System.out.println("Àü¿øÀÌ ²¨Áı´Ï´Ù.");
+			System.out.println("ì „ì›ì´ êº¼ì§‘ë‹ˆë‹¤.");
 		} else {
-			System.out.println("Àü¿øÀÌ ÄÑÁı´Ï´Ù.");
+			System.out.println("ì „ì›ì´ ì¼œì§‘ë‹ˆë‹¤.");
 			print();
 		}
 		power = !power;
@@ -129,7 +129,7 @@ class TV {
 			}
 
 			if (vol == 0) {
-				System.out.println("À½¼Ò°Å");
+				System.out.println("ìŒì†Œê±°");
 			} else {
 				System.out.println("vol:" + vol);
 			}
@@ -137,7 +137,7 @@ class TV {
 	}
 
 	// getter/setter
-	// brand´Â ºÒº¯°ªÀÌ¹Ç·Î setter°¡ ¾øÀ½
+	// brandëŠ” ë¶ˆë³€ê°’ì´ë¯€ë¡œ setterê°€ ì—†ìŒ
 	public String getBrand() {
 		return BRAND;
 	}

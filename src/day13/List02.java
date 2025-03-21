@@ -8,7 +8,7 @@ import java.util.List;
 
 public class List02 {
 	public static void main(String[] args) {
-		/* List »ı¼º ÈÄ 1~10 Ã¤¿î ÈÄ Ãâ·Â
+		/* List ìƒì„± í›„ 1~10 ì±„ìš´ í›„ ì¶œë ¥
 		 * */
 		List<Integer> list = new ArrayList<Integer>();
 		for (int i = 0; i < 10; i++) {
@@ -16,22 +16,22 @@ public class List02 {
 		}
 		System.out.println(list);
 		
-		// for¹®À¸·Î ¿ä¼Ò Ãâ·Â
+		// forë¬¸ìœ¼ë¡œ ìš”ì†Œ ì¶œë ¥
 		for (int i = 0; i < 10; i++) {
 			System.out.print(list.get(i) + " ");
 		}
 		System.out.println();
 		
-		// Çâ»óµÈ for¹®À¸·Î ¿ä¼Ò Ãâ·Â
-		for (int num : list) { // ¿ÀÅä ¾ğ¹Ú½Ì
+		// í–¥ìƒëœ forë¬¸ìœ¼ë¡œ ìš”ì†Œ ì¶œë ¥
+		for (int num : list) { // ì˜¤í†  ì–¸ë°•ì‹±
 			System.out.print(num + " ");
 		}
 		System.out.println("\n");
 		
-		// Iterator : index°¡ ¾ø´Â °ªÀ» Ãâ·ÂÇÏ±â À§ÇØ »ç¿ë
-		// list´Â index°¡ ÀÖÁö¸¸, setÀÌ³ª mapÀº index°¡ ¾ø¾î¼­ iterator³ª Çâ»óµÈ for¹®À» »ç¿ëÇØ¾ß ÇÔ
-		// ¼ø¼­¿Í »ó°ü¾øÀÌ °ªÀ» °¡Á®¿Ã ¼ö ÀÖ´Â ±¸¹®À» »ç¿ë
-		// mapÀº Çâ»óµÈ for, iterator Á÷Á¢ »ç¿ë ºÒ°¡´É
+		// Iterator : indexê°€ ì—†ëŠ” ê°’ì„ ì¶œë ¥í•˜ê¸° ìœ„í•´ ì‚¬ìš©
+		// listëŠ” indexê°€ ìˆì§€ë§Œ, setì´ë‚˜ mapì€ indexê°€ ì—†ì–´ì„œ iteratorë‚˜ í–¥ìƒëœ forë¬¸ì„ ì‚¬ìš©í•´ì•¼ í•¨
+		// ìˆœì„œì™€ ìƒê´€ì—†ì´ ê°’ì„ ê°€ì ¸ì˜¬ ìˆ˜ ìˆëŠ” êµ¬ë¬¸ì„ ì‚¬ìš©
+		// mapì€ í–¥ìƒëœ for, iterator ì§ì ‘ ì‚¬ìš© ë¶ˆê°€ëŠ¥
 		System.out.println("iterator");
 		Iterator<Integer> it = list.iterator();
 		while (it.hasNext()) {
@@ -39,10 +39,10 @@ public class List02 {
 		}
 		System.out.println();
 		
-		// indexOf(°ª) : ÇØ´ç °ªÀÇ index / ¾øÀ¸¸é -1
+		// indexOf(ê°’) : í•´ë‹¹ ê°’ì˜ index / ì—†ìœ¼ë©´ -1
 		System.out.println(list.indexOf(11));
 		
-		// Collections.sort(list) : Á¤·Ä => ¿À¸§Â÷¼ø¸¸ °¡´É
+		// Collections.sort(list) : ì •ë ¬ => ì˜¤ë¦„ì°¨ìˆœë§Œ ê°€ëŠ¥
 		list.clear();
 		list.add(45);
 		list.add(78);
@@ -53,15 +53,15 @@ public class List02 {
 		Collections.sort(list);
 		System.out.println(list);
 		
-		// list.sort(Comparator¸¦ ±¸ÇöÇÑ °´Ã¼); : Á¤·Ä
-		// Comparator ÀÎÅÍÆäÀÌ½º¸¦ ±¸ÇöÇÑ ±¸ÇöÃ¼¸¦ ³Ö¾î¾ß ÇÔ(ÁÖ·Î ÀÍ¸í Å¬·¡½º »ç¿ë)
-		// compareTo() ¸Ş¼­µå¸¦ ±¸ÇöÇÏ¿© °´Ã¼¸¦ Á¤·Ä
-		// - compareTo : »çÀü»ó ¾Õ¿¡ ÀÖÀ¸¸é -1, µÚ¿¡ ÀÖÀ¸¸é 1
+		// list.sort(Comparatorë¥¼ êµ¬í˜„í•œ ê°ì²´); : ì •ë ¬
+		// Comparator ì¸í„°í˜ì´ìŠ¤ë¥¼ êµ¬í˜„í•œ êµ¬í˜„ì²´ë¥¼ ë„£ì–´ì•¼ í•¨(ì£¼ë¡œ ìµëª… í´ë˜ìŠ¤ ì‚¬ìš©)
+		// compareTo() ë©”ì„œë“œë¥¼ êµ¬í˜„í•˜ì—¬ ê°ì²´ë¥¼ ì •ë ¬
+		// - compareTo : ì‚¬ì „ìƒ ì•ì— ìˆìœ¼ë©´ -1, ë’¤ì— ìˆìœ¼ë©´ 1
 		list.sort(new Comparator<Integer>() {
 			@Override
 			public int compare(Integer o1, Integer o2) {
-				// o1 - o2 : ¿À¸§Â÷¼ø, o2 - o1 : ³»¸²Â÷¼ø
-				// °á°ú°¡ -¸é ¾ÕÀ¸·Î º¸³»°í, +¸é µÚ·Î º¸³»´Â ¿ªÇÒ
+				// o1 - o2 : ì˜¤ë¦„ì°¨ìˆœ, o2 - o1 : ë‚´ë¦¼ì°¨ìˆœ
+				// ê²°ê³¼ê°€ -ë©´ ì•ìœ¼ë¡œ ë³´ë‚´ê³ , +ë©´ ë’¤ë¡œ ë³´ë‚´ëŠ” ì—­í• 
 				return o2 - o1;
 			}
 		});

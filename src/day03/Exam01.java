@@ -5,40 +5,40 @@ import java.util.Scanner;
 public class Exam01 {
 
 	public static void main(String[] args) {
-		/* up/down °ÔÀÓ
+		/* up/down ê²Œìž„
 		 * 
-		 * 1~50ÀÇ ·£´ý ¼ö »ý¼ºÇÏ¿© ¸ÂÃß´Â °ÔÀÓ
-		 * ÄÄÇ»ÅÍ°¡ ·£´ý ¼ö »ý¼º : 23
-		 * ÀÔ·Â> 10
+		 * 1~50ì˜ ëžœë¤ ìˆ˜ ìƒì„±í•˜ì—¬ ë§žì¶”ëŠ” ê²Œìž„
+		 * ì»´í“¨í„°ê°€ ëžœë¤ ìˆ˜ ìƒì„± : 23
+		 * ìž…ë ¥> 10
 		 * up!!
-		 * ÀÔ·Â> 20
+		 * ìž…ë ¥> 20
 		 * up!!
-		 * ÀÔ·Â> 30
+		 * ìž…ë ¥> 30
 		 * down!!
-		 * ÀÔ·Â> 25
+		 * ìž…ë ¥> 25
 		 * down!!
-		 * ÀÔ·Â> 23
-		 * Á¤´ä!!
+		 * ìž…ë ¥> 23
+		 * ì •ë‹µ!!
 		 * */
 
 		int answer = (int) (50 * Math.random()) + 1, count = 0;
 		Scanner scan = new Scanner(System.in);
-		System.out.println("5È¸ ¾È¿¡ Á¤´äÀ» ¸ÂÃçº¸¼¼¿ä! ´äÀº 1ºÎÅÍ 50±îÁöÀÇ Á¤¼öÀÔ´Ï´Ù.");
+		System.out.println("5íšŒ ì•ˆì— ì •ë‹µì„ ë§žì¶°ë³´ì„¸ìš”! ë‹µì€ 1ë¶€í„° 50ê¹Œì§€ì˜ ì •ìˆ˜ìž…ë‹ˆë‹¤.");
 		while (true) {
 			count++;
-			System.out.print(count + ". ÀÔ·Â> ");
+			System.out.print(count + ". ìž…ë ¥> ");
 			int input = scan.nextInt();
 			if (input > answer) {
 				System.out.println("down!!");
 			} else if (input < answer) {
 				System.out.println("up!!");
 			} else {
-				System.out.println("Á¤´ä!!");
+				System.out.println("ì •ë‹µ!!");
 				break;
 			}
 			
 			if (count == 5) {
-				System.out.println("½ÇÆÐ!!");
+				System.out.println("ì‹¤íŒ¨!!");
 				break;
 			}
 		}

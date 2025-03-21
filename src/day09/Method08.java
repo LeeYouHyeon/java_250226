@@ -2,8 +2,8 @@ package day09;
 
 public class Method08 {
 	public static void main(String[] args) {
-		/* °¡º¯ÀÎÀÚ ¸Ş¼­µå
-		 * - ¸Å°³º¯¼öÀÇ °¹¼ö°¡ °íÁ¤µÇ¾î ÀÖÁö ¾Ê´Â °æ¿ì »ç¿ë
+		/* ê°€ë³€ì¸ì ë©”ì„œë“œ
+		 * - ë§¤ê°œë³€ìˆ˜ì˜ ê°¯ìˆ˜ê°€ ê³ ì •ë˜ì–´ ìˆì§€ ì•ŠëŠ” ê²½ìš° ì‚¬ìš©
 		 * */
 		Method08 m8 = new Method08();
 		
@@ -13,7 +13,7 @@ public class Method08 {
 	}
 
 	public int sum(int... num) {
-		// num´Â int[]
+		// numëŠ” int[]
 		int result = 0;
 		for (int tmp : num) {
 			result += tmp;

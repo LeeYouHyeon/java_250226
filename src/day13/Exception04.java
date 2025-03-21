@@ -3,20 +3,20 @@ package day13;
 public class Exception04 {
 	@SuppressWarnings({ "null", "unused" })
 	public static void main(String[] args) {
-		/* ¸ÖÆ¼ Ä³Ä¡ ±¸¹®, ´ÙÁß Ä³Ä¡ ±¸¹®
+		/* ë©€í‹° ìºì¹˜ êµ¬ë¬¸, ë‹¤ì¤‘ ìºì¹˜ êµ¬ë¬¸
 		 * try {
 		 * ...
-		 * } catch(¿¹¿ÜÅ¬·¡½º¸í °´Ã¼) {
+		 * } catch(ì˜ˆì™¸í´ë˜ìŠ¤ëª… ê°ì²´) {
 		 * ...
-		 * } catch(¿¹¿ÜÅ¬·¡½º¸í °´Ã¼) {
+		 * } catch(ì˜ˆì™¸í´ë˜ìŠ¤ëª… ê°ì²´) {
 		 * ...
 		 * } catch ...
 		 * 
-		 * ¿¹¿Ü¸¦ ±¸Ã¼ÀûÀ¸·Î ¼¼ºĞÈ­ÇØ¼­ Àâ°í ½ÍÀ» ¶§ »ç¿ë
+		 * ì˜ˆì™¸ë¥¼ êµ¬ì²´ì ìœ¼ë¡œ ì„¸ë¶„í™”í•´ì„œ ì¡ê³  ì‹¶ì„ ë•Œ ì‚¬ìš©
 		 * 
-		 * ExceptionÀº ¸ğµç ¿¹¿ÜÀÇ ÃÖ°í Á¶»ó
-		 * 	: ¾î¶² ¿¹¿Ü°¡ ¿Íµµ ´Ù Ä³Ä¡
-		 * 	: ¸ÖÆ¼ Ä³Ä¡ ±¸¹®¿¡¼­ °¡Àå ¸¶Áö¸·¿¡ »ç¿ëÇØ¾ß ÇÔ 
+		 * Exceptionì€ ëª¨ë“  ì˜ˆì™¸ì˜ ìµœê³  ì¡°ìƒ
+		 * 	: ì–´ë–¤ ì˜ˆì™¸ê°€ ì™€ë„ ë‹¤ ìºì¹˜
+		 * 	: ë©€í‹° ìºì¹˜ êµ¬ë¬¸ì—ì„œ ê°€ì¥ ë§ˆì§€ë§‰ì— ì‚¬ìš©í•´ì•¼ í•¨ 
 		 * */
 		double res = 0;
 		try {
@@ -28,15 +28,15 @@ public class Exception04 {
 			
 			res = 1/0;
 		} catch (ArithmeticException e) {
-			System.out.println("0À¸·Î ³ª´­ ¼ö ¾ø½À´Ï´Ù.");
+			System.out.println("0ìœ¼ë¡œ ë‚˜ëˆŒ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 		} catch (NullPointerException e) {
-			System.out.println("°´Ã¼°¡ nullÀÔ´Ï´Ù.");
+			System.out.println("ê°ì²´ê°€ nullì…ë‹ˆë‹¤.");
 		} catch (ArrayIndexOutOfBoundsException e) {
-			System.out.println("¹è¿­ÀÇ ¹üÀ§°¡ ³Ñ¾î°¬½À´Ï´Ù.");
-		} catch (Exception e) { // ÃÖ°íÁ¶»ó. °¡Àå ¸¶Áö¸·¿¡...
+			System.out.println("ë°°ì—´ì˜ ë²”ìœ„ê°€ ë„˜ì–´ê°”ìŠµë‹ˆë‹¤.");
+		} catch (Exception e) { // ìµœê³ ì¡°ìƒ. ê°€ì¥ ë§ˆì§€ë§‰ì—...
 			e.printStackTrace();
 		}
 		
-		System.out.println("Á¾·á");
+		System.out.println("ì¢…ë£Œ");
 	}
 }

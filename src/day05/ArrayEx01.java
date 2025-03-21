@@ -4,29 +4,29 @@ import java.util.Scanner;
 
 public class ArrayEx01 {
 	public static void main(String[] args) {
-		/* ÆÄÀÏ¸íÀ» ÀúÀåÇÏ°í ÀÖ´Â ¹è¿­ÀÌ ÁÖ¾îÁ³À» ¶§
-		 * °Ë»ö¾î¸¦ ÀÔ·ÂÇÏ¸é ÇØ´ç °Ë»ö¾î¸¦ Æ÷ÇÔÇÏ´Â ÆÄÀÏÀ» Ãâ·Â
-		 * °Ë»ö °á°ú°¡ ¾øÀ¸¸é "°Ë»ö °á°ú°¡ ¾ø½À´Ï´Ù."¶ó°í Ãâ·Â
+		/* íŒŒì¼ëª…ì„ ì €ì¥í•˜ê³  ìˆëŠ” ë°°ì—´ì´ ì£¼ì–´ì¡Œì„ ë•Œ
+		 * ê²€ìƒ‰ì–´ë¥¼ ì…ë ¥í•˜ë©´ í•´ë‹¹ ê²€ìƒ‰ì–´ë¥¼ í¬í•¨í•˜ëŠ” íŒŒì¼ì„ ì¶œë ¥
+		 * ê²€ìƒ‰ ê²°ê³¼ê°€ ì—†ìœ¼ë©´ "ê²€ìƒ‰ ê²°ê³¼ê°€ ì—†ìŠµë‹ˆë‹¤."ë¼ê³  ì¶œë ¥
 		 * */
 
-		String[] files = { "ÀÌ°ÍÀÌÀÚ¹Ù´Ù.java", "javaÀÇ Á¤¼®.java", "Array.txt", "array.java", "String Method.txt",
+		String[] files = { "ì´ê²ƒì´ìë°”ë‹¤.java", "javaì˜ ì •ì„.java", "Array.txt", "array.java", "String Method.txt",
 				"Array Method.jpg", "method.png", "java Method.java" };
 		Scanner scan = new Scanner(System.in);
 		String[] result = new String[files.length];
 
-		// 1. °Ë»ö¾î ÀÔ·Â
-		System.out.print("°Ë»ö¾î¸¦ ÀÔ·ÂÇÏ¼¼¿ä.> ");
-		String find = scan.nextLine().toLowerCase(); // ´ë¼Ò¹®ÀÚ »ó°ü¾øÀÌ °Ë»ö
+		// 1. ê²€ìƒ‰ì–´ ì…ë ¥
+		System.out.print("ê²€ìƒ‰ì–´ë¥¼ ì…ë ¥í•˜ì„¸ìš”.> ");
+		String find = scan.nextLine().toLowerCase(); // ëŒ€ì†Œë¬¸ì ìƒê´€ì—†ì´ ê²€ìƒ‰
 		scan.close();
 
-		// 2. files¿¡¼­ °Ë»ö¾î¸¦ Æ÷ÇÔÇÏ´Â ÆÄÀÏµéÀ» result¿¡ ³Ö±â
+		// 2. filesì—ì„œ ê²€ìƒ‰ì–´ë¥¼ í¬í•¨í•˜ëŠ” íŒŒì¼ë“¤ì„ resultì— ë„£ê¸°
 		for (int i = 0; i < files.length; i++) {
-			if (files[i].toLowerCase().contains(find)) { // ´ë¼Ò¹®ÀÚ »ó°ü¾øÀÌ °Ë»ö
+			if (files[i].toLowerCase().contains(find)) { // ëŒ€ì†Œë¬¸ì ìƒê´€ì—†ì´ ê²€ìƒ‰
 				result[i] = files[i];
 			}
 		}
 
-		// 3. °Ë»ö °á°ú Ãâ·Â
+		// 3. ê²€ìƒ‰ ê²°ê³¼ ì¶œë ¥
 		int count = 0;
 		for (String name : result) {
 			if (name != null) {
@@ -35,16 +35,16 @@ public class ArrayEx01 {
 			}
 		}
 		if (count == 0) {
-			System.out.println("°Ë»ö °á°ú°¡ ¾ø½À´Ï´Ù.");
+			System.out.println("ê²€ìƒ‰ ê²°ê³¼ê°€ ì—†ìŠµë‹ˆë‹¤.");
 		} else {
-			System.out.println("ÃÑ " + count + "°Ç");
+			System.out.println("ì´ " + count + "ê±´");
 		}
 		
 		// CRUD
-		/* Create	»ı¼º
-		 * Read		ÀĞ±â/°Ë»ö
-		 * Update	¼öÁ¤
-		 * Delete	»èÁ¦
+		/* Create	ìƒì„±
+		 * Read		ì½ê¸°/ê²€ìƒ‰
+		 * Update	ìˆ˜ì •
+		 * Delete	ì‚­ì œ
 		 * */
 	}
 }

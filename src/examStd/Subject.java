@@ -14,7 +14,7 @@ public class Subject {
 
 	public Subject() {
 	}
-	// Áßº¹Ã¼Å©¿ë
+	// ì¤‘ë³µì²´í¬ìš©
 	public Subject(String subNum) {
 		this.subNum = subNum;
 	}
@@ -29,7 +29,7 @@ public class Subject {
 		this.subRoom = subRoom;
 	}
 	public Subject(Subject s) {
-		// °´Ã¼ copy
+		// ê°ì²´ copy
 		subNum = s.subNum;
 		subName = s.subName;
 		subPoint = s.subPoint;

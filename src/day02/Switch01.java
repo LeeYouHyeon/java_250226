@@ -4,31 +4,31 @@ public class Switch01 {
 
 	public static void main(String[] args) {
 		/*
-		 * switch(º¯¼ö / °ª) { case °ª : ½ÇÇà¹®; break; case °ª : ½ÇÇà¹®; break; case °ª : ½ÇÇà¹®;
-		 * break; case °ª : ½ÇÇà¹®; break; ... default : ½ÇÇà¹®; } break;´Â ±¸¹®À» ºüÁ®³ª°¥ ¶§ »ç¿ë, º¸Åë
-		 * Á¶°Ç¹®À» »ç¿ëÇÑ´Ù.(switch´Â ÀÚÃ¼ÀûÀ¸·Î Á¶°Ç¹®À» Æ÷ÇÔÇÔ)
+		 * switch(ë³€ìˆ˜ / ê°’) { case ê°’ : ì‹¤í–‰ë¬¸; break; case ê°’ : ì‹¤í–‰ë¬¸; break; case ê°’ : ì‹¤í–‰ë¬¸;
+		 * break; case ê°’ : ì‹¤í–‰ë¬¸; break; ... default : ì‹¤í–‰ë¬¸; } break;ëŠ” êµ¬ë¬¸ì„ ë¹ ì ¸ë‚˜ê°ˆ ë•Œ ì‚¬ìš©, ë³´í†µ
+		 * ì¡°ê±´ë¬¸ì„ ì‚¬ìš©í•œë‹¤.(switchëŠ” ìì²´ì ìœ¼ë¡œ ì¡°ê±´ë¬¸ì„ í¬í•¨í•¨)
 		 */
 
-		// Â¦¼ö È¦¼ö switch ±¸¹®À¸·Î ½ÇÇà
+		// ì§ìˆ˜ í™€ìˆ˜ switch êµ¬ë¬¸ìœ¼ë¡œ ì‹¤í–‰
 		int num;
 
 		num = 2;
 
 		switch (num % 2) {
 			case 0:
-				System.out.println("Â¦¼ö");
+				System.out.println("ì§ìˆ˜");
 				break;
 			case 1:
-				System.out.println("È¦¼ö");
+				System.out.println("í™€ìˆ˜");
 				break;
 			default:
-				System.out.println("Àß¸øµÈ °ªÀÔ´Ï´Ù.");
+				System.out.println("ì˜ëª»ëœ ê°’ì…ë‹ˆë‹¤.");
 		}
 
 		System.out.println("----------------");
 
 		/*
-		 * num1ÀÇ °ªÀÌ 1, 2, 3ÀÌ¶ó°í °¡Á¤ 1ÀÌ¸é 1Ä­ ÀüÁø, 2¸é 2Ä­ ÀüÁø, 3ÀÌ¸é 3Ä­ ÀüÁø ³ª¸ÓÁö °ªÀº ´Ù½Ã ÀÔ·ÂÇÏ¶ó°í Ãâ·Â
+		 * num1ì˜ ê°’ì´ 1, 2, 3ì´ë¼ê³  ê°€ì • 1ì´ë©´ 1ì¹¸ ì „ì§„, 2ë©´ 2ì¹¸ ì „ì§„, 3ì´ë©´ 3ì¹¸ ì „ì§„ ë‚˜ë¨¸ì§€ ê°’ì€ ë‹¤ì‹œ ì…ë ¥í•˜ë¼ê³  ì¶œë ¥
 		 */
 		int num1;
 
@@ -36,31 +36,31 @@ public class Switch01 {
 
 //		switch (num1) {
 //			case 1:
-//				System.out.println("ÇÑ Ä­ ÀüÁø");
+//				System.out.println("í•œ ì¹¸ ì „ì§„");
 //				break;
 //			case 2:
-//				System.out.println("µÎ Ä­ ÀüÁø");
+//				System.out.println("ë‘ ì¹¸ ì „ì§„");
 //				break;
 //			case 3:
-//				System.out.println("¼¼ Ä­ ÀüÁø");
+//				System.out.println("ì„¸ ì¹¸ ì „ì§„");
 //				break;
 //			default:
-//				System.out.println("´Ù½Ã ÀÔ·ÂÇÏ¼¼¿ä.");
+//				System.out.println("ë‹¤ì‹œ ì…ë ¥í•˜ì„¸ìš”.");
 //		}
 
 		switch (num1) {
 			case 1:
 			case 2:
 			case 3:
-				System.out.println(num1 + "Ä­ ÀüÁø");
+				System.out.println(num1 + "ì¹¸ ì „ì§„");
 				break;
 			default:
-				System.out.println("´Ù½Ã ÀÔ·ÂÇÏ¼¼¿ä.");
+				System.out.println("ë‹¤ì‹œ ì…ë ¥í•˜ì„¸ìš”.");
 		}
 
 		System.out.println("----------------");
 		/*
-		 * 3¿ùºÎÅÍ º½, 6¿ùºÎÅÍ ¿©¸§, 9¿ùºÎÅÍ °¡À», 12¿ùºÎÅÍ °Ü¿ï
+		 * 3ì›”ë¶€í„° ë´„, 6ì›”ë¶€í„° ì—¬ë¦„, 9ì›”ë¶€í„° ê°€ì„, 12ì›”ë¶€í„° ê²¨ìš¸
 		 */
 		int month = 13;
 
@@ -68,25 +68,25 @@ public class Switch01 {
 			case 3:
 			case 4:
 			case 5:
-				System.out.println("º½");
+				System.out.println("ë´„");
 				break;
 			case 6:
 			case 7:
 			case 8:
-				System.out.println("¿©¸§");
+				System.out.println("ì—¬ë¦„");
 				break;
 			case 9:
 			case 10:
 			case 11:
-				System.out.println("°¡À»");
+				System.out.println("ê°€ì„");
 				break;
 			case 12:
 			case 1:
 			case 2:
-				System.out.println("°Ü¿ï");
+				System.out.println("ê²¨ìš¸");
 				break;
 			default:
-				System.out.println("Àß¸øµÈ ³¯Â¥ÀÔ´Ï´Ù.");
+				System.out.println("ì˜ëª»ëœ ë‚ ì§œì…ë‹ˆë‹¤.");
 		}
 
 	}

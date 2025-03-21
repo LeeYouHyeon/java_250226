@@ -6,10 +6,10 @@ import java.util.List;
 public class Cards {
 	protected List<Card> cards = new ArrayList<>();
 
-	/* »ı¼ºÀÚ
-	 *  - ÃÊ±â»ı¼ºÀÚ´Â ºó µ¦À» ¸¸µé¾î¼­ ÁÜ
-	 *  - Ä«µå¸¦ ÁÙ °æ¿ì ±× Ä«µåµéÀ» µ¦¿¡ ³Ö¾î¼­ ÁÜ
-	 *  - ÀÔ·Â Ä«µåµéÀº Áßº¹ ºÒÇã
+	/* ìƒì„±ì
+	 *  - ì´ˆê¸°ìƒì„±ìëŠ” ë¹ˆ ë±ì„ ë§Œë“¤ì–´ì„œ ì¤Œ
+	 *  - ì¹´ë“œë¥¼ ì¤„ ê²½ìš° ê·¸ ì¹´ë“œë“¤ì„ ë±ì— ë„£ì–´ì„œ ì¤Œ
+	 *  - ì…ë ¥ ì¹´ë“œë“¤ì€ ì¤‘ë³µ ë¶ˆí—ˆ
 	 * */
 	public Cards() {
 	}
@@ -17,7 +17,7 @@ public class Cards {
 		add(cards);
 	}
 
-	// cards¿¡ Ä«µå¸¦ ³Ö±â
+	// cardsì— ì¹´ë“œë¥¼ ë„£ê¸°
 	public void add(Card... cards) {
 		for (Card card : cards) {
 			if (card != null && !contains(card)) {
@@ -25,11 +25,11 @@ public class Cards {
 			}
 		}
 	}
-	// cards ¼¯±â
+	// cards ì„ê¸°
 	public void shuffle() {
 		Shuffle.shuffle(cards);
 	}
-	// cards¿¡ Ä«µå°¡ ÀÖ´Â°¡
+	// cardsì— ì¹´ë“œê°€ ìˆëŠ”ê°€
 	public boolean contains(Card card) {
 		for (Card c : cards) {
 			if (card.equals(c))

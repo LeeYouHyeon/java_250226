@@ -2,14 +2,14 @@ package studentManager_List;
 
 import java.util.List;
 
-// Á¡¼ö¸¦ ³Ö´Â´Ù¸é Map?
+// ì ìˆ˜ë¥¼ ë„£ëŠ”ë‹¤ë©´ Map?
 public class Student {
-	// ÇĞ¹ø, ÀÌ¸§, ³ªÀÌ, ÀüÈ­¹øÈ£, ÁÖ¼Ò, ¼ö°­°ú¸ñ
+	// í•™ë²ˆ, ì´ë¦„, ë‚˜ì´, ì „í™”ë²ˆí˜¸, ì£¼ì†Œ, ìˆ˜ê°•ê³¼ëª©
 	private String stdCode, stdName, stdPhone, stdAddress;
 	private int stdAge;
 	private List<Subject> subjects;
 
-	// »ı¼ºÀÚ
+	// ìƒì„±ì
 	public Student() {
 	}
 
@@ -40,7 +40,7 @@ public class Student {
 		return answer;
 	}
 
-	// °ú¸ñÀ» ¹ŞÀ¸¸é ¼ö°­ÇÑ °ú¸ñÀÎÁö È®ÀÎ
+	// ê³¼ëª©ì„ ë°›ìœ¼ë©´ ìˆ˜ê°•í•œ ê³¼ëª©ì¸ì§€ í™•ì¸
 	public boolean contains(Subject subject) {
 		for (Subject sub : subjects) {
 			if (sub.getSubCode().equals(subject.getSubCode())) {
@@ -50,22 +50,22 @@ public class Student {
 		return false;
 	}
 
-	// ¼ö°­½ÅÃ»
+	// ìˆ˜ê°•ì‹ ì²­
 	public void insertSubject(Subject s) {
 		if (contains(s)) {
-			System.out.println("ÀÌ¹Ì ¼ö°­ÇÑ °ú¸ñÀÔ´Ï´Ù.");
+			System.out.println("ì´ë¯¸ ìˆ˜ê°•í•œ ê³¼ëª©ì…ë‹ˆë‹¤.");
 			return;
 		}
 		subjects.add(s);
-		System.out.println("½ÅÃ»µÇ¾ú½À´Ï´Ù.");
+		System.out.println("ì‹ ì²­ë˜ì—ˆìŠµë‹ˆë‹¤.");
 	}
 
-	// ¼ö°­½ÅÃ» Ãë¼Ò
+	// ìˆ˜ê°•ì‹ ì²­ ì·¨ì†Œ
 	public void cancelSubject(Subject s) {
 		if (subjects.remove(s)) {
-			System.out.println("Ãë¼ÒµÇ¾ú½À´Ï´Ù.");
+			System.out.println("ì·¨ì†Œë˜ì—ˆìŠµë‹ˆë‹¤.");
 		} else {
-			System.out.println("½ÅÃ»ÇÏÁö ¾ÊÀº °ú¸ñÀÔ´Ï´Ù.");
+			System.out.println("ì‹ ì²­í•˜ì§€ ì•Šì€ ê³¼ëª©ì…ë‹ˆë‹¤.");
 		}
 	}
 

@@ -2,9 +2,9 @@ package day09;
 
 public class Exam01 {
 	public static void main(String[] args) {
-		/* ¸Ş¼­µå·Î ÀÛ¾÷
-		 * µÎ Á¤¼öÀÇ °ªÀÌ ÁÖ¾îÁú ¶§
-		 * µÎ Á¤¼ö »çÀÌÀÇ ¸ğµç Á¤¼öÀÇ ÇÕÀ» ¸®ÅÏÇÏ´Â ¸Ş¼­µå
+		/* ë©”ì„œë“œë¡œ ì‘ì—…
+		 * ë‘ ì •ìˆ˜ì˜ ê°’ì´ ì£¼ì–´ì§ˆ ë•Œ
+		 * ë‘ ì •ìˆ˜ ì‚¬ì´ì˜ ëª¨ë“  ì •ìˆ˜ì˜ í•©ì„ ë¦¬í„´í•˜ëŠ” ë©”ì„œë“œ
 		 * */
 		Exam01 e1 = new Exam01();
 
@@ -12,7 +12,7 @@ public class Exam01 {
 		System.out.println(e1.sumRecur(3, 3));
 	}
 	
-	// Àç±Í ¸Ş¼­µå¸¦ ÀÔ·ÂÀÇ Á¶°ÇÀ» Á¦ÇÑÇÏ´Â ¿ëµµ·Î¸¸ »ç¿ë
+	// ì¬ê·€ ë©”ì„œë“œë¥¼ ì…ë ¥ì˜ ì¡°ê±´ì„ ì œí•œí•˜ëŠ” ìš©ë„ë¡œë§Œ ì‚¬ìš©
 	public int sumBetween(int num1, int num2) {
 		if (num1 > num2) {
 			return sumBetween(num2, num1);
@@ -26,7 +26,7 @@ public class Exam01 {
 		return answer;
 	}
 
-	// ¿ÏÀüÇÑ Àç±Í ¸Ş¼­µå·Î ±¸Çö
+	// ì™„ì „í•œ ì¬ê·€ ë©”ì„œë“œë¡œ êµ¬í˜„
 	public int sumRecur(int num1, int num2) {
 		if (num1 > num2) {
 			return sumRecur(num2, num1);

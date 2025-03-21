@@ -10,12 +10,12 @@ public class Controller implements TODO {
 	private List<Student> stds;
 	private List<Subject> subs;
 	private Exception wrongAge;
-	private HashMap<String, Double> valueOfScore; // 4.3Á¡ ±âÁØ
+	private HashMap<String, Double> valueOfScore; // 4.3ì  ê¸°ì¤€
 
 	public Controller() {
 		stds = new ArrayList<Student>();
 		subs = new ArrayList<Subject>();
-		wrongAge = new Exception("Àß¸øµÈ ³ªÀÌ");
+		wrongAge = new Exception("ì˜ëª»ëœ ë‚˜ì´");
 
 		valueOfScore = new HashMap<>();
 		valueOfScore.put("F", 0.0);
@@ -33,7 +33,7 @@ public class Controller implements TODO {
 		insertSubject(subjects);
 	}
 
-	// ±âº»°ªÀ» ³Ö±â À§ÇÑ ¸Ş¼­µå
+	// ê¸°ë³¸ê°’ì„ ë„£ê¸° ìœ„í•œ ë©”ì„œë“œ
 	public void insertSubject(Subject... subjects) {
 		for (Subject s : subjects) {
 			subs.add(s);
@@ -45,16 +45,16 @@ public class Controller implements TODO {
 		}
 	}
 
-	// ÇĞ»ıÀ» °Ë»öÇÏ´Â º¸Á¶ ¸Ş¼­µå
+	// í•™ìƒì„ ê²€ìƒ‰í•˜ëŠ” ë³´ì¡° ë©”ì„œë“œ
 	private Student searchStudent(String code) throws Exception {
 		for (Student s : stds) {
 			if (s.getStdCode().equals(code)) {
 				return s;
 			}
 		}
-		throw new Exception("ÇĞ»ıÀ» Ã£À» ¼ö ¾ø½À´Ï´Ù.");
+		throw new Exception("í•™ìƒì„ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 	}
-	// °ú¸ñÀ» °Ë»öÇÏ´Â º¸Á¶ ¸Ş¼­µå
+	// ê³¼ëª©ì„ ê²€ìƒ‰í•˜ëŠ” ë³´ì¡° ë©”ì„œë“œ
 	private Subject searchSubject(String code) throws Exception {
 		for (Subject sub : subs) {
 			if (sub.getSubCode().equals(code)) {
@@ -62,7 +62,7 @@ public class Controller implements TODO {
 			}
 		}
 
-		throw new Exception("°ú¸ñÀ» Ã£À» ¼ö ¾ø½À´Ï´Ù.");
+		throw new Exception("ê³¼ëª©ì„ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 	}
 
 	@Override
@@ -71,24 +71,24 @@ public class Controller implements TODO {
 			String name, phone, place;
 			int age;
 
-			System.out.println("ÇĞ»ı Á¤º¸ ÀÔ·Â");
-			System.out.print("ÀÌ¸§> ");
+			System.out.println("í•™ìƒ ì •ë³´ ì…ë ¥");
+			System.out.print("ì´ë¦„> ");
 			name = scan.nextLine();
-			System.out.print("³ªÀÌ> ");
+			System.out.print("ë‚˜ì´> ");
 			age = Integer.parseInt(scan.nextLine());
 			if (age <= 0) {
 				throw wrongAge;
 			}
-			System.out.print("ÇÚµåÆù¹øÈ£> ");
+			System.out.print("í•¸ë“œí°ë²ˆí˜¸> ");
 			phone = scan.nextLine();
-			System.out.print("ÁÖ¼Ò> ");
+			System.out.print("ì£¼ì†Œ> ");
 			place = scan.nextLine();
 
 			code++;
 			stds.add(new Student(String.valueOf(code), name, phone, place, age));
-			System.out.println("ÇĞ»ı µî·Ï ¿Ï·á");
+			System.out.println("í•™ìƒ ë“±ë¡ ì™„ë£Œ");
 		} catch (NumberFormatException e) {
-			System.out.println("Àß¸øµÈ ³ªÀÌ");
+			System.out.println("ì˜ëª»ëœ ë‚˜ì´");
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
@@ -97,7 +97,7 @@ public class Controller implements TODO {
 	@Override
 	public void printStudents() {
 		if (stds.isEmpty()) {
-			System.out.println("ÇĞ»ıÀÌ ¾ø½À´Ï´Ù.");
+			System.out.println("í•™ìƒì´ ì—†ìŠµë‹ˆë‹¤.");
 		} else {
 			for (Student s : stds) {
 				System.out.println(s);
@@ -107,7 +107,7 @@ public class Controller implements TODO {
 
 	@Override
 	public void searchStudent(Scanner scan) {
-		System.out.print("ÇĞ¹ø> ");
+		System.out.print("í•™ë²ˆ> ");
 		try {
 			System.out.println(searchStudent(scan.nextLine()));
 		} catch (Exception e) {
@@ -117,20 +117,20 @@ public class Controller implements TODO {
 
 	@Override
 	public void updateStudent(Scanner scan) {
-		System.out.print("ÇĞ¹ø> ");
+		System.out.print("í•™ë²ˆ> ");
 		try {
 			Student s = searchStudent(scan.nextLine());
 
-			System.out.println("ÇĞ»ıÀ» Ã£¾Ò½À´Ï´Ù. ¼öÁ¤ÇÒ ±âº»Á¤º¸¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
-			System.out.println("º¯°æÀ» ¿øÇÏÁö ¾ÊÀ¸¸é ¿£ÅÍ·Î ½ºÅµÇÒ ¼ö ÀÖ½À´Ï´Ù.");
+			System.out.println("í•™ìƒì„ ì°¾ì•˜ìŠµë‹ˆë‹¤. ìˆ˜ì •í•  ê¸°ë³¸ì •ë³´ë¥¼ ì…ë ¥í•˜ì„¸ìš”.");
+			System.out.println("ë³€ê²½ì„ ì›í•˜ì§€ ì•Šìœ¼ë©´ ì—”í„°ë¡œ ìŠ¤í‚µí•  ìˆ˜ ìˆìŠµë‹ˆë‹¤.");
 
-			System.out.print("ÀÌ¸§> ");
+			System.out.print("ì´ë¦„> ");
 			String name = scan.nextLine();
 			if (!name.isBlank()) {
 				s.setStdName(name);
 			}
 
-			System.out.print("³ªÀÌ> ");
+			System.out.print("ë‚˜ì´> ");
 			String ageStr = scan.nextLine();
 			if (!ageStr.isBlank()) {
 				int age = Integer.parseInt(ageStr);
@@ -140,19 +140,19 @@ public class Controller implements TODO {
 				s.setAge(age);
 			}
 
-			System.out.print("ÀüÈ­¹øÈ£> ");
+			System.out.print("ì „í™”ë²ˆí˜¸> ");
 			String phone = scan.nextLine();
 			if (!phone.isBlank()) {
 				s.setStdPhone(phone);
 			}
 
-			System.out.print("ÁÖ¼Ò> ");
+			System.out.print("ì£¼ì†Œ> ");
 			String address = scan.nextLine();
 			if (!address.isBlank()) {
 				s.setStdAddress(address);
 			}
 
-			System.out.println("¼öÁ¤µÇ¾ú½À´Ï´Ù.");
+			System.out.println("ìˆ˜ì •ë˜ì—ˆìŠµë‹ˆë‹¤.");
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
@@ -161,10 +161,10 @@ public class Controller implements TODO {
 	@Override
 	public void deleteStudent(Scanner scan) {
 		try {
-			System.out.print("ÇĞ¹ø> ");
+			System.out.print("í•™ë²ˆ> ");
 			Student s = searchStudent(scan.nextLine());
 			stds.remove(s);
-			System.out.println("»èÁ¦µÇ¾ú½À´Ï´Ù.");
+			System.out.println("ì‚­ì œë˜ì—ˆìŠµë‹ˆë‹¤.");
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
@@ -173,7 +173,7 @@ public class Controller implements TODO {
 	@Override
 	public void printSubjects() {
 		if (subs.isEmpty()) {
-			System.out.println("ÁØºñÁßÀÔ´Ï´Ù.");
+			System.out.println("ì¤€ë¹„ì¤‘ì…ë‹ˆë‹¤.");
 		} else {
 			for (Subject sub : subs) {
 				System.out.println(sub);
@@ -184,22 +184,22 @@ public class Controller implements TODO {
 	@Override
 	public void insertSubject(Scanner scan) {
 		try {
-			System.out.print("ÇĞ¹ø> ");
+			System.out.print("í•™ë²ˆ> ");
 			Student std = searchStudent(scan.nextLine());
 
-			System.out.print("°ú¸ñ ÄÚµå> ");
+			System.out.print("ê³¼ëª© ì½”ë“œ> ");
 			Subject sub = searchSubject(scan.nextLine());
 
 			if (std.isLearned(sub)) {
-				throw new Exception("ÀÌ¹Ì ½ÅÃ»ÇÑ °ú¸ñÀÔ´Ï´Ù.");
+				throw new Exception("ì´ë¯¸ ì‹ ì²­í•œ ê³¼ëª©ì…ë‹ˆë‹¤.");
 			}
 
-			System.out.print("ÆòÁ¡> ");
+			System.out.print("í‰ì > ");
 			String score = scan.nextLine();
 
 			std.addSubject(sub);
 			sub.addStudent(std, score);
-			System.out.println("¼ö°­½ÅÃ» ¿Ï·á");
+			System.out.println("ìˆ˜ê°•ì‹ ì²­ ì™„ë£Œ");
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
@@ -208,17 +208,17 @@ public class Controller implements TODO {
 	@Override
 	public void deleteSubject(Scanner scan) {
 		try {
-			System.out.print("ÇĞ¹ø> ");
+			System.out.print("í•™ë²ˆ> ");
 			Student std = searchStudent(scan.nextLine());
 
-			System.out.print("°ú¸ñ ÄÚµå> ");
+			System.out.print("ê³¼ëª© ì½”ë“œ> ");
 			Subject sub = searchSubject(scan.nextLine());
 
 			if (!std.deleteSubject(sub)) {
-				throw new Exception("½ÅÃ»ÇÏÁö ¾ÊÀº °ú¸ñÀÔ´Ï´Ù.");
+				throw new Exception("ì‹ ì²­í•˜ì§€ ì•Šì€ ê³¼ëª©ì…ë‹ˆë‹¤.");
 			}
 			sub.deleteStudent(std);
-			System.out.println("¼ö°­Ã¶È¸ ¿Ï·á");
+			System.out.println("ìˆ˜ê°•ì² íšŒ ì™„ë£Œ");
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
@@ -227,7 +227,7 @@ public class Controller implements TODO {
 	@Override
 	public void studentsOfSubject(Scanner scan) {
 		try {
-			System.out.print("°ú¸ñÄÚµå> ");
+			System.out.print("ê³¼ëª©ì½”ë“œ> ");
 			searchSubject(scan.nextLine()).printStduents();
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
@@ -237,7 +237,7 @@ public class Controller implements TODO {
 	@Override
 	public void printStudentScore(Scanner scan) {
 		try {
-			System.out.print("ÇĞ¹ø> ");
+			System.out.print("í•™ë²ˆ> ");
 			searchStudent(scan.nextLine()).printScores(valueOfScore);
 		} catch (Exception e) {
 			e.getMessage();

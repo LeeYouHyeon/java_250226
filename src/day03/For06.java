@@ -5,17 +5,17 @@ import java.util.Scanner;
 public class For06 {
 	
 	public static void main(String[] args) {
-		/* ¹è¼ö : °ªÀ» °öÇØ¼­ ³ª¿À´Â °ª
-		 * 10ÀÇ ¹è¼ö : 10, 20, 30, ...
+		/* ë°°ìˆ˜ : ê°’ì„ ê³±í•´ì„œ ë‚˜ì˜¤ëŠ” ê°’
+		 * 10ì˜ ë°°ìˆ˜ : 10, 20, 30, ...
 		 * */
 		
 		Scanner scan = new Scanner(System.in);
 		int num1, num2;
 		
-		System.out.println("ÃÖ´ë°ø¾à¼ö¿Í ÃÖ¼Ò°ø¹è¼ö¸¦ ±¸ÇÏ°í ½ÍÀº µÎ ÀÚ¿¬¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
-		System.out.print("Ã¹ ¹øÂ° ÀÚ¿¬¼ö> ");
+		System.out.println("ìµœëŒ€ê³µì•½ìˆ˜ì™€ ìµœì†Œê³µë°°ìˆ˜ë¥¼ êµ¬í•˜ê³  ì‹¶ì€ ë‘ ìžì—°ìˆ˜ë¥¼ ìž…ë ¥í•˜ì„¸ìš”.");
+		System.out.print("ì²« ë²ˆì§¸ ìžì—°ìˆ˜> ");
 		num1 = scan.nextInt();
-		System.out.print("µÎ ¹øÂ° ÀÚ¿¬¼ö> ");
+		System.out.print("ë‘ ë²ˆì§¸ ìžì—°ìˆ˜> ");
 		num2 = scan.nextInt();
 		
 		int max = Math.max(num1, num2);

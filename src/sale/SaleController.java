@@ -15,111 +15,111 @@ public class SaleController {
 		this.scan = scan;
 	}
 
-	// º¸Á¶ ¸Ş¼­µå 1. °¡°İÀ» ÀÔ·Â¹ŞÀ½
-	// °¡°İ > 0
+	// ë³´ì¡° ë©”ì„œë“œ 1. ê°€ê²©ì„ ì…ë ¥ë°›ìŒ
+	// ê°€ê²© > 0
 	private int getPriceInput() throws Exception {
-		System.out.print("°¡°İ> ");
+		System.out.print("ê°€ê²©> ");
 		int price = Integer.parseInt(scan.nextLine());
 		if (price <= 0) {
-			throw new Exception("°¡°İÀÌ 0 ÀÌÇÏÀÔ´Ï´Ù.");
+			throw new Exception("ê°€ê²©ì´ 0 ì´í•˜ì…ë‹ˆë‹¤.");
 		}
 
 		return price;
 	}
-	// º¸Á¶ ¸Ş¼­µå 2. ¸Ş´º¸¦ º¸¿©ÁÖ°í ¹øÈ£·Î ¼±ÅÃ¹ŞÀ½
+	// ë³´ì¡° ë©”ì„œë“œ 2. ë©”ë‰´ë¥¼ ë³´ì—¬ì£¼ê³  ë²ˆí˜¸ë¡œ ì„ íƒë°›ìŒ
 	private int getMenuIdx(String inputGuide) throws Exception {
-		// 1. ¸Ş´º¸¦ º¸¿©ÁÜ
+		// 1. ë©”ë‰´ë¥¼ ë³´ì—¬ì¤Œ
 		showMenu();
 
-		// 2. ÇÊ¿äÇÑ ¸Ş¼¼Áö¸¦ º¸¿©ÁÜ
+		// 2. í•„ìš”í•œ ë©”ì„¸ì§€ë¥¼ ë³´ì—¬ì¤Œ
 		System.out.print(inputGuide);
 
-		// 3. ¹ŞÀº ¹øÈ£¸¦ return
+		// 3. ë°›ì€ ë²ˆí˜¸ë¥¼ return
 		int idx = Integer.parseInt(scan.nextLine()) - 1;
-		menus.get(idx); // ExceptionÀ» ´øÁö±â À§ÇÑ ÄÚµå
+		menus.get(idx); // Exceptionì„ ë˜ì§€ê¸° ìœ„í•œ ì½”ë“œ
 		return idx;
 	}
 
-	// 1. ¸Ş´º µî·Ï
+	// 1. ë©”ë‰´ ë“±ë¡
 	public void add() throws Exception {
-		// 1. ÀÌ¸§ ÀÔ·Â
-		System.out.print("¸Ş´º ÀÌ¸§> ");
+		// 1. ì´ë¦„ ì…ë ¥
+		System.out.print("ë©”ë‰´ ì´ë¦„> ");
 		String name = scan.nextLine();
-		// 1-1. Áßº¹ È®ÀÎ
+		// 1-1. ì¤‘ë³µ í™•ì¸
 		for (Menu m : menus) {
 			if (m.getName().equals(name)) {
-				throw new Exception("°°Àº ÀÌ¸§ÀÇ ¸Ş´º°¡ ÀÖ½À´Ï´Ù.");
+				throw new Exception("ê°™ì€ ì´ë¦„ì˜ ë©”ë‰´ê°€ ìˆìŠµë‹ˆë‹¤.");
 			}
 		}
 
-		// 2. °¡°İ ÀÔ·Â
+		// 2. ê°€ê²© ì…ë ¥
 		int price = getPriceInput();
 
-		// 2. ÀÌ¸§°ú °¡°İÀ¸·Î Menu °´Ã¼¸¦ ¸¸µé¾î menu¿¡ µî·Ï
+		// 2. ì´ë¦„ê³¼ ê°€ê²©ìœ¼ë¡œ Menu ê°ì²´ë¥¼ ë§Œë“¤ì–´ menuì— ë“±ë¡
 		menus.add(new Menu(name, price));
-		System.out.println("Ãß°¡µÇ¾ú½À´Ï´Ù.");
+		System.out.println("ì¶”ê°€ë˜ì—ˆìŠµë‹ˆë‹¤.");
 	}
 
-	// 2. ¸Ş´º »èÁ¦
+	// 2. ë©”ë‰´ ì‚­ì œ
 	public void remove() throws Exception {
-		// ¸Ş´º¸¦ ¹øÈ£·Î ÀÔ·Â¹Ş¾Æ menus¿¡¼­ »èÁ¦
-		menus.remove(getMenuIdx("»èÁ¦ÇÒ ¸Ş´º ¹øÈ£> "));
-		System.out.println("¸Ş´º°¡ »èÁ¦µÇ¾ú½À´Ï´Ù.");
+		// ë©”ë‰´ë¥¼ ë²ˆí˜¸ë¡œ ì…ë ¥ë°›ì•„ menusì—ì„œ ì‚­ì œ
+		menus.remove(getMenuIdx("ì‚­ì œí•  ë©”ë‰´ ë²ˆí˜¸> "));
+		System.out.println("ë©”ë‰´ê°€ ì‚­ì œë˜ì—ˆìŠµë‹ˆë‹¤.");
 	}
 
-	// 3. °¡°İ ¼öÁ¤
-	// °¡°İ > 0
+	// 3. ê°€ê²© ìˆ˜ì •
+	// ê°€ê²© > 0
 	public void update() throws Exception {
-		// 1. ¼öÁ¤ÇÒ ¸Ş´º¸¦ ¹øÈ£·Î ÀÔ·Â
-		Menu menu = menus.get(getMenuIdx("¼öÁ¤ÇÒ ¸Ş´º ¹øÈ£> "));
+		// 1. ìˆ˜ì •í•  ë©”ë‰´ë¥¼ ë²ˆí˜¸ë¡œ ì…ë ¥
+		Menu menu = menus.get(getMenuIdx("ìˆ˜ì •í•  ë©”ë‰´ ë²ˆí˜¸> "));
 
-		// 2. °¡°İ ÀÔ·Â
+		// 2. ê°€ê²© ì…ë ¥
 		int price = getPriceInput();
 
-		// 3. °¡°İ ¼öÁ¤
+		// 3. ê°€ê²© ìˆ˜ì •
 		menu.setPrice(price);
-		System.out.println("°¡°İÀÌ ¼öÁ¤µÇ¾ú½À´Ï´Ù.");
+		System.out.println("ê°€ê²©ì´ ìˆ˜ì •ë˜ì—ˆìŠµë‹ˆë‹¤.");
 	}
 
-	// 4. ¸Ş´º º¸±â
+	// 4. ë©”ë‰´ ë³´ê¸°
 	public void showMenu() throws Exception {
 		if (menus.isEmpty())
-			throw new Exception("¸Ş´º¿¡ µî·ÏµÈ »óÇ°ÀÌ ¾ø½À´Ï´Ù.");
+			throw new Exception("ë©”ë‰´ì— ë“±ë¡ëœ ìƒí’ˆì´ ì—†ìŠµë‹ˆë‹¤.");
 
 		for (int i = 0; i < menus.size(); i++) {
 			System.out.println(i + 1 + ". " + menus.get(i).toString());
 		}
 	}
 
-	// 5. ÁÖ¹®
-	// ÁÖ¹® ¼ö·® > 0
+	// 5. ì£¼ë¬¸
+	// ì£¼ë¬¸ ìˆ˜ëŸ‰ > 0
 	public void order() throws Exception {
-		// 1. ÁÖ¹®ÇÒ ¸Ş´º¸¦ ¹øÈ£·Î ÀÔ·Â
-		int idx = getMenuIdx("ÁÖ¹®ÇÒ ¸Ş´º ¹øÈ£> ");
+		// 1. ì£¼ë¬¸í•  ë©”ë‰´ë¥¼ ë²ˆí˜¸ë¡œ ì…ë ¥
+		int idx = getMenuIdx("ì£¼ë¬¸í•  ë©”ë‰´ ë²ˆí˜¸> ");
 
-		// 2. ¼ö·® ÀÔ·Â
-		System.out.print("¼ö·®> ");
+		// 2. ìˆ˜ëŸ‰ ì…ë ¥
+		System.out.print("ìˆ˜ëŸ‰> ");
 		int count = Integer.parseInt(scan.nextLine());
 		if (count <= 0) {
-			throw new Exception("ÁÖ¹® ¼ö·®ÀÌ 0 ÀÌÇÏÀÔ´Ï´Ù.");
+			throw new Exception("ì£¼ë¬¸ ìˆ˜ëŸ‰ì´ 0 ì´í•˜ì…ë‹ˆë‹¤.");
 		}
 
-		// 3. ÁÖ¹® µî·Ï
+		// 3. ì£¼ë¬¸ ë“±ë¡
 		orders.add(new Order(menus.get(idx), count));
-		System.out.println("ÁÖ¹® ¿Ï·á");
+		System.out.println("ì£¼ë¬¸ ì™„ë£Œ");
 	}
 
-	// 6. ÁÖ¹® ³»¿ª Ãâ·Â
+	// 6. ì£¼ë¬¸ ë‚´ì—­ ì¶œë ¥
 	public void printOrders() throws Exception {
 		if (orders.isEmpty()) {
-			System.out.println("ÁÖ¹® ³»¿ªÀÌ ¾ø½À´Ï´Ù.");
+			System.out.println("ì£¼ë¬¸ ë‚´ì—­ì´ ì—†ìŠµë‹ˆë‹¤.");
 		} else {
 			int total = 0;
 			for (int i = 0; i < orders.size(); i++) {
 				total += orders.get(i).getTotal();
 				System.out.println(i + 1 + ". " + orders.get(i).toString());
 			}
-			System.out.println("ÃÑ : " + total);
+			System.out.println("ì´ : " + total);
 		}
 	}
 

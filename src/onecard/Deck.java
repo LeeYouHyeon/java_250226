@@ -4,17 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Deck extends Cards {
-	/* ¸â¹öº¯¼ö
-	 * cards : Cards¿¡¼­ »ó¼Ó
-	 * opened : ¿ÀÇÂµÈ Ä«µåµé 
+	/* ë©¤ë²„ë³€ìˆ˜
+	 * cards : Cardsì—ì„œ ìƒì†
+	 * opened : ì˜¤í”ˆëœ ì¹´ë“œë“¤ 
 	 * */
 	private List<Card> opened = new ArrayList<>();
 
-	// »ı¼ºÀÚ
-	// cards¿¡ Á¤·ÄµÈ 52°³ÀÇ Ä«µå¸¦ ¸¸µé°í, optionÀÌ true¸é ¼¯À½
-	// optionÀÇ ±âº»°ªÀº true
+	// ìƒì„±ì
+	// cardsì— ì •ë ¬ëœ 52ê°œì˜ ì¹´ë“œë¥¼ ë§Œë“¤ê³ , optionì´ trueë©´ ì„ìŒ
+	// optionì˜ ê¸°ë³¸ê°’ì€ true
 	public Deck(boolean option) {
-		for (char shape : new char[] { '¢¾', '¡ß', '¢À', '¢¼' }) {
+		for (char shape : new char[] { 'â™¥', 'â—†', 'â™£', 'â™ ' }) {
 			for (int num = 1; num <= 13; num++) {
 				cards.add(new Card(num, shape));
 			}
@@ -26,7 +26,7 @@ public class Deck extends Cards {
 		this(true);
 	}
 
-	// °ø°³µÈ Ä«µåµéÀ» ¸Ç À§ ÇÏ³ª¸¸ »©°í ÀüºÎ µ¦À¸·Î µÇµ¹¸° ÈÄ ¼ÅÇÃÇÔ
+	// ê³µê°œëœ ì¹´ë“œë“¤ì„ ë§¨ ìœ„ í•˜ë‚˜ë§Œ ë¹¼ê³  ì „ë¶€ ë±ìœ¼ë¡œ ë˜ëŒë¦° í›„ ì…”í”Œí•¨
 	public void merge() {
 		while (opened.size() > 1) {
 			add(opened.remove(0));
@@ -34,19 +34,19 @@ public class Deck extends Cards {
 		shuffle();
 	}
 	
-	// µ¦¿¡¼­ Ä«µå¸¦ ÇÏ³ª »ÌÀ½
-	// cards¿Í opened ¸ğµÎ ºñ¾îÀÖÀ» °æ¿ì Exception
+	// ë±ì—ì„œ ì¹´ë“œë¥¼ í•˜ë‚˜ ë½‘ìŒ
+	// cardsì™€ opened ëª¨ë‘ ë¹„ì–´ìˆì„ ê²½ìš° Exception
 	public Card pick() throws Exception {
 		if (cards.isEmpty()) {
 			if(opened.isEmpty())
-				throw new Exception("Ä«µå°¡ ¾ø½À´Ï´Ù.");
+				throw new Exception("ì¹´ë“œê°€ ì—†ìŠµë‹ˆë‹¤.");
 			else merge();
 		}
 		
 		return cards.remove(0);
 	}
 	
-	// ¸¶Áö¸·¿¡ ³ª¿Â Ä«µåÀÇ Á¤º¸¿Í µ¦ÀÇ ³²Àº Ä«µå ¼ö¸¦ º¸¿©ÁÜ
+	// ë§ˆì§€ë§‰ì— ë‚˜ì˜¨ ì¹´ë“œì˜ ì •ë³´ì™€ ë±ì˜ ë‚¨ì€ ì¹´ë“œ ìˆ˜ë¥¼ ë³´ì—¬ì¤Œ
 	@Override
 	public String toString() {
 		return opened.get(opened.size() - 1).toString() + " / " + cards.size();

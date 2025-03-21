@@ -2,59 +2,59 @@ package day01;
 
 public class Exam01 {
 	public static void main(String[] args) {
-		/* Ä«Æä¿¡ Á¦Ãâ
-		 * ±¹¾î, ¿µ¾î, ¼öÇÐ Á¡¼ö ÀÔ·Â
-		 * ÇÕ°è¿Í Æò±ÕÀ» Ãâ·Â
+		/* ì¹´íŽ˜ì— ì œì¶œ
+		 * êµ­ì–´, ì˜ì–´, ìˆ˜í•™ ì ìˆ˜ ìž…ë ¥
+		 * í•©ê³„ì™€ í‰ê· ì„ ì¶œë ¥
 		 * 
-		 * Á¶°Ç ¼±ÅÃ ¿¬»êÀÚ¸¦ ÀÌ¿ëÇÏ¿©
-		 * Æò±ÕÀÌ 80Á¡ ÀÌ»óÀÌ¸é ÇÕ°Ý, ¾Æ´Ï¸é ºÒÇÕ°Ý
+		 * ì¡°ê±´ ì„ íƒ ì—°ì‚°ìžë¥¼ ì´ìš©í•˜ì—¬
+		 * í‰ê· ì´ 80ì  ì´ìƒì´ë©´ í•©ê²©, ì•„ë‹ˆë©´ ë¶ˆí•©ê²©
 		 */
 		int kor, eng, math, sum;
 		double average;
 		String pass;
 		
-		// ÀÌÈÄ ÀÔ·Â¹Þ´Â ÄÚµå·Î º¯°æ
+		// ì´í›„ ìž…ë ¥ë°›ëŠ” ì½”ë“œë¡œ ë³€ê²½
 		kor = 78;
 		eng = 96;
 		math = 156;
 		
 		sum = kor + eng + math;
 		average = (double)sum/3;
-		pass = (average >= 80) ? "ÇÕ°Ý" : "ºÒÇÕ°Ý";
+		pass = (average >= 80) ? "í•©ê²©" : "ë¶ˆí•©ê²©";
 		
-		System.out.println("ÇÕ°è : " + sum);
-		System.out.println("Æò±Õ : " + average);
+		System.out.println("í•©ê³„ : " + sum);
+		System.out.println("í‰ê·  : " + average);
 		System.out.println(pass);
 		
 		
 		System.out.println("---------------");
-		//if (Á¶°Ç½Ä) { ½ÇÇà¹®; } else { ½ÇÇà¹®; }
-		//Æò±ÕÀÌ 100º¸´Ù Å©°Å³ª 0º¸´Ù ÀÛ´Ù¸é ¿À·ù
-		//80Á¡ ÀÌ»óÀÌ¸é ¿ì¼ö, 60Á¡ ÀÌ»óÀÌ¸é ÇÕ°Ý, ³ª¸ÓÁö´Â ºÒÇÕ°Ý
+		//if (ì¡°ê±´ì‹) { ì‹¤í–‰ë¬¸; } else { ì‹¤í–‰ë¬¸; }
+		//í‰ê· ì´ 100ë³´ë‹¤ í¬ê±°ë‚˜ 0ë³´ë‹¤ ìž‘ë‹¤ë©´ ì˜¤ë¥˜
+		//80ì  ì´ìƒì´ë©´ ìš°ìˆ˜, 60ì  ì´ìƒì´ë©´ í•©ê²©, ë‚˜ë¨¸ì§€ëŠ” ë¶ˆí•©ê²©
 		
-		//¿¹½Ã´ä¾È 1
+		//ì˜ˆì‹œë‹µì•ˆ 1
 		if(average > 100 || average < 0) {
-			System.out.println("¿À·ù");
+			System.out.println("ì˜¤ë¥˜");
 		} else if(average >= 80) {
-			System.out.println("¿ì¼ö");
+			System.out.println("ìš°ìˆ˜");
 		} else if(average >= 60) {
-			System.out.println("ÇÕ°Ý");
+			System.out.println("í•©ê²©");
 		} else {
-			System.out.println("ºÒÇÕ°Ý");
+			System.out.println("ë¶ˆí•©ê²©");
 		}
 		
-		//¿¹½Ã´ä¾È 2
-		//Á¶±Ý ´õ ¹®Á¦ÀÇ ¾ÆÀÌµð¾î¿¡ ºñ½ÁÇÑ Á¢±Ù
+		//ì˜ˆì‹œë‹µì•ˆ 2
+		//ì¡°ê¸ˆ ë” ë¬¸ì œì˜ ì•„ì´ë””ì–´ì— ë¹„ìŠ·í•œ ì ‘ê·¼
 		System.out.println("---------------");
 		if(average > 100 || average < 0) {
-			System.out.println("¿À·ù");
+			System.out.println("ì˜¤ë¥˜");
 		} else {
 			if(average >= 80) {
-				System.out.println("¿ì¼ö");
+				System.out.println("ìš°ìˆ˜");
 			} else if(average >= 60) {
-				System.out.println("ÇÕ°Ý");
+				System.out.println("í•©ê²©");
 			} else {
-				System.out.println("ºÒÇÕ°Ý");
+				System.out.println("ë¶ˆí•©ê²©");
 			}
 			
 		}

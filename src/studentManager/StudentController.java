@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class StudentController implements Program {
 	private Student[] students = new Student[100];
-	private Subject[] subjects; // °ú¸ñµéÀº controller¸¦ ¸¸µé ¶§ µî·ÏÇØÁà¾ß ÇÔ
+	private Subject[] subjects; // ê³¼ëª©ë“¤ì€ controllerë¥¼ ë§Œë“¤ ë•Œ ë“±ë¡í•´ì¤˜ì•¼ í•¨
 	private int numStudents;
 
 	public StudentController(Subject... subjects) {
@@ -13,7 +13,7 @@ public class StudentController implements Program {
 
 	@Override
 	public void insertStudent(Scanner scan) {
-		// ÇÊ¿äÇÏ¸é °ø°£ È®º¸
+		// í•„ìš”í•˜ë©´ ê³µê°„ í™•ë³´
 		if (numStudents == students.length) {
 			Student[] students = new Student[numStudents + 100];
 			for (int i = 0; i < numStudents; i++) {
@@ -22,18 +22,18 @@ public class StudentController implements Program {
 			this.students = students;
 		}
 
-		// »ç¿ëÀÚ ÀÔ·Â
+		// ì‚¬ìš©ì ì…ë ¥
 		String id, name, phone, place;
 		int age;
-		System.out.println("µî·ÏÇÒ ÇĞ»ıÀÇ Á¤º¸¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
-		System.out.print("ÀÌ¸§> ");
+		System.out.println("ë“±ë¡í•  í•™ìƒì˜ ì •ë³´ë¥¼ ì…ë ¥í•˜ì„¸ìš”.");
+		System.out.print("ì´ë¦„> ");
 		name = scan.nextLine();
-		System.out.print("ÀüÈ­¹øÈ£> ");
+		System.out.print("ì „í™”ë²ˆí˜¸> ");
 		phone = scan.nextLine();
-		System.out.print("³ªÀÌ> ");
+		System.out.print("ë‚˜ì´> ");
 		age = scan.nextInt();
 		scan.nextLine();
-		System.out.print("ÁÖ¼Ò> ");
+		System.out.print("ì£¼ì†Œ> ");
 		place = scan.nextLine();
 
 		id = String.valueOf(numStudents + 1);
@@ -54,27 +54,27 @@ public class StudentController implements Program {
 
 	@Override
 	public void searchStudent(Scanner scan) {
-		System.out.println("ÇĞ»ıÀ» °Ë»öÇÒ ¹æ¹ıÀ» ¼±ÅÃÇÏ¼¼¿ä.");
-		System.out.println("1. ÇĞ»ı Á¤º¸ | 2. ¼ö°­ Á¤º¸");
+		System.out.println("í•™ìƒì„ ê²€ìƒ‰í•  ë°©ë²•ì„ ì„ íƒí•˜ì„¸ìš”.");
+		System.out.println("1. í•™ìƒ ì •ë³´ | 2. ìˆ˜ê°• ì •ë³´");
 		System.out.print("> ");
 		int input = scan.nextInt();
 		scan.nextLine();
 		switch (input) {
 			case 1:
-				// ÇĞ»ı Á¤º¸·Î °Ë»ö
-				// »ó¼¼ Á¤º¸´Â returnStudent() ÂüÁ¶
+				// í•™ìƒ ì •ë³´ë¡œ ê²€ìƒ‰
+				// ìƒì„¸ ì •ë³´ëŠ” returnStudent() ì°¸ì¡°
 				Student[] answer = returnStudents(scan);
 				if (answer != null) {
 					for (Student s : answer) {
 						System.out.println(s);
 					}
 				} else {
-					System.out.println("ÇØ´ç Á¤º¸¿Í ÀÏÄ¡ÇÏ´Â ÇĞ»ıÀÌ ¾ø½À´Ï´Ù.");
+					System.out.println("í•´ë‹¹ ì •ë³´ì™€ ì¼ì¹˜í•˜ëŠ” í•™ìƒì´ ì—†ìŠµë‹ˆë‹¤.");
 				}
 				return;
 				
 			case 2:
-				// ¼ö°­ Á¤º¸·Î °Ë»ö
+				// ìˆ˜ê°• ì •ë³´ë¡œ ê²€ìƒ‰
 				Subject sub = chooseSubject(scan, subjects);
 				int subcount = 0;
 				for (int i = 0; i < numStudents; i++) {
@@ -86,7 +86,7 @@ public class StudentController implements Program {
 					}
 				}
 				if (subcount == 0) {
-					System.out.println("ÇØ´ç °ú¸ñÀ» µè´Â ÇĞ»ıÀÌ ¾ø½À´Ï´Ù.");
+					System.out.println("í•´ë‹¹ ê³¼ëª©ì„ ë“£ëŠ” í•™ìƒì´ ì—†ìŠµë‹ˆë‹¤.");
 				}
 		}
 
@@ -95,14 +95,14 @@ public class StudentController implements Program {
 	@Override
 	public void insertSubject(Scanner scan) {
 		if (subjects == null) {
-			System.out.println("ÁØºñÁßÀÔ´Ï´Ù.");
+			System.out.println("ì¤€ë¹„ì¤‘ì…ë‹ˆë‹¤.");
 			return;
 		}
 
-		System.out.println("¼ö°­½ÅÃ»ÇÒ ÇĞ»ıÀ» °Ë»öÇÕ´Ï´Ù.");
+		System.out.println("ìˆ˜ê°•ì‹ ì²­í•  í•™ìƒì„ ê²€ìƒ‰í•©ë‹ˆë‹¤.");
 		Student found[] = returnStudents(scan), student;
 		if (found == null) {
-			System.out.println("°Ë»ö °á°ú°¡ ¾ø½À´Ï´Ù.");
+			System.out.println("ê²€ìƒ‰ ê²°ê³¼ê°€ ì—†ìŠµë‹ˆë‹¤.");
 			return;
 		}
 
@@ -113,21 +113,21 @@ public class StudentController implements Program {
 	@Override
 	public void deleteSubject(Scanner scan) {
 		if (subjects == null) {
-			System.out.println("ÁØºñÁßÀÔ´Ï´Ù.");
+			System.out.println("ì¤€ë¹„ì¤‘ì…ë‹ˆë‹¤.");
 			return;
 		}
 
-		System.out.println("¼ö°­½ÅÃ»À» Ãë¼ÒÇÒ ÇĞ»ıÀ» °Ë»öÇÕ´Ï´Ù.");
+		System.out.println("ìˆ˜ê°•ì‹ ì²­ì„ ì·¨ì†Œí•  í•™ìƒì„ ê²€ìƒ‰í•©ë‹ˆë‹¤.");
 		Student found[] = returnStudents(scan), student;
 		if (found == null) {
-			System.out.println("°Ë»ö °á°ú°¡ ¾ø½À´Ï´Ù.");
+			System.out.println("ê²€ìƒ‰ ê²°ê³¼ê°€ ì—†ìŠµë‹ˆë‹¤.");
 			return;
 		}
 
 		student = (found.length > 1) ? decideOne(scan, found) : found[0];
 		Subject sub = chooseSubject(scan, student.getSubjects());
 		if (sub == null) {
-			System.out.println("¼ö°­ÇÑ °ú¸ñÀÌ ¾ø½À´Ï´Ù.");
+			System.out.println("ìˆ˜ê°•í•œ ê³¼ëª©ì´ ì—†ìŠµë‹ˆë‹¤.");
 		} else {
 			student.deleteSubject(sub);
 		}
@@ -141,10 +141,10 @@ public class StudentController implements Program {
 		return subjects;
 	}
 
-	// °Ë»ö °á°ú¸¦ StudentÀÇ array·Î ¹İÈ¯
-	// °Ë»ö °á°ú°¡ ¾øÀ¸¸é null
+	// ê²€ìƒ‰ ê²°ê³¼ë¥¼ Studentì˜ arrayë¡œ ë°˜í™˜
+	// ê²€ìƒ‰ ê²°ê³¼ê°€ ì—†ìœ¼ë©´ null
 	private Student[] returnStudents(Scanner scan) {
-		System.out.println("ÇĞ¹øÀ¸·Î °Ë»öÇÏ·Á¸é 1, ÀÌ¸§À¸·Î °Ë»öÇÏ·Á¸é 2¸¦ ´­·¯ÁÖ¼¼¿ä.");
+		System.out.println("í•™ë²ˆìœ¼ë¡œ ê²€ìƒ‰í•˜ë ¤ë©´ 1, ì´ë¦„ìœ¼ë¡œ ê²€ìƒ‰í•˜ë ¤ë©´ 2ë¥¼ ëˆŒëŸ¬ì£¼ì„¸ìš”.");
 		int choice;
 		while (true) {
 			System.out.print("> ");
@@ -156,7 +156,7 @@ public class StudentController implements Program {
 			switch (choice) {
 				case 1:
 					result = new Student[1];
-					System.out.println("°Ë»öÇÒ ÇĞ¹øÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+					System.out.println("ê²€ìƒ‰í•  í•™ë²ˆì„ ì…ë ¥í•´ì£¼ì„¸ìš”.");
 					System.out.print("> ");
 					scan.nextLine();
 					input = scan.nextLine();
@@ -169,7 +169,7 @@ public class StudentController implements Program {
 					return null;
 				case 2:
 					result = new Student[students.length];
-					System.out.println("°Ë»öÇÒ ÀÌ¸§À» ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+					System.out.println("ê²€ìƒ‰í•  ì´ë¦„ì„ ì…ë ¥í•´ì£¼ì„¸ìš”.");
 					System.out.print("> ");
 					scan.nextLine();
 					input = scan.nextLine();
@@ -189,19 +189,19 @@ public class StudentController implements Program {
 						return answer;
 					}
 				default:
-					System.out.println("´Ù½Ã ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+					System.out.println("ë‹¤ì‹œ ì…ë ¥í•´ì£¼ì„¸ìš”.");
 			}
 		}
 	}
 
-	// ¿©·¯ ¸íÀÇ ÇĞ»ıµé Áß ÇÑ ¸íÀ» °í¸£°Ô ÇÏ´Â ¸Ş¼­µå
+	// ì—¬ëŸ¬ ëª…ì˜ í•™ìƒë“¤ ì¤‘ í•œ ëª…ì„ ê³ ë¥´ê²Œ í•˜ëŠ” ë©”ì„œë“œ
 	private Student decideOne(Scanner scan, Student[] found) {
-		System.out.println(found.length + "¸íÀÇ ÇĞ»ıÀÌ °Ë»öµÇ¾ú½À´Ï´Ù. ÇĞ¹øÀ» ÅëÇØ ½ÅÃ»ÇÒ ÇĞ»ıÀ» Á¤ÇØÁÖ¼¼¿ä.");
+		System.out.println(found.length + "ëª…ì˜ í•™ìƒì´ ê²€ìƒ‰ë˜ì—ˆìŠµë‹ˆë‹¤. í•™ë²ˆì„ í†µí•´ ì‹ ì²­í•  í•™ìƒì„ ì •í•´ì£¼ì„¸ìš”.");
 		for (int i = 0; i < found.length; i++) {
 			System.out.println(found[i]);
 		}
 		String input;
-		System.out.print("ÇĞ¹ø ÀÔ·Â> ");
+		System.out.print("í•™ë²ˆ ì…ë ¥> ");
 		while (true) {
 			input = scan.nextLine();
 			for (Student s : found) {
@@ -209,11 +209,11 @@ public class StudentController implements Program {
 					return s;
 				}
 			}
-			System.out.print("°á°ú ³»¿¡ ÇĞ¹øÀÌ ¾ø½À´Ï´Ù. ´Ù½Ã ÀÔ·ÂÇÏ¼¼¿ä.> ");
+			System.out.print("ê²°ê³¼ ë‚´ì— í•™ë²ˆì´ ì—†ìŠµë‹ˆë‹¤. ë‹¤ì‹œ ì…ë ¥í•˜ì„¸ìš”.> ");
 		}
 	}
 
-	// »ç¿ëÀÚ°¡ ÁÖ¾îÁø °ú¸ñµé Áß ÇÏ³ª¸¦ °í¸£°Ô ÇÏ´Â ¸Ş¼­µå
+	// ì‚¬ìš©ìê°€ ì£¼ì–´ì§„ ê³¼ëª©ë“¤ ì¤‘ í•˜ë‚˜ë¥¼ ê³ ë¥´ê²Œ í•˜ëŠ” ë©”ì„œë“œ
 	private Subject chooseSubject(Scanner scan, Subject[] subjects) {
 		int subcount = 0;
 		for (Subject subject : subjects) {
@@ -226,8 +226,8 @@ public class StudentController implements Program {
 			return null;
 		}
 
-		System.out.println("À§ °ú¸ñµé Áß¿¡ ÇÏ³ªÀÇ °ú¸ñÄÚµå¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä.");
-		System.out.print("°ú¸ñÄÚµå> ");
+		System.out.println("ìœ„ ê³¼ëª©ë“¤ ì¤‘ì— í•˜ë‚˜ì˜ ê³¼ëª©ì½”ë“œë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”.");
+		System.out.print("ê³¼ëª©ì½”ë“œ> ");
 
 		String input;
 		while (true) {
@@ -238,7 +238,7 @@ public class StudentController implements Program {
 				}
 			}
 
-			System.out.print("¾ø´Â °ú¸ñÀÔ´Ï´Ù. ´Ù½Ã ÀÔ·ÂÇÏ¼¼¿ä.> ");
+			System.out.print("ì—†ëŠ” ê³¼ëª©ì…ë‹ˆë‹¤. ë‹¤ì‹œ ì…ë ¥í•˜ì„¸ìš”.> ");
 		}
 	}
 }

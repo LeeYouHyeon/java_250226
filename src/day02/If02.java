@@ -6,59 +6,59 @@ public class If02 {
 
 	public static void main(String[] args) {
 		/*
-		 * ±¹¾î, ¿µ¾î, ¼öÇÐ Á¡¼ö¸¦ ÀÔ·Â¹Þ¾Æ ÇÕ°è, Æò±Õ, pass ¿©ºÎ¸¦ Ãâ·Â
-		 * 80 ÀÌ»óÀÌ¸é ÇÕ°Ý, if »ç¿ë
-		 * Á¡¼ö¸¦ ÀÔ·Â¹ÞÀ» ¶§ 100Á¡º¸´Ù Å©°Å³ª 0º¸´Ù ÀÛÀ¸¸é ¿À·ù Ãâ·Â ÈÄ Áï½Ã Á¾·á
+		 * êµ­ì–´, ì˜ì–´, ìˆ˜í•™ ì ìˆ˜ë¥¼ ìž…ë ¥ë°›ì•„ í•©ê³„, í‰ê· , pass ì—¬ë¶€ë¥¼ ì¶œë ¥
+		 * 80 ì´ìƒì´ë©´ í•©ê²©, if ì‚¬ìš©
+		 * ì ìˆ˜ë¥¼ ìž…ë ¥ë°›ì„ ë•Œ 100ì ë³´ë‹¤ í¬ê±°ë‚˜ 0ë³´ë‹¤ ìž‘ìœ¼ë©´ ì˜¤ë¥˜ ì¶œë ¥ í›„ ì¦‰ì‹œ ì¢…ë£Œ
 		 */
 		
 		Scanner scan = new Scanner(System.in);
-		System.out.println("±¹¾î, ¿µ¾î, ¼öÇÐ Á¡¼ö¸¦ ¼ø¼­´ë·Î, ¶ç¾î¾²±â·Î ±¸ºÐÇÏ¿© ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+		System.out.println("êµ­ì–´, ì˜ì–´, ìˆ˜í•™ ì ìˆ˜ë¥¼ ìˆœì„œëŒ€ë¡œ, ë„ì–´ì“°ê¸°ë¡œ êµ¬ë¶„í•˜ì—¬ ìž…ë ¥í•´ì£¼ì„¸ìš”.");
 		int kor = scan.nextInt();
 		int eng = scan.nextInt();
 		int math = scan.nextInt();
 		
 		if (kor > 100 || kor < 0) {
-			System.out.println("±¹¾î Á¡¼ö°¡ Àß¸øµÇ¾ú½À´Ï´Ù.");
+			System.out.println("êµ­ì–´ ì ìˆ˜ê°€ ìž˜ëª»ë˜ì—ˆìŠµë‹ˆë‹¤.");
 		} else if (eng > 100 || eng < 0) {
-			System.out.println("¿µ¾î Á¡¼ö°¡ Àß¸øµÇ¾ú½À´Ï´Ù.");
+			System.out.println("ì˜ì–´ ì ìˆ˜ê°€ ìž˜ëª»ë˜ì—ˆìŠµë‹ˆë‹¤.");
 		} else if (math > 100 || math < 0) {
-			System.out.println("¼öÇÐ Á¡¼ö°¡ Àß¸øµÇ¾ú½À´Ï´Ù.");
+			System.out.println("ìˆ˜í•™ ì ìˆ˜ê°€ ìž˜ëª»ë˜ì—ˆìŠµë‹ˆë‹¤.");
 		} else {
 			int sum = kor + eng + math;
 			double avg = sum / 3.0;
-			System.out.println("ÇÕ°è : " + sum);
-			System.out.println("Æò±Õ : " + avg);
+			System.out.println("í•©ê³„ : " + sum);
+			System.out.println("í‰ê·  : " + avg);
 			
 			if (avg >= 80) {
-				System.out.println("ÇÕ°Ý");
+				System.out.println("í•©ê²©");
 			}
 		}
 		
 		scan.close();
 
 		
-		//main¿¡¼± return Áö¾ç
+		//mainì—ì„  return ì§€ì–‘
 //		int kor, eng, math;
 //		Scanner scan = new Scanner(System.in);
 //
-//		System.out.print("±¹¾î Á¡¼ö¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä.> ");
+//		System.out.print("êµ­ì–´ ì ìˆ˜ë¥¼ ìž…ë ¥í•´ì£¼ì„¸ìš”.> ");
 //		kor = scan.nextInt();
 //		if (kor < 0 || kor > 100) {
-//			System.out.println("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù.");
+//			System.out.println("ìž˜ëª»ëœ ìž…ë ¥ìž…ë‹ˆë‹¤.");
 //			scan.close();
 //			return;
 //		}
-//		System.out.print("¿µ¾î Á¡¼ö¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä.> ");
+//		System.out.print("ì˜ì–´ ì ìˆ˜ë¥¼ ìž…ë ¥í•´ì£¼ì„¸ìš”.> ");
 //		eng = scan.nextInt();
 //		if (eng < 0 || eng > 100) {
-//			System.out.println("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù.");
+//			System.out.println("ìž˜ëª»ëœ ìž…ë ¥ìž…ë‹ˆë‹¤.");
 //			scan.close();
 //			return;
 //		}
-//		System.out.print("¼öÇÐ Á¡¼ö¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä> ");
+//		System.out.print("ìˆ˜í•™ ì ìˆ˜ë¥¼ ìž…ë ¥í•´ì£¼ì„¸ìš”> ");
 //		math = scan.nextInt();
 //		if (math < 0 || math > 100) {
-//			System.out.println("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù.");
+//			System.out.println("ìž˜ëª»ëœ ìž…ë ¥ìž…ë‹ˆë‹¤.");
 //			scan.close();
 //			return;
 //		}
@@ -66,14 +66,14 @@ public class If02 {
 //		int sum = kor + eng + math;
 //		double avg = sum / 3.0;
 //
-//		System.out.println("ÇÕ°è : " + sum);
-//		System.out.println("Æò±Õ : " + avg);
+//		System.out.println("í•©ê³„ : " + sum);
+//		System.out.println("í‰ê·  : " + avg);
 //		if (avg > 100 || avg < 0) {
-//			System.out.println("¾Ë ¼ö ¾ø´Â ¿À·ù");
+//			System.out.println("ì•Œ ìˆ˜ ì—†ëŠ” ì˜¤ë¥˜");
 //		} else if (avg >= 80) {
-//			System.out.println("ÇÕ°Ý");
+//			System.out.println("í•©ê²©");
 //		} else if (avg >= 0) {
-//			System.out.println("ºÒÇÕ°Ý");
+//			System.out.println("ë¶ˆí•©ê²©");
 //		}
 //		scan.close();
 	}

@@ -4,7 +4,7 @@ import memos.Randoms;
 
 public class MethodEx02 {
 
-	// ÀÔ·ÂµÇ´Â Á¤¼ö ¹è¿­À» Ãâ·ÂÇÏ´Â ¸Ş¼­µå
+	// ì…ë ¥ë˜ëŠ” ì •ìˆ˜ ë°°ì—´ì„ ì¶œë ¥í•˜ëŠ” ë©”ì„œë“œ
 	public static void printArray(int[] arr) {
 		System.out.print("arr : " + arr[0]);
 		for (int i = 1; i < arr.length; i++) {
@@ -14,7 +14,7 @@ public class MethodEx02 {
 		System.out.println();
 	}
 
-	// ÀÔ·ÂµÇ´Â Á¤¼ö ¹è¿­À» ¿À¸§Â÷¼ø Á¤·ÄÇÏ´Â ¸Ş¼­µå
+	// ì…ë ¥ë˜ëŠ” ì •ìˆ˜ ë°°ì—´ì„ ì˜¤ë¦„ì°¨ìˆœ ì •ë ¬í•˜ëŠ” ë©”ì„œë“œ
 	public static void sortArray(int[] arr) {
 		for (int i = 0; i < arr.length - 1; i++) {
 			for (int j = i + 1; j < arr.length; j++) {
@@ -31,12 +31,12 @@ public class MethodEx02 {
 		Randoms ran = new Randoms();
 		int arr[] = ran.randoms(5, 0, 100);
 
-		// arrÀ» Ãâ·Â
+		// arrì„ ì¶œë ¥
 		printArray(arr);
 
-		// arrÀ» Á¤·ÄÇÏ°í Ãâ·Â
+		// arrì„ ì •ë ¬í•˜ê³  ì¶œë ¥
 		sortArray(arr);
-		System.out.println("Á¤·Ä ÈÄ");
+		System.out.println("ì •ë ¬ í›„");
 		printArray(arr);
 	}
 

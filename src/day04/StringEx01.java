@@ -3,18 +3,18 @@ package day04;
 public class StringEx01 {
 
 	public static void main(String[] args) {
-		// regNumÀÇ ÁÖ¹Îµî·Ï¹øÈ£¸¦ Âü°íÇÏ¿©
-		// »ı³â¿ùÀÏ°ú ¼ºº°À» Ãâ·Â
+		// regNumì˜ ì£¼ë¯¼ë“±ë¡ë²ˆí˜¸ë¥¼ ì°¸ê³ í•˜ì—¬
+		// ìƒë…„ì›”ì¼ê³¼ ì„±ë³„ì„ ì¶œë ¥
 		
 		String regNum = "990101-12344567";
 		String regNum1 = "020101-4567896";
 		
 		System.out.println("1");
-		System.out.println("»ı³â¿ùÀÏ : " + regNum.substring(0, 6));
-		System.out.println((int)(regNum.charAt(7))%2 == 0 ? "¿©ÀÚ" : "³²ÀÚ");
+		System.out.println("ìƒë…„ì›”ì¼ : " + regNum.substring(0, 6));
+		System.out.println((int)(regNum.charAt(7))%2 == 0 ? "ì—¬ì" : "ë‚¨ì");
 		System.out.println("2");
-		System.out.println("»ı³â¿ùÀÏ : " + regNum1.substring(0, 6));
-		System.out.println((int)(regNum1.charAt(7))%2 == 0 ? "¿©ÀÚ" : "³²ÀÚ");
+		System.out.println("ìƒë…„ì›”ì¼ : " + regNum1.substring(0, 6));
+		System.out.println((int)(regNum1.charAt(7))%2 == 0 ? "ì—¬ì" : "ë‚¨ì");
 	}
 
 }

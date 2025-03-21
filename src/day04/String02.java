@@ -5,40 +5,40 @@ import java.util.Arrays;
 public class String02 {
 
 	public static void main(String[] args) {
-		/* String ¸Ş¼­µå
+		/* String ë©”ì„œë“œ
 		 * */
-		String str = "È«±æµ¿~~~!!!", str2 = "";
+		String str = "í™ê¸¸ë™~~~!!!", str2 = "";
 
-		// toLowerCase(), toUpperCase() : ´ë¼Ò¹®ÀÚ º¯È¯
+		// toLowerCase(), toUpperCase() : ëŒ€ì†Œë¬¸ì ë³€í™˜
 		System.out.println("--toLowerCase/toUpperCase--");
 		System.out.println("toLower".toLowerCase());
 		System.out.println("toLower".toUpperCase());
 
-		// isEmpty() : °ªÀÌ ºñ¾ú´ÂÁö È®ÀÎ
+		// isEmpty() : ê°’ì´ ë¹„ì—ˆëŠ”ì§€ í™•ì¸
 		System.out.println("--isEmpty()--");
 		System.out.println(str.isEmpty());
 		System.out.println(str2.isEmpty());
 
-		// trim() : ºÒÇÊ¿äÇÑ °ø¹é Á¦°Å
+		// trim() : ë¶ˆí•„ìš”í•œ ê³µë°± ì œê±°
 		System.out.println("--trim()--");
 		System.out.println("           hello          ".trim());
 
-		// replace() : ±ÛÀÚ¸¦ Ä¡È¯
+		// replace() : ê¸€ìë¥¼ ì¹˜í™˜
 		System.out.println("--replace()--");
 		String str3 = "apple, banana, kiwi";
 		System.out.println(str3.replace(",", " /"));
 		
-		// split() : Æ¯Á¤ °ªÀ» ±âÁØÀ¸·Î ³ª´©±â => ¹è¿­·Î return
+		// split() : íŠ¹ì • ê°’ì„ ê¸°ì¤€ìœ¼ë¡œ ë‚˜ëˆ„ê¸° => ë°°ì—´ë¡œ return
 		System.out.println("--split()--");
 		String[] arr = str3.split(", ");
 		System.out.println(Arrays.toString(arr));
 		
-		// ¹®ÀÚ¸¦ ¼ıÀÚ·Î
+		// ë¬¸ìë¥¼ ìˆ«ìë¡œ
 		String num1 = "1";
 		int num2 = Integer.parseInt(num1);
 		
-		// ¼ıÀÚ¸¦ ¹®ÀÚ·Î. String.valueOf()
-		// instanceof : °´Ã¼ÀÇ ÇüÀÌ ÀÏÄ¡ÇÏ´ÂÁö Ã¼Å©
+		// ìˆ«ìë¥¼ ë¬¸ìë¡œ. String.valueOf()
+		// instanceof : ê°ì²´ì˜ í˜•ì´ ì¼ì¹˜í•˜ëŠ”ì§€ ì²´í¬
 		String as = String.valueOf(num2);
 		
 		System.out.println(as);

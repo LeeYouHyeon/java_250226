@@ -6,20 +6,20 @@ import java.util.List;
 
 public class Stream03 {
 	public static void main(String[] args) {
-		// List<Student> »ı¼º
+		// List<Student> ìƒì„±
 		
 		List<Student> list = new ArrayList<Student>();
 		for(String name : new String[]
-				{"È«±æµ¿", "±è¼øÀÌ", "ÀÌ¿µÀÌ", "¹Ú¼øÃ¶", "ÀÌÃ¶¼ö", "È«¼øÀÌ", "¹Ú±æµ¿", "ÃÖ¼öÁö"}) {
+				{"í™ê¸¸ë™", "ê¹€ìˆœì´", "ì´ì˜ì´", "ë°•ìˆœì² ", "ì´ì² ìˆ˜", "í™ìˆœì´", "ë°•ê¸¸ë™", "ìµœìˆ˜ì§€"}) {
 			list.add(new Student(name, new memos.Randoms().random(50, 100)));
 		}
 		
-		// ½ºÆ®¸²À¸·Î Ãâ·Â => È«±æµ¿ : 56
-		// toString() ÀÌ¿ë
+		// ìŠ¤íŠ¸ë¦¼ìœ¼ë¡œ ì¶œë ¥ => í™ê¸¸ë™ : 56
+		// toString() ì´ìš©
 		list.stream()
 			.forEach(s -> System.out.println(s));
 		System.out.println("----------------");
-		// toString() ¾øÀÌ
+		// toString() ì—†ì´
 		// cf) effectively final
 		String[] prints = {"", ""};
 		list.stream()
@@ -31,21 +31,21 @@ public class Stream03 {
 		System.out.println(prints[1]);
 		System.out.println();
 		
-		// listÀÇ Á¡¼ö ÇÕ°è
+		// listì˜ ì ìˆ˜ í•©ê³„
 		int sum = list.stream()
 				.mapToInt(s -> s.getScore())
 				.sum();
-		System.out.println("ÇÕ°è : " + sum);
-		System.out.println("Æò±Õ : " + sum/(double)list.size());
+		System.out.println("í•©ê³„ : " + sum);
+		System.out.println("í‰ê·  : " + sum/(double)list.size());
 		
-		// listÀÇ ÀÎ¿ø¼ö
-		System.out.println("ÀÎ¿ø¼ö : " + list.stream().count());
+		// listì˜ ì¸ì›ìˆ˜
+		System.out.println("ì¸ì›ìˆ˜ : " + list.stream().count());
 		
-		// ÀÌ¸§ °¡³ª´Ù¼ø Á¤·Ä
+		// ì´ë¦„ ê°€ë‚˜ë‹¤ìˆœ ì •ë ¬
 		System.out.println("---------------------");
 		String[] sortName = {"", ""};
 		list.stream()
-			.sorted()	// Comparable<Student>¿¡¼­ ±¸ÇöÇÑ Á¤·Ä
+			.sorted()	// Comparable<Student>ì—ì„œ êµ¬í˜„í•œ ì •ë ¬
 			.forEach(s -> {
 				sortName[0] += s.getName() + "\t";
 				sortName[1] += s.getScore() + "\t";
@@ -53,7 +53,7 @@ public class Stream03 {
 		System.out.println(sortName[0]);
 		System.out.println(sortName[1]);
 		
-		// Á¡¼ö ³»¸²Â÷¼ø Á¤·Ä
+		// ì ìˆ˜ ë‚´ë¦¼ì°¨ìˆœ ì •ë ¬
 		System.out.println("---------------------");
 		String[] sortScoreDesc = {"", ""};
 		list.stream()

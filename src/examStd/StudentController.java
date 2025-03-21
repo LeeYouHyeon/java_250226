@@ -9,31 +9,31 @@ public class StudentController {
 	private ArrayList<Subject> subjectList = new ArrayList<Subject>();
 	Scanner scan = new Scanner(System.in);
 	
-	//±âº»°ª Ãß°¡
+	//ê¸°ë³¸ê°’ ì¶”ê°€
 	public void addStudent() {
-		studentList.add(new Student("111", "È«±æµ¿", "20", "010-1111-1111", "¼­¿ï½Ã"));
-		studentList.add(new Student("222", "±è¼øÀÌ", "20", "010-1111-2222", "¼­¿ï½Ã"));
-		studentList.add(new Student("333", "¹ÚÃ¶¼ö", "21", "010-1111-3333", "°æ±âµµ"));
-		studentList.add(new Student("444", "ÀÌ¿µÃ¶", "20", "010-1111-4444", "¼­¿ï½Ã"));
-		studentList.add(new Student("555", "½ÅÂ¯±¸", "21", "010-1111-5555", "°æ±âµµ"));
+		studentList.add(new Student("111", "í™ê¸¸ë™", "20", "010-1111-1111", "ì„œìš¸ì‹œ"));
+		studentList.add(new Student("222", "ê¹€ìˆœì´", "20", "010-1111-2222", "ì„œìš¸ì‹œ"));
+		studentList.add(new Student("333", "ë°•ì² ìˆ˜", "21", "010-1111-3333", "ê²½ê¸°ë„"));
+		studentList.add(new Student("444", "ì´ì˜ì² ", "20", "010-1111-4444", "ì„œìš¸ì‹œ"));
+		studentList.add(new Student("555", "ì‹ ì§±êµ¬", "21", "010-1111-5555", "ê²½ê¸°ë„"));
 	}
 	public void addSubject() {
-		subjectList.add(new Subject("1111", "java", 3, 2, "È«±æµ¿", "È­¸ñ/2½Ã~4½Ã", "1°­ÀÇÀå"));
-		subjectList.add(new Subject("2222", "DB", 3, 2, "ÀÌ¼ø½Å", "¿ù¼ö/2½Ã~4½Ã", "2°­ÀÇÀå"));
-		subjectList.add(new Subject("3333", "HTML", 2, 3, "±è¿µÀÌ", "È­±İ/2½Ã~4½Ã", "3°­ÀÇÀå"));
-		subjectList.add(new Subject("4444", "CSS", 2, 3, "È²±âµ¿", "¿ù¸ñ/2½Ã~4½Ã", "4°­ÀÇÀå"));
-		subjectList.add(new Subject("5555", "javascript", 3, 3, "¹Ú¼øÃ¶", "¼ö¸ñ/2½Ã~4½Ã", "5°­ÀÇÀå"));
+		subjectList.add(new Subject("1111", "java", 3, 2, "í™ê¸¸ë™", "í™”ëª©/2ì‹œ~4ì‹œ", "1ê°•ì˜ì¥"));
+		subjectList.add(new Subject("2222", "DB", 3, 2, "ì´ìˆœì‹ ", "ì›”ìˆ˜/2ì‹œ~4ì‹œ", "2ê°•ì˜ì¥"));
+		subjectList.add(new Subject("3333", "HTML", 2, 3, "ê¹€ì˜ì´", "í™”ê¸ˆ/2ì‹œ~4ì‹œ", "3ê°•ì˜ì¥"));
+		subjectList.add(new Subject("4444", "CSS", 2, 3, "í™©ê¸°ë™", "ì›”ëª©/2ì‹œ~4ì‹œ", "4ê°•ì˜ì¥"));
+		subjectList.add(new Subject("5555", "javascript", 3, 3, "ë°•ìˆœì² ", "ìˆ˜ëª©/2ì‹œ~4ì‹œ", "5ê°•ì˜ì¥"));
 	}
 	
 	public int menuPrint() {
 		System.out.println("--menu--");
-		System.out.println("1. ÇĞ»ıµî·Ï | 2. ÇĞ»ı ¸ñ·Ï Ãâ·Â | 3. ÇĞ»ı °Ë»ö");
-		System.out.println("4. ÇĞ»ı Á¤º¸ ¼öÁ¤ | 5. ÇĞ»ı »èÁ¦");
-		System.out.println("6. ¼ö°­½ÅÃ» | 7. ¼ö°­Ã¶È¸");
-		System.out.println("8. °ú¸ñº° ÇĞ»ı ¸ñ·Ï");
-		System.out.println("9. ¼ºÀû µî·Ï(±³¼ö¿ë)");
-		System.out.println("10. ¼ºÀûÇ¥ Ãâ·Â(ÇĞ»ı¿ë)");
-		System.out.println("11. Á¾·á");
+		System.out.println("1. í•™ìƒë“±ë¡ | 2. í•™ìƒ ëª©ë¡ ì¶œë ¥ | 3. í•™ìƒ ê²€ìƒ‰");
+		System.out.println("4. í•™ìƒ ì •ë³´ ìˆ˜ì • | 5. í•™ìƒ ì‚­ì œ");
+		System.out.println("6. ìˆ˜ê°•ì‹ ì²­ | 7. ìˆ˜ê°•ì² íšŒ");
+		System.out.println("8. ê³¼ëª©ë³„ í•™ìƒ ëª©ë¡");
+		System.out.println("9. ì„±ì  ë“±ë¡(êµìˆ˜ìš©)");
+		System.out.println("10. ì„±ì í‘œ ì¶œë ¥(í•™ìƒìš©)");
+		System.out.println("11. ì¢…ë£Œ");
 		System.out.print("> ");
 		try {
 			return Integer.parseInt(scan.nextLine());
@@ -43,50 +43,50 @@ public class StudentController {
 	}
 
 	public void insertStudnet() {
-		// ÇĞ»ı Ãß°¡
+		// í•™ìƒ ì¶”ê°€
 		try {
-			System.out.println("ÇĞ¹ø> ");
+			System.out.println("í•™ë²ˆ> ");
 			String num = scan.nextLine();
 			for(Student s : studentList) {
 				if(s.equals(new Student(num))) {
-					throw new Exception("ÀÌ¹Ì µî·ÏµÈ ÇĞ¹øÀÔ´Ï´Ù.");
+					throw new Exception("ì´ë¯¸ ë“±ë¡ëœ í•™ë²ˆì…ë‹ˆë‹¤.");
 				}
 			}
 			
-			System.out.println("ÀÌ¸§> ");
+			System.out.println("ì´ë¦„> ");
 			String name = scan.nextLine();
-			System.out.println("³ªÀÌ> ");
+			System.out.println("ë‚˜ì´> ");
 			String age = scan.nextLine();
-			System.out.println("ÀüÈ­¹øÈ£> ");
+			System.out.println("ì „í™”ë²ˆí˜¸> ");
 			String phone = scan.nextLine();
-			System.out.println("ÁÖ¼Ò> ");
+			System.out.println("ì£¼ì†Œ> ");
 			String address = scan.nextLine();
 			
 			studentList.add(new Student(num, name, age, phone, address));
-			System.out.println("ÇĞ»ı µî·Ï ¿Ï·á");
+			System.out.println("í•™ìƒ ë“±ë¡ ì™„ë£Œ");
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
 	}
 
 	public void printStudent() {
-		// ÇĞ»ı ¸®½ºÆ® Ãâ·Â
+		// í•™ìƒ ë¦¬ìŠ¤íŠ¸ ì¶œë ¥
 		if(studentList.isEmpty()) {
-			System.out.println("ÇĞ»ıÀÌ ¾ø½À´Ï´Ù.");
+			System.out.println("í•™ìƒì´ ì—†ìŠµë‹ˆë‹¤.");
 		} else {
-			System.out.println("--ÇĞ»ıÀüÃ¼¸ñ·Ï--");
+			System.out.println("--í•™ìƒì „ì²´ëª©ë¡--");
 			for(Student s : studentList) {
 				System.out.println(s);
 			}
 		}
 		System.out.println("------------");
 	}
-	// ¼ö°­½ÅÃ»½Ã È®ÀÎÇÏ´Â ¿ëµµ
+	// ìˆ˜ê°•ì‹ ì²­ì‹œ í™•ì¸í•˜ëŠ” ìš©ë„
 	public void printSubjectList() {
 		if(subjectList.isEmpty()) {
-			System.out.println("ÁØºñÁßÀÔ´Ï´Ù.");
+			System.out.println("ì¤€ë¹„ì¤‘ì…ë‹ˆë‹¤.");
 		} else {
-			System.out.println("--¼ö°­½ÅÃ»°ú¸ñ ¸ñ·Ï--");
+			System.out.println("--ìˆ˜ê°•ì‹ ì²­ê³¼ëª© ëª©ë¡--");
 			for(Subject s : subjectList) {
 				System.out.println(s);
 			}
@@ -95,26 +95,26 @@ public class StudentController {
 	}
 	
 	public void searchStudent() {
-		// ÇĞ»ı°Ë»ö
-		System.out.print("°Ë»ö ÇĞ¹ø> ");
+		// í•™ìƒê²€ìƒ‰
+		System.out.print("ê²€ìƒ‰ í•™ë²ˆ> ");
 		String num = scan.nextLine();
 		
 		for(Student student : studentList) {
 			if(student.equals(new Student(num))) {
 				System.out.println(student);
-				// ¼ö°­ ¸ñ·Ïµµ Ãâ·Â
+				// ìˆ˜ê°• ëª©ë¡ë„ ì¶œë ¥
 				student.subjectPrint();
 				return;
 			}
 		}
-		System.out.println("ÇĞ»ıÀ» Ã£À» ¼ö ¾ø½À´Ï´Ù.");
+		System.out.println("í•™ìƒì„ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 	}
 
 	public void searchSubject() {
-		// °ú¸ñÀ» ÁÖ°í, ÇØ´ç °ú¸ñÀ» ¼ö°­ÇÏ´Â ÇĞ»ı ¸í´Ü Ãâ·Â
-		// Ãâ·Â : ÇĞ»ı¸í´Ü
-		// Á¶°Ç : ¼ö°­°ú¸ñ¿¡ °Ë»ö ´ë»ó °ú¸ñÀÌ Á¸ÀçÇÏ´ÂÁö
-		System.out.print("°Ë»ö °ú¸ñ ¹øÈ£> ");
+		// ê³¼ëª©ì„ ì£¼ê³ , í•´ë‹¹ ê³¼ëª©ì„ ìˆ˜ê°•í•˜ëŠ” í•™ìƒ ëª…ë‹¨ ì¶œë ¥
+		// ì¶œë ¥ : í•™ìƒëª…ë‹¨
+		// ì¡°ê±´ : ìˆ˜ê°•ê³¼ëª©ì— ê²€ìƒ‰ ëŒ€ìƒ ê³¼ëª©ì´ ì¡´ì¬í•˜ëŠ”ì§€
+		System.out.print("ê²€ìƒ‰ ê³¼ëª© ë²ˆí˜¸> ");
 		String subNum = scan.nextLine();
 		
 		boolean found = false;
@@ -125,7 +125,7 @@ public class StudentController {
 			}
 		}
 		if(!found) {
-			System.out.println("°ú¸ñÀ» Ã£À» ¼ö ¾ø½À´Ï´Ù.");
+			System.out.println("ê³¼ëª©ì„ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 			return;
 		}
 		
@@ -136,7 +136,7 @@ public class StudentController {
 			}
 		}
 		if(stds.isEmpty()) {
-			System.out.println("½ÅÃ»ÇÑ ÇĞ»ıÀÌ ¾ø½À´Ï´Ù.");
+			System.out.println("ì‹ ì²­í•œ í•™ìƒì´ ì—†ìŠµë‹ˆë‹¤.");
 		} else {
 			stds.stream()
 				.sorted(new Comparator<Student>() {
@@ -150,49 +150,49 @@ public class StudentController {
 	}
 
 	public void removeSubject() {
-		// ¼ö°­Ãë¼Ò
-		// ´©°¡? ¹«½¼ °ú¸ñÀ»?
-		System.out.print("ÇĞ¹ø> ");
+		// ìˆ˜ê°•ì·¨ì†Œ
+		// ëˆ„ê°€? ë¬´ìŠ¨ ê³¼ëª©ì„?
+		System.out.print("í•™ë²ˆ> ");
 		String num = scan.nextLine();
 		for(Student s : studentList) {
 			if(s.equals(new Student(num))) {
-				// ³»°¡ ½ÅÃ»ÇÑ °ú¸ñ Ãâ·Â
+				// ë‚´ê°€ ì‹ ì²­í•œ ê³¼ëª© ì¶œë ¥
 				s.subjectPrint();
-				System.out.print("»èÁ¦ °ú¸ñ ¹øÈ£> ");
+				System.out.print("ì‚­ì œ ê³¼ëª© ë²ˆí˜¸> ");
 				s.deleteSub(scan.nextLine());
 				return;
 			}
 		}
-		System.out.println("ÇĞ»ıÀ» Ã£À» ¼ö ¾ø½À´Ï´Ù.");
+		System.out.println("í•™ìƒì„ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 	}
 
 	public void removeStudent() {
-		// ÇĞ»ı »èÁ¦
-		System.out.print("»èÁ¦ ÇĞ¹ø> ");
+		// í•™ìƒ ì‚­ì œ
+		System.out.print("ì‚­ì œ í•™ë²ˆ> ");
 		String num = scan.nextLine();
 		if (studentList.remove(new Student(num))) {
-			System.out.println("»èÁ¦ ¿Ï·á");
+			System.out.println("ì‚­ì œ ì™„ë£Œ");
 		} else {
-			System.out.println("¾ø´Â ÇĞ¹øÀÔ´Ï´Ù.");
+			System.out.println("ì—†ëŠ” í•™ë²ˆì…ë‹ˆë‹¤.");
 		}
 	}
 
 	public void modifyStudent() {
-		// ÇĞ»ı¼öÁ¤ => »èÁ¦ ÈÄ ´Ù½Ã Ãß°¡
+		// í•™ìƒìˆ˜ì • => ì‚­ì œ í›„ ë‹¤ì‹œ ì¶”ê°€
 		
 	}
 
 	public void insertSubject() {
-		// ¼ö°­½ÅÃ»
-		// ´©°¡? ÇĞ¹øÀ» ¹Ş¾Æ,
-		// ¾î¶² °ú¸ñ? Student class method => ¸Å°³º¯¼ö Àü´Ş
-		// ±× ÇĞ»ı °´Ã¼ÀÇ subject ¸®½ºÆ®¿¡ °ªÀ» Ãß°¡
+		// ìˆ˜ê°•ì‹ ì²­
+		// ëˆ„ê°€? í•™ë²ˆì„ ë°›ì•„,
+		// ì–´ë–¤ ê³¼ëª©? Student class method => ë§¤ê°œë³€ìˆ˜ ì „ë‹¬
+		// ê·¸ í•™ìƒ ê°ì²´ì˜ subject ë¦¬ìŠ¤íŠ¸ì— ê°’ì„ ì¶”ê°€
 		
-		// ÇĞ¹ø ÀÔ·Â
-		System.out.print("¼ö°­½ÅÃ» ÇĞ¹ø> ");
+		// í•™ë²ˆ ì…ë ¥
+		System.out.print("ìˆ˜ê°•ì‹ ì²­ í•™ë²ˆ> ");
 		String num = scan.nextLine();
 		
-		// ÇĞ¹ø °Ë»ö
+		// í•™ë²ˆ ê²€ìƒ‰
 		Student std = null;
 		for(Student s : studentList) {
 			if(s.equals(new Student(num))) {
@@ -200,15 +200,15 @@ public class StudentController {
 			}
 		}
 		if(std == null) {
-			System.out.println("ÇĞ»ıÀÌ ¾ø½À´Ï´Ù.");
+			System.out.println("í•™ìƒì´ ì—†ìŠµë‹ˆë‹¤.");
 			return;
 		}
 		
-		// °ú¸ñ ¸®½ºÆ® Ãâ·Â
+		// ê³¼ëª© ë¦¬ìŠ¤íŠ¸ ì¶œë ¥
 		printSubjectList();
 		
-		// °ú¸ñ¹øÈ£ ÀÔ·Â
-		System.out.print("¼ö°­½ÅÃ» °ú¸ñ ¹øÈ£> ");
+		// ê³¼ëª©ë²ˆí˜¸ ì…ë ¥
+		System.out.print("ìˆ˜ê°•ì‹ ì²­ ê³¼ëª© ë²ˆí˜¸> ");
 		String subNum = scan.nextLine();
 		for(Subject s : subjectList) {
 			if(s.equals(new Subject(subNum))) {
@@ -216,45 +216,45 @@ public class StudentController {
 				return;
 			}
 		}
-		System.out.println("¾ø´Â °ú¸ñÀÔ´Ï´Ù.");
+		System.out.println("ì—†ëŠ” ê³¼ëª©ì…ë‹ˆë‹¤.");
 	}
 
 	public void insertScore() {
-		// ÇĞ»ı ¼ºÀû µî·Ï
-		// ´©±¸? ¹«½¼ °ú¸ñ?
-		System.out.print("ÇĞ¹ø> ");
+		// í•™ìƒ ì„±ì  ë“±ë¡
+		// ëˆ„êµ¬? ë¬´ìŠ¨ ê³¼ëª©?
+		System.out.print("í•™ë²ˆ> ");
 		String num = scan.nextLine();
 		for(Student s : studentList) {
 			if(s.equals(new Student(num))) {
-				// ³»°¡ ¼ö°­ÇÏ´Â °ú¸ñ
+				// ë‚´ê°€ ìˆ˜ê°•í•˜ëŠ” ê³¼ëª©
 				s.subjectPrint();
-				System.out.print("°ú¸ñ¹øÈ£> ");
+				System.out.print("ê³¼ëª©ë²ˆí˜¸> ");
 				String subNum = scan.nextLine();
 				s.insertScore(subNum, scan);
 				return;
 			}
 		}
-		System.out.println("ÇĞ»ıÀ» Ã£À» ¼ö ¾ø½À´Ï´Ù.");
+		System.out.println("í•™ìƒì„ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 	}
 	
 	public void printScore() {
-		// ¼ºÀûÇ¥ Ãâ·Â
-		System.out.print("ÇĞ¹ø> ");
+		// ì„±ì í‘œ ì¶œë ¥
+		System.out.print("í•™ë²ˆ> ");
 		String num = scan.nextLine();
 		
 		for(Student s : studentList) {
 			if(s.equals(new Student(num))) {
 				s.subjectPrint();
-				System.out.println("Æò±Õ : " + s.getTotal()/(double)s.getSubject().size());
+				System.out.println("í‰ê·  : " + s.getTotal()/(double)s.getSubject().size());
 				return;
 			}
 		}
 		
-		System.out.println("ÇĞ»ıÀ» Ã£À» ¼ö ¾ø½À´Ï´Ù.");
+		System.out.println("í•™ìƒì„ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 	}
 	
-	// ÇĞ»ı ¸®½ºÆ®¿¡ ³Ö±â, »©±â, ¼öÁ¤, Ãâ·Â
-	// °ú¸ñ ¸®½ºÆ®¿¡ ³Ö±â, »©±â, ¼öÁ¤, Ãâ·Â
+	// í•™ìƒ ë¦¬ìŠ¤íŠ¸ì— ë„£ê¸°, ë¹¼ê¸°, ìˆ˜ì •, ì¶œë ¥
+	// ê³¼ëª© ë¦¬ìŠ¤íŠ¸ì— ë„£ê¸°, ë¹¼ê¸°, ìˆ˜ì •, ì¶œë ¥
 	
 	
 }

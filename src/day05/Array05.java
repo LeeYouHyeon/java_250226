@@ -2,16 +2,16 @@ package day05;
 
 public class Array05 {
 	public static void main(String[] args) {
-		/* ¹®ÀÚ ¹è¿­ »ı¼º
+		/* ë¬¸ì ë°°ì—´ ìƒì„±
 		 * */
 		String arr[] = new String[5];
-		arr[0] = "È«±æµ¿";
-		arr[1] = "±è¿µÀÌ";
-		arr[2] = "¹Ú¿µÃ¶";
-		arr[3] = "ÃÖ¼øÃ¶";
-		arr[4] = "ÀÌ¼øÀÌ";
+		arr[0] = "í™ê¸¸ë™";
+		arr[1] = "ê¹€ì˜ì´";
+		arr[2] = "ë°•ì˜ì² ";
+		arr[3] = "ìµœìˆœì² ";
+		arr[4] = "ì´ìˆœì´";
 		
-		// Çâ»óµÈ for¹®À¸·Î Ãâ·Â
+		// í–¥ìƒëœ forë¬¸ìœ¼ë¡œ ì¶œë ¥
 		for(String name : arr) {
 			System.out.print(name + ' ');
 		}

@@ -2,15 +2,15 @@ package day13;
 
 public class Exception02 {
 	public static void main(String[] args) {
-		/* ÀÚÁÖ ¹ß»ýÇÏ´Â ¿¹¿Ü ÄÚµåµé
+		/* ìžì£¼ ë°œìƒí•˜ëŠ” ì˜ˆì™¸ ì½”ë“œë“¤
 		 * - ArithmeticException
-		 * 		: 0À¸·Î ³ª´©¾úÀ» ¶§ ¹ß»ý
+		 * 		: 0ìœ¼ë¡œ ë‚˜ëˆ„ì—ˆì„ ë•Œ ë°œìƒ
 		 * - ArrayIndexOutOfBoundsException
-		 * 		: ¹è¿­ÀÇ index°¡ ¹üÀ§¸¦ ³Ñ¾î°¬À» ¶§ ¹ß»ý
+		 * 		: ë°°ì—´ì˜ indexê°€ ë²”ìœ„ë¥¼ ë„˜ì–´ê°”ì„ ë•Œ ë°œìƒ
 		 * - NullPointerException
-		 * 		: °´Ã¼ÀÇ °ªÀÌ nullÀÏ °æ¿ì ¹ß»ý
+		 * 		: ê°ì²´ì˜ ê°’ì´ nullì¼ ê²½ìš° ë°œìƒ
 		 * - ClassCastException
-		 * 		: ´Ù¿îÄ³½ºÆÃÀÌ Àß¸ø µÇ¾úÀ» ¶§ ¹ß»ý
+		 * 		: ë‹¤ìš´ìºìŠ¤íŒ…ì´ ìž˜ëª» ë˜ì—ˆì„ ë•Œ ë°œìƒ
 		 * */
 		
 //		ArrayIndexOutOfBoundsException

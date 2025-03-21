@@ -6,17 +6,17 @@ import java.util.Iterator;
 public class Map01 {
 	public static void main(String[] args) {
 		/* Map
-		 * - °ªÀ» 2°³ ½ÖÀ¸·Î ÀúÀå key / value
-		 * - key : Áßº¹ ºÒ°¡, value : Áßº¹ °¡´É
-		 * - HashMapÀ» °¡Àå ¸¹ÀÌ »ç¿ë
+		 * - ê°’ì„ 2ê°œ ìŒìœ¼ë¡œ ì €ì¥ key / value
+		 * - key : ì¤‘ë³µ ë¶ˆê°€, value : ì¤‘ë³µ ê°€ëŠ¥
+		 * - HashMapì„ ê°€ì¥ ë§ì´ ì‚¬ìš©
 		 * 
-		 * HashMap<Å¬·¡½º, Å¬·¡½º> map = new HashMap<>();
-		 * - °ªÀÌ 2°³ÀÌ±â ¶§¹®¿¡, Çâ»óµÈ for¹®ÀÌ³ª iterator¸¦ ¾µ ¼ö ¾øÀ½
-		 * - map => key => setÀ¸·Î ±¸¼º ÈÄ Ãâ·Â
+		 * HashMap<í´ë˜ìŠ¤, í´ë˜ìŠ¤> map = new HashMap<>();
+		 * - ê°’ì´ 2ê°œì´ê¸° ë•Œë¬¸ì—, í–¥ìƒëœ forë¬¸ì´ë‚˜ iteratorë¥¼ ì“¸ ìˆ˜ ì—†ìŒ
+		 * - map => key => setìœ¼ë¡œ êµ¬ì„± í›„ ì¶œë ¥
 		 * 
-		 * list, set => Ãß°¡ add() / map => Ãß°¡ put()
+		 * list, set => ì¶”ê°€ add() / map => ì¶”ê°€ put()
 		 * get(key) => value
-		 * remove(key) => »èÁ¦ÇÏ¸é¼­ value¸¦ ¸®ÅÏ
+		 * remove(key) => ì‚­ì œí•˜ë©´ì„œ valueë¥¼ ë¦¬í„´
 		 * */
 		
 		HashMap<String, Integer> map = new HashMap<String, Integer>();
@@ -28,29 +28,29 @@ public class Map01 {
 		map.put("kiwi", 1500);
 		
 		System.out.println(map);
-		System.out.println(map.keySet()); // ÀÚÁÖ »ç¿ë
+		System.out.println(map.keySet()); // ìì£¼ ì‚¬ìš©
 		System.out.println(map.values());
 		
 		//get(key) => value
 		System.out.println(map.get("apple"));
 		
-		// Çâ»óµÈ for
+		// í–¥ìƒëœ for
 		int sum = 0;
 		for(String key : map.keySet()) {
 			System.out.println(key + " : " + map.get(key));
 			sum += map.get(key);
 		}
-		System.out.println("ÃÑ " + sum);	
+		System.out.println("ì´ " + sum);	
 		System.out.println();
 		
-		// Iterator Ãâ·Â
+		// Iterator ì¶œë ¥
 		Iterator<String> it = map.keySet().iterator();
 		while(it.hasNext()) {
 			String key = it.next();
 			System.out.println(key + " : " + map.get(key));
 		}
 		
-		// remove(object) : key°ªÀ» ÁÖ¸é »èÁ¦ => value ¸®ÅÏ
+		// remove(object) : keyê°’ì„ ì£¼ë©´ ì‚­ì œ => value ë¦¬í„´
 		System.out.println(map.remove("apple"));
 		System.out.println(map);
 		System.out.println(map.remove("a")); // null

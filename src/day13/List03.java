@@ -8,21 +8,21 @@ import java.util.List;
 
 public class List03 {
 	public static void main(String[] args) {
-		/* ¿À´Ã ÇÏ·ç ÀÏ°ú(String)¸¦ ÀúÀåÇÏ´Â list¸¦ »ı¼º
-		 * Ãâ·Â => Çâ»óµÈ for / iterator
+		/* ì˜¤ëŠ˜ í•˜ë£¨ ì¼ê³¼(String)ë¥¼ ì €ì¥í•˜ëŠ” listë¥¼ ìƒì„±
+		 * ì¶œë ¥ => í–¥ìƒëœ for / iterator
 		 * */
 		List<String> day = new ArrayList<String>();
-		for (String work : new String[] { "±â»ó", "Ãâ±Ù", "¼ö¾÷", "Á¡½É", "¼ö¾÷", "Åğ±Ù", "Àú³á", "¼ö¸é" }) {
+		for (String work : new String[] { "ê¸°ìƒ", "ì¶œê·¼", "ìˆ˜ì—…", "ì ì‹¬", "ìˆ˜ì—…", "í‡´ê·¼", "ì €ë…", "ìˆ˜ë©´" }) {
 			day.add(work);
 		}
 
-		// ÀÏ¹İ for¹®
+		// ì¼ë°˜ forë¬¸
 		for (int i = 0; i < day.size(); i++) {
 			System.out.print(day.get(i) + " ");
 		}
 		System.out.println();
 
-		// Çâ»óµÈ for¹®
+		// í–¥ìƒëœ forë¬¸
 		for (String work : day) {
 			System.out.print(work + " ");
 		}
@@ -35,15 +35,15 @@ public class List03 {
 		}
 		System.out.println();
 
-		// Á¤·Ä
+		// ì •ë ¬
 		Collections.sort(day);
 		System.out.println(day);
 		day.sort(new Comparator<String>() {
 			@Override
 			public int compare(String o1, String o2) {
 				// compareTo
-				// o1.compareTo(o2) : ¿À¸§Â÷¼ø
-				// o2.compareTo(o1) : ³»¸²Â÷¼ø
+				// o1.compareTo(o2) : ì˜¤ë¦„ì°¨ìˆœ
+				// o2.compareTo(o1) : ë‚´ë¦¼ì°¨ìˆœ
 				return o2.compareTo(o1);
 			}
 		});

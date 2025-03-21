@@ -7,7 +7,7 @@ public class Main {
 		Scanner scan = new Scanner(System.in);
 		Controller sc = new Controller();
 		
-		// ±âº»°ª
+		// ê¸°ë³¸ê°’
 		String subNames[] = {
 				"java", "python", "C", "SQL", "JS"
 		};
@@ -21,9 +21,9 @@ public class Main {
 		while (choice != 11) {
 			try {
 				System.out.println("--menu--");
-				System.out.println("1. ÇÐ»ý µî·Ï | 2. ÇÐ»ý ¸ñ·Ï | 3. ÇÐ»ý °Ë»ö | 4. ÇÐ»ý Á¤º¸ ¼öÁ¤");
-				System.out.println("5. ÇÐ»ý »èÁ¦ | 6. °ú¸ñ ¸ñ·Ï | 7. ¼ö°­ ½ÅÃ» | 8. ¼ö°­ Ã¶È¸");
-				System.out.println("9. °ú¸ñº° ÇÐ»ý | 10. ÇÐ»ý ¼ºÀûÇ¥ | 11. Á¾·á");
+				System.out.println("1. í•™ìƒ ë“±ë¡ | 2. í•™ìƒ ëª©ë¡ | 3. í•™ìƒ ê²€ìƒ‰ | 4. í•™ìƒ ì •ë³´ ìˆ˜ì •");
+				System.out.println("5. í•™ìƒ ì‚­ì œ | 6. ê³¼ëª© ëª©ë¡ | 7. ìˆ˜ê°• ì‹ ì²­ | 8. ìˆ˜ê°• ì² íšŒ");
+				System.out.println("9. ê³¼ëª©ë³„ í•™ìƒ | 10. í•™ìƒ ì„±ì í‘œ | 11. ì¢…ë£Œ");
 				System.out.print("> ");
 				choice = Integer.parseInt(scan.nextLine());
 				
@@ -59,13 +59,13 @@ public class Main {
 					sc.printStudentScore(scan);
 					break;
 				case 11:
-					System.out.println("Á¾·á");
+					System.out.println("ì¢…ë£Œ");
 					break;
 				default:
 					throw new NumberFormatException();
 				}
 			} catch (NumberFormatException e) {
-				System.out.println("ÀÔ·Â ¿À·ù");
+				System.out.println("ìž…ë ¥ ì˜¤ë¥˜");
 			} catch (Exception e) {
 				System.out.println(e.getMessage());
 			}

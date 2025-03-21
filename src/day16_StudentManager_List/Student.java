@@ -57,7 +57,7 @@ public class Student {
 		}
 
 		if (count > 0) {
-			System.out.println("ÆòÁ¡ : " + sum / count);
+			System.out.println("í‰ì  : " + sum / count);
 		}
 	}
 

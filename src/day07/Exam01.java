@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Exam01 {
 	public static void main(String[] args) {
-		// day06.ArrayEx01À» ¸Þ¼­µå·Î ºÐ¸®ÇÑ ÈÄ ½ÇÇà
+		// day06.ArrayEx01ì„ ë©”ì„œë“œë¡œ ë¶„ë¦¬í•œ í›„ ì‹¤í–‰
 
 		int comNum[] = new int[3], myNum[] = new int[3], count = 0, strike, ball;
 		Scanner scan = new Scanner(System.in);
@@ -13,40 +13,40 @@ public class Exam01 {
 			comNum[i] = -1;
 		}
 
-		// 1. °ÔÀÓ ¼³¸í
-		System.out.println("ÇÑ ÀÚ¸® ¼ýÀÚ 3°³¸¦ ¶ç¾î¾²±â·Î ±¸ºÐÇÏ¿© ÀÔ·ÂÇØÁÖ¼¼¿ä.");
-		System.out.println("ÀÔ·ÂÇÏ´Â ¼ýÀÚµéÀº Áßº¹µÇ¸é ¾È µË´Ï´Ù.");
-		System.out.println("¿¹)1 2 0");
+		// 1. ê²Œìž„ ì„¤ëª…
+		System.out.println("í•œ ìžë¦¬ ìˆ«ìž 3ê°œë¥¼ ë„ì–´ì“°ê¸°ë¡œ êµ¬ë¶„í•˜ì—¬ ìž…ë ¥í•´ì£¼ì„¸ìš”.");
+		System.out.println("ìž…ë ¥í•˜ëŠ” ìˆ«ìžë“¤ì€ ì¤‘ë³µë˜ë©´ ì•ˆ ë©ë‹ˆë‹¤.");
+		System.out.println("ì˜ˆ)1 2 0");
 
-		// 2. Áßº¹µÇÁö ¾Ê´Â 3°³ÀÇ ÇÑ ÀÚ¸® ¼ýÀÚ¸¦ »ý¼º
+		// 2. ì¤‘ë³µë˜ì§€ ì•ŠëŠ” 3ê°œì˜ í•œ ìžë¦¬ ìˆ«ìžë¥¼ ìƒì„±
 		fill(comNum);
 
-		// °ÔÀÓ ÁøÇà
+		// ê²Œìž„ ì§„í–‰
 		input: while (true) {
-			// 3. À¯Àú ÀÔ·Â
+			// 3. ìœ ì € ìž…ë ¥
 			System.out.print(count + 1 + "> ");
 			for (int i = 0; i < 3; i++) {
 				myNum[i] = scan.nextInt();
 			}
-			// 3-1. Áßº¹°ªÀ» ÀÔ·ÂÇÏ¸é ÀÔ·ÂÀ» ´Ù½Ã ¹ÞÀ½
+			// 3-1. ì¤‘ë³µê°’ì„ ìž…ë ¥í•˜ë©´ ìž…ë ¥ì„ ë‹¤ì‹œ ë°›ìŒ
 			for (int i = 0; i < myNum.length - 1; i++) {
 				for (int j = i + 1; j < myNum.length; j++) {
 					if (myNum[i] == myNum[j]) {
-						System.out.println("Áßº¹µÈ °ªÀ» ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.");
+						System.out.println("ì¤‘ë³µëœ ê°’ì„ ìž…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤.");
 						continue input;
 					}
 				}
 			}
-			count++; // Á¦´ë·Î ÀÔ·ÂÀ» ¹Þ¾ÒÀ¸¸é count¸¦ Áõ°¡
+			count++; // ì œëŒ€ë¡œ ìž…ë ¥ì„ ë°›ì•˜ìœ¼ë©´ countë¥¼ ì¦ê°€
 
-			// 4. Á¡¼ö °è»ê
+			// 4. ì ìˆ˜ ê³„ì‚°
 			strike = countStrike(comNum, myNum);
-			if (strike == 3) { // Á¤´ä
+			if (strike == 3) { // ì •ë‹µ
 				break;
 			}
 			ball = countBall(comNum, myNum);
 
-			// 5. °á°ú¹® ÀÛ¼º
+			// 5. ê²°ê³¼ë¬¸ ìž‘ì„±
 			String result = "";
 			if (strike == 0 && ball == 0) {
 				result = "out";
@@ -65,14 +65,14 @@ public class Exam01 {
 			System.out.println(result);
 		}
 
-		// Á¤´ä Ã³¸®
-		System.out.println("Á¤´ä");
-		System.out.println("È½¼ö : " + count);
+		// ì •ë‹µ ì²˜ë¦¬
+		System.out.println("ì •ë‹µ");
+		System.out.println("íšŸìˆ˜ : " + count);
 		scan.close();
 	}
 
-	/* ºó ¹è¿­À» ÀÔ·Â¹Þ¾Æ ·£´ýÀ¸·Î °ªÀÌ Áßº¹µÇÁö ¾Ê°Ô Ã¤¿ì±â 
-	 * ·£´ý °ªÀº 0~9
+	/* ë¹ˆ ë°°ì—´ì„ ìž…ë ¥ë°›ì•„ ëžœë¤ìœ¼ë¡œ ê°’ì´ ì¤‘ë³µë˜ì§€ ì•Šê²Œ ì±„ìš°ê¸° 
+	 * ëžœë¤ ê°’ì€ 0~9
 	 * */
 	public static void fill(int[] arr) {
 		for (int i = 0; i < arr.length; i++) {
@@ -85,9 +85,9 @@ public class Exam01 {
 		}
 	}
 
-	/* Áßº¹È®ÀÎ ¸Þ¼­µå
-	 * ¹Ì¿Ï¼º ¹è¿­°ú ·£´ý°ªÀ» ÀÔ·Â¹ÞÀ½
-	 * ¹è¿­¿¡ ·£´ý°ªÀÌ Á¸ÀçÇÏ¸é true, ¾øÀ¸¸é false
+	/* ì¤‘ë³µí™•ì¸ ë©”ì„œë“œ
+	 * ë¯¸ì™„ì„± ë°°ì—´ê³¼ ëžœë¤ê°’ì„ ìž…ë ¥ë°›ìŒ
+	 * ë°°ì—´ì— ëžœë¤ê°’ì´ ì¡´ìž¬í•˜ë©´ true, ì—†ìœ¼ë©´ false
 	 * */
 	public static boolean contains(int[] arr, int num) {
 		for (int in : arr) {
@@ -99,9 +99,9 @@ public class Exam01 {
 		return false;
 	}
 
-	/* ½ºÆ®¶óÀÌÅ© °¹¼ö¸¦ ¼¼´Â ¸Þ¼­µå
-	 * ¸Å°³º¯¼ö : int[] comNum, int[] myNum
-	 * count °ªÀ» ¸®ÅÏ
+	/* ìŠ¤íŠ¸ë¼ì´í¬ ê°¯ìˆ˜ë¥¼ ì„¸ëŠ” ë©”ì„œë“œ
+	 * ë§¤ê°œë³€ìˆ˜ : int[] comNum, int[] myNum
+	 * count ê°’ì„ ë¦¬í„´
 	 * */
 	public static int countStrike(int[] comNum, int[] myNum) {
 		int answer = 0;
@@ -114,9 +114,9 @@ public class Exam01 {
 		return answer;
 	}
 
-	/* º¼ °¹¼ö¸¦ ¼¼´Â ¸Þ¼­µå
-	 * ¸Å°³º¯¼ö : int[] comNum, int[]myNum
-	 * count °ªÀ» ¸®ÅÏ
+	/* ë³¼ ê°¯ìˆ˜ë¥¼ ì„¸ëŠ” ë©”ì„œë“œ
+	 * ë§¤ê°œë³€ìˆ˜ : int[] comNum, int[]myNum
+	 * count ê°’ì„ ë¦¬í„´
 	 * */
 	public static int countBall(int[] comNum, int[] myNum) {
 		int answer = 0;

@@ -5,40 +5,40 @@ import java.util.Scanner;
 public class Exam02 {
 
 	public static void main(String[] args) {
-		/* ÁÖ»çÀ§ °ÔÀÓ
-		 * ÁÖ»çÀ§¸¦ ´øÁ®¼­ ÃÑ 30Ä­À» ÀÌµ¿ÇÏ´Â °ÔÀÓ
-		 * ÁÖ»çÀ§´Â ·£´ıÀ¸·Î »ı¼º (1~6)
-		 * ¿¹)
-		 * ÁÖ»çÀ§ : 3
-		 * 3Ä­ ÀüÁø => 27Ä­ ³²¾Ò½À´Ï´Ù.
-		 * ÁÖ»çÀ§ : 1
-		 * 1Ä­ ÀüÁø => 26Ä­ ³²¾Ò½À´Ï´Ù.
+		/* ì£¼ì‚¬ìœ„ ê²Œì„
+		 * ì£¼ì‚¬ìœ„ë¥¼ ë˜ì ¸ì„œ ì´ 30ì¹¸ì„ ì´ë™í•˜ëŠ” ê²Œì„
+		 * ì£¼ì‚¬ìœ„ëŠ” ëœë¤ìœ¼ë¡œ ìƒì„± (1~6)
+		 * ì˜ˆ)
+		 * ì£¼ì‚¬ìœ„ : 3
+		 * 3ì¹¸ ì „ì§„ => 27ì¹¸ ë‚¨ì•˜ìŠµë‹ˆë‹¤.
+		 * ì£¼ì‚¬ìœ„ : 1
+		 * 1ì¹¸ ì „ì§„ => 26ì¹¸ ë‚¨ì•˜ìŠµë‹ˆë‹¤.
 		 * ...
-		 * µµÂø~!!	ÃÑ ÀÌµ¿ È½¼ö : 10¹ø => ÁÖ»çÀ§¸¦ ´øÁø È½¼ö
+		 * ë„ì°©~!!	ì´ ì´ë™ íšŸìˆ˜ : 10ë²ˆ => ì£¼ì‚¬ìœ„ë¥¼ ë˜ì§„ íšŸìˆ˜
 		 * */
 
-		System.out.println("ÁÖ»çÀ§ °ÔÀÓ. ÃÑ 30Ä­À» ÀÌµ¿ÇÕ´Ï´Ù.");
+		System.out.println("ì£¼ì‚¬ìœ„ ê²Œì„. ì´ 30ì¹¸ì„ ì´ë™í•©ë‹ˆë‹¤.");
 		int goal = 30, count = 0, dice;
 		Scanner scan = new Scanner(System.in);
 
 		while (goal > 0) {
-			System.out.printf("¿£ÅÍÅ°·Î ÁÖ»çÀ§¸¦ ´øÁ®ÁÖ¼¼¿ä.> ");
+			System.out.printf("ì—”í„°í‚¤ë¡œ ì£¼ì‚¬ìœ„ë¥¼ ë˜ì ¸ì£¼ì„¸ìš”.> ");
 			scan.nextLine();
 
 			dice = (int) (5 * Math.random()) + 1;
 			count++;
 
-			System.out.println("ÁÖ»çÀ§ : " + dice);
-			System.out.print(dice + "Ä­ ÀüÁø => ");
+			System.out.println("ì£¼ì‚¬ìœ„ : " + dice);
+			System.out.print(dice + "ì¹¸ ì „ì§„ => ");
 			goal -= dice;
 
 			if (goal > 0) {
-				System.out.println(goal + "Ä­ ³²¾Ò½À´Ï´Ù.");
+				System.out.println(goal + "ì¹¸ ë‚¨ì•˜ìŠµë‹ˆë‹¤.");
 			}
 		}
 
-		System.out.println("µµÂø~!!");
-		System.out.println("ÃÑ ÀÌµ¿ È½¼ö : " + count + "¹ø");
+		System.out.println("ë„ì°©~!!");
+		System.out.println("ì´ ì´ë™ íšŸìˆ˜ : " + count + "ë²ˆ");
 		scan.close();
 	}
 

@@ -2,28 +2,28 @@ package day11;
 
 public class Abstract01 {
 	public static void main(String[] args) {
-		/* Ãß»ó ¸Ş¼­µå : ¸Ş¼­µåÀÇ ¼±¾ğºÎ¸¸ ÀÖ°í ±¸ÇöÀº ¾ø´Â ¸Ş¼­µå
-		 * Ãß»ó Å¬·¡½º : Ãß»ó ¸Ş¼­µå( + ÀÏ¹İ ¸Ş¼­µå + ¸â¹ö º¯¼ö + »ó¼ö(final))
-		 * Ãß»ó Å¬·¡½º´Â ¹Ì¿Ï¼º Å¬·¡½ºÀÌ¹Ç·Î °´Ã¼¸¦ »ı¼ºÇÒ ¼ö ¾øÀ½
-		 * Å°¿öµå : abstract
-		 * 	- ¸Ş¼­µå : Á¢±ÙÁ¦ÇÑÀÚ abstract ¸®ÅÏÅ¸ÀÔ ¸Ş¼­µå¸í(¸Å°³º¯¼ö);
-		 * 	- Å¬·¡½º : Á¢±ÙÁ¦ÇÑÀÚ abstract class Å¬·¡½º¸í {}
-		 * 	- ÀÎÅÍÆäÀÌ½º : Á¢±ÙÁ¦ÇÑÀÚ interface ÀÎÅÍÆäÀÌ½º¸í {}
-		 * 		- ÀÎÅÍÆäÀÌ½º´Â Ãß»ó ¸Ş¼­µå¸¸ °¡Áö´Â Ãß»ó Å¬·¡½º
-		 * 		- ÀÎÅÍÆäÀÌ½º´Â abstract Å°¿öµå¸¦ »ı·«ÇÒ ¼ö ÀÖÀ½
-		 * 	- ¸®ÅÏÅ¸ÀÔ, class, interface Å°¿öµå Àü¿¡ ¿À´Â Å°¿öµåµéÀº ¼ø¼­ »ó°ü¾øÀ½
+		/* ì¶”ìƒ ë©”ì„œë“œ : ë©”ì„œë“œì˜ ì„ ì–¸ë¶€ë§Œ ìˆê³  êµ¬í˜„ì€ ì—†ëŠ” ë©”ì„œë“œ
+		 * ì¶”ìƒ í´ë˜ìŠ¤ : ì¶”ìƒ ë©”ì„œë“œ( + ì¼ë°˜ ë©”ì„œë“œ + ë©¤ë²„ ë³€ìˆ˜ + ìƒìˆ˜(final))
+		 * ì¶”ìƒ í´ë˜ìŠ¤ëŠ” ë¯¸ì™„ì„± í´ë˜ìŠ¤ì´ë¯€ë¡œ ê°ì²´ë¥¼ ìƒì„±í•  ìˆ˜ ì—†ìŒ
+		 * í‚¤ì›Œë“œ : abstract
+		 * 	- ë©”ì„œë“œ : ì ‘ê·¼ì œí•œì abstract ë¦¬í„´íƒ€ì… ë©”ì„œë“œëª…(ë§¤ê°œë³€ìˆ˜);
+		 * 	- í´ë˜ìŠ¤ : ì ‘ê·¼ì œí•œì abstract class í´ë˜ìŠ¤ëª… {}
+		 * 	- ì¸í„°í˜ì´ìŠ¤ : ì ‘ê·¼ì œí•œì interface ì¸í„°í˜ì´ìŠ¤ëª… {}
+		 * 		- ì¸í„°í˜ì´ìŠ¤ëŠ” ì¶”ìƒ ë©”ì„œë“œë§Œ ê°€ì§€ëŠ” ì¶”ìƒ í´ë˜ìŠ¤
+		 * 		- ì¸í„°í˜ì´ìŠ¤ëŠ” abstract í‚¤ì›Œë“œë¥¼ ìƒëµí•  ìˆ˜ ìˆìŒ
+		 * 	- ë¦¬í„´íƒ€ì…, class, interface í‚¤ì›Œë“œ ì „ì— ì˜¤ëŠ” í‚¤ì›Œë“œë“¤ì€ ìˆœì„œ ìƒê´€ì—†ìŒ
 		 * 
-		 * - »ó¼ÓÀ» ÇÏ±â À§ÇÑ ºÎ¸ğ Å¬·¡½º¸¦ ¸¸µé±â À§ÇØ »ç¿ë
-		 * - »ó¼ÓÀ» ¹ŞÀº ÀÚ½Ä Å¬·¡½º´Â ¹İµå½Ã Ãß»ó ¸Ş¼­µå¸¦ ±¸ÇöÇØ¾ß ÇÔ.
-		 * 	- ÀÚ½Äµµ Ãß»ó Å¬·¡½º¸é ÀÏºÎ¸¦ ¹Ì¿Ï¼ºÀ¸·Î ³²±æ ¼ö ÀÖÀ½
+		 * - ìƒì†ì„ í•˜ê¸° ìœ„í•œ ë¶€ëª¨ í´ë˜ìŠ¤ë¥¼ ë§Œë“¤ê¸° ìœ„í•´ ì‚¬ìš©
+		 * - ìƒì†ì„ ë°›ì€ ìì‹ í´ë˜ìŠ¤ëŠ” ë°˜ë“œì‹œ ì¶”ìƒ ë©”ì„œë“œë¥¼ êµ¬í˜„í•´ì•¼ í•¨.
+		 * 	- ìì‹ë„ ì¶”ìƒ í´ë˜ìŠ¤ë©´ ì¼ë¶€ë¥¼ ë¯¸ì™„ì„±ìœ¼ë¡œ ë‚¨ê¸¸ ìˆ˜ ìˆìŒ
 		 * */
 		
-		Dog dog = new Dog("»Ç»ß", "°³");
+		Dog dog = new Dog("ë½€ì‚", "ê°œ");
 		dog.printInfo();
 		dog.howl();
-		dog.eating("°í±â");
+		dog.eating("ê³ ê¸°");
 		
-		Cat cat = new Cat("¼ÛÀÌ", "°í¾çÀÌ");
+		Cat cat = new Cat("ì†¡ì´", "ê³ ì–‘ì´");
 		cat.printInfo();
 		cat.howl();
 	}
@@ -39,13 +39,13 @@ class Cat extends Animal {
 
 	@Override
 	public void howl() {
-		System.out.println(name + " ¿ïÀ½¼Ò¸® : " + "¾ß¿Ë");
+		System.out.println(name + " ìš¸ìŒì†Œë¦¬ : " + "ì•¼ì˜¹");
 		
 	}
 	
 	public void playing(String toy) {
 		setToy(toy);
-		System.out.println(name + "Àº " + toy + "¸¦ ÁÁ¾ÆÇÕ´Ï´Ù.");
+		System.out.println(name + "ì€ " + toy + "ë¥¼ ì¢‹ì•„í•©ë‹ˆë‹¤.");
 	}
 
 	public String getToy() {
@@ -67,12 +67,12 @@ class Dog extends Animal {
 	
 	@Override
 	public void howl() {
-		System.out.println(super.name + " ¿ïÀ½¼Ò¸® : " + "¸Û¸Û");
+		System.out.println(super.name + " ìš¸ìŒì†Œë¦¬ : " + "ë©ë©");
 	}
 	
 	public void eating(String eat) {
 		setEat(eat);
-		System.out.println(name + "Àº " + eat + "¸¦ ÁÁ¾ÆÇÕ´Ï´Ù.");
+		System.out.println(name + "ì€ " + eat + "ë¥¼ ì¢‹ì•„í•©ë‹ˆë‹¤.");
 	}
 
 	public String getEat() {
@@ -88,8 +88,8 @@ abstract class Animal {
 	protected String name, category;
 	
 	public void printInfo() {
-		System.out.println("ÀÌ¸§ : " + name);
-		System.out.println("Á¾ : " + category);
+		System.out.println("ì´ë¦„ : " + name);
+		System.out.println("ì¢… : " + category);
 	}
 	public abstract void howl();
 	

@@ -7,12 +7,12 @@ import java.util.HashMap;
 
 public class File04 {
 	public static void main(String[] args) throws IOException {
-		/* test.txt ÆÄÀÏÀ» ÀÐ¾îµé¿© map¿¡ ÀúÀå
-		 * ¸í´Ü Ãâ·Â / ÇÕ°è / Æò±Õ Ãâ·Â
-		 * ÀÐ¾îµéÀÌ´Â ÆÄÀÏÀº ¸ðµÎ String
-		 * Á¡¼ö => int
+		/* test.txt íŒŒì¼ì„ ì½ì–´ë“¤ì—¬ mapì— ì €ìž¥
+		 * ëª…ë‹¨ ì¶œë ¥ / í•©ê³„ / í‰ê·  ì¶œë ¥
+		 * ì½ì–´ë“¤ì´ëŠ” íŒŒì¼ì€ ëª¨ë‘ String
+		 * ì ìˆ˜ => int
 		 * Integer.parseInt()
-		 * Á¡¼ö°¡ 80Á¡ ÀÌ»óÀÎ ÇÐ»ý ¸í´Ü
+		 * ì ìˆ˜ê°€ 80ì  ì´ìƒì¸ í•™ìƒ ëª…ë‹¨
 		 * */
 		
 		BufferedReader br = new BufferedReader(
@@ -29,7 +29,7 @@ public class File04 {
 			scores.put(line[0], Integer.parseInt(line[1]));
 		}
 		
-		// ¸í´Ü, ÇÕ°è, Æò±Õ
+		// ëª…ë‹¨, í•©ê³„, í‰ê· 
 		int sum = 0;
 		double count = 0.0;
 		for(String name : scores.keySet()) {
@@ -38,10 +38,10 @@ public class File04 {
 			sum += score;
 			count++;
 		}
-		System.out.println("ÇÕ°è : " + sum);
-		System.out.println("Æò±Õ : " + sum/count);
+		System.out.println("í•©ê³„ : " + sum);
+		System.out.println("í‰ê·  : " + sum/count);
 		
-		// 80Á¡ ÀÌ»ó
+		// 80ì  ì´ìƒ
 		scores.keySet().stream()
 			.filter(name -> scores.getOrDefault(name, -1) >= 80)
 			.forEach(n -> System.out.println(n + ":" + scores.get(n)));

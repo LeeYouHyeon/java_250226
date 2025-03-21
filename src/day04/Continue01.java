@@ -3,8 +3,8 @@ package day04;
 public class Continue01 {
 
 	public static void main(String[] args) {
-		// continue : °è¼Ó, pass, skip °³³ä
-		/* 1~10±îÁö Ãâ·Â, 5¸¸ »©°í
+		// continue : ê³„ì†, pass, skip ê°œë…
+		/* 1~10ê¹Œì§€ ì¶œë ¥, 5ë§Œ ë¹¼ê³ 
 		 * */
 
 		for (int i = 1; i <= 10; i++) {
@@ -15,7 +15,7 @@ public class Continue01 {
 		}
 		System.out.println();
 
-		/* 1~10 Â¦¼ö¸¸ Ãâ·Â(continue ÀÌ¿ë)
+		/* 1~10 ì§ìˆ˜ë§Œ ì¶œë ¥(continue ì´ìš©)
 		 * */
 
 		for (int i = 1; i <= 10; i++) {

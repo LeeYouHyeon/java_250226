@@ -3,35 +3,35 @@ package day16_StudentManager_List;
 import java.util.Scanner;
 
 public interface TODO {
-	// ÇĞ»ı µî·Ï
+	// í•™ìƒ ë“±ë¡
 	public void insertStudent(Scanner scan);
 	
-	// ÇĞ»ı ¸ñ·Ï Ãâ·Â
+	// í•™ìƒ ëª©ë¡ ì¶œë ¥
 	public void printStudents();
 	
-	// ÇĞ»ı °Ë»ö(±âº»Á¤º¸ Ãâ·Â)
+	// í•™ìƒ ê²€ìƒ‰(ê¸°ë³¸ì •ë³´ ì¶œë ¥)
 	public void searchStudent(Scanner scan);
 	
-	// ÇĞ»ı Á¤º¸ ¼öÁ¤
+	// í•™ìƒ ì •ë³´ ìˆ˜ì •
 	public void updateStudent(Scanner scan);
 	
-	// ÇĞ»ı »èÁ¦
+	// í•™ìƒ ì‚­ì œ
 	public void deleteStudent(Scanner scan);
 	
-	// °ú¸ñ ¸ñ·Ï Ãâ·Â
+	// ê³¼ëª© ëª©ë¡ ì¶œë ¥
 	public void printSubjects();
 	
-	// ¼ö°­½ÅÃ»
+	// ìˆ˜ê°•ì‹ ì²­
 	public void insertSubject(Scanner scan);
 	
-	// ¼ö°­Ã¶È¸
+	// ìˆ˜ê°•ì² íšŒ
 	public void deleteSubject(Scanner scan);
 	
-	// °ú¸ñº° ½ÅÃ»ÀÚ ¸®½ºÆ®
-	// °ú¸ñÀ» ÀÔ·Â¹Ş¾Æ ½ÅÃ»ÇÑ ÇĞ»ıµéÀÇ ±âº»Á¤º¸ Ãâ·Â
+	// ê³¼ëª©ë³„ ì‹ ì²­ì ë¦¬ìŠ¤íŠ¸
+	// ê³¼ëª©ì„ ì…ë ¥ë°›ì•„ ì‹ ì²­í•œ í•™ìƒë“¤ì˜ ê¸°ë³¸ì •ë³´ ì¶œë ¥
 	public void studentsOfSubject(Scanner scan);
 	
-	// ÇĞ»ıº° ¼ºÀûÇ¥ Ãâ·Â
-	// ¼ºÀû Æò±Õµµ Ãâ·Â
+	// í•™ìƒë³„ ì„±ì í‘œ ì¶œë ¥
+	// ì„±ì  í‰ê· ë„ ì¶œë ¥
 	public void printStudentScore(Scanner scan);
 }

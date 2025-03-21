@@ -5,10 +5,10 @@ public class CardMain {
 		CardPack cp = new CardPack();
 		
 		System.out.println("---------------");
-		System.out.println("Ä«µå¸¦ ¼¯½À´Ï´Ù.");
+		System.out.println("ì¹´ë“œë¥¼ ì„ìŠµë‹ˆë‹¤.");
 		cp.shuffle();
 		
-		System.out.println("Ä«µå¸¦ ³ª´²Áİ´Ï´Ù.");
+		System.out.println("ì¹´ë“œë¥¼ ë‚˜ëˆ ì¤ë‹ˆë‹¤.");
 		Card p1 = cp.pickOne(),
 			p2 = cp.pickOne(),
 			p3 = cp.pickOne();

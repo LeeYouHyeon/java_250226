@@ -3,17 +3,17 @@ package day04;
 public class For08 {
 
 	public static void main(String[] args) {
-		// ÀÌÁß for¹®
+		// ì´ì¤‘ forë¬¸
 		for (int i = 1; i <= 5; i++) { // i = 1 2 3 4 5
 			for (int j = 1; j <= 5; j++) { // j = 1 2 3 4 5
 				System.out.print(j + " ");
 			}
-			System.out.println(); // j Ãâ·Â ÈÄ ÁÙ¹Ù²Ş
+			System.out.println(); // j ì¶œë ¥ í›„ ì¤„ë°”ê¿ˆ
 		}
 
 		System.out.println("------------");
 
-		/* º° Âï±â => 5°³¾¿ 5ÁÙ
+		/* ë³„ ì°ê¸° => 5ê°œì”© 5ì¤„
 		 * *****
 		 * *****
 		 * *****
@@ -103,7 +103,7 @@ public class For08 {
 		/* 1 2 3
 		 * 4 5 6
 		 * 7 8 9
-		 * 3ÁÙ¾¿ 3°³ÀÇ ¼ıÀÚ (ÀÌÁß for)
+		 * 3ì¤„ì”© 3ê°œì˜ ìˆ«ì (ì´ì¤‘ for)
 		 * */
 		int print = 1;
 		for(int i = 1; i <= 3; i++) {

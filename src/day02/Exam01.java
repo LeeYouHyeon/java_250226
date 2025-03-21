@@ -5,27 +5,27 @@ import java.util.Scanner;
 public class Exam01 {
 
 	public static void main(String[] args) {
-		/* °úÁ¦
-		 * Á¤¼ö 2°³¿Í ¿¬»êÀÚ 1°³¸¦ ÀÔ·Â¹Ş¾Æ µÎ Á¤¼öÀÇ ¿¬»ê °á°ú¸¦ Ãâ·Â
+		/* ê³¼ì œ
+		 * ì •ìˆ˜ 2ê°œì™€ ì—°ì‚°ì 1ê°œë¥¼ ì…ë ¥ë°›ì•„ ë‘ ì •ìˆ˜ì˜ ì—°ì‚° ê²°ê³¼ë¥¼ ì¶œë ¥
 		 * ex) 2 3 + => 5
 		 * ex) 2 3 * => 6
-		 * ex) 2 3 ! => Àß¸øµÈ ¿¬»ê
-		 * ¿¬»êÀÚ´Â +, -, *, /, %
-		 * ´Ù¸¥ Á¾·ùÀÇ Æ¯¼ö¹®ÀÚ°¡ µé¾î¿À¸é "Àß¸øµÈ ¿¬»ê" Ãâ·Â
+		 * ex) 2 3 ! => ì˜ëª»ëœ ì—°ì‚°
+		 * ì—°ì‚°ìëŠ” +, -, *, /, %
+		 * ë‹¤ë¥¸ ì¢…ë¥˜ì˜ íŠ¹ìˆ˜ë¬¸ìê°€ ë“¤ì–´ì˜¤ë©´ "ì˜ëª»ëœ ì—°ì‚°" ì¶œë ¥
 		 */
 
-		// ¹®ÀÚ·Î ¹Ş´Â ÄÉÀÌ½º : String => ºñ±³ ºÒ°¡ ""
-		// ÇÑ ±ÛÀÚ¸¸ ¹Ş´Â ÄÉÀÌ½º : char => ºñ±³ °¡´É ''
+		// ë¬¸ìë¡œ ë°›ëŠ” ì¼€ì´ìŠ¤ : String => ë¹„êµ ë¶ˆê°€ ""
+		// í•œ ê¸€ìë§Œ ë°›ëŠ” ì¼€ì´ìŠ¤ : char => ë¹„êµ ê°€ëŠ¥ ''
 
 		Scanner scan = new Scanner(System.in);
 
-		System.out.println("µÎ Á¤¼ö¿Í ¿¬»êÀÚ¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä.");
-		System.out.println("¿¹)2 3 +");
+		System.out.println("ë‘ ì •ìˆ˜ì™€ ì—°ì‚°ìë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”.");
+		System.out.println("ì˜ˆ)2 3 +");
 
 		int num1 = scan.nextInt();
-		String strNum1 = (num1 > 0) ? "" + num1 : "(" + num1 + ')'; // À½¼öÀÏ °æ¿ì ¼Ò°ıÈ£¸¦ ºÙÀÓ
+		String strNum1 = (num1 > 0) ? "" + num1 : "(" + num1 + ')'; // ìŒìˆ˜ì¼ ê²½ìš° ì†Œê´„í˜¸ë¥¼ ë¶™ì„
 		int num2 = scan.nextInt();
-		String strNum2 = (num2 > 0) ? "" + num2 : "(" + num2 + ')'; // À½¼öÀÏ °æ¿ì ¼Ò°ıÈ£¸¦ ºÙÀÓ
+		String strNum2 = (num2 > 0) ? "" + num2 : "(" + num2 + ')'; // ìŒìˆ˜ì¼ ê²½ìš° ì†Œê´„í˜¸ë¥¼ ë¶™ì„
 		char cal = scan.next().charAt(0);
 		String result = strNum1 + ' ' + cal + ' ' + strNum2 + " = ";
 
@@ -40,13 +40,13 @@ public class Exam01 {
 				result += num1 * num2;
 				break;
 			case '/':
-				result = (num2 == 0) ? "0À¸·Î ³ª´­ ¼ö ¾ø½À´Ï´Ù." : result + (num1/num2);
+				result = (num2 == 0) ? "0ìœ¼ë¡œ ë‚˜ëˆŒ ìˆ˜ ì—†ìŠµë‹ˆë‹¤." : result + (num1/num2);
 				break;
 			case '%':
-				result = (num2 == 0) ? "0À¸·Î ³ª´­ ¼ö ¾ø½À´Ï´Ù." : result + (num1%num2);
+				result = (num2 == 0) ? "0ìœ¼ë¡œ ë‚˜ëˆŒ ìˆ˜ ì—†ìŠµë‹ˆë‹¤." : result + (num1%num2);
 				break;
 			default:
-				result = "Àß¸øµÈ ¿¬»êÀÚÀÔ´Ï´Ù.";
+				result = "ì˜ëª»ëœ ì—°ì‚°ìì…ë‹ˆë‹¤.";
 		}
 
 		System.out.println(result);

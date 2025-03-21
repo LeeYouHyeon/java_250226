@@ -8,10 +8,10 @@ public class DistinctNumsArray {
 		return (int) (Math.random() * (end - start) + start);
 	}
 
-	// startºÎÅÍ end±îÁöÀÇ Áßº¹ÇÏÁö ¾Ê´Â ·£´ı ¼öµéÀÇ array ... ½ÇÆĞ
+	// startë¶€í„° endê¹Œì§€ì˜ ì¤‘ë³µí•˜ì§€ ì•ŠëŠ” ëœë¤ ìˆ˜ë“¤ì˜ array ... ì‹¤íŒ¨
 	public static int[] randomDistinctArray(int n, int start, int end) throws Exception {
-		// ÀÔ·ÂÁ¶°Ç °ËÁõ
-		// start <= endÀÌ°í, ¹üÀ§°¡ n ÀÌ»óÀÌ¾î¾ß ÇÑ´Ù.
+		// ì…ë ¥ì¡°ê±´ ê²€ì¦
+		// start <= endì´ê³ , ë²”ìœ„ê°€ n ì´ìƒì´ì–´ì•¼ í•œë‹¤.
 		if (start > end)
 			return randomDistinctArray(n, end, start);
 		if (end - start + 1 < n)
@@ -35,11 +35,11 @@ public class DistinctNumsArray {
 		Scanner scan = new Scanner(System.in);
 		int n, start, end, answer[];
 
-		System.out.println("Áßº¹ÇÏÁö ¾Ê´Â ·£´ı ¼ıÀÚ »ı¼º±â");
+		System.out.println("ì¤‘ë³µí•˜ì§€ ì•ŠëŠ” ëœë¤ ìˆ«ì ìƒì„±ê¸°");
 		
 		while (true) {
 			try {
-				System.out.print("¼ıÀÚ¸¦ ¸î °³ »Ì°í ½ÍÀºÁö ÀÔ·ÂÇÏ¼¼¿ä.> ");
+				System.out.print("ìˆ«ìë¥¼ ëª‡ ê°œ ë½‘ê³  ì‹¶ì€ì§€ ì…ë ¥í•˜ì„¸ìš”.> ");
 				while (true) {
 					try {
 						n = scan.nextInt();
@@ -48,46 +48,46 @@ public class DistinctNumsArray {
 						}
 						break;
 					} catch (InputMismatchException e) {
-						System.out.println("ÀÚ¿¬¼ö¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+						System.out.println("ìì—°ìˆ˜ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”.");
 					}
 				}
 				
-				// start ÀÔ·Â
+				// start ì…ë ¥
 				while (true) {
 					try {
-						System.out.print("ÃÖ¼Ú°ªÀ» ÀÔ·ÂÇÏ¼¼¿ä.> ");
+						System.out.print("ìµœì†Ÿê°’ì„ ì…ë ¥í•˜ì„¸ìš”.> ");
 						start = scan.nextInt();
 						break;
 					} catch (InputMismatchException e) {
-						System.out.println("Á¤¼ö¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+						System.out.println("ì •ìˆ˜ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”.");
 					}
 				}
 				
-				// end ÀÔ·Â
+				// end ì…ë ¥
 				while (true) {
 					try {
-						System.out.print("ÃÖ´ñ°ªÀ» ÀÔ·ÂÇÏ¼¼¿ä.> ");
+						System.out.print("ìµœëŒ“ê°’ì„ ì…ë ¥í•˜ì„¸ìš”.> ");
 						end = scan.nextInt();
 						if (end < start) {
 							throw new Exception();
 						}
 						break;
 					} catch (InputMismatchException e) {
-						System.out.println("Á¤¼ö¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+						System.out.println("ì •ìˆ˜ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”.");
 					} catch (Exception e) {
-						System.out.println("ÃÖ´ñ°ªÀº ÃÖ¼Ú°ª ÀÌ»óÀÌ¾î¾ß ÇÕ´Ï´Ù.");
+						System.out.println("ìµœëŒ“ê°’ì€ ìµœì†Ÿê°’ ì´ìƒì´ì–´ì•¼ í•©ë‹ˆë‹¤.");
 					}
 				}
 				
-				// array »ı¼º
+				// array ìƒì„±
 				answer = randomDistinctArray(n, start, end);
 				break;
 			} catch (Exception e) {
-				System.out.println("¹üÀ§º¸´Ù ´õ ¸¹ÀÌ »ÌÀ» ¼ö ¾ø½À´Ï´Ù.");
+				System.out.println("ë²”ìœ„ë³´ë‹¤ ë” ë§ì´ ë½‘ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 			}
 		}
 		
-		// array Ãâ·Â
+		// array ì¶œë ¥
 		for(int num : answer) {
 			System.out.print(num + " ");
 		}

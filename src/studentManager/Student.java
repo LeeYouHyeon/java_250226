@@ -29,28 +29,28 @@ public class Student {
 	}
 
 	public void insertSubject(Subject subject) {
-		// 1. °°Àº °ú¸ñÀ» ÀÌ¹Ì µè°í ÀÖ´ÂÁö È®ÀÎ
+		// 1. ê°™ì€ ê³¼ëª©ì„ ì´ë¯¸ ë“£ê³  ìˆëŠ”ì§€ í™•ì¸
 		for (Subject sub : subjects) {
 			if (sub == null) {
 				break;
 			}
 			if (sub.equals(subject)) {
-				System.out.println("ÀÌ¹Ì ½ÅÃ»ÇÑ °ú¸ñÀÔ´Ï´Ù.");
+				System.out.println("ì´ë¯¸ ì‹ ì²­í•œ ê³¼ëª©ì…ë‹ˆë‹¤.");
 				return;
 			}
 		}
 
-		// 2. subjects°¡ ´Ù Ã¡À¸¸é array¸¦ ´Ã¸²
+		// 2. subjectsê°€ ë‹¤ ì°¼ìœ¼ë©´ arrayë¥¼ ëŠ˜ë¦¼
 		if (countSub == subjects.length) {
 			Subject[] subjects = new Subject[this.subjects.length + 5];
 			System.arraycopy(this.subjects, 0, subjects, 0, countSub);
 			this.subjects = subjects;
 		}
 
-		// 3. subjectsÀÇ ºó ÀÚ¸®¿¡ subject¸¦ Ãß°¡
+		// 3. subjectsì˜ ë¹ˆ ìë¦¬ì— subjectë¥¼ ì¶”ê°€
 		subjects[countSub] = subject;
 		countSub++;
-		System.out.println("½ÅÃ»Çß½À´Ï´Ù.");
+		System.out.println("ì‹ ì²­í–ˆìŠµë‹ˆë‹¤.");
 	}
 
 	public void deleteSubject(Subject subject) {
@@ -69,12 +69,12 @@ public class Student {
 				}
 				countSub--;
 				subjects[countSub] = null;
-				System.out.println("¼ö°­½ÅÃ»À» Ãë¼ÒÇß½À´Ï´Ù.");
+				System.out.println("ìˆ˜ê°•ì‹ ì²­ì„ ì·¨ì†Œí–ˆìŠµë‹ˆë‹¤.");
 			}
 		}
 
 		if (!found) {
-			System.out.println("½ÅÃ»ÇÏÁö ¾ÊÀº °ú¸ñÀÔ´Ï´Ù.");
+			System.out.println("ì‹ ì²­í•˜ì§€ ì•Šì€ ê³¼ëª©ì…ë‹ˆë‹¤.");
 		}
 	}
 

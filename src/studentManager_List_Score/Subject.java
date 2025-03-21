@@ -1,11 +1,11 @@
 package studentManager_List_Score;
 
 public class Subject {
-	// °ú¸ñÄÚµå, °ú¸ñ¸í, ÇĞÁ¡, ½Ã¼ö, ±³¼ö¸í, ½Ã°£Ç¥, °­ÀÇÀå...
+	// ê³¼ëª©ì½”ë“œ, ê³¼ëª©ëª…, í•™ì , ì‹œìˆ˜, êµìˆ˜ëª…, ì‹œê°„í‘œ, ê°•ì˜ì¥...
 	private String subCode, subName, subProfessor, subTimeTable, subRoom;
 	private int subPoint, subTime;
 
-	// »ı¼ºÀÚ
+	// ìƒì„±ì
 	public Subject() {}
 	public Subject(String subCode, String subName, String subProfessor, String subTimeTable, String subRoom,
 			int subPoint, int subTime) {

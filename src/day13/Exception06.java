@@ -13,18 +13,18 @@ public class Exception06 {
 
 	}
 
-	/* size¸¦ ÀÔ·Â¹Ş¾Æ size¸¸Å­ÀÇ ±æÀÌ¸¦ °¡Áö´Â ¹è¿­À» »ı¼º
-	 * ·£´ı°ªÀ» Ã¤¿ö ¹è¿­À» ¸®ÅÏ
-	 * ·£´ı°ªÀÇ ¹üÀ§´Â start ~ start + count
-	 * - size°¡ 0º¸´Ù ÀÛÀ¸¸é ¿¹¿Ü¹ß»ı
-	 * - count°¡ 0º¸´Ù ÀÛÀ¸¸é ¿¹¿Ü¹ß»ı
+	/* sizeë¥¼ ì…ë ¥ë°›ì•„ sizeë§Œí¼ì˜ ê¸¸ì´ë¥¼ ê°€ì§€ëŠ” ë°°ì—´ì„ ìƒì„±
+	 * ëœë¤ê°’ì„ ì±„ì›Œ ë°°ì—´ì„ ë¦¬í„´
+	 * ëœë¤ê°’ì˜ ë²”ìœ„ëŠ” start ~ start + count
+	 * - sizeê°€ 0ë³´ë‹¤ ì‘ìœ¼ë©´ ì˜ˆì™¸ë°œìƒ
+	 * - countê°€ 0ë³´ë‹¤ ì‘ìœ¼ë©´ ì˜ˆì™¸ë°œìƒ
 	 * */
 
 	public int[] randoms(int size, int start, int count) {
 		if (size <= 0) {
-			throw new RuntimeException("¹è¿­ÀÇ ±æÀÌ°¡ 0 ÀÌÇÏÀÔ´Ï´Ù.");
+			throw new RuntimeException("ë°°ì—´ì˜ ê¸¸ì´ê°€ 0 ì´í•˜ì…ë‹ˆë‹¤.");
 		} else if (count < 0) {
-			throw new RuntimeException("·£´ı °ªÀÇ ¹üÀ§°¡ 0º¸´Ù ÀÛ½À´Ï´Ù.");
+			throw new RuntimeException("ëœë¤ ê°’ì˜ ë²”ìœ„ê°€ 0ë³´ë‹¤ ì‘ìŠµë‹ˆë‹¤.");
 		}
 
 		int answer[] = new int[size];

@@ -6,32 +6,32 @@ import java.util.stream.Stream;
 
 public class Stream01 {
 	public static void main(String[] args) {
-		/* Stream(½ºÆ®¸²)
-		 * - ÀÚ·á±¸Á¶¸¦ º¹»çÇÏ¿© ½ºÆ®¸² °´Ã¼·Î »ı¼º
-		 * - ½ºÆ®¸²À» ÀÌ¿ëÇÏ¿© ¿¬»êÀ» ¼öÇà
-		 * - ¿¬»êÀ» ¼öÇàÇÑ ½ºÆ®¸²Àº ¼Ò¸ğµÊ
-		 * - ½ºÆ®¸²Àº ±âÁ¸ ÀÚ·á¸¦ º¯°æÇÒ ¼ö ¾øÀ½
-		 * - ¸Ş¼­µå Ã¼ÀÌ´× ¹æ½ÄÀ» »ç¿ë
-		 * - ½ºÆ®¸²¸¸ÀÇ ¿¬»êÀ» °¡Áö°í ÀÖÀ½
-		 * - Áß°£¿¬»ê / ÃÖÁ¾¿¬»ê
-		 * - ÇÑ ½ºÆ®¸²ÀÇ ¿¬»êµé »çÀÌ¿¡¼± °°Àº ÀÌ¸§ÀÇ º¯¼ö¸¦ »ç¿ëÇÒ ¼ö ¾øÀ½
+		/* Stream(ìŠ¤íŠ¸ë¦¼)
+		 * - ìë£Œêµ¬ì¡°ë¥¼ ë³µì‚¬í•˜ì—¬ ìŠ¤íŠ¸ë¦¼ ê°ì²´ë¡œ ìƒì„±
+		 * - ìŠ¤íŠ¸ë¦¼ì„ ì´ìš©í•˜ì—¬ ì—°ì‚°ì„ ìˆ˜í–‰
+		 * - ì—°ì‚°ì„ ìˆ˜í–‰í•œ ìŠ¤íŠ¸ë¦¼ì€ ì†Œëª¨ë¨
+		 * - ìŠ¤íŠ¸ë¦¼ì€ ê¸°ì¡´ ìë£Œë¥¼ ë³€ê²½í•  ìˆ˜ ì—†ìŒ
+		 * - ë©”ì„œë“œ ì²´ì´ë‹ ë°©ì‹ì„ ì‚¬ìš©
+		 * - ìŠ¤íŠ¸ë¦¼ë§Œì˜ ì—°ì‚°ì„ ê°€ì§€ê³  ìˆìŒ
+		 * - ì¤‘ê°„ì—°ì‚° / ìµœì¢…ì—°ì‚°
+		 * - í•œ ìŠ¤íŠ¸ë¦¼ì˜ ì—°ì‚°ë“¤ ì‚¬ì´ì—ì„  ê°™ì€ ì´ë¦„ì˜ ë³€ìˆ˜ë¥¼ ì‚¬ìš©í•  ìˆ˜ ì—†ìŒ
 		 * 
-		 * - Áß°£¿¬»ê : ¸Ş¼­µå¸¦ ÀÌ¾î¼­ »ç¿ë°¡´É, ¼ø¼­´Â »ó°ü¾ø´Â °æ¿ì°¡ ¸¹À½
-		 * 	- filter() : Á¶°Ç¿¡ ¸Â´Â °ª¸¸ ´ÙÀ½ ¸Ş¼­µå·Î ³Ñ±è
-		 * 	- distinct() : Áßº¹ Á¦°Å
-		 *  - limit() : ½ºÆ®¸²ÀÇ ÀÏºÎ¸¦ Àß¶ó³¿
-		 *  - sorted() : Á¤·Ä
-		 *  - map() : ÁÖ·Î Çüº¯È¯
-		 *  - peek() : ÀÛ¾÷¼öÇà
-		 *  - skip() : ½ºÆ®¸² ÀÏºÎ¸¦ °Ç³Ê¶Ü
+		 * - ì¤‘ê°„ì—°ì‚° : ë©”ì„œë“œë¥¼ ì´ì–´ì„œ ì‚¬ìš©ê°€ëŠ¥, ìˆœì„œëŠ” ìƒê´€ì—†ëŠ” ê²½ìš°ê°€ ë§ìŒ
+		 * 	- filter() : ì¡°ê±´ì— ë§ëŠ” ê°’ë§Œ ë‹¤ìŒ ë©”ì„œë“œë¡œ ë„˜ê¹€
+		 * 	- distinct() : ì¤‘ë³µ ì œê±°
+		 *  - limit() : ìŠ¤íŠ¸ë¦¼ì˜ ì¼ë¶€ë¥¼ ì˜ë¼ëƒ„
+		 *  - sorted() : ì •ë ¬
+		 *  - map() : ì£¼ë¡œ í˜•ë³€í™˜
+		 *  - peek() : ì‘ì—…ìˆ˜í–‰
+		 *  - skip() : ìŠ¤íŠ¸ë¦¼ ì¼ë¶€ë¥¼ ê±´ë„ˆëœ€
 		 * 
-		 * - ÃÖÁ¾¿¬»ê : ¹İµå½Ã ¸¶Áö¸·¿¡ ÇÏ³ª¸¸
+		 * - ìµœì¢…ì—°ì‚° : ë°˜ë“œì‹œ ë§ˆì§€ë§‰ì— í•˜ë‚˜ë§Œ
 		 * 	- forEach(), count(), sum(), average(), max(), min()
-		 * 	- allMatch() : ½ºÆ®¸² ¿ä¼Ò°¡ ¸ğµÎ ÀÏÄ¡ÇÏ´ÂÁö
-		 * 	- anyMatch() : ÇÏ³ª¶óµµ ÀÏÄ¡ÇÏ´ÂÁö
-		 * 	- toArray() : array·Î º¯È¯
-		 * 	- toList() : ¸®½ºÆ®·Î º¯È¯
-		 *  - collect() : ¼öÁı
+		 * 	- allMatch() : ìŠ¤íŠ¸ë¦¼ ìš”ì†Œê°€ ëª¨ë‘ ì¼ì¹˜í•˜ëŠ”ì§€
+		 * 	- anyMatch() : í•˜ë‚˜ë¼ë„ ì¼ì¹˜í•˜ëŠ”ì§€
+		 * 	- toArray() : arrayë¡œ ë³€í™˜
+		 * 	- toList() : ë¦¬ìŠ¤íŠ¸ë¡œ ë³€í™˜
+		 *  - collect() : ìˆ˜ì§‘
 		 * */
 
 		int arr[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
@@ -39,23 +39,23 @@ public class Stream01 {
 		System.out.println(Arrays.stream(arr).count());
 		System.out.println(Arrays.stream(arr).average());
 
-		// 5 ÀÌ»ó¸¸ ÇÕ°è
+		// 5 ì´ìƒë§Œ í•©ê³„
 		System.out.println(Arrays.stream(arr).filter(n -> n >= 5).sum());
 
-		// Á¡¼ö ¹è¿­À» »ı¼ºÇÑ ÈÄ 70Á¡ ÀÌ»ó¸¸ ÇÊÅÍÇØ ÇÕ°è, Æò±Õ
-		// °¡Àå ³ôÀº Á¡¼ö¸¦ Ãâ·Â
+		// ì ìˆ˜ ë°°ì—´ì„ ìƒì„±í•œ í›„ 70ì  ì´ìƒë§Œ í•„í„°í•´ í•©ê³„, í‰ê· 
+		// ê°€ì¥ ë†’ì€ ì ìˆ˜ë¥¼ ì¶œë ¥
 		int arr2[] = new memos.Randoms().randoms(5, 0, 100);
 		for (int num : arr2) {
 			System.out.print(num + " ");
 		}
 		System.out.println();
 
-		// ÇÕ°è
-		System.out.print("70Á¡ ÀÌ»óÀÇ ÇÕ°è : ");
+		// í•©ê³„
+		System.out.print("70ì  ì´ìƒì˜ í•©ê³„ : ");
 		System.out.println(Arrays.stream(arr2).filter(n -> n >= 70).sum());
-		System.out.print("70Á¡ ÀÌ»óÀÇ Æò±Õ : ");
+		System.out.print("70ì  ì´ìƒì˜ í‰ê·  : ");
 		System.out.println(Arrays.stream(arr2).filter(n -> n >= 70).average().orElse(0));
-		System.out.print("1µî : ");
+		System.out.print("1ë“± : ");
 		System.out.println(Arrays.stream(arr2).max().orElse(0));
 
 		// 
@@ -64,28 +64,28 @@ public class Stream01 {
 			list.add(num);
 		}
 
-		// list¸¦ ½ºÆ®¸²À¸·Î ±¸¼º
+		// listë¥¼ ìŠ¤íŠ¸ë¦¼ìœ¼ë¡œ êµ¬ì„±
 		list.stream()
 			.sorted()
 			.forEach(n -> System.out.print(n + " "));
 		System.out.println();
-		// Áßº¹Á¦°Å
+		// ì¤‘ë³µì œê±°
 		list.stream()
 			.distinct()
 			.forEach(n -> System.out.print(n + " "));
 		
 		System.out.println();
-		// Áßº¹Á¦°Å ÈÄ ÇÕ°è
+		// ì¤‘ë³µì œê±° í›„ í•©ê³„
 		System.out.println(list.stream()
 								.distinct()
 								.mapToInt(n -> n.intValue())
 								.sum());
 		
-		// ½ºÆ®¸² °´Ã¼ »ı¼º
+		// ìŠ¤íŠ¸ë¦¼ ê°ì²´ ìƒì„±
 		Stream<Integer> stream01 = Stream.of(10, 20, 30, 40, 50);
 		System.out.println(stream01.mapToInt(n -> n.intValue()).sum());
 		
-		// ÀÌ¹Ì ½ºÆ®¸²ÀÌ ¼Ò¸ğµÊ. ÀÌÈÄ stream01 »ç¿ëºÒ°¡
+		// ì´ë¯¸ ìŠ¤íŠ¸ë¦¼ì´ ì†Œëª¨ë¨. ì´í›„ stream01 ì‚¬ìš©ë¶ˆê°€
 		System.out.println(Stream.of(10, 20, 30, 40, 50)
 								.mapToInt(n -> n.intValue())
 								.average().orElse(0));

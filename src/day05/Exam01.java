@@ -4,31 +4,31 @@ import java.util.Scanner;
 
 public class Exam01 {
 	public static void extra() {
-		String table[] = { "°¡À§", "¹ÙÀ§", "º¸" },
-				resultTable[] = { "¹«½ÂºÎ", "½Â¸®", "ÆĞ¹è" },
+		String table[] = { "ê°€ìœ„", "ë°”ìœ„", "ë³´" },
+				resultTable[] = { "ë¬´ìŠ¹ë¶€", "ìŠ¹ë¦¬", "íŒ¨ë°°" },
 				user;
 		int userInt, comInt;
 
-		// »çÀü Ãâ·Â
-		System.out.println("°¡À§, ¹ÙÀ§, º¸ Áß ÇÏ³ª¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
-		System.out.println("Q/q¸¦ ´©¸£¸é Á¾·áÇÕ´Ï´Ù.");
+		// ì‚¬ì „ ì¶œë ¥
+		System.out.println("ê°€ìœ„, ë°”ìœ„, ë³´ ì¤‘ í•˜ë‚˜ë¥¼ ì…ë ¥í•˜ì„¸ìš”.");
+		System.out.println("Q/që¥¼ ëˆ„ë¥´ë©´ ì¢…ë£Œí•©ë‹ˆë‹¤.");
 
 		Scanner scan = new Scanner(System.in);
 		while (true) {
-			// ÄÄÇ»ÅÍ °áÁ¤
+			// ì»´í“¨í„° ê²°ì •
 			comInt = (int) (Math.random() * 3);
 
-			// À¯ÀúÀÇ ÀÔ·ÂÀ» ¹ŞÀ½
-			System.out.print("ÀÔ·Â> ");
+			// ìœ ì €ì˜ ì…ë ¥ì„ ë°›ìŒ
+			System.out.print("ì…ë ¥> ");
 			user = scan.next();
 			if (user.toLowerCase().equals("q")) {
-				// Q/q¸¦ ´©¸£¸é Á¾·á
+				// Q/që¥¼ ëˆ„ë¥´ë©´ ì¢…ë£Œ
 				break;
 			}
 
-			// À¯Àú ÀÔ·ÂÀ» Á¤¼ö(userInt)·Î º¯È¯
-			// userIntÀÇ ±âº»°ªÀº Àß¸ø ÀÔ·ÂÇÑ °æ¿ì¸¦ ÆÇº°ÇÏ±â À§ÇÔ
-			// Á¤»óÀûÀ¸·Î ÀÔ·ÂÇßÀ¸¸é 0~2 »çÀÌÀÇ °ªÀÌ µÈ´Ù.
+			// ìœ ì € ì…ë ¥ì„ ì •ìˆ˜(userInt)ë¡œ ë³€í™˜
+			// userIntì˜ ê¸°ë³¸ê°’ì€ ì˜ëª» ì…ë ¥í•œ ê²½ìš°ë¥¼ íŒë³„í•˜ê¸° ìœ„í•¨
+			// ì •ìƒì ìœ¼ë¡œ ì…ë ¥í–ˆìœ¼ë©´ 0~2 ì‚¬ì´ì˜ ê°’ì´ ëœë‹¤.
 			userInt = -1;
 			for (int i = 0; i < 3; i++) {
 				if (user.equals(table[i])) {
@@ -37,93 +37,93 @@ public class Exam01 {
 			}
 
 			if (userInt == -1) {
-				// ¿¡·¯ ÄÉÀÌ½º
-				System.out.println("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù.");
+				// ì—ëŸ¬ ì¼€ì´ìŠ¤
+				System.out.println("ì˜ëª»ëœ ì…ë ¥ì…ë‹ˆë‹¤.");
 			} else {
-				// ½ÂÆĞ °áÁ¤
+				// ìŠ¹íŒ¨ ê²°ì •
 				int result = userInt - comInt;
 				if (result < 0) {
 					result += 3;
 				}
 
-				// °á°ú Ãâ·Â
-				System.out.println("ÄÄÇ»ÅÍ : " + table[comInt] + " / À¯Àú : " + user);
+				// ê²°ê³¼ ì¶œë ¥
+				System.out.println("ì»´í“¨í„° : " + table[comInt] + " / ìœ ì € : " + user);
 				System.out.println(resultTable[result]);
 			}
 
 		}
 		
-		System.out.println("Á¾·áÇÕ´Ï´Ù.");
+		System.out.println("ì¢…ë£Œí•©ë‹ˆë‹¤.");
 		scan.close();
 	}
 
 	public static void main(String[] args) {
-		/* ÄÄÇ»ÅÍ¿Í °¡À§¹ÙÀ§º¸ °ÔÀÓ
-		 * ÄÄÇ»ÅÍ´Â ·£´ıÀ¸·Î °¡À§/¹ÙÀ§/º¸ Áß ÇÏ³ª¸¦ ¼±ÅÃ (0 = °¡À§ / 1 = ¹ÙÀ§ / 2 = º¸)
-		 * °¡À§¹ÙÀ§º¸ Áß ÇÏ³ª¸¦ ¼±ÅÃÇÏ¿© ÀÔ·Â
+		/* ì»´í“¨í„°ì™€ ê°€ìœ„ë°”ìœ„ë³´ ê²Œì„
+		 * ì»´í“¨í„°ëŠ” ëœë¤ìœ¼ë¡œ ê°€ìœ„/ë°”ìœ„/ë³´ ì¤‘ í•˜ë‚˜ë¥¼ ì„ íƒ (0 = ê°€ìœ„ / 1 = ë°”ìœ„ / 2 = ë³´)
+		 * ê°€ìœ„ë°”ìœ„ë³´ ì¤‘ í•˜ë‚˜ë¥¼ ì„ íƒí•˜ì—¬ ì…ë ¥
 		 * ex)
-		 * com = 0(°¡À§) me = º¸ => com ½Â¸®
-		 * ÄÄÇ»ÅÍ¿Í ³ªÀÇ ¼±ÅÃ, ÆĞ¹è / ¹«½ÂºÎ / ½Â¸® Ãâ·Â
+		 * com = 0(ê°€ìœ„) me = ë³´ => com ìŠ¹ë¦¬
+		 * ì»´í“¨í„°ì™€ ë‚˜ì˜ ì„ íƒ, íŒ¨ë°° / ë¬´ìŠ¹ë¶€ / ìŠ¹ë¦¬ ì¶œë ¥
 		 * */
 		extra();
-//		String table[] = { "°¡À§", "¹ÙÀ§", "º¸" };
+//		String table[] = { "ê°€ìœ„", "ë°”ìœ„", "ë³´" };
 //
-//		// À¯Àú ÀÔ·Â
+//		// ìœ ì € ì…ë ¥
 //		Scanner scan = new Scanner(System.in);
-//		System.out.print("°¡À§, ¹ÙÀ§, º¸ Áß ÇÏ³ª¸¦ ÀÔ·ÂÇÏ¼¼¿ä.> ");
+//		System.out.print("ê°€ìœ„, ë°”ìœ„, ë³´ ì¤‘ í•˜ë‚˜ë¥¼ ì…ë ¥í•˜ì„¸ìš”.> ");
 //		String user = scan.next(), result = "";
 //		scan.close();
 //
-//		// ÄÄÇ»ÅÍ °áÁ¤
+//		// ì»´í“¨í„° ê²°ì •
 //		int comInt = (int) (Math.random() * 3);
 //
-//		// ÀÔ·Â È®ÀÎ ¹× ½ÂÆĞ ÆÇÁ¤
+//		// ì…ë ¥ í™•ì¸ ë° ìŠ¹íŒ¨ íŒì •
 //		boolean valid = true;
 //		switch (comInt) {
-//			case 0: // °¡À§
-//				if (user.equals("°¡À§")) {
-//					result = "¹«½ÂºÎ";
-//				} else if (user.equals("¹ÙÀ§")) {
-//					result = "½Â¸®";
-//				} else if (user.equals("º¸")) {
-//					result = "ÆĞ¹è";
+//			case 0: // ê°€ìœ„
+//				if (user.equals("ê°€ìœ„")) {
+//					result = "ë¬´ìŠ¹ë¶€";
+//				} else if (user.equals("ë°”ìœ„")) {
+//					result = "ìŠ¹ë¦¬";
+//				} else if (user.equals("ë³´")) {
+//					result = "íŒ¨ë°°";
 //				} else {
 //					valid = false;
-//					result = "Àß¸øµÈ ÀÔ·Â";
+//					result = "ì˜ëª»ëœ ì…ë ¥";
 //				}
 //				break;
-//			case 1: // ¹ÙÀ§
-//				if (user.equals("°¡À§")) {
-//					result = "ÆĞ¹è";
-//				} else if (user.equals("¹ÙÀ§")) {
-//					result = "¹«½ÂºÎ";
-//				} else if (user.equals("º¸")) {
-//					result = "½Â¸®";
+//			case 1: // ë°”ìœ„
+//				if (user.equals("ê°€ìœ„")) {
+//					result = "íŒ¨ë°°";
+//				} else if (user.equals("ë°”ìœ„")) {
+//					result = "ë¬´ìŠ¹ë¶€";
+//				} else if (user.equals("ë³´")) {
+//					result = "ìŠ¹ë¦¬";
 //				} else {
 //					valid = false;
-//					result = "Àß¸øµÈ ÀÔ·Â";
+//					result = "ì˜ëª»ëœ ì…ë ¥";
 //				}
 //				break;
-//			case 2: // º¸
-//				if (user.equals("°¡À§")) {
-//					result = "½Â¸®";
-//				} else if (user.equals("¹ÙÀ§")) {
-//					result = "ÆĞ¹è";
-//				} else if (user.equals("º¸")) {
-//					result = "¹«½ÂºÎ";
+//			case 2: // ë³´
+//				if (user.equals("ê°€ìœ„")) {
+//					result = "ìŠ¹ë¦¬";
+//				} else if (user.equals("ë°”ìœ„")) {
+//					result = "íŒ¨ë°°";
+//				} else if (user.equals("ë³´")) {
+//					result = "ë¬´ìŠ¹ë¶€";
 //				} else {
 //					valid = false;
-//					result = "Àß¸øµÈ ÀÔ·Â";
+//					result = "ì˜ëª»ëœ ì…ë ¥";
 //				}
 //				break;
 //			default:
 //				valid = false;
-//				System.out.println("¾Ë ¼ö ¾ø´Â ¿À·ù");
+//				System.out.println("ì•Œ ìˆ˜ ì—†ëŠ” ì˜¤ë¥˜");
 //		}
 //
-//		// °á°ú Ãâ·Â
+//		// ê²°ê³¼ ì¶œë ¥
 //		if (valid) {
-//			System.out.println("ÄÄÇ»ÅÍ : " + table[comInt] + " / À¯Àú : " + user);
+//			System.out.println("ì»´í“¨í„° : " + table[comInt] + " / ìœ ì € : " + user);
 //		}
 //		System.out.println(result);
 

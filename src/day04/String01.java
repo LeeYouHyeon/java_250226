@@ -3,9 +3,9 @@ package day04;
 public class String01 {
 
 	public static void main(String[] args) {
-		/* String class : ¹®ÀÚ¿­À» ´Ù·ç±â À§ÇÑ Å¬·¡½º => ±âº» ÀÚ·áÇüÀÌ ¾Æ´Ô
-		 * class : ÇØ´ç Å¬·¡½º ¾È¿¡ ¿©·¯°¡Áö ±â´ÉÀ» ´ã°í ÀÖÀ½
-		 * class : Å¬·¡½º¸í °´Ã¼¸í = new Å¬·¡½º¸í();
+		/* String class : ë¬¸ìì—´ì„ ë‹¤ë£¨ê¸° ìœ„í•œ í´ë˜ìŠ¤ => ê¸°ë³¸ ìë£Œí˜•ì´ ì•„ë‹˜
+		 * class : í•´ë‹¹ í´ë˜ìŠ¤ ì•ˆì— ì—¬ëŸ¬ê°€ì§€ ê¸°ëŠ¥ì„ ë‹´ê³  ìˆìŒ
+		 * class : í´ë˜ìŠ¤ëª… ê°ì²´ëª… = new í´ë˜ìŠ¤ëª…();
 		 * String str = new String();
 		 * */
 
@@ -15,55 +15,55 @@ public class String01 {
 		String str2 = "123 456";
 		System.out.println(str2);
 
-		// str1 == str2; : °¢ °´Á¦¯M ÁÖ¼Ò¸¦ ¹°¾îº¸´Â °Í
-		// STringÀº ¹è¿­Ã³·³ »ç¿ë
+		// str1 == str2; : ê° ê°ì œì¸¼ ì£¼ì†Œë¥¼ ë¬¼ì–´ë³´ëŠ” ê²ƒ
+		// STringì€ ë°°ì—´ì²˜ëŸ¼ ì‚¬ìš©
 
-		// length : ÀüÃ¼ ±ÛÀÚ¼ö(±ÛÀÚÀÌ ±æÀÌ)
+		// length : ì „ì²´ ê¸€ììˆ˜(ê¸€ìì´ ê¸¸ì´)
 		System.out.println("--length--");
 		System.out.println(str2.length());
 
-		// charAt(index) : index ¹øÁö¿¡ ÀÖ´Â ¹®ÀÚ ¹İÈ¯char
+		// charAt(index) : index ë²ˆì§€ì— ìˆëŠ” ë¬¸ì ë°˜í™˜char
 		System.out.println("--charAt()--");
 		System.out.println(str2.charAt(3));
 
-		// substring() : ¹®ÀÚ¿­ ÃßÃâ
+		// substring() : ë¬¸ìì—´ ì¶”ì¶œ
 		System.out.println("--substring()");
 		System.out.println(str2.substring(2, 5));
 
-		// str.compareTo(str2) : strÀÌ str2º¸´Ù ¾ÕÀÌ¸é -1, °°À¸¸é 0, µÚ¸é 1
-		// ¹®ÀÚ Á¤·Ä ½Ã »ç¿ë
+		// str.compareTo(str2) : strì´ str2ë³´ë‹¤ ì•ì´ë©´ -1, ê°™ìœ¼ë©´ 0, ë’¤ë©´ 1
+		// ë¬¸ì ì •ë ¬ ì‹œ ì‚¬ìš©
 		System.out.println("--compareTo");
 		System.out.println("a".compareTo("b"));
 		System.out.println("apple".compareTo("banana"));
 
-		// equals() : µÎ ¹®ÀÚ°¡ °°ÀºÁö ºñ±³(´ë¼Ò¹®ÀÚ ±¸ºĞ)
-		// °°À¸¸é true / ´Ù¸£¸é false
-		// ÂüÁ¶ÀÚ·áÇüÀ» ==·Î ºñ±³ÇÏ¸é ÁÖ¼Ò¸¦ ºñ±³
+		// equals() : ë‘ ë¬¸ìê°€ ê°™ì€ì§€ ë¹„êµ(ëŒ€ì†Œë¬¸ì êµ¬ë¶„)
+		// ê°™ìœ¼ë©´ true / ë‹¤ë¥´ë©´ false
+		// ì°¸ì¡°ìë£Œí˜•ì„ ==ë¡œ ë¹„êµí•˜ë©´ ì£¼ì†Œë¥¼ ë¹„êµ
 		System.out.println("--equals()--");
 		System.out.println("abc".equals("abc"));
 		System.out.println("hello".equals("java"));
 
-		// indexOf() : ¹®ÀÚÀÇ À§Ä¡¸¦ Ã£¾ÆÁÖ´Â ±â´É
-		// Ã£´Â ¹®ÀÚ°¡ ¾øÀ¸¸é -1À» return
+		// indexOf() : ë¬¸ìì˜ ìœ„ì¹˜ë¥¼ ì°¾ì•„ì£¼ëŠ” ê¸°ëŠ¥
+		// ì°¾ëŠ” ë¬¸ìê°€ ì—†ìœ¼ë©´ -1ì„ return
 		System.out.println("--indexOf()--");
 		System.out.println("HelloWorld!!".indexOf('W'));
 		System.out.println("HelloWorld!!".indexOf('o'));
 		System.out.println("HelloWorld!!".indexOf('a'));
 		System.out.println("HelloWorld!!".lastIndexOf('o'));
 		
-		//substring, indexOf¸¦ »ç¿ëÇÏ¿© id¸¦ ÃßÃâ
+		//substring, indexOfë¥¼ ì‚¬ìš©í•˜ì—¬ idë¥¼ ì¶”ì¶œ
 		String email = "abc12345@naver.com";
 		System.out.println(email.substring(0, email.indexOf('@')));
 		
-		// ÁÖ¹Îµî·Ï ¹øÈ£ÀÇ »ı³â¿ùÀÏ¸¸ ÃßÃâ
+		// ì£¼ë¯¼ë“±ë¡ ë²ˆí˜¸ì˜ ìƒë…„ì›”ì¼ë§Œ ì¶”ì¶œ
 		String regNum = "990101-1234567";
 		System.out.println(regNum.substring(0, regNum.indexOf('-')));
 		
-		// contains : ÇØ´ç ¹®ÀÚ¸¦ Æ÷ÇÔÇÏ´ÂÁö Ã¼Å©
+		// contains : í•´ë‹¹ ë¬¸ìë¥¼ í¬í•¨í•˜ëŠ”ì§€ ì²´í¬
 		String file = "HelloWorldjava.html";
 		System.out.println(file.contains("java"));
 		
-		// concat : ÀÌ¾îºÙÀÌ±â (+ ¿¬°á¿¬»êÀÚ¿Í °°Àº ÀÇ¹Ì)
+		// concat : ì´ì–´ë¶™ì´ê¸° (+ ì—°ê²°ì—°ì‚°ìì™€ ê°™ì€ ì˜ë¯¸)
 		System.out.println("--concat--");
 		System.out.println("abc".concat("def"));
 	}

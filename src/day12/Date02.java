@@ -5,14 +5,14 @@ import java.time.format.DateTimeFormatter;
 
 public class Date02 {
 	public static void main(String[] args) {
-		// LocalDateTime Å¬·¡½º
+		// LocalDateTime í´ë˜ìŠ¤
 		LocalDateTime today = LocalDateTime.now();
 		System.out.println(today);
 		
-		// °´Ã¼¸¦ StringÀ¸·Î º¯È¯
+		// ê°ì²´ë¥¼ Stringìœ¼ë¡œ ë³€í™˜
 		String date = today.toString();
 		
-		// substringÀ¸·Î ³¯Â¥ / ½Ã°£À¸·Î ºĞ¸®ÇÏ¿© Ãâ·Â
+		// substringìœ¼ë¡œ ë‚ ì§œ / ì‹œê°„ìœ¼ë¡œ ë¶„ë¦¬í•˜ì—¬ ì¶œë ¥
 		
 		int idx = date.indexOf("T");
 		System.out.print(date.substring(0, idx) + "/");
@@ -22,7 +22,7 @@ public class Date02 {
 		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd hh:mm:ss");
 		System.out.println(dtf.format(today));
 		
-		// ÀÓÀÇÀÇ ³¯Â¥ »ı¼º
+		// ì„ì˜ì˜ ë‚ ì§œ ìƒì„±
 		LocalDateTime birth = LocalDateTime.of(1994, 10, 13, 0, 0);
 		System.out.println(dtf.format(birth));
 	}

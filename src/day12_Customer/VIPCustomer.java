@@ -22,8 +22,8 @@ public class VIPCustomer extends Customer {
 
 	@Override
 	public String toString() {
-		return customerName + "´ÔÀº " + customerGrade + " °í°´ÀÌ¸ç, º¸³Ê½º Æ÷ÀÎÆ®´Â " + bonusPoint + "Á¡ÀÔ´Ï´Ù." +
-				"\nÀü´ã »ó´ã»ç´Â " + agentName + "ÀÌ°í, ¹øÈ£´Â " + agentNum + "ÀÔ´Ï´Ù.";
+		return customerName + "ë‹˜ì€ " + customerGrade + " ê³ ê°ì´ë©°, ë³´ë„ˆìŠ¤ í¬ì¸íŠ¸ëŠ” " + bonusPoint + "ì ì…ë‹ˆë‹¤." +
+				"\nì „ë‹´ ìƒë‹´ì‚¬ëŠ” " + agentName + "ì´ê³ , ë²ˆí˜¸ëŠ” " + agentNum + "ì…ë‹ˆë‹¤.";
 	}
 	
 	public String getAgentName() {

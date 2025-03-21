@@ -23,8 +23,8 @@ public class Method03 {
 	}
 	
 	public static void main(String[] args) {
-		/* + - * / % ±â´ÉÀ» ÇÏ´Â ¸Ş¼­µå¸¦ »ı¼º
-		 * main¿¡¼­ È£Ãâ => ¸®ÅÏ¹ŞÀº °ªÀ» Ãâ·Â
+		/* + - * / % ê¸°ëŠ¥ì„ í•˜ëŠ” ë©”ì„œë“œë¥¼ ìƒì„±
+		 * mainì—ì„œ í˜¸ì¶œ => ë¦¬í„´ë°›ì€ ê°’ì„ ì¶œë ¥
 		 * */
 		
 		int num1 = 10, num2 = 20;
@@ -32,10 +32,10 @@ public class Method03 {
 		System.out.println(add(num1, num2));
 		System.out.println(sub(num1, num2));
 		System.out.println(mul(num1, num2));
-		System.out.println((num2 == 0) ? "ÇÇ¿¬»êÀÚ°¡ 0ÀÔ´Ï´Ù." : div(num1, num2));
-		System.out.println((num2 == 0) ? "ÇÇ¿¬»êÀÚ°¡ 0ÀÔ´Ï´Ù." : mod(num1, num2));
+		System.out.println((num2 == 0) ? "í”¼ì—°ì‚°ìê°€ 0ì…ë‹ˆë‹¤." : div(num1, num2));
+		System.out.println((num2 == 0) ? "í”¼ì—°ì‚°ìê°€ 0ì…ë‹ˆë‹¤." : mod(num1, num2));
 		
-		// ´Ù¸¥ Å¬·¡½º¿¡ ÀÖ´Â ¸Ş¼­µå¸¦ È£ÃâÇÒ °æ¿ì Å¬·¡½º¸í.¸Ş¼­µå¸í(); => staticÀÏ °æ¿ì
+		// ë‹¤ë¥¸ í´ë˜ìŠ¤ì— ìˆëŠ” ë©”ì„œë“œë¥¼ í˜¸ì¶œí•  ê²½ìš° í´ë˜ìŠ¤ëª….ë©”ì„œë“œëª…(); => staticì¼ ê²½ìš°
 		System.out.println("------------------------");
 		Method04.times();
 	}

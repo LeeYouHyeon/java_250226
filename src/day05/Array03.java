@@ -5,14 +5,14 @@ import java.text.DecimalFormat;
 public class Array03 {
 
 	public static void main(String[] args) {
-		// arr ¹è¿­ÀÇ ÇÕ°è¿Í Æò±Õ Ãâ·Â
-		// ÃÖ´ñ°ª°ú ÃÖ¼Ú°ª Ãâ·Â
+		// arr ë°°ì—´ì˜ í•©ê³„ì™€ í‰ê·  ì¶œë ¥
+		// ìµœëŒ“ê°’ê³¼ ìµœì†Ÿê°’ ì¶œë ¥
 
-		// arr: ·£´ıÇÑ ±æÀÌÀÇ ¹è¿­. ±æÀÌÀÇ ¹üÀ§´Â 1~20
+		// arr: ëœë¤í•œ ê¸¸ì´ì˜ ë°°ì—´. ê¸¸ì´ì˜ ë²”ìœ„ëŠ” 1~20
 		int length = (int) (Math.random() * 20 + 1);
 		int arr[] = new int[length];
 
-		// arrÀÇ °¢ °ªÀÇ ¹üÀ§´Â 0~100
+		// arrì˜ ê° ê°’ì˜ ë²”ìœ„ëŠ” 0~100
 		for (int i = 0; i < length; i++) {
 			arr[i] = (int) (Math.random() * 101);
 		}
@@ -20,33 +20,33 @@ public class Array03 {
 		int sum = 0, max = arr[0], min = arr[0];
 		System.out.print("arr[" + length + "] = ");
 		for (int num : arr) {
-			// ¹è¿­ Ãâ·Â
+			// ë°°ì—´ ì¶œë ¥
 			System.out.print(num + " ");
 
-			// ÇÕ°è °è»ê
+			// í•©ê³„ ê³„ì‚°
 			sum += num;
 
-			// ÃÖ´ñ°ª °»½Å
+			// ìµœëŒ“ê°’ ê°±ì‹ 
 			if (num > max) {
 				max = num;
 			}
 
-			// ÃÖ¼Ú°ª °»½Å
+			// ìµœì†Ÿê°’ ê°±ì‹ 
 			if (num < min) {
 				min = num;
 			}
 		}
 
-		// Á¤¼öÀÇ Çü½ÄÀ» º¯°æ
-		// ÄÜ¼Ö¿¡¼­ º¸±â ÁÁ°Ô ¹Ù²Ù´Â ¸Ş¼­µå. ½Ç¹«¿¡¼± Àß ¾²Áö ¾ÊÀ½
+		// ì •ìˆ˜ì˜ í˜•ì‹ì„ ë³€ê²½
+		// ì½˜ì†”ì—ì„œ ë³´ê¸° ì¢‹ê²Œ ë°”ê¾¸ëŠ” ë©”ì„œë“œ. ì‹¤ë¬´ì—ì„  ì˜ ì“°ì§€ ì•ŠìŒ
 		DecimalFormat df = new DecimalFormat("#.0");
 
-		// Ãâ·Â
+		// ì¶œë ¥
 		System.out.println();
-		System.out.println("ÇÕ°è : " + sum);
-		System.out.println("Æò±Õ : " + df.format(sum / (double) length));
-		System.out.println("ÃÖ´ñ°ª : " + max);
-		System.out.println("ÃÖ¼Ú°ª : " + min);
+		System.out.println("í•©ê³„ : " + sum);
+		System.out.println("í‰ê·  : " + df.format(sum / (double) length));
+		System.out.println("ìµœëŒ“ê°’ : " + max);
+		System.out.println("ìµœì†Ÿê°’ : " + min);
 	}
 
 }

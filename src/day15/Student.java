@@ -1,8 +1,8 @@
 package day15;
 
 public class Student implements Comparable<Student> {
-	// ÇĞ»ı Å¬·¡½º 
-	// name, score¸¸ °¡Áö´Â Å¬·¡½º
+	// í•™ìƒ í´ë˜ìŠ¤ 
+	// name, scoreë§Œ ê°€ì§€ëŠ” í´ë˜ìŠ¤
 	private String name;
 	private int score;
 	

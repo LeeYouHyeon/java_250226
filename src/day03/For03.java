@@ -5,17 +5,17 @@ import java.util.Scanner;
 public class For03 {
 
 	public static void main(String[] args) {
-		// ±¸±¸´Ü 2´Ü Ãâ·Â
+		// êµ¬êµ¬ë‹¨ 2ë‹¨ ì¶œë ¥
 		
 		//int num = 3;
 		
 		Scanner scan = new Scanner(System.in);
-		System.out.println("±¸±¸´Ü¿¡¼­ ¸î ´ÜÀ» º¸°í ½ÍÀºÁö ÇÑ ÀÚ¸® ¼ıÀÚ·Î ÀÔ·ÂÇÏ¼¼¿ä.");
+		System.out.println("êµ¬êµ¬ë‹¨ì—ì„œ ëª‡ ë‹¨ì„ ë³´ê³  ì‹¶ì€ì§€ í•œ ìë¦¬ ìˆ«ìë¡œ ì…ë ¥í•˜ì„¸ìš”.");
 		
 		int num = scan.nextInt();
 		
 		if (num < 2 || num > 10) {
-			System.out.println("±¸±¸´ÜÀÇ ¹üÀ§ ¹ÛÀÔ´Ï´Ù.");
+			System.out.println("êµ¬êµ¬ë‹¨ì˜ ë²”ìœ„ ë°–ì…ë‹ˆë‹¤.");
 		} else {
 			for (int i = 1; i < 10; i++) {
 				System.out.println(num + "*" + i + " = " + num*i);

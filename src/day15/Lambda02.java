@@ -4,10 +4,10 @@ import java.util.HashMap;
 
 public class Lambda02 {
 	public static void main(String[] args) {
-		// mapÀ» ±¸¼ºÇÏ¿© forEach·Î Ãâ·Â
+		// mapì„ êµ¬ì„±í•˜ì—¬ forEachë¡œ ì¶œë ¥
 
 		HashMap<String, Integer> map = new HashMap<String, Integer>();
-		for (String name : new String[] { "±æµ¿", "¿µÀÌ", "¼øÀÌ", "Ã¶¼ö", "¿µÃ¶", "¼øÀÚ" }) {
+		for (String name : new String[] { "ê¸¸ë™", "ì˜ì´", "ìˆœì´", "ì² ìˆ˜", "ì˜ì² ", "ìˆœì" }) {
 			map.put(name, (int)(Math.random()*101));
 		}
 		
@@ -22,10 +22,10 @@ public class Lambda02 {
 	}
 }
 
-// ¶÷´Ù¿ë ÇÔ¼öÇü ÀÎÅÍÆäÀÌ½º »ı¼º
-// ¸Ş¼­µå´Â 1°³¸¸
+// ëŒë‹¤ìš© í•¨ìˆ˜í˜• ì¸í„°í˜ì´ìŠ¤ ìƒì„±
+// ë©”ì„œë“œëŠ” 1ê°œë§Œ
 @FunctionalInterface
 interface Number {
-	// ¸Ş¼­µå Ãß°¡
+	// ë©”ì„œë“œ ì¶”ê°€
 	int add(int a, int b);
 }

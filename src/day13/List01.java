@@ -7,37 +7,37 @@ public class List01 {
 	@SuppressWarnings("deprecation")
 	public static void main(String[] args) {
 		// List => ArrayList
-		// List<Å¬·¡½º¸í> °´Ã¼¸í = new ±¸ÇöÅ¬·¡½º<Å¬·¡½º¸í>();
+		// List<í´ë˜ìŠ¤ëª…> ê°ì²´ëª… = new êµ¬í˜„í´ë˜ìŠ¤<í´ë˜ìŠ¤ëª…>();
 		List<Integer> list = new ArrayList<Integer>();
 		
-		// add() : ¿ä¼Ò¸¦ Ãß°¡
-		list.add(1); // ¿ÀÅä ¹Ú½Ì : int => Integer ¹Ú½ÌµÅ¼­ ÀúÀå
-		list.add(new Integer(2)); // Á÷Á¢ °´Ã¼ »ı¼º ÈÄ ÀúÀå
+		// add() : ìš”ì†Œë¥¼ ì¶”ê°€
+		list.add(1); // ì˜¤í†  ë°•ì‹± : int => Integer ë°•ì‹±ë¼ì„œ ì €ì¥
+		list.add(new Integer(2)); // ì§ì ‘ ê°ì²´ ìƒì„± í›„ ì €ì¥
 		list.add(3);
 		
-		System.out.println(list); // ÀÚÃ¼ÀûÀ¸·Î toString() Á¦°ø
+		System.out.println(list); // ìì²´ì ìœ¼ë¡œ toString() ì œê³µ
 		
-		// get(index) : index ¹øÁöÀÇ °ªÀ» °¡Á®¿À±â
-		System.out.println(list.get(0));	// arr[0]°ú °°Àº ÀÇ¹Ì
+		// get(index) : index ë²ˆì§€ì˜ ê°’ì„ ê°€ì ¸ì˜¤ê¸°
+		System.out.println(list.get(0));	// arr[0]ê³¼ ê°™ì€ ì˜ë¯¸
 		System.out.println(list.get(1));
 		System.out.println(list.get(2));
 		
-		// set(index, °ª) : index ¹øÁöÀÇ °ª º¯°æÇÏ±â
+		// set(index, ê°’) : index ë²ˆì§€ì˜ ê°’ ë³€ê²½í•˜ê¸°
 		list.set(0, 5);
-		// size() : listÀÇ ÃÑ °¹¼ö
-		System.out.println("---for¹®À» ÀÌ¿ëÇÏ¿© Ãâ·Â---");
+		// size() : listì˜ ì´ ê°¯ìˆ˜
+		System.out.println("---forë¬¸ì„ ì´ìš©í•˜ì—¬ ì¶œë ¥---");
 		for(int i = 0; i < list.size(); i++) {
 			System.out.println(list.get(i));
 		}
 		
-		// remove(index) : index ¹øÁöÀÇ °ªÀ» »èÁ¦
-		// remove(object) : object ¿ä¼Ò¸¦ »èÁ¦
-		list.remove(0);	// index·Î »èÁ¦
+		// remove(index) : index ë²ˆì§€ì˜ ê°’ì„ ì‚­ì œ
+		// remove(object) : object ìš”ì†Œë¥¼ ì‚­ì œ
+		list.remove(0);	// indexë¡œ ì‚­ì œ
 		System.out.println(list);
 		list.remove(Integer.valueOf(3));
 		System.out.println(list);
 		
-		// list1À» »ı¼ºÇÏ¿©, 1~10±îÁö Ãß°¡ÇÏ°í Ãâ·Â
+		// list1ì„ ìƒì„±í•˜ì—¬, 1~10ê¹Œì§€ ì¶”ê°€í•˜ê³  ì¶œë ¥
 		ArrayList<Integer> list1 = new ArrayList<Integer>();
 		
 		for(int i = 1; i <= 10; i++) {
@@ -45,25 +45,25 @@ public class List01 {
 		}
 		System.out.println(list1);
 		
-		// index 4¿¡ ÀÖ´Â °ªÀ» 11·Î º¯°æ
+		// index 4ì— ìˆëŠ” ê°’ì„ 11ë¡œ ë³€ê²½
 		list1.set(4, 11);
 		System.out.println(list1);
 		
-		// index 0¿¡ ÀÖ´Â ¿ä¼Ò¸¦ »èÁ¦
+		// index 0ì— ìˆëŠ” ìš”ì†Œë¥¼ ì‚­ì œ
 		list1.remove(0);
 		System.out.println(list1);
 		
 		list1.remove(Integer.valueOf(3));
 		System.out.println(list1);
 		
-		// contains(object) : list¿¡ object °ªÀÌ ÀÖ´ÂÁö Ã¼Å©
+		// contains(object) : listì— object ê°’ì´ ìˆëŠ”ì§€ ì²´í¬
 		System.out.println(list1.contains(11));
 		
-		// clear() : ¸®½ºÆ® ºñ¿ì±â (¿ä¼Ò ÀüºÎ »èÁ¦)
+		// clear() : ë¦¬ìŠ¤íŠ¸ ë¹„ìš°ê¸° (ìš”ì†Œ ì „ë¶€ ì‚­ì œ)
 		list1.clear();
 		System.out.println(list1);
 		
-		// isEmpty() : ¸®½ºÆ®°¡ ºñ¾îÀÖ´ÂÁö Ã¼Å©
+		// isEmpty() : ë¦¬ìŠ¤íŠ¸ê°€ ë¹„ì–´ìˆëŠ”ì§€ ì²´í¬
 		System.out.println(list1.isEmpty());
 		System.out.println(list.isEmpty());
 	}

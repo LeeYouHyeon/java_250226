@@ -3,57 +3,57 @@ package day09;
 import memos.Randoms;
 
 public class CardPack {
-	// Card¸¦ ¹­Àº pack
-	/* 1. ¸â¹öº¯¼ö
-	 * 	- pack : CardÀÇ array
-	 * 	- count : nullÀÌ ¾Æ´Ñ Ä«µåµéÀÇ ¼ıÀÚ(»©³»¸é null·Î Ã¤¿ò)
+	// Cardë¥¼ ë¬¶ì€ pack
+	/* 1. ë©¤ë²„ë³€ìˆ˜
+	 * 	- pack : Cardì˜ array
+	 * 	- count : nullì´ ì•„ë‹Œ ì¹´ë“œë“¤ì˜ ìˆ«ì(ë¹¼ë‚´ë©´ nullë¡œ ì±„ì›€)
 	 * 
-	 * 2. »ı¼ºÀÚ 
-	 *  - ±âº» »ı¼ºÀÚ: 52ÀåÀÌ ¼ø¼­´ë·Î µé¾îÀÖµµ·Ï »ı¼º
+	 * 2. ìƒì„±ì 
+	 *  - ê¸°ë³¸ ìƒì„±ì: 52ì¥ì´ ìˆœì„œëŒ€ë¡œ ë“¤ì–´ìˆë„ë¡ ìƒì„±
 	 * 
-	 * 3. ¸Ş¼­µå
-	 * 1) public void print() : Ä«µåµéÀ» ¼ø¼­´ë·Î Ãâ·Â
-	 * 2) public void shuffle() : Ä«µå ¼¯±â
-	 * 3) Ä«µå »Ì±â
+	 * 3. ë©”ì„œë“œ
+	 * 1) public void print() : ì¹´ë“œë“¤ì„ ìˆœì„œëŒ€ë¡œ ì¶œë ¥
+	 * 2) public void shuffle() : ì¹´ë“œ ì„ê¸°
+	 * 3) ì¹´ë“œ ë½‘ê¸°
 	 * 	[1] public Card pickOne()
-	 * 		- Ä«µå ÇÑ Àå »Ì±â
-	 * 		- µ¦ÀÌ ºñ¾îÀÖ´Ù¸é nullÀ» return
+	 * 		- ì¹´ë“œ í•œ ì¥ ë½‘ê¸°
+	 * 		- ë±ì´ ë¹„ì–´ìˆë‹¤ë©´ nullì„ return
 	 * 	[2] public void pick(Card[] user)
-	 * 		- user¿¡¼­ nullÀÎ ºÎºĞÀ» µ¦¿¡¼­ »Ì¾Æ¼­ Ã¤¿ò
-	 * 		- Ä«µå°¡ ºÎÁ·ÇÏ¸é userÀÇ nullÀÌ ±×´ë·Î ³²À» ¼ö ÀÖÀ½
+	 * 		- userì—ì„œ nullì¸ ë¶€ë¶„ì„ ë±ì—ì„œ ë½‘ì•„ì„œ ì±„ì›€
+	 * 		- ì¹´ë“œê°€ ë¶€ì¡±í•˜ë©´ userì˜ nullì´ ê·¸ëŒ€ë¡œ ë‚¨ì„ ìˆ˜ ìˆìŒ
 	 * 	[3] public Card[] pick(int n)
-	 * 		- µ¦¿¡¼­ n°³ÀÇ Ä«µå¸¦ »Ì¾Æ array ÇüÅÂ·Î return
-	 * 		- µ¦ÀÇ Ä«µå ¼ö°¡ ºÎÁ·ÇÏ¸é nullÀ» Æ÷ÇÔÇÒ ¼ö ÀÖÀ½
-	 * 4) Ä«µå¸¦ µ¦¿¡ ³Ö±â
+	 * 		- ë±ì—ì„œ nê°œì˜ ì¹´ë“œë¥¼ ë½‘ì•„ array í˜•íƒœë¡œ return
+	 * 		- ë±ì˜ ì¹´ë“œ ìˆ˜ê°€ ë¶€ì¡±í•˜ë©´ nullì„ í¬í•¨í•  ìˆ˜ ìˆìŒ
+	 * 4) ì¹´ë“œë¥¼ ë±ì— ë„£ê¸°
 	 * 	[1] public boolean addOne(Card card)
-	 * 		- card°¡ µ¦¿¡ ¾øÀ¸¸é ³Ö°í true¸¦ return
-	 * 		- ÀÌ¹Ì ÀÖ´Â Ä«µå¶ó¸é ³ÖÁö ¾Ê°í false¸¦ return
+	 * 		- cardê°€ ë±ì— ì—†ìœ¼ë©´ ë„£ê³  trueë¥¼ return
+	 * 		- ì´ë¯¸ ìˆëŠ” ì¹´ë“œë¼ë©´ ë„£ì§€ ì•Šê³  falseë¥¼ return
 	 * 	[2] public boolean add(Card[] user)
-	 * 		- user¿¡ ÀÖ´Â ¸ğµç Ä«µå¸¦ µ¦¿¡ ³Ö°í null·Î Ã¤¿ò
-	 * 		- ÀÌ¹Ì ÀÖ´Â Ä«µåµéÀº ¾È µé¾î°¡°í user¿¡ ³²À½
-	 * 		- ÇÏ³ª¶óµµ ¾È µé¾î°£ Ä«µå°¡ ÀÖÀ¸¸é false¸¦, ÀüºÎ µé¾î°¬´Ù¸é true¸¦ return
-	 * 5) public int count() : countÀÇ getter
-	 * 	- setter´Â Áö¿øÇÏÁö ¾ÊÀ½
+	 * 		- userì— ìˆëŠ” ëª¨ë“  ì¹´ë“œë¥¼ ë±ì— ë„£ê³  nullë¡œ ì±„ì›€
+	 * 		- ì´ë¯¸ ìˆëŠ” ì¹´ë“œë“¤ì€ ì•ˆ ë“¤ì–´ê°€ê³  userì— ë‚¨ìŒ
+	 * 		- í•˜ë‚˜ë¼ë„ ì•ˆ ë“¤ì–´ê°„ ì¹´ë“œê°€ ìˆìœ¼ë©´ falseë¥¼, ì „ë¶€ ë“¤ì–´ê°”ë‹¤ë©´ trueë¥¼ return
+	 * 5) public int count() : countì˜ getter
+	 * 	- setterëŠ” ì§€ì›í•˜ì§€ ì•ŠìŒ
 	 * */
 
-	// 1. ¸â¹öº¯¼ö
+	// 1. ë©¤ë²„ë³€ìˆ˜
 	private Card pack[] = new Card[52];
-	private int count; // »ı¼ºÀÚ¿¡ ÀÇÇØ 52·Î ÃÊ±âÈ­µÊ
-	private Randoms ran = new Randoms(); // º¸Á¶ º¯¼ö. ÆÑ ÇÏ³ª¸¦ ¸¸µé°í ¿©·¯ ¹ø ¼¯±â À§ÇØ ¹Ì¸® ¼±¾ğÇØµÒ
+	private int count; // ìƒì„±ìì— ì˜í•´ 52ë¡œ ì´ˆê¸°í™”ë¨
+	private Randoms ran = new Randoms(); // ë³´ì¡° ë³€ìˆ˜. íŒ© í•˜ë‚˜ë¥¼ ë§Œë“¤ê³  ì—¬ëŸ¬ ë²ˆ ì„ê¸° ìœ„í•´ ë¯¸ë¦¬ ì„ ì–¸í•´ë‘ 
 
-	// 2. »ı¼ºÀÚ
+	// 2. ìƒì„±ì
 	public CardPack() {
-		for (char shape : new char[] { '¢¾', '¡ß', '¢¼', '¢À' }) {
+		for (char shape : new char[] { 'â™¥', 'â—†', 'â™ ', 'â™£' }) {
 			for (int j = 1; j <= 13; count++, j++) {
 				pack[count] = new Card(j, shape);
 			}
 		}
 	}
 
-	// 3. ¸Ş¼­µå
+	// 3. ë©”ì„œë“œ
 	public void print() {
 		if (count == 0) {
-			System.out.println("Ä«µå°¡ ¾ø½À´Ï´Ù.");
+			System.out.println("ì¹´ë“œê°€ ì—†ìŠµë‹ˆë‹¤.");
 		}
 		for (int i = 0; i < count; i++) {
 			pack[i].print();

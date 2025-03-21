@@ -6,7 +6,7 @@ import java.util.TreeSet;
 
 public class SetEx01 {
 	public static void main(String[] args) {
-		/* Set¿¡ ·Î¶Ç ¹øÈ£ 6°³ »ı¼º ÈÄ Ãâ·Â
+		/* Setì— ë¡œë˜ ë²ˆí˜¸ 6ê°œ ìƒì„± í›„ ì¶œë ¥
 		 * */
 
 		Set<Integer> set = new HashSet<Integer>();
@@ -25,17 +25,17 @@ public class SetEx01 {
 		}
 		System.out.println(treeSet);
 		
-		// first() : °¡Àå ¾Õ¿¡ ÀÖ´Â °ª(°¡Àå ÀÛÀº °ª)
-		// last() : °¡Àå µÚ¿¡ ÀÖ´Â °ª(°¡Àå Å« °ª)
+		// first() : ê°€ì¥ ì•ì— ìˆëŠ” ê°’(ê°€ì¥ ì‘ì€ ê°’)
+		// last() : ê°€ì¥ ë’¤ì— ìˆëŠ” ê°’(ê°€ì¥ í° ê°’)
 		
 		System.out.println(treeSet.first());
 		System.out.println(treeSet.last());
 		
-		// headSet(±âÁØ°ª) / tailSet(±âÁØ°ª) : ±âÁØ°ªÀÇ ¾ÕÂÊ, µŞÂÊ °ªÀ» Ãâ·Â
+		// headSet(ê¸°ì¤€ê°’) / tailSet(ê¸°ì¤€ê°’) : ê¸°ì¤€ê°’ì˜ ì•ìª½, ë’·ìª½ ê°’ì„ ì¶œë ¥
 		System.out.println(treeSet.headSet(20));
 		System.out.println(treeSet.tailSet(20));
 		
-		// subSet(½ÃÀÛ°ª, ³¡°ª) : °Ë»ö ¹üÀ§ Ãâ·Â(½ÃÀÛ°ªÀº Æ÷ÇÔ, ³¡°ªÀº ¹ÌÆ÷ÇÔ)
+		// subSet(ì‹œì‘ê°’, ëê°’) : ê²€ìƒ‰ ë²”ìœ„ ì¶œë ¥(ì‹œì‘ê°’ì€ í¬í•¨, ëê°’ì€ ë¯¸í¬í•¨)
 		System.out.println(treeSet.subSet(10, 20));
 	}
 }

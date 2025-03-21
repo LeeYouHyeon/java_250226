@@ -9,8 +9,8 @@ public class ListEx01 {
 		String[] arr1 = new String[] {"c", "f", "a", "d"};
 		String[] arr2 = new String[] {"e", "b", "g", "f"};
 		
-		// µÎ ¹è¿­(arr1, arr2)À» ÇÕÃÄ¼­ ÇÏ³ªÀÇ list·Î »ı¼º
-		// Á¤·Ä ÈÄ Ãâ·Â
+		// ë‘ ë°°ì—´(arr1, arr2)ì„ í•©ì³ì„œ í•˜ë‚˜ì˜ listë¡œ ìƒì„±
+		// ì •ë ¬ í›„ ì¶œë ¥
 		List<String> list = new ArrayList<String>();
 		
 		for(String c : arr1) {

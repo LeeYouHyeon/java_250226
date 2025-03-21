@@ -2,13 +2,13 @@ package day05;
 
 public class ArrayCopy {
 	public static void main(String[] args) {
-		/* ¹è¿­º¹»ç
-		 * °°Àº ¹è¿­À» 2°³ »ý¼º
-		 * ¹è¿­ÀÇ ±æÀÌ´Â Á¤ÇØÁ® ÀÖÀ½.
+		/* ë°°ì—´ë³µì‚¬
+		 * ê°™ì€ ë°°ì—´ì„ 2ê°œ ìƒì„±
+		 * ë°°ì—´ì˜ ê¸¸ì´ëŠ” ì •í•´ì ¸ ìžˆìŒ.
 		 * */
 		int arr[] = { 1, 2, 3, 4 }, arr1[] = arr;
 		System.out.println(arr);
-		System.out.println(arr1); // arr¿Í °°Àº ¹è¿­À» °øÀ¯
+		System.out.println(arr1); // arrì™€ ê°™ì€ ë°°ì—´ì„ ê³µìœ 
 
 		int[] arr2 = new int[4];
 		System.out.println(arr2);
@@ -27,7 +27,7 @@ public class ArrayCopy {
 		}
 		System.out.println();
 
-		// arr => arr2 º¹»ç
+		// arr => arr2 ë³µì‚¬
 
 		for (int i = 0; i < arr.length; i++) {
 			arr2[i] = arr[i];

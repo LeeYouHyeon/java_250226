@@ -3,26 +3,26 @@ package day03;
 public class While01 {
 
 	public static void main(String[] args) {
-		// while¹®
-		/* while¹®Àº for¹®°ú ¼ø¼­°¡ µ¿ÀÏÇÑ ±¸¹®
-		 * for : ½ÇÇà È½¼ö°¡ Á¤ÇØÁ® ÀÖ´Â °æ¿ì »ç¿ë
-		 * while : ½ÇÇà È½¼ö°¡ ÀÏÁ¤ÇÏÁö ¾ÊÀº °æ¿ì »ç¿ë
+		// whileë¬¸
+		/* whileë¬¸ì€ forë¬¸ê³¼ ìˆœì„œê°€ ë™ì¼í•œ êµ¬ë¬¸
+		 * for : ì‹¤í–‰ íšŸìˆ˜ê°€ ì •í•´ì ¸ ìžˆëŠ” ê²½ìš° ì‚¬ìš©
+		 * while : ì‹¤í–‰ íšŸìˆ˜ê°€ ì¼ì •í•˜ì§€ ì•Šì€ ê²½ìš° ì‚¬ìš©
 		 * 
-		 * while(Á¶°Ç½Ä) { //Á¶°Ç½ÄÀÌ trueÀÏ ¶§ ¹Ýº¹
-		 * 	½ÇÇà¹®;
+		 * while(ì¡°ê±´ì‹) { //ì¡°ê±´ì‹ì´ trueì¼ ë•Œ ë°˜ë³µ
+		 * 	ì‹¤í–‰ë¬¸;
 		 * }
-		 * ½ÇÇà¹® ¾È¿¡ Á¶°Ç½ÄÀÌ ¹Ù²ð ¼ö ÀÖ´Â º¯È­°¡ ÀÖ¾î¾ß ÇÔ
+		 * ì‹¤í–‰ë¬¸ ì•ˆì— ì¡°ê±´ì‹ì´ ë°”ë€” ìˆ˜ ìžˆëŠ” ë³€í™”ê°€ ìžˆì–´ì•¼ í•¨
 		 * 
 		 * */
 
-		// 1ºÎÅÍ 10±îÁö Ãâ·Â
+		// 1ë¶€í„° 10ê¹Œì§€ ì¶œë ¥
 		int i = 1;
 		while (i <= 10) {
 			System.out.println(i++);
 		}
 
 		System.out.println("--------------");
-		// 1ºÎÅÍ 10±îÁö Áß Â¦¼ö Ãâ·Â
+		// 1ë¶€í„° 10ê¹Œì§€ ì¤‘ ì§ìˆ˜ ì¶œë ¥
 		i = 2;
 		while (i <= 10) {
 			System.out.println(i);

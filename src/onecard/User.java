@@ -1,8 +1,8 @@
 package onecard;
 
 public class User extends Cards {
-	// Ä«µå¸¦ ÇÏ³ª °ñ¶ó¼­ ³»´Â ¸Ş¼­µå
-	// ¸Å°³º¯¼ö°¡ ¾øÀ¸¸é ·£´ıÀ¸·Î ³½´Ù.
+	// ì¹´ë“œë¥¼ í•˜ë‚˜ ê³¨ë¼ì„œ ë‚´ëŠ” ë©”ì„œë“œ
+	// ë§¤ê°œë³€ìˆ˜ê°€ ì—†ìœ¼ë©´ ëœë¤ìœ¼ë¡œ ë‚¸ë‹¤.
 	public Card layCard() throws Exception {
 		return layCard((int)(Math.random()*cards.size()));
 	}

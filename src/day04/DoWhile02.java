@@ -5,9 +5,9 @@ import java.util.Scanner;
 public class DoWhile02 {
 
 	public static void main(String[] args) {
-		/* ¸Þ´º ±¸¼ºÇÒ ¶§ do~while¹®À» ÀÚÁÖ »ç¿ë
+		/* ë©”ë‰´ êµ¬ì„±í•  ë•Œ do~whileë¬¸ì„ ìžì£¼ ì‚¬ìš©
 		 * 
-		 * menu 1. ÀúÀåÇÏ±â, 2. »õ·Î ¸¸µé±â, 3. Á¾·áÇÏ±â
+		 * menu 1. ì €ìž¥í•˜ê¸°, 2. ìƒˆë¡œ ë§Œë“¤ê¸°, 3. ì¢…ë£Œí•˜ê¸°
 		 * */
 
 		Scanner scan = new Scanner(System.in);
@@ -15,23 +15,23 @@ public class DoWhile02 {
 		int menu;
 		do {
 			System.out.println("--menu--");
-			System.out.println("1. ÀúÀåÇÏ±â | 2. »õ·Î ¸¸µé±â | 3. Á¾·á");
+			System.out.println("1. ì €ìž¥í•˜ê¸° | 2. ìƒˆë¡œ ë§Œë“¤ê¸° | 3. ì¢…ë£Œ");
 			System.out.println("menu>> ");
 			menu = scan.nextInt();
 			
-			// ½ÇÁ¦ Ã³¸®
+			// ì‹¤ì œ ì²˜ë¦¬
 			switch (menu) {
 				case 1:
-					System.out.println("ÀúÀåÇß½À´Ï´Ù.");
+					System.out.println("ì €ìž¥í–ˆìŠµë‹ˆë‹¤.");
 					break;
 				case 2:
-					System.out.println("»õ·Î ¸¸µé¾ú½À´Ï´Ù.");
+					System.out.println("ìƒˆë¡œ ë§Œë“¤ì—ˆìŠµë‹ˆë‹¤.");
 					break;
 				case 3:
-					System.out.println("Á¾·áÇÕ´Ï´Ù.");
+					System.out.println("ì¢…ë£Œí•©ë‹ˆë‹¤.");
 					break;
 				default:
-					System.out.println("´Ù½Ã ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+					System.out.println("ë‹¤ì‹œ ìž…ë ¥í•´ì£¼ì„¸ìš”.");
 			}
 
 		} while (menu != 3);

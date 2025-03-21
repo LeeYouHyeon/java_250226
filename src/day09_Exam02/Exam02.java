@@ -2,48 +2,48 @@ package day09_Exam02;
 
 public class Exam02 {
 	public static void main(String[] args) {
-		/* ÇĞ»ı Á¤º¸¸¦ °ü¸®ÇÏ±â À§ÇÑ Å¬·¡½º »ı¼º (Student)
-		 * - ÇĞ»ı ±âº»Á¤º¸ : ÀÌ¸§, »ı³â¿ùÀÏ, ÀüÈ­¹øÈ£, ³ªÀÌ
-		 * - ÇĞ¿ø Á¤º¸ : ÇĞ¿ø¸í=KOREAIT, ÁöÁ¡
-		 * - ¼ö°­ Á¤º¸ : ¼ö°­°ú¸ñ, ±â°£
-		 * 		- ¿©·¯ °ú¸ñ °¡´É
-		 * 		- ÃÖ´ë 5°ú¸ñ => 5Ä­Â¥¸® array·Î Ã³¸®
+		/* í•™ìƒ ì •ë³´ë¥¼ ê´€ë¦¬í•˜ê¸° ìœ„í•œ í´ë˜ìŠ¤ ìƒì„± (Student)
+		 * - í•™ìƒ ê¸°ë³¸ì •ë³´ : ì´ë¦„, ìƒë…„ì›”ì¼, ì „í™”ë²ˆí˜¸, ë‚˜ì´
+		 * - í•™ì› ì •ë³´ : í•™ì›ëª…=KOREAIT, ì§€ì 
+		 * - ìˆ˜ê°• ì •ë³´ : ìˆ˜ê°•ê³¼ëª©, ê¸°ê°„
+		 * 		- ì—¬ëŸ¬ ê³¼ëª© ê°€ëŠ¥
+		 * 		- ìµœëŒ€ 5ê³¼ëª© => 5ì¹¸ì§œë¦¬ arrayë¡œ ì²˜ë¦¬
 		 * 
 		 * 	ex) 
-		 * ÇĞ»ıÀÇ ±âº» Á¤º¸
-		 * 		È«±æµ¿ 010101 010-.... (25)
-		 * ¼ö°­Á¤º¸
-		 * 		KOREAIT(°­³²)
-		 * 		°ø°øµ¥ÀÌÅÍ ±¹ºñ (25-02-26 ~ 25-08-01)
+		 * í•™ìƒì˜ ê¸°ë³¸ ì •ë³´
+		 * 		í™ê¸¸ë™ 010101 010-.... (25)
+		 * ìˆ˜ê°•ì •ë³´
+		 * 		KOREAIT(ê°•ë‚¨)
+		 * 		ê³µê³µë°ì´í„° êµ­ë¹„ (25-02-26 ~ 25-08-01)
 		 * 		java (25-01-05 ~ 25-01-30)
 		 * 		DB (25-02-01 ~ 25-02-28)
 		 * 
-		 * 	¸Ş¼­µå
-		 * 	- ÇĞ»ıÀÇ ±âº»Á¤º¸¸¦ Ãâ·ÂÇÏ´Â ¸Ş¼­µå
-		 * 	- ÇĞ»ıÀÇ ¼ö°­Á¤º¸¸¦ Ãâ·ÂÇÏ´Â ¸Ş¼­µå
-		 * 	- ÇĞ»ıÀÇ ¼ö°­Á¤º¸¸¦ Ãß°¡ÇÏ´Â ¸Ş¼­µå
+		 * 	ë©”ì„œë“œ
+		 * 	- í•™ìƒì˜ ê¸°ë³¸ì •ë³´ë¥¼ ì¶œë ¥í•˜ëŠ” ë©”ì„œë“œ
+		 * 	- í•™ìƒì˜ ìˆ˜ê°•ì •ë³´ë¥¼ ì¶œë ¥í•˜ëŠ” ë©”ì„œë“œ
+		 * 	- í•™ìƒì˜ ìˆ˜ê°•ì •ë³´ë¥¼ ì¶”ê°€í•˜ëŠ” ë©”ì„œë“œ
 		 * */
-		Student st = new Student("hong", "010-1234-4567", "°­³²");
+		Student st = new Student("hong", "010-1234-4567", "ê°•ë‚¨");
 
 		st.setAge(23);
 		st.setBirth("030101");
 		st.insertCourse("java", "25-01-05 ~ 25-01-30");
-		st.insertCourse("°ø°øµ¥ÀÌÅÍ ±¹ºñ", "25-02-26 ~ 25-08-01");
+		st.insertCourse("ê³µê³µë°ì´í„° êµ­ë¹„", "25-02-26 ~ 25-08-01");
 
-		Student st1 = new Student("kim", "010-2222-3333", "°­³²");
+		Student st1 = new Student("kim", "010-2222-3333", "ê°•ë‚¨");
 		st1.setAge(25);
 		st1.setBirth("010101");
 		st1.insertCourse("java", "25-01-05 ~ 25-01-30");
-		st1.insertCourse("°ø°øµ¥ÀÌÅÍ ±¹ºñ", "25-02-26 ~ 25-08-01");
+		st1.insertCourse("ê³µê³µë°ì´í„° êµ­ë¹„", "25-02-26 ~ 25-08-01");
 
 		Student[] studentArr = new Student[8];
 		studentArr[0] = st;
 		studentArr[1] = st1;
 
-		// Ãß°¡ 6¸í
+		// ì¶”ê°€ 6ëª…
 		for (int i = 2; i < 8; i++) {
 			Student s = new Student(String.valueOf(i),
-					"010-" + ((int) (Math.random() * 9000) + 1000) + "-" + ((int) (Math.random() * 9000) + 1000), "¼ö¿ø");
+					"010-" + ((int) (Math.random() * 9000) + 1000) + "-" + ((int) (Math.random() * 9000) + 1000), "ìˆ˜ì›");
 			s.setAge((int) (Math.random() * 8) + 20);
 			s.setBirth("0" + (int) (Math.random() * 10));
 
@@ -51,7 +51,7 @@ public class Exam02 {
 				s.insertCourse("java", "25-01-05 ~ 25-01-30");
 			}
 			if (Math.random() >= 0.8) {
-				s.insertCourse("°ø°øµ¥ÀÌÅÍ ±¹ºñ", "25-02-26 ~ 25-08-01");
+				s.insertCourse("ê³µê³µë°ì´í„° êµ­ë¹„", "25-02-26 ~ 25-08-01");
 			}
 			if (Math.random() >= 0.5) {
 				s.insertCourse("DB", "25-02-01 ~ 25-02-28");
@@ -67,7 +67,7 @@ public class Exam02 {
 //		}
 
 //		System.out.println("---------------------------");
-		// ÀÌ¸§ °Ë»ö
+		// ì´ë¦„ ê²€ìƒ‰
 		String searchName = "7";
 		int searchCount = 0;
 		for (Student stu : studentArr) {
@@ -80,13 +80,13 @@ public class Exam02 {
 			}
 		}
 		if (searchCount == 0) {
-			System.out.println("ÇĞ»ıÀ» Ã£À» ¼ö ¾ø½À´Ï´Ù.");
+			System.out.println("í•™ìƒì„ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 		}
 
 		System.out.println("-");
 		System.out.println();
-		String searchCourse = "DB"; // => ÇĞ»ı Á¤º¸, È¸»ç Á¤º¸
-		System.out.println("--" + searchCourse + "ÀÇ ¼ö°­ÇĞ»ı ¸ñ·Ï--");
+		String searchCourse = "DB"; // => í•™ìƒ ì •ë³´, íšŒì‚¬ ì •ë³´
+		System.out.println("--" + searchCourse + "ì˜ ìˆ˜ê°•í•™ìƒ ëª©ë¡--");
 		searchCount = 0;
 		for (Student stu : studentArr) {
 			for (String course : stu.getCourse()) {
@@ -103,15 +103,15 @@ public class Exam02 {
 			}
 		}
 		if (searchCount == 0) {
-			System.out.println("ÇĞ»ıÀ» Ã£À» ¼ö ¾ø½À´Ï´Ù.");
+			System.out.println("í•™ìƒì„ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 		} else {
-			System.out.println("ÃÑ " + searchCount + "°Ç");
+			System.out.println("ì´ " + searchCount + "ê±´");
 		}
 
 		System.out.println("-");
 		System.out.println();
-		String searchBranch = "°­³²";
-		System.out.println("--" + searchBranch + "ÀÇ ¼ö°­ÇĞ»ı ¸ñ·Ï--");
+		String searchBranch = "ê°•ë‚¨";
+		System.out.println("--" + searchBranch + "ì˜ ìˆ˜ê°•í•™ìƒ ëª©ë¡--");
 		searchCount = 0;
 		for (Student stu : studentArr) {
 			if(stu.getBranch() == null) {
@@ -123,9 +123,9 @@ public class Exam02 {
 			}
 		}
 		if (searchCount == 0) {
-			System.out.println("ÇĞ»ıÀ» Ã£À» ¼ö ¾ø½À´Ï´Ù.");
+			System.out.println("í•™ìƒì„ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 		} else {
-			System.out.println("ÃÑ " + searchCount + "°Ç");
+			System.out.println("ì´ " + searchCount + "ê±´");
 		}
 	}
 }

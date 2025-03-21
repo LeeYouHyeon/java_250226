@@ -43,11 +43,11 @@ public class Student {
 		return Objects.equals(stdNum, other.stdNum);
 	}
 	
-	// ³»°¡ ÇÊ¿äÇÑ ¸Ş¼­µå Ãß°¡
-	// 1. subject¿¡ µ¥ÀÌÅÍ Ãß°¡ÇÏ±â : ¼ö°­½ÅÃ»
-	// 2. subject¿¡¼­ µ¥ÀÌÅÍ »èÁ¦ÇÏ±â : ¼ö°­Ã¶È¸
-	// 3. subjectÀÇ µ¥ÀÌÅÍ Á¶È¸ÇÏ±â : °ú¸ñ Á¶È¸ (¼ºÀûÃß°¡)
-	// 4. subject Ãâ·ÂÇÏ±â
+	// ë‚´ê°€ í•„ìš”í•œ ë©”ì„œë“œ ì¶”ê°€
+	// 1. subjectì— ë°ì´í„° ì¶”ê°€í•˜ê¸° : ìˆ˜ê°•ì‹ ì²­
+	// 2. subjectì—ì„œ ë°ì´í„° ì‚­ì œí•˜ê¸° : ìˆ˜ê°•ì² íšŒ
+	// 3. subjectì˜ ë°ì´í„° ì¡°íšŒí•˜ê¸° : ê³¼ëª© ì¡°íšŒ (ì„±ì ì¶”ê°€)
+	// 4. subject ì¶œë ¥í•˜ê¸°
 	
 	public String getStdNum() {
 		return stdNum;
@@ -93,9 +93,9 @@ public class Student {
 	}
 	public void subjectPrint() {
 		if(subject == null || subject.isEmpty()) {
-			System.out.println("¼ö°­ÁßÀÎ °ú¸ñÀÌ ¾ø½À´Ï´Ù.");
+			System.out.println("ìˆ˜ê°•ì¤‘ì¸ ê³¼ëª©ì´ ì—†ìŠµë‹ˆë‹¤.");
 		} else {
-			System.out.println("--" + stdNum + "´Ô ¼ö°­½ÅÃ»¸ñ·Ï--");
+			System.out.println("--" + stdNum + "ë‹˜ ìˆ˜ê°•ì‹ ì²­ëª©ë¡--");
 			for(Subject s : subject) {
 				System.out.println(s);
 			}
@@ -104,35 +104,35 @@ public class Student {
 		
 	}
 	public void insertSubject(Subject temp) {
-		// subject°¡ ÀÔ·ÂµÇ¸é ¸®½ºÆ®¿¡ Ãß°¡
+		// subjectê°€ ì…ë ¥ë˜ë©´ ë¦¬ìŠ¤íŠ¸ì— ì¶”ê°€
 		if(subject.contains(temp)) {
-			System.out.println("ÀÌ¹Ì ¼ö°­ÇÑ °ú¸ñÀÔ´Ï´Ù.");
+			System.out.println("ì´ë¯¸ ìˆ˜ê°•í•œ ê³¼ëª©ì…ë‹ˆë‹¤.");
 			return;
 		}
 		subject.add(temp);
-		System.out.println("¼ö°­½ÅÃ» ¿Ï·á");
+		System.out.println("ìˆ˜ê°•ì‹ ì²­ ì™„ë£Œ");
 	}
 	public void deleteSub(String subNum) {
-		// ¼ö°­ Ãë¼Ò ¹øÈ£¸¦ ÁÖ¸é ¼ö°­ »èÁ¦
-		System.out.println(subject.remove(new Subject(subNum)) ? "¼ö°­ Ãë¼Ò ¿Ï·á" : "½ÅÃ»ÇÏÁö ¾ÊÀº °ú¸ñÀÔ´Ï´Ù.");
+		// ìˆ˜ê°• ì·¨ì†Œ ë²ˆí˜¸ë¥¼ ì£¼ë©´ ìˆ˜ê°• ì‚­ì œ
+		System.out.println(subject.remove(new Subject(subNum)) ? "ìˆ˜ê°• ì·¨ì†Œ ì™„ë£Œ" : "ì‹ ì²­í•˜ì§€ ì•Šì€ ê³¼ëª©ì…ë‹ˆë‹¤.");
 	}
 	
-	// ¼ºÀû µî·ÏÇÏ±â
-	// ¾î¶² °ú¸ñ? (°ú¸ñ¹øÈ£) / ¸î Á¡? (Á¡¼ö)
-	// ÇØ´ç ¼ºÀû µî·Ï ÈÄ Á¡¼ö¿¡ ´©Àû
+	// ì„±ì  ë“±ë¡í•˜ê¸°
+	// ì–´ë–¤ ê³¼ëª©? (ê³¼ëª©ë²ˆí˜¸) / ëª‡ ì ? (ì ìˆ˜)
+	// í•´ë‹¹ ì„±ì  ë“±ë¡ í›„ ì ìˆ˜ì— ëˆ„ì 
 	public void insertScore(String subNum, Scanner scan) {
 		//TODO
 		for(Subject s : subject) {
 			if(s.equals(new Subject(subNum))) {
-				System.out.print("Á¡¼ö> ");
+				System.out.print("ì ìˆ˜> ");
 				int score = scan.nextInt();
 				s.setSubScore(score);
 				total += score;
-				System.out.println("ÀÔ·Â ¿Ï·á");
+				System.out.println("ì…ë ¥ ì™„ë£Œ");
 				return;
 			}
 		}
 		
-		System.out.println("¼ö°­ÇÏÁö ¾ÊÀº °ú¸ñÀÔ´Ï´Ù.");
+		System.out.println("ìˆ˜ê°•í•˜ì§€ ì•Šì€ ê³¼ëª©ì…ë‹ˆë‹¤.");
 	}
 }

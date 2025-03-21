@@ -6,37 +6,37 @@ public class Input01 {
 
 	public static void main(String[] args) {
 		// Input Class
-		// console input : ÄÜ¼Ö¿¡¼­ °ªÀ» ÀÔ·Â¹Þ´Â °ÍÀ» ÀÇ¹Ì
-		// Scanner Å¬·¡½º : °´Ã¼¸¦ »ý¼ºÇÑ ÈÄ »ç¿ë new
-		// cf) StringÀº ³Ê¹« ÀÚÁÖ ¾²´Ù º¸´Ï Ãà¾àÇüÀ» Á¦°ø
-		// Å¬·¡½º¸í °´Ã¼ÀÌ¸§ = new Å¬·¡½º¸í(°ª);
-		// °´Ã¼¸í.next () : ÇÑ ´Ü¾î¸¸ ÀÔ·Â(¹®ÀÚ)
-		// °´Ã¼¸í.nextLine() : °ø¹é Æ÷ÇÔ
-		// °´Ã¼¸í.nextInt() : Á¤¼ö ÀÔ·Â
-		// °´Ã¼¸í.nextÀÚ·áÇü() : ÀÚ·áÇü¿¡ ¸Â´Â °ª ÀÔ·Â
+		// console input : ì½˜ì†”ì—ì„œ ê°’ì„ ìž…ë ¥ë°›ëŠ” ê²ƒì„ ì˜ë¯¸
+		// Scanner í´ëž˜ìŠ¤ : ê°ì²´ë¥¼ ìƒì„±í•œ í›„ ì‚¬ìš© new
+		// cf) Stringì€ ë„ˆë¬´ ìžì£¼ ì“°ë‹¤ ë³´ë‹ˆ ì¶•ì•½í˜•ì„ ì œê³µ
+		// í´ëž˜ìŠ¤ëª… ê°ì²´ì´ë¦„ = new í´ëž˜ìŠ¤ëª…(ê°’);
+		// ê°ì²´ëª….next () : í•œ ë‹¨ì–´ë§Œ ìž…ë ¥(ë¬¸ìž)
+		// ê°ì²´ëª….nextLine() : ê³µë°± í¬í•¨
+		// ê°ì²´ëª….nextInt() : ì •ìˆ˜ ìž…ë ¥
+		// ê°ì²´ëª….nextìžë£Œí˜•() : ìžë£Œí˜•ì— ë§žëŠ” ê°’ ìž…ë ¥
 
 		Scanner scan = new Scanner(System.in);
-//		System.out.print("¼ýÀÚÀÔ·Â> ");
+//		System.out.print("ìˆ«ìžìž…ë ¥> ");
 //		int num = scan.nextInt();
 //		System.out.println(num);
 //
 //		if (num % 2 == 0) {
-//			System.out.println("Â¦¼ö");
+//			System.out.println("ì§ìˆ˜");
 //		} else {
-//			System.out.println("È¦¼ö");
+//			System.out.println("í™€ìˆ˜");
 //		}
 //		
-//		System.out.print("½Ç¼ö¸¦ ÀÔ·Â> ");
+//		System.out.print("ì‹¤ìˆ˜ë¥¼ ìž…ë ¥> ");
 //		double d = scan.nextDouble();
 //		System.out.println(d);
 		
-		System.out.print("¹®ÀÚÀÔ·Â> ");
+		System.out.print("ë¬¸ìžìž…ë ¥> ");
 		String s = scan.next();
 		System.out.println(s);
 		
-		scan.nextLine(); //next() ÈÄÀÇ ¿£ÅÍ¸¦ ¹ö¸®´Â ¿ëµµ
+		scan.nextLine(); //next() í›„ì˜ ì—”í„°ë¥¼ ë²„ë¦¬ëŠ” ìš©ë„
 		
-		System.out.print("¿©·¯ ´Ü¾î ÀÔ·Â> ");
+		System.out.print("ì—¬ëŸ¬ ë‹¨ì–´ ìž…ë ¥> ");
 		String s1 = scan.nextLine();
 		System.out.println(s1);
 		

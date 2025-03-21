@@ -5,40 +5,40 @@ import java.util.Scanner;
 public class Array02 {
 
 	public static void main(String[] args) {
-		/* 5¸íÀÇ Á¡¼ö¸¦ ÀÔ·Â
-		 * 1. ¹è¿­À» »ı¼º
-		 * 2. ¹è¿­¿¡ Á¡¼ö ÀÔ·Â¹Ş±â
-		 * 3. ¹è¿­À» Ãâ·Â
-		 * 4. Á¡¼öÀÇ ÇÕ°è / Æò±Õ
+		/* 5ëª…ì˜ ì ìˆ˜ë¥¼ ì…ë ¥
+		 * 1. ë°°ì—´ì„ ìƒì„±
+		 * 2. ë°°ì—´ì— ì ìˆ˜ ì…ë ¥ë°›ê¸°
+		 * 3. ë°°ì—´ì„ ì¶œë ¥
+		 * 4. ì ìˆ˜ì˜ í•©ê³„ / í‰ê· 
 		 * */
 		
-		// 1. ¹è¿­À» »ı¼º
+		// 1. ë°°ì—´ì„ ìƒì„±
 		Scanner scan = new Scanner(System.in);
 		int scores[] = new int[5], sum = 0;
 
-		// 2. ¹è¿­¿¡ Á¡¼ö ÀÔ·Â¹Ş±â
-		System.out.println("5¸íÀÇ Á¡¼ö¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+		// 2. ë°°ì—´ì— ì ìˆ˜ ì…ë ¥ë°›ê¸°
+		System.out.println("5ëª…ì˜ ì ìˆ˜ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”.");
 		for (int i = 0; i < scores.length; i++) {
 			System.out.print(i + 1 + "> ");
 			scores[i] = scan.nextInt();
 			sum += scores[i];
 		}
 
-		// 3. ¹è¿­À» Ãâ·Â
-		System.out.print("Á¡¼ö : ");
+		// 3. ë°°ì—´ì„ ì¶œë ¥
+		System.out.print("ì ìˆ˜ : ");
 		for (int i = 0; i < scores.length; i++) {
 			System.out.print(scores[i] + " ");
 		}
 		System.out.println();
 
-		// 4. Á¡¼öÀÇ ÇÕ°è¿Í Æò±Õ Ãâ·Â
-		System.out.println("ÇÕ°è : " + sum);
-		System.out.println("Æò±Õ : " + sum / (double)scores.length);
+		// 4. ì ìˆ˜ì˜ í•©ê³„ì™€ í‰ê·  ì¶œë ¥
+		System.out.println("í•©ê³„ : " + sum);
+		System.out.println("í‰ê·  : " + sum / (double)scores.length);
 		scan.close();
 		
-		// Çâ»óµÈ for¹®
-		// ¹øÁö·Î Á¢±ÙÀÌ ºÒ°¡´ÉÇÑ °æ¿ì »ç¿ë
-		// index¸¦ È°¿ëÇÑ ±â´ÉÀ» ¾µ ¼ö ¾ø°í ÀüÃ¼ Å½»ö¸¸ °¡´É
+		// í–¥ìƒëœ forë¬¸
+		// ë²ˆì§€ë¡œ ì ‘ê·¼ì´ ë¶ˆê°€ëŠ¥í•œ ê²½ìš° ì‚¬ìš©
+		// indexë¥¼ í™œìš©í•œ ê¸°ëŠ¥ì„ ì“¸ ìˆ˜ ì—†ê³  ì „ì²´ íƒìƒ‰ë§Œ ê°€ëŠ¥
 		for(int num : scores) {
 			System.out.print(num + " ");
 		}

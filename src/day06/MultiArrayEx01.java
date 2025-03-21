@@ -4,15 +4,15 @@ import java.util.Scanner;
 
 public class MultiArrayEx01 {
 	public static void main(String[] args) {
-		/* ¼ºÀûÇ¥
-		 * ¸î ¸íÀÇ ¼ºÀûÀ» ÀÔ·ÂÇÒ Áö °áÁ¤ > 3
-		 * ÀÌ¸§, ±¹¾î, ¿µ¾î, ¼öÇĞ, ÃÑÁ¡, Æò±Õ, ¼®Â÷
-		 * ¼®Â÷´Â ÃÑÁ¡ ±âÁØ
-		 * "\t" : ÅÇ
+		/* ì„±ì í‘œ
+		 * ëª‡ ëª…ì˜ ì„±ì ì„ ì…ë ¥í•  ì§€ ê²°ì • > 3
+		 * ì´ë¦„, êµ­ì–´, ì˜ì–´, ìˆ˜í•™, ì´ì , í‰ê· , ì„ì°¨
+		 * ì„ì°¨ëŠ” ì´ì  ê¸°ì¤€
+		 * "\t" : íƒ­
 		 * */
 
-		// ÀÔ·Â¹ŞÀ» ÇĞ»ı ¼ö °áÁ¤
-		System.out.print("¼ºÀûÀ» ÀÔ·ÂÇÒ ÇĞ»ı ¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä.> ");
+		// ì…ë ¥ë°›ì„ í•™ìƒ ìˆ˜ ê²°ì •
+		System.out.print("ì„±ì ì„ ì…ë ¥í•  í•™ìƒ ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš”.> ");
 		Scanner scan = new Scanner(System.in);
 		int numOfStudents = scan.nextInt();
 
@@ -24,23 +24,23 @@ public class MultiArrayEx01 {
 				rank[]	= new int[numOfStudents];
 		double	avg[]	= new double[numOfStudents];
 
-		// ÇĞ»ı Á¤º¸¸¦ ÀÔ·Â¹Ş¾Æ ÀÌ¸§, Á¡¼ö, ÃÑÁ¡, Æò±Õ °è»ê
-		System.out.println("ÇĞ»ıÀÇ ÀÌ¸§, ±¹¾î, ¿µ¾î, ¼öÇĞ Á¡¼ö¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+		// í•™ìƒ ì •ë³´ë¥¼ ì…ë ¥ë°›ì•„ ì´ë¦„, ì ìˆ˜, ì´ì , í‰ê·  ê³„ì‚°
+		System.out.println("í•™ìƒì˜ ì´ë¦„, êµ­ì–´, ì˜ì–´, ìˆ˜í•™ ì ìˆ˜ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”.");
 		for (int i = 0; i < numOfStudents; i++) {
-			// ÀÔ·Â
-			System.out.println(i + 1 + "¹ø ÇĞ»ı");
-			scan.nextLine(); // nextInt()¿¡¼­ Ã³¸®µÇÁö ¾ÊÀº ¿£ÅÍÅ°¸¦ ¹ö¸²
+			// ì…ë ¥
+			System.out.println(i + 1 + "ë²ˆ í•™ìƒ");
+			scan.nextLine(); // nextInt()ì—ì„œ ì²˜ë¦¬ë˜ì§€ ì•Šì€ ì—”í„°í‚¤ë¥¼ ë²„ë¦¼
 			
-			System.out.print("ÀÌ¸§> ");
+			System.out.print("ì´ë¦„> ");
 			name[i] = scan.nextLine();
-			System.out.print("±¹¾î Á¡¼ö> ");
+			System.out.print("êµ­ì–´ ì ìˆ˜> ");
 			kor[i] = scan.nextInt();
-			System.out.print("¿µ¾î Á¡¼ö> ");
+			System.out.print("ì˜ì–´ ì ìˆ˜> ");
 			eng[i] = scan.nextInt();
-			System.out.print("¼öÇĞ Á¡¼ö> ");
+			System.out.print("ìˆ˜í•™ ì ìˆ˜> ");
 			math[i] = scan.nextInt();
 
-			// ÃÑÁ¡, Æò±Õ °è»ê
+			// ì´ì , í‰ê·  ê³„ì‚°
 			sum[i] = kor[i] + eng[i] + math[i];
 			avg[i] = sum[i] / 3.0;
 			rank[i] = 1;
@@ -48,7 +48,7 @@ public class MultiArrayEx01 {
 		}
 		scan.close();
 
-		// ÃÑÁ¡À» ±âÁØÀ¸·Î ¼®Â÷¸¦ °è»ê
+		// ì´ì ì„ ê¸°ì¤€ìœ¼ë¡œ ì„ì°¨ë¥¼ ê³„ì‚°
 		for (int i = 0; i < numOfStudents; i++) {
 			for (int j = 0; j < numOfStudents; j++) {
 				if (sum[i] < sum[j]) {
@@ -58,8 +58,8 @@ public class MultiArrayEx01 {
 		}
 
 		System.out.println("=============================================");
-		// ÀÔ·Â¹ŞÀº ¼ø¼­´ë·Î Ãâ·Â
-		System.out.printf("ÀÌ¸§\t±¹¾î\t¿µ¾î\t¼öÇĞ\tÃÑÁ¡\tÆò±Õ\t¼®Â÷\n");
+		// ì…ë ¥ë°›ì€ ìˆœì„œëŒ€ë¡œ ì¶œë ¥
+		System.out.printf("ì´ë¦„\têµ­ì–´\tì˜ì–´\tìˆ˜í•™\tì´ì \tí‰ê· \tì„ì°¨\n");
 		for (int i = 0; i < numOfStudents; i++) {
 			System.out.printf("%s\t%d\t%d\t%d\t%d\t%.2f\t%d\n",
 					name[i], kor[i], eng[i], math[i], sum[i], avg[i], rank[i]);

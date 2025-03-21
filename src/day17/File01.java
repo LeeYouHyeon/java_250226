@@ -2,44 +2,44 @@ package day17;
 
 public class File01 {
 	public static void main(String[] args) {
-		// file: java.io.*¿¡¼­ Á¦°øÇÏ´Â Å¬·¡½º
-		// ´ëºÎºĞ try~catch / throws¸¦ ÇØÁà¾ß ÇÔ
-		/* java´Â ÀÔ·Â½ºÆ®¸², Ãâ·Â½ºÆ®¸²À» ÅëÇØ µ¥ÀÌÅÍ¸¦ ÀÔÃâ·ÂÇÔ
+		// file: java.io.*ì—ì„œ ì œê³µí•˜ëŠ” í´ë˜ìŠ¤
+		// ëŒ€ë¶€ë¶„ try~catch / throwsë¥¼ í•´ì¤˜ì•¼ í•¨
+		/* javaëŠ” ì…ë ¥ìŠ¤íŠ¸ë¦¼, ì¶œë ¥ìŠ¤íŠ¸ë¦¼ì„ í†µí•´ ë°ì´í„°ë¥¼ ì…ì¶œë ¥í•¨
 		 * 
-		 * - ´ë»ó ±âÁØ : inputStream / outputStream (IOStream)
-		 *  ´Ü¹æÇâÀ¸·Î µ¥ÀÌÅÍ°¡ Èê·¯°¡´Â ÇüÅÂ
-		 * 	´Ù¾çÇÑ ÀåÄ¡¿¡ µ¶¸³ÀûÀ¸·Î ¿î¿µ, ÀÏ°ü¼º ÀÖ°Ô ÀÔÃâ·ÂÀ» À¯ÁöÇÏ±â À§ÇØ »ç¿ë
+		 * - ëŒ€ìƒ ê¸°ì¤€ : inputStream / outputStream (IOStream)
+		 *  ë‹¨ë°©í–¥ìœ¼ë¡œ ë°ì´í„°ê°€ í˜ëŸ¬ê°€ëŠ” í˜•íƒœ
+		 * 	ë‹¤ì–‘í•œ ì¥ì¹˜ì— ë…ë¦½ì ìœ¼ë¡œ ìš´ì˜, ì¼ê´€ì„± ìˆê²Œ ì…ì¶œë ¥ì„ ìœ ì§€í•˜ê¸° ìœ„í•´ ì‚¬ìš©
 		 * 
-		 * - µ¥ÀÌÅÍ ÇüÅÂ : ¹ÙÀÌÆ® / ¹®ÀÚ ½ºÆ®¸²
-		 * 	¹ÙÀÌÆ® : ±×¸², ¿µ»ó, ½ÇÇàÆÄÀÏ
-		 * 		ÀÔ·Â) FileInputStream, BufferedInputStream, ...			
-		 * 		Ãâ·Â) FileOutputStream, BufferedOutputStream, ...
-		 * 	¹®ÀÚ : Encoding Ã³¸®¸¦ ÇØÁÜ
-		 * 		ÀÔ·Â) FileReader, BufferedReader, InputStreamReader, ...
-		 * 		Ãâ·Â) FileWriter, BufferedWriter, PrintWriter, ...
+		 * - ë°ì´í„° í˜•íƒœ : ë°”ì´íŠ¸ / ë¬¸ì ìŠ¤íŠ¸ë¦¼
+		 * 	ë°”ì´íŠ¸ : ê·¸ë¦¼, ì˜ìƒ, ì‹¤í–‰íŒŒì¼
+		 * 		ì…ë ¥) FileInputStream, BufferedInputStream, ...			
+		 * 		ì¶œë ¥) FileOutputStream, BufferedOutputStream, ...
+		 * 	ë¬¸ì : Encoding ì²˜ë¦¬ë¥¼ í•´ì¤Œ
+		 * 		ì…ë ¥) FileReader, BufferedReader, InputStreamReader, ...
+		 * 		ì¶œë ¥) FileWriter, BufferedWriter, PrintWriter, ...
 		 * 		
-		 * - ±â¹İ ½ºÆ®¸² / º¸Á¶ ½ºÆ®¸²
-		 * 	±â¹İ ½ºÆ®¸² : Á÷Á¢ ÀĞ°í ¾²´Â ±â´ÉÀÌ ÀÖ´Â ½ºÆ®¸²
+		 * - ê¸°ë°˜ ìŠ¤íŠ¸ë¦¼ / ë³´ì¡° ìŠ¤íŠ¸ë¦¼
+		 * 	ê¸°ë°˜ ìŠ¤íŠ¸ë¦¼ : ì§ì ‘ ì½ê³  ì“°ëŠ” ê¸°ëŠ¥ì´ ìˆëŠ” ìŠ¤íŠ¸ë¦¼
 		 * 		FileInputStream, FileOutputStream, FileReader, FileWriter, ...
-		 * 	º¸Á¶ ½ºÆ®¸² : ÀĞ°í ¾²´Â ±â´ÉÀÌ ¾ø°í, Ãß°¡ÀûÀÎ ±â´ÉÀ» ´õÇØÁÖ±â À§ÇÑ ½ºÆ®¸²
-		 * 		Buffered~´Â ÀüºÎ º¸Á¶ ½ºÆ®¸²
+		 * 	ë³´ì¡° ìŠ¤íŠ¸ë¦¼ : ì½ê³  ì“°ëŠ” ê¸°ëŠ¥ì´ ì—†ê³ , ì¶”ê°€ì ì¸ ê¸°ëŠ¥ì„ ë”í•´ì£¼ê¸° ìœ„í•œ ìŠ¤íŠ¸ë¦¼
+		 * 		Buffered~ëŠ” ì „ë¶€ ë³´ì¡° ìŠ¤íŠ¸ë¦¼
 		 * */
 		
-		// Ç¥ÁØ Ãâ·Â(¸ğ´ÏÅÍ = ÄÜ¼Ö) ½ºÆ®¸²
+		// í‘œì¤€ ì¶œë ¥(ëª¨ë‹ˆí„° = ì½˜ì†”) ìŠ¤íŠ¸ë¦¼
 		System.out.println("print");
 		
-		// Ç¥ÁØ ÀÔ·Â(Å°º¸µå) ½ºÆ®¸²
-		// ¹ÙÀÌÆ® ´ÜÀ§ ½ºÆ®¸²
+		// í‘œì¤€ ì…ë ¥(í‚¤ë³´ë“œ) ìŠ¤íŠ¸ë¦¼
+		// ë°”ì´íŠ¸ ë‹¨ìœ„ ìŠ¤íŠ¸ë¦¼
 		try {
 			int b = 0;
-			while ((b = System.in.read()) != '\n') { // 'enter'°¡ ¾Æ´Ï¶ó¸é
+			while ((b = System.in.read()) != '\n') { // 'enter'ê°€ ì•„ë‹ˆë¼ë©´
 				System.out.println((char)b);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
-		// Ç¥ÁØ ¿¡·¯ Ãâ·Â ½ºÆ®¸²
-		System.err.println("error"); // »¡°£»ö
+		// í‘œì¤€ ì—ëŸ¬ ì¶œë ¥ ìŠ¤íŠ¸ë¦¼
+		System.err.println("error"); // ë¹¨ê°„ìƒ‰
 	}
 }

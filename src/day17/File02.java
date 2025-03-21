@@ -8,9 +8,9 @@ import java.io.PrintWriter;
 
 public class File02 {
 	public static void main(String[] args) {
-		// FileWriter¸¦ ÅëÇØ ÆÄÀÏ ¾²±â
-		// °°Àº ÀÌ¸§À¸·Î ´Ù½Ã ½ÇÇàÇÏ¸é µ¤¾î¾²±â
-		// °æ·Î ¾øÀÌ ÆÄÀÏ¸í¸¸ ÀûÀ¸¸é ³» ÆÄÀÏÀÌ ÀÖ´Â À§Ä¡¿¡ »ı±è
+		// FileWriterë¥¼ í†µí•´ íŒŒì¼ ì“°ê¸°
+		// ê°™ì€ ì´ë¦„ìœ¼ë¡œ ë‹¤ì‹œ ì‹¤í–‰í•˜ë©´ ë®ì–´ì“°ê¸°
+		// ê²½ë¡œ ì—†ì´ íŒŒì¼ëª…ë§Œ ì ìœ¼ë©´ ë‚´ íŒŒì¼ì´ ìˆëŠ” ìœ„ì¹˜ì— ìƒê¹€
 		
 		try {
 			FileWriter fw = new FileWriter("D:\\web_0226_lyh\\memo\\File02.txt");
@@ -24,9 +24,9 @@ public class File02 {
 			fw.close();
 		} catch (IOException e) {
 			System.out.println("fw error");
-		} // ÆÄÀÏÀÌ¸§(°æ·Î + ÆÄÀÏ¸í + È®ÀåÀÚ)
+		} // íŒŒì¼ì´ë¦„(ê²½ë¡œ + íŒŒì¼ëª… + í™•ì¥ì)
 		
-		// Ãß°¡ ¸ğµå : ±âÁ¸ ÆÄÀÏ¿¡ µ¥ÀÌÅÍ¸¦ ¾²·Á°í ÇÒ ¶§
+		// ì¶”ê°€ ëª¨ë“œ : ê¸°ì¡´ íŒŒì¼ì— ë°ì´í„°ë¥¼ ì“°ë ¤ê³  í•  ë•Œ
 		
 		try {
 			FileWriter fw2 = new FileWriter("D:\\web_0226_lyh\\memo\\File02.txt", true);
@@ -53,7 +53,7 @@ public class File02 {
 			System.out.println("pw error");
 		}
 		
-		// PrintWriter ÆÄÀÏ ³»¿ë Ãß°¡ÇÏ±â
+		// PrintWriter íŒŒì¼ ë‚´ìš© ì¶”ê°€í•˜ê¸°
 		try {
 			PrintWriter pw2 = new PrintWriter(new FileWriter("writer2.txt", true));
 			for(int i = 11; i <= 20; i++) {
@@ -65,11 +65,11 @@ public class File02 {
 			System.out.println("pw2 error");
 		}
 		
-		// ¹ÙÀÌÆ® ±â¹İ ½ºÆ®¸²
+		// ë°”ì´íŠ¸ ê¸°ë°˜ ìŠ¤íŠ¸ë¦¼
 		try {
 			FileOutputStream output = new FileOutputStream("out.txt");
 			for(int i = 1; i <= 10; i++) {
-				String data = i + ". ¹ÙÀÌÆ® ±â¹İ ½ºÆ®¸² Å×½ºÆ®\r\n";
+				String data = i + ". ë°”ì´íŠ¸ ê¸°ë°˜ ìŠ¤íŠ¸ë¦¼ í…ŒìŠ¤íŠ¸\r\n";
 				output.write(data.getBytes());
 			}
 			output.close();

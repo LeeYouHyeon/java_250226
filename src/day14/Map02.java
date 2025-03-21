@@ -6,9 +6,9 @@ import java.util.Scanner;
 public class Map02 {
 
 	public static void main(String[] args) {
-		/* °ú¸ñ°ú Á¡¼ö¸¦ ÀÔ·Â¹Ş¾Æ map¿¡ ÀúÀå
-		 * Ãâ·Â / ÇÕ°è / Æò±Õ
-		 * Á¾·á Å°¿öµå°¡ ³ª¿Ã ¶§±îÁö ¹İº¹ (0 => Á¾·á)
+		/* ê³¼ëª©ê³¼ ì ìˆ˜ë¥¼ ì…ë ¥ë°›ì•„ mapì— ì €ì¥
+		 * ì¶œë ¥ / í•©ê³„ / í‰ê· 
+		 * ì¢…ë£Œ í‚¤ì›Œë“œê°€ ë‚˜ì˜¬ ë•Œê¹Œì§€ ë°˜ë³µ (0 => ì¢…ë£Œ)
 		 * */
 		HashMap<String, Integer> score = new HashMap<String, Integer>();
 
@@ -19,25 +19,25 @@ public class Map02 {
 
 		while(cont) {
 			try {
-				// ÀÔ·Â
-				// score¿¡´Â À¯È¿ÇÑ ÀÔ·Â¸¸ ¹İ¿µµÊ
+				// ì…ë ¥
+				// scoreì—ëŠ” ìœ íš¨í•œ ì…ë ¥ë§Œ ë°˜ì˜ë¨
 				System.out.print("> ");
 				input = scan.nextLine().split(" ");
 				switch (input.length) {
 				case 2:
-					// 2°³¸¦ ÀÔ·Â¹Ş¾ÒÀ¸¸é ¾ÕÀ» °ú¸ñ, µÚ¸¦ Á¡¼ö·Î °£ÁÖ
+					// 2ê°œë¥¼ ì…ë ¥ë°›ì•˜ìœ¼ë©´ ì•ì„ ê³¼ëª©, ë’¤ë¥¼ ì ìˆ˜ë¡œ ê°„ì£¼
 					int num = Integer.parseInt(input[1]);
 					score.put(input[0], num);
 					break;
 				case 1:
-					// 1°³¸¦ ¹Ş¾ÒÀ¸¸é 0ÀÎ °æ¿ì break, ¾Æ´Ï¸é default·Î ³Ñ±è
+					// 1ê°œë¥¼ ë°›ì•˜ìœ¼ë©´ 0ì¸ ê²½ìš° break, ì•„ë‹ˆë©´ defaultë¡œ ë„˜ê¹€
 					if(Integer.parseInt(input[0]) == 0) {
 						cont = false;
 						break;
 					}
 				default:
-					// ±× ¿Ü¿¡´Â ¿¡·¯
-					throw new Exception("Àß¸øµÈ ÀÔ·Â");
+					// ê·¸ ì™¸ì—ëŠ” ì—ëŸ¬
+					throw new Exception("ì˜ëª»ëœ ì…ë ¥");
 				}
 			} catch (Exception e) {
 				System.out.println(e.getMessage());
@@ -52,8 +52,8 @@ public class Map02 {
 		
 		if(!score.isEmpty()) {
 			System.out.println(score);
-			System.out.println("ÇÕ°è : " + sum);
-			System.out.println("Æò±Õ : " + sum/(double)score.size());
+			System.out.println("í•©ê³„ : " + sum);
+			System.out.println("í‰ê·  : " + sum/(double)score.size());
 		}
 	}
 

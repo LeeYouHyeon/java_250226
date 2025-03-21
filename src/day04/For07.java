@@ -4,11 +4,11 @@ public class For07 {
 
 	public static void main(String[] args) {
 		// for / while
-		/* for¹®À» ÀÌ¿ëÇÏ¿© ±¸±¸´Ü 5´ÜÀ» Ãâ·Â
+		/* forë¬¸ì„ ì´ìš©í•˜ì—¬ êµ¬êµ¬ë‹¨ 5ë‹¨ì„ ì¶œë ¥
 		 * 
 		 * */
 
-		// ÀÌÁß for¹®
+		// ì´ì¤‘ forë¬¸
 //		for(int dan = 2; dan <= 9; dan++) {
 //			for(int i = 1; i <= 9; i++) {
 //				System.out.print(dan + "*" + i + " = " + dan*i + " ");

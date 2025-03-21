@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-// Student¿Í Subject¸¦ MapÀ¸·Î °ü¸®?(Áßº¹ °ü¸®)
+// Studentì™€ Subjectë¥¼ Mapìœ¼ë¡œ ê´€ë¦¬?(ì¤‘ë³µ ê´€ë¦¬)
 public class StudentController implements Program {
 	private List<Student> stds;
 	private List<Subject> subs;
@@ -21,9 +21,9 @@ public class StudentController implements Program {
 
 	@Override
 	public void insertStudent(Scanner scan) throws Exception {
-		// 1. Á¤º¸ ÀÔ·Â
+		// 1. ì •ë³´ ì…ë ¥
 		String message[] = new String[] {
-				"ÀÌ¸§> ", "ÀüÈ­¹øÈ£> ", "ÁÖ¼Ò> ", "³ªÀÌ> "
+				"ì´ë¦„> ", "ì „í™”ë²ˆí˜¸> ", "ì£¼ì†Œ> ", "ë‚˜ì´> "
 		};
 		String info[] = new String[4];
 		for(int i = 0; i < 4; i++) {
@@ -33,18 +33,18 @@ public class StudentController implements Program {
 		
 		int age = Integer.parseInt(info[3]);
 		if(age < 0) {
-			throw new Exception("³ªÀÌ°¡ À½¼öÀÔ´Ï´Ù.");
+			throw new Exception("ë‚˜ì´ê°€ ìŒìˆ˜ì…ë‹ˆë‹¤.");
 		}
 		
 		stds.add(new Student(String.valueOf(nextCode), info[0], info[1], info[2], age, new ArrayList<Subject>()));
 		nextCode++;
-		System.out.println("µî·Ï ¿Ï·á");
+		System.out.println("ë“±ë¡ ì™„ë£Œ");
 	}
 
 	@Override
 	public void printStudents() {
 		if(stds.isEmpty()) {
-			System.out.println("ÇĞ»ıÀÌ ¾ø½À´Ï´Ù.");
+			System.out.println("í•™ìƒì´ ì—†ìŠµë‹ˆë‹¤.");
 		} else {
 			for(Student std : stds) {
 				System.out.println(std);
@@ -53,7 +53,7 @@ public class StudentController implements Program {
 	}
 	
 	private Student getStudent(Scanner scan) {
-		System.out.print("ÇĞ»ı ¹øÈ£> ");
+		System.out.print("í•™ìƒ ë²ˆí˜¸> ");
 		return stds.get(Integer.parseInt(scan.nextLine()) - 1);
 	}
 
@@ -64,17 +64,17 @@ public class StudentController implements Program {
 
 	@Override
 	public void insertSubject(Scanner scan) {
-		// 1. ½ÅÃ»ÇÒ ÇĞ»ı °áÁ¤
+		// 1. ì‹ ì²­í•  í•™ìƒ ê²°ì •
 		Student s = getStudent(scan);
 		
-		// 2. ½ÅÃ»ÇÒ °ú¸ñ °áÁ¤
+		// 2. ì‹ ì²­í•  ê³¼ëª© ê²°ì •
 		for(Subject sub : subs) {
 			System.out.println(sub);
 		}
-		System.out.print("½ÅÃ»ÇÒ °ú¸ñ ÄÚµå> ");
+		System.out.print("ì‹ ì²­í•  ê³¼ëª© ì½”ë“œ> ");
 		String subCode = scan.nextLine();
 		
-		// 3. ÀÔ·Â¹ŞÀº °ú¸ñÀ» ½ÅÃ»
+		// 3. ì…ë ¥ë°›ì€ ê³¼ëª©ì„ ì‹ ì²­
 		for(Subject sub : subs) {
 			if(sub.getSubCode().equals(subCode)) {
 				s.insertSubject(sub);
@@ -82,23 +82,23 @@ public class StudentController implements Program {
 			}
 		}
 		
-		// 4. ¾øÀ¸¸é ¾È³»¹® Ãâ·Â
-		System.out.println("¾ø´Â °ú¸ñÀÔ´Ï´Ù.");
+		// 4. ì—†ìœ¼ë©´ ì•ˆë‚´ë¬¸ ì¶œë ¥
+		System.out.println("ì—†ëŠ” ê³¼ëª©ì…ë‹ˆë‹¤.");
 	}
 
 	@Override
 	public void deleteSubject(Scanner scan) {
-		// 1. ¼ö°­Ã¶È¸ÇÒ ÇĞ»ı °áÁ¤
+		// 1. ìˆ˜ê°•ì² íšŒí•  í•™ìƒ ê²°ì •
 		Student s = getStudent(scan);
 		
-		// 2. Ã¶È¸ÇÒ °ú¸ñ °áÁ¤
+		// 2. ì² íšŒí•  ê³¼ëª© ê²°ì •
 		for(Subject sub : s.getSubjects()) {
 			System.out.println(sub);
 		}
-		System.out.print("Ã¶È¸ÇÒ °ú¸ñ ÄÚµå> ");
+		System.out.print("ì² íšŒí•  ê³¼ëª© ì½”ë“œ> ");
 		String subCode = scan.nextLine();
 		
-		// 3. ÀÔ·Â¹ŞÀº °ú¸ñÀ» Ã¶È¸
+		// 3. ì…ë ¥ë°›ì€ ê³¼ëª©ì„ ì² íšŒ
 		for(Subject sub : s.getSubjects()) {
 			if(sub.getSubCode().equals(subCode)) {
 				s.cancelSubject(sub);
@@ -106,8 +106,8 @@ public class StudentController implements Program {
 			}
 		}
 		
-		// 4. ¾øÀ¸¸é ¾È³»¹® Ãâ·Â
-		System.out.println("½ÅÃ»ÇÏÁö ¾ÊÀº °ú¸ñÀÔ´Ï´Ù.");
+		// 4. ì—†ìœ¼ë©´ ì•ˆë‚´ë¬¸ ì¶œë ¥
+		System.out.println("ì‹ ì²­í•˜ì§€ ì•Šì€ ê³¼ëª©ì…ë‹ˆë‹¤.");
 	}
 
 }

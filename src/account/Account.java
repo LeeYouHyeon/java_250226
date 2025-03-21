@@ -1,7 +1,7 @@
 package account;
 
 public class Account {
-	private String id; // �ߺ��Ұ�
+	private String id; // 기본키
 	private String password;
 	private String name;
 	private String phone;
@@ -18,12 +18,12 @@ public class Account {
 		this.email = email;
 	}
 
-	// ��й�ȣ�� �´��� Ȯ��
+	// 비밀번호가 맞는지 확인
 	public boolean passCheck(String word) {
 		return password.equals(word);
 	}
 	
-	// �ʿ��ϸ� �޼��� �߰�
+	// 필요하면 메서드 추가
 	
 	// getter/setter
 	public String getPassword() {

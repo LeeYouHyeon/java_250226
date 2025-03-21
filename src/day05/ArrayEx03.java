@@ -2,24 +2,24 @@ package day05;
 
 public class ArrayEx03 {
 	public static void main(String[] args) {
-		// ¹è¿­ 10°³ => 1ºÎÅÍ 100±îÁöÀÇ ·£´ı ¼ö ÀúÀå
-		// Ãâ·Â
-		// ¿À¸§Â÷¼ø Á¤·Ä ÈÄ Ãâ·Â
+		// ë°°ì—´ 10ê°œ => 1ë¶€í„° 100ê¹Œì§€ì˜ ëœë¤ ìˆ˜ ì €ì¥
+		// ì¶œë ¥
+		// ì˜¤ë¦„ì°¨ìˆœ ì •ë ¬ í›„ ì¶œë ¥
 
-		// 1. ¹è¿­ ÃÊ±âÈ­
+		// 1. ë°°ì—´ ì´ˆê¸°í™”
 		int arr[] = new int[10];
 		for (int i = 0; i < 10; i++) {
 			arr[i] = (int) (Math.random() * 100 + 1);
 		}
 
-		// 2. ¹è¿­ Ãâ·Â
+		// 2. ë°°ì—´ ì¶œë ¥
 		System.out.print("arr : ");
 		for (int num : arr) {
 			System.out.print(num + " ");
 		}
 		System.out.println();
 
-		// 3. ¹è¿­ Á¤·Ä
+		// 3. ë°°ì—´ ì •ë ¬
 		for (int i = 0; i < 9; i++) {
 			for (int j = i; j < 10; j++) {
 				if (arr[i] > arr[j]) {
@@ -30,7 +30,7 @@ public class ArrayEx03 {
 			}
 		}
 
-		// 4. Á¤·ÄÇÑ ¹è¿­ Ãâ·Â
+		// 4. ì •ë ¬í•œ ë°°ì—´ ì¶œë ¥
 		System.out.print("arr : ");
 		for (int num : arr) {
 			System.out.print(num + " ");

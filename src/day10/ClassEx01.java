@@ -4,35 +4,35 @@ import java.util.Scanner;
 
 public class ClassEx01 {
 	public static void main(String[] args) {
-		/* Product Å¬·¡½º »ı¼º : »óÇ°À» µî·ÏÇÏ´Â Å¬·¡½º
-		 * 	- ¸â¹öº¯¼ö : »óÇ°¸í, °¡°İ
-		 * 	- »óÇ°¸í°ú °¡°İÀ» Ãâ·ÂÇÏ´Â ¸Ş¼­µå
-		 * 	- »óÇ°À» Ãß°¡ÇÏ´Â ¸Ş¼­µå
+		/* Product í´ë˜ìŠ¤ ìƒì„± : ìƒí’ˆì„ ë“±ë¡í•˜ëŠ” í´ë˜ìŠ¤
+		 * 	- ë©¤ë²„ë³€ìˆ˜ : ìƒí’ˆëª…, ê°€ê²©
+		 * 	- ìƒí’ˆëª…ê³¼ ê°€ê²©ì„ ì¶œë ¥í•˜ëŠ” ë©”ì„œë“œ
+		 * 	- ìƒí’ˆì„ ì¶”ê°€í•˜ëŠ” ë©”ì„œë“œ
 		 * */
 
-		/* main Å¬·¡½º¿¡¼­ Ã³¸®
-		 * »óÇ° 10°³ µî·Ï
-		 * ½ºÄ³³Ê¸¦ ÅëÇØ¼­ »óÇ°À» µî·Ï¹Ş±â
-		 * µî·ÏÇÑ »óÇ°À» Ãâ·Â
+		/* main í´ë˜ìŠ¤ì—ì„œ ì²˜ë¦¬
+		 * ìƒí’ˆ 10ê°œ ë“±ë¡
+		 * ìŠ¤ìºë„ˆë¥¼ í†µí•´ì„œ ìƒí’ˆì„ ë“±ë¡ë°›ê¸°
+		 * ë“±ë¡í•œ ìƒí’ˆì„ ì¶œë ¥
 		 * */
 
 		Product buy[] = new Product[10];
 		Scanner scan = new Scanner(System.in);
 
-		// ±¸¸Å ¸ñ·Ï ÀÔ·Â¹Ş±â
-		System.out.println("µî·ÏÇÒ »óÇ° Á¤º¸¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
-		System.out.print("ÀÌ¸§> ");
+		// êµ¬ë§¤ ëª©ë¡ ì…ë ¥ë°›ê¸°
+		System.out.println("ë“±ë¡í•  ìƒí’ˆ ì •ë³´ë¥¼ ì…ë ¥í•˜ì„¸ìš”.");
+		System.out.print("ì´ë¦„> ");
 		buy[0] = new Product();
 		buy[0].setName(scan.nextLine());
-		System.out.print("°¡°İ> ");
+		System.out.print("ê°€ê²©> ");
 		buy[0].setPrice(scan.nextInt());
 		scan.nextLine();
 
 		for (int i = 1; i < buy.length; i++) {
 			String input = "";
-			// Ãß°¡ ±¸¸Å ÀÇ»ç È®ÀÎ
-			System.out.println("µî·ÏÇÒ »óÇ° ÀÌ¸§À» ÀÔ·ÂÇØÁÖ¼¼¿ä.");
-			System.out.println("±×¸¸µÎ½Ã·Á¸é Q/q¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+			// ì¶”ê°€ êµ¬ë§¤ ì˜ì‚¬ í™•ì¸
+			System.out.println("ë“±ë¡í•  ìƒí’ˆ ì´ë¦„ì„ ì…ë ¥í•´ì£¼ì„¸ìš”.");
+			System.out.println("ê·¸ë§Œë‘ì‹œë ¤ë©´ Q/që¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”.");
 			System.out.print("> ");
 
 			while (input.isBlank()) {
@@ -44,16 +44,16 @@ public class ClassEx01 {
 			} else {
 				buy[i] = new Product();
 				buy[i].setName(input);
-				System.out.print("°¡°İ> ");
+				System.out.print("ê°€ê²©> ");
 				buy[i].setPrice(scan.nextInt());
 				scan.nextLine();
 			}
 		}
 		scan.close();
 
-		// ±¸¸Å ¸ñ·Ï Ãâ·Â
+		// êµ¬ë§¤ ëª©ë¡ ì¶œë ¥
 		System.out.println();
-		System.out.println("»óÇ° ¸ñ·Ï");
+		System.out.println("ìƒí’ˆ ëª©ë¡");
 		for (int i = 0; i < buy.length; i++) {
 			if (buy[i] == null) {
 				break;

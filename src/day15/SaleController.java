@@ -4,47 +4,47 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class SaleController {
-	// ¸â¹öº¯¼ö·Î Sale Å¬·¡½º ¸®½ºÆ®¸¦ »ı¼º
+	// ë©¤ë²„ë³€ìˆ˜ë¡œ Sale í´ë˜ìŠ¤ ë¦¬ìŠ¤íŠ¸ë¥¼ ìƒì„±
 	
 	private ArrayList<Sale<String, Integer>> sales = new ArrayList<>();
 	private ArrayList<Sale<String, Integer>> orders = new ArrayList<>();
 
 	public void add(Scanner scan) throws Exception {
-		// ¸Ş´º¸í ÀÔ·Â
-		System.out.print("¸Ş´º¸í> ");
+		// ë©”ë‰´ëª… ì…ë ¥
+		System.out.print("ë©”ë‰´ëª…> ");
 		String menu = scan.nextLine();
 		int price;
 		
 		for(Sale<String, Integer> s : sales) {
 			if(s.getMenu().equals(menu)) {
-				// ÀÖ´Â ¸Ş´º¶ó¸é °¡°İ ¼öÁ¤ ¿©ºÎ¸¦ ¹°¾îº½
-				System.out.println("ÀÌ¹Ì µî·ÏµÈ »óÇ°ÀÔ´Ï´Ù.");
-				System.out.print("°¡°İÀ» º¯°æÇÏ½Ã°Ú½À´Ï±î?(Y/N)> ");
+				// ìˆëŠ” ë©”ë‰´ë¼ë©´ ê°€ê²© ìˆ˜ì • ì—¬ë¶€ë¥¼ ë¬¼ì–´ë´„
+				System.out.println("ì´ë¯¸ ë“±ë¡ëœ ìƒí’ˆì…ë‹ˆë‹¤.");
+				System.out.print("ê°€ê²©ì„ ë³€ê²½í•˜ì‹œê² ìŠµë‹ˆê¹Œ?(Y/N)> ");
 				
-				// ¼öÁ¤ÇÑ´Ù¸é ¼öÁ¤ÇÑ ÈÄ Á¾·á
+				// ìˆ˜ì •í•œë‹¤ë©´ ìˆ˜ì •í•œ í›„ ì¢…ë£Œ
 				if(scan.nextLine().toLowerCase().equals("y")) {
-					System.out.print("º¯°æÇÒ °¡°İ> ");
+					System.out.print("ë³€ê²½í•  ê°€ê²©> ");
 					price = Integer.parseInt(scan.nextLine());
 					s.setPrice(price);
-					System.out.println("°¡°İ ¼öÁ¤ ¿Ï·á");
+					System.out.println("ê°€ê²© ìˆ˜ì • ì™„ë£Œ");
 				}
 				return;
 			}
 		}
 		
-		// °¡°İ ÀÔ·Â
-		System.out.print("°¡°İ> ");
+		// ê°€ê²© ì…ë ¥
+		System.out.print("ê°€ê²©> ");
 		price = Integer.parseInt(scan.nextLine());
 		
-		// ¸Ş´º µî·Ï
+		// ë©”ë‰´ ë“±ë¡
 		sales.add(new Sale<>(menu, price));
-		System.out.println("¸Ş´º Ãß°¡ ¿Ï·á");
+		System.out.println("ë©”ë‰´ ì¶”ê°€ ì™„ë£Œ");
 	}
 
 	public void print() {
-		// ¸Ş´ºÃâ·Â
+		// ë©”ë‰´ì¶œë ¥
 		if(sales.isEmpty()) {
-			System.out.println("¸Ş´º°¡ ¾ø½À´Ï´Ù.");
+			System.out.println("ë©”ë‰´ê°€ ì—†ìŠµë‹ˆë‹¤.");
 		} else {
 			for(Sale<String, Integer> sale : sales) {
 				System.out.println(sale);
@@ -53,47 +53,47 @@ public class SaleController {
 	}
 
 	public void order(Scanner scan) {
-		// ÁÖ¹®
-		/* ¸Ş´º¿Í ¼ö·®À» ÀÔ·Â¹Ş¾Æ list¿¡¼­ ¸Ş´ºÀÇ °¡°İÀ» Ã£¾Æ¿Í
-		 * order ¸Ş´º / ¼ö·®*°¡°İÀ» price¿¡ ÀúÀå
+		// ì£¼ë¬¸
+		/* ë©”ë‰´ì™€ ìˆ˜ëŸ‰ì„ ì…ë ¥ë°›ì•„ listì—ì„œ ë©”ë‰´ì˜ ê°€ê²©ì„ ì°¾ì•„ì™€
+		 * order ë©”ë‰´ / ìˆ˜ëŸ‰*ê°€ê²©ì„ priceì— ì €ì¥
 		 * */
 		
-		// ¸Ş´º ÀÔ·Â
+		// ë©”ë‰´ ì…ë ¥
 		print();
-		System.out.print("¸Ş´º> ");
+		System.out.print("ë©”ë‰´> ");
 		String name = scan.nextLine();
 		for(Sale<String, Integer> menu : sales) {
-			// ¸Ş´º °Ë»ö
+			// ë©”ë‰´ ê²€ìƒ‰
 			if(menu.getMenu().equals(name)) {
 				
-				// ¼ö·® ÀÔ·Â
-				System.out.print("¼ö·®> ");
+				// ìˆ˜ëŸ‰ ì…ë ¥
+				System.out.print("ìˆ˜ëŸ‰> ");
 				int count = Integer.parseInt(scan.nextLine());
 				if(count <= 0) {
-					System.out.println("¼ö·®À» Àß¸ø ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù.");
+					System.out.println("ìˆ˜ëŸ‰ì„ ì˜ëª» ì…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤.");
 					return;
 				}
 				
 				orders.add(new Sale<>(name, count*menu.getPrice()));
-				System.out.println("ÁÖ¹® ¿Ï·á");
+				System.out.println("ì£¼ë¬¸ ì™„ë£Œ");
 				return;
 			}
 		}
 		
-		System.out.println("¾ø´Â ¸Ş´ºÀÔ´Ï´Ù.");
+		System.out.println("ì—†ëŠ” ë©”ë‰´ì…ë‹ˆë‹¤.");
 	}
 
 	public void orderPrint() {
 		int sum = 0;
 		if(orders.isEmpty()) {
-			System.out.println("ÁÖ¹® ÀÌ·ÂÀÌ ¾ø½À´Ï´Ù.");
+			System.out.println("ì£¼ë¬¸ ì´ë ¥ì´ ì—†ìŠµë‹ˆë‹¤.");
 		} else {
 			for(Sale<String, Integer> order : orders) {
 				System.out.println(order);
 				sum += order.getPrice();
 			}
 			
-			System.out.println("ÇÕ°è : " + sum);
+			System.out.println("í•©ê³„ : " + sum);
 		}
 	}
 	

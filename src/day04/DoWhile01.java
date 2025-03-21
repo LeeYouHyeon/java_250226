@@ -5,29 +5,29 @@ import java.util.Scanner;
 public class DoWhile01 {
 
 	public static void main(String[] args) {
-		/* ¹Ýº¹¹® : for, while, do~while
-		 * for, while : Á¶°ÇÀ» ¸¸Á·ÇÏÁö ¾ÊÀ¸¸é ÇÑ ¹øµµ ½ÇÇàµÇÁö ¾ÊÀ» ¼ö ÀÖÀ½
-		 * do~while : ½ÇÇà¹®À» ¸ÕÀú ½ÇÇàÇÏ°í, Á¶°Ç½ÄÀ» ³ªÁß¿¡ ºñ±³
-		 * ¹«Á¶°Ç ÇÑ ¹øÀº ½ÇÇà ÈÄ ºñ±³ÇÏ´Â ±¸Á¶
+		/* ë°˜ë³µë¬¸ : for, while, do~while
+		 * for, while : ì¡°ê±´ì„ ë§Œì¡±í•˜ì§€ ì•Šìœ¼ë©´ í•œ ë²ˆë„ ì‹¤í–‰ë˜ì§€ ì•Šì„ ìˆ˜ ìžˆìŒ
+		 * do~while : ì‹¤í–‰ë¬¸ì„ ë¨¼ì € ì‹¤í–‰í•˜ê³ , ì¡°ê±´ì‹ì„ ë‚˜ì¤‘ì— ë¹„êµ
+		 * ë¬´ì¡°ê±´ í•œ ë²ˆì€ ì‹¤í–‰ í›„ ë¹„êµí•˜ëŠ” êµ¬ì¡°
 		 * 
 		 * do {
-		 * 	½ÇÇà¹®;
-		 * } while(Á¶°Ç½Ä);
+		 * 	ì‹¤í–‰ë¬¸;
+		 * } while(ì¡°ê±´ì‹);
 		 * */
 		
 		Scanner scan = new Scanner(System.in);
 		
-		/* ÇÑ ±ÛÀÚ¸¦ ÀÔ·Â¹Þ¾Æ¼­ Ãâ·Â
-		 * y => Á¾·á
+		/* í•œ ê¸€ìžë¥¼ ìž…ë ¥ë°›ì•„ì„œ ì¶œë ¥
+		 * y => ì¢…ë£Œ
 		 * */
 		
-		char ch; // do ¾È¿¡¼­ ¼±¾ðÇÏ¸é while¿¡¼­ ÀÐÀ» ¼ö ¾øÀ½
+		char ch; // do ì•ˆì—ì„œ ì„ ì–¸í•˜ë©´ whileì—ì„œ ì½ì„ ìˆ˜ ì—†ìŒ
 		do {
-			System.out.print("ÇÑ ±ÛÀÚ ÀÔ·Â> ");
+			System.out.print("í•œ ê¸€ìž ìž…ë ¥> ");
 			ch = scan.next().charAt(0);
 		} while (ch != 'y');
 		
-		System.out.println("Á¾·á");
+		System.out.println("ì¢…ë£Œ");
 		scan.close();
 	}
 

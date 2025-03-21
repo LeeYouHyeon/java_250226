@@ -3,18 +3,18 @@ package day04;
 public class StringEx02 {
 
 	public static void main(String[] args) {
-		// file ÆÄÀÏ¸í.È®ÀåÀÚ
-		// ÆÄÀÏ¸í°ú È®ÀåÀÚ·Î ºĞ¸®ÇÏ¿© Ãâ·Â
-		// È®ÀåÀÚ°¡ java¸é "ÀÚ¹Ù ÆÄÀÏÀÔ´Ï´Ù.", ¾Æ´Ï¸é "±âÅ¸ ÆÄÀÏÀÔ´Ï´Ù." Ãâ·Â
+		// file íŒŒì¼ëª….í™•ì¥ì
+		// íŒŒì¼ëª…ê³¼ í™•ì¥ìë¡œ ë¶„ë¦¬í•˜ì—¬ ì¶œë ¥
+		// í™•ì¥ìê°€ javaë©´ "ìë°” íŒŒì¼ì…ë‹ˆë‹¤.", ì•„ë‹ˆë©´ "ê¸°íƒ€ íŒŒì¼ì…ë‹ˆë‹¤." ì¶œë ¥
 		
-		String file = "ÀÚ¹ÙÀÇÁ¤¼®.java";
+		String file = "ìë°”ì˜ì •ì„.java";
 		int point = file.lastIndexOf('.');
 		String name = file.substring(0, point),
 				ext = file.substring(point + 1);
 		
-		System.out.println("ÆÄÀÏ¸í : " + name);
-		System.out.println("È®ÀåÀÚ : " + ext);
-		System.out.println(ext.equals("java") ? "ÀÚ¹Ù ÆÄÀÏÀÔ´Ï´Ù." : "±âÅ¸ ÆÄÀÏÀÔ´Ï´Ù.");
+		System.out.println("íŒŒì¼ëª… : " + name);
+		System.out.println("í™•ì¥ì : " + ext);
+		System.out.println(ext.equals("java") ? "ìë°” íŒŒì¼ì…ë‹ˆë‹¤." : "ê¸°íƒ€ íŒŒì¼ì…ë‹ˆë‹¤.");
 	}
 
 }

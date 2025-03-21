@@ -3,35 +3,35 @@ package day02;
 public class For01 {
 
 	public static void main(String[] args) {
-		/* ¹Ýº¹¹® : ±ÔÄ¢ÀûÀÎ ÀÛ¾÷À» ¹Ýº¹ÀûÀ¸·Î ÇÒ ¶§ »ç¿ë
+		/* ë°˜ë³µë¬¸ : ê·œì¹™ì ì¸ ìž‘ì—…ì„ ë°˜ë³µì ìœ¼ë¡œ í•  ë•Œ ì‚¬ìš©
 		 * for, while, do~while
-		 * - for, while ¹®Àº µ¿ÀÛ ¹æ½ÄÀÌ °°À½
-		 * => Á¶°Ç¿¡ µû¶ó Á¶°ÇÀÌ ¸ÂÁö ¾ÊÀ¸¸é ÇÑ ¹øµµ ½ÇÇàµÇÁö ¾ÊÀ» ¼ö ÀÖÀ½
+		 * - for, while ë¬¸ì€ ë™ìž‘ ë°©ì‹ì´ ê°™ìŒ
+		 * => ì¡°ê±´ì— ë”°ë¼ ì¡°ê±´ì´ ë§žì§€ ì•Šìœ¼ë©´ í•œ ë²ˆë„ ì‹¤í–‰ë˜ì§€ ì•Šì„ ìˆ˜ ìžˆìŒ
 		 * 
-		 * do~while ¹® : Á¶°Ç¿¡ ¸ÂÁö ¾Ê¾Æµµ ÇÑ ¹øÀº ¹«Á¶°Ç ½ÇÇàÇÔ
+		 * do~while ë¬¸ : ì¡°ê±´ì— ë§žì§€ ì•Šì•„ë„ í•œ ë²ˆì€ ë¬´ì¡°ê±´ ì‹¤í–‰í•¨
 		 * 
-		 * for(ÃÊ±âÈ­; Á¶°Ç½Ä; Áõ°¨½Ä) {
-		 * 	½ÇÇà¹®; 
+		 * for(ì´ˆê¸°í™”; ì¡°ê±´ì‹; ì¦ê°ì‹) {
+		 * 	ì‹¤í–‰ë¬¸; 
 		 * }
-		 * - ÃÊ±âÈ­ : ½ÇÇà¹®À» ¹Ýº¹ÇÏ±â À§ÇÑ º¯¼ö ÃÊ±âÈ­, Ã³À½ ÇÑ ¹ø¸¸ ½ÇÇà. »ý·« °¡´É
-		 * - Á¶°Ç½Ä : ¹Ýº¹À» °áÁ¤ÇÏ´Â ±â´É. »ý·« °¡´É
-		 * - Áõ°¨½Ä : Á¶°Ç½Ä¿¡¼­ »ç¿ëÇÏ´Â º¯¼ö¸¦ Áõ°¨½ÃÄÑ ¹Ýº¹ È½¼ö¸¦ Á¶Àý. »ý·« °¡´É
+		 * - ì´ˆê¸°í™” : ì‹¤í–‰ë¬¸ì„ ë°˜ë³µí•˜ê¸° ìœ„í•œ ë³€ìˆ˜ ì´ˆê¸°í™”, ì²˜ìŒ í•œ ë²ˆë§Œ ì‹¤í–‰. ìƒëžµ ê°€ëŠ¥
+		 * - ì¡°ê±´ì‹ : ë°˜ë³µì„ ê²°ì •í•˜ëŠ” ê¸°ëŠ¥. ìƒëžµ ê°€ëŠ¥
+		 * - ì¦ê°ì‹ : ì¡°ê±´ì‹ì—ì„œ ì‚¬ìš©í•˜ëŠ” ë³€ìˆ˜ë¥¼ ì¦ê°ì‹œì¼œ ë°˜ë³µ íšŸìˆ˜ë¥¼ ì¡°ì ˆ. ìƒëžµ ê°€ëŠ¥
 		 * */
 		
-		//for¹®, while¹® ³×ÀÌ¹Ö
-		//(ÀÌ¸§): for() {}, (ÀÌ¸§): while() {}
+		//forë¬¸, whileë¬¸ ë„¤ì´ë°
+		//(ì´ë¦„): for() {}, (ì´ë¦„): while() {}
 		a: for(;;) {
 			for(;;) {
 				break a;
 			}
 		}
 		
-		// 1~10ÀÇ ·£´ý ¼ö¸¦ 5°³ Ãâ·Â
+		// 1~10ì˜ ëžœë¤ ìˆ˜ë¥¼ 5ê°œ ì¶œë ¥
 //		for(int i = 1; i <= 5; i++) {
 //			System.out.println((int)(10*Math.random()) + 1);
 //		}
 		
-		// 1~10±îÁöÀÇ ÇÕ°è Ãâ·Â
+		// 1~10ê¹Œì§€ì˜ í•©ê³„ ì¶œë ¥
 		int sum = 0;
 		for(int i = 1; i <= 10; i++) {
 			sum += i;

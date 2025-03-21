@@ -2,34 +2,34 @@ package day12_Customer;
 
 public class CustomerMain {
 	public static void main(String[] args) {
-		/* ¹éÈ­Á¡
-		 * - ÀÏ¹İ °í°´ / Gold °í°´(ÇÒÀÎ) / VIP °í°´(ÇÒÀÎ)
+		/* ë°±í™”ì 
+		 * - ì¼ë°˜ ê³ ê° / Gold ê³ ê°(í• ì¸) / VIP ê³ ê°(í• ì¸)
 		 * 
-		 * 1. °í°´
-		 * 1) ¸â¹ö º¯¼ö
-		 * 	- °í°´ ID : int customerID
-		 * 	- °í°´ ÀÌ¸§ : String customerName
-		 * 	- °í°´ µî±Ş : String customerGrade = Silver
-		 * 		- Silver(±âº») / Gold / VIP
-		 * 	- º¸³Ê½º Æ÷ÀÎÆ® : int bonusPoint
-		 *  - º¸³Ê½º Àû¸³ ºñÀ² : double bonusRatio = 0.01(= 1%)
+		 * 1. ê³ ê°
+		 * 1) ë©¤ë²„ ë³€ìˆ˜
+		 * 	- ê³ ê° ID : int customerID
+		 * 	- ê³ ê° ì´ë¦„ : String customerName
+		 * 	- ê³ ê° ë“±ê¸‰ : String customerGrade = Silver
+		 * 		- Silver(ê¸°ë³¸) / Gold / VIP
+		 * 	- ë³´ë„ˆìŠ¤ í¬ì¸íŠ¸ : int bonusPoint
+		 *  - ë³´ë„ˆìŠ¤ ì ë¦½ ë¹„ìœ¨ : double bonusRatio = 0.01(= 1%)
 		 * 
 		 * class Customer {
-		 * 	- ¸Ş¼­µå
-		 * 	1. º¸³Ê½º Àû¸³ °è»ê ¸Ş¼­µå : int calcPrice(int item)
-		 * 		- ±¸¸Å ±İ¾×ÀÇ Àû¸³ º¸³Ê½º¸¦ °è»êÇØ bonusPoint¿¡ ´©Àû
-		 * 		- º¸³Ê½º Àû¸³, ÇÒÀÎ ¿©ºÎ¸¦ Ã¼Å©ÇØ¼­ ±¸¸Å price¸¦ return
+		 * 	- ë©”ì„œë“œ
+		 * 	1. ë³´ë„ˆìŠ¤ ì ë¦½ ê³„ì‚° ë©”ì„œë“œ : int calcPrice(int item)
+		 * 		- êµ¬ë§¤ ê¸ˆì•¡ì˜ ì ë¦½ ë³´ë„ˆìŠ¤ë¥¼ ê³„ì‚°í•´ bonusPointì— ëˆ„ì 
+		 * 		- ë³´ë„ˆìŠ¤ ì ë¦½, í• ì¸ ì—¬ë¶€ë¥¼ ì²´í¬í•´ì„œ êµ¬ë§¤ priceë¥¼ return
 		 * 
-		 * 	2. Ãâ·Â ¸Ş¼­µå : void customerInfo()
-		 * 		- Çü½Ä
-		 * 			(customerName)´ÔÀº (customerGrade) °í°´ÀÌ¸ç, º¸³Ê½º Æ÷ÀÎÆ®´Â (bonusPoint)Á¡ÀÔ´Ï´Ù.
-		 * 		- VIPÀÏ °æ¿ìÀÇ Ãß°¡ ¹®Àå
-		 * 			Àü´ã »ó´ã»ç´Â (ÀÌ¸§)ÀÌ°í, ¹øÈ£´Â (int)ÀÔ´Ï´Ù.
+		 * 	2. ì¶œë ¥ ë©”ì„œë“œ : void customerInfo()
+		 * 		- í˜•ì‹
+		 * 			(customerName)ë‹˜ì€ (customerGrade) ê³ ê°ì´ë©°, ë³´ë„ˆìŠ¤ í¬ì¸íŠ¸ëŠ” (bonusPoint)ì ì…ë‹ˆë‹¤.
+		 * 		- VIPì¼ ê²½ìš°ì˜ ì¶”ê°€ ë¬¸ì¥
+		 * 			ì „ë‹´ ìƒë‹´ì‚¬ëŠ” (ì´ë¦„)ì´ê³ , ë²ˆí˜¸ëŠ” (int)ì…ë‹ˆë‹¤.
 		 * 
-		 * 	3. µî±Şº° ÇÒÀÎ Àû¸³ ¿©ºÎ
-		 * 		- Silver µî±Ş : 0% ÇÒÀÎ, 1% Àû¸³
-		 * 		- Gold µî±Ş : 10% ÇÒÀÎ, 2% Àû¸³
-		 * 		- VIP µî±Ş : 10% ÇÒÀÎ, 3% Àû¸³, Àü´ã »ó´ã»ç(String agentName, String agentNum)
+		 * 	3. ë“±ê¸‰ë³„ í• ì¸ ì ë¦½ ì—¬ë¶€
+		 * 		- Silver ë“±ê¸‰ : 0% í• ì¸, 1% ì ë¦½
+		 * 		- Gold ë“±ê¸‰ : 10% í• ì¸, 2% ì ë¦½
+		 * 		- VIP ë“±ê¸‰ : 10% í• ì¸, 3% ì ë¦½, ì „ë‹´ ìƒë‹´ì‚¬(String agentName, String agentNum)
 		 * 
 		 * Customer : Silver
 		 * GoldCustomer extends Customer
@@ -37,24 +37,24 @@ public class CustomerMain {
 		 * */
 		
 		Customer[] customers = new Customer[4];
-		customers[0] = new Customer(101, "ÀÏ¹İ");
-		customers[1] = new GoldCustomer(102, "°í±Ş");
-		customers[2] = new VIPCustomer(103, "±Íºó", "¼øÀÌ", "1001");
-		customers[3] = new VIPCustomer(104, "±èÃ¶¼ö", "¿µ¼ö", "1002");
+		customers[0] = new Customer(101, "ì¼ë°˜");
+		customers[1] = new GoldCustomer(102, "ê³ ê¸‰");
+		customers[2] = new VIPCustomer(103, "ê·€ë¹ˆ", "ìˆœì´", "1001");
+		customers[3] = new VIPCustomer(104, "ê¹€ì² ìˆ˜", "ì˜ìˆ˜", "1002");
 		for(Customer customer : customers) {
 			customer.customerInfo();
-			System.out.println("1¸¸¿øÂ¥¸® »óÇ°À» »ğ´Ï´Ù. ÁöºÒÇÒ °¡°İÀº " + customer.calcPrice(10000) + "¿øÀÔ´Ï´Ù.");
+			System.out.println("1ë§Œì›ì§œë¦¬ ìƒí’ˆì„ ì‚½ë‹ˆë‹¤. ì§€ë¶ˆí•  ê°€ê²©ì€ " + customer.calcPrice(10000) + "ì›ì…ë‹ˆë‹¤.");
 			customer.customerInfo();
 			System.out.println();
 		}
 		
-		// ´Ù¿îÄ³½ºÆÃ »ç¿ë
-		// 1001.¼øÀÌ »ó´ã»ç°¡ Åğ»çÇØ¼­ 1003À¸·Î º¯°æÇÏ´Â °Í
+		// ë‹¤ìš´ìºìŠ¤íŒ… ì‚¬ìš©
+		// 1001.ìˆœì´ ìƒë‹´ì‚¬ê°€ í‡´ì‚¬í•´ì„œ 1003ìœ¼ë¡œ ë³€ê²½í•˜ëŠ” ê²ƒ
 		for(Customer c : customers) {
 			if(c instanceof VIPCustomer) {
 				VIPCustomer vip = (VIPCustomer)c;
 				if(vip.getAgentNum().equals("1001")) {
-					vip.setAgentName("»ó´ã");
+					vip.setAgentName("ìƒë‹´");
 					vip.setAgentNum("1003");
 				}
 			}

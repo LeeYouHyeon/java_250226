@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 
 public class Exception05 {
 	public static void main(String[] args){
-		// IO Exception ¹ß»ı ¿¹Á¦
+		// IO Exception ë°œìƒ ì˜ˆì œ
 		
 		InputStreamReader isr = new InputStreamReader(System.in);
 		BufferedReader br = new BufferedReader(isr);

@@ -3,12 +3,12 @@ package studentManager_List;
 import java.util.Scanner;
 
 public interface Program {
-	/* 1. ÇÐ»ý µî·Ï					=> void insertStudent(Scanner scan);
-	 * 2. ÇÐ»ý ¸®½ºÆ® Ãâ·Â				=> void printStudents();
-	 * 3. ÇÐ»ý °Ë»ö(ÇÐ»ý Á¤º¸, ¼ö°­ Á¤º¸)	=> void searchStudent(Scanner scan);
-	 * 4. ¼ö°­½ÅÃ»(ÇÑ ÇÐ»ý¿¡ ´ëÇÑ)			=> void insertSubject(Scanner scan);
-	 * 5. ¼ö°­Ã¶È¸(ÇÑ ÇÐ»ý¿¡ ´ëÇÑ)			=> void deleteSubject(Scanner scan);
-	 * 6. Á¾·á
+	/* 1. í•™ìƒ ë“±ë¡					=> void insertStudent(Scanner scan);
+	 * 2. í•™ìƒ ë¦¬ìŠ¤íŠ¸ ì¶œë ¥				=> void printStudents();
+	 * 3. í•™ìƒ ê²€ìƒ‰(í•™ìƒ ì •ë³´, ìˆ˜ê°• ì •ë³´)	=> void searchStudent(Scanner scan);
+	 * 4. ìˆ˜ê°•ì‹ ì²­(í•œ í•™ìƒì— ëŒ€í•œ)			=> void insertSubject(Scanner scan);
+	 * 5. ìˆ˜ê°•ì² íšŒ(í•œ í•™ìƒì— ëŒ€í•œ)			=> void deleteSubject(Scanner scan);
+	 * 6. ì¢…ë£Œ
 	 * */
 
 	void insertStudent(Scanner scan) throws Exception;

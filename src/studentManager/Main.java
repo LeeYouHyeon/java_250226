@@ -4,16 +4,16 @@ import java.util.Scanner;
 
 public class Main {
 	public static void main(String[] args) {
-		StudentController controller = new StudentController(new Subject("101", "°ø°øµ¥ÀÌÅÍ Ç®½ºÅÃ"), new Subject("102", "java"),
+		StudentController controller = new StudentController(new Subject("101", "ê³µê³µë°ì´í„° í’€ìŠ¤íƒ"), new Subject("102", "java"),
 				new Subject("103", "DB"), new Subject("104", "JavaScript"), new Subject("105", "Python"), new Subject("106", "Node.js"));
 
 		Scanner scan = new Scanner(System.in);
 		int input = 0;
-		System.out.println("ÇĞ»ı µî·Ï ÇÁ·Î±×·¥");
+		System.out.println("í•™ìƒ ë“±ë¡ í”„ë¡œê·¸ë¨");
 		while (input != 6) {
 			System.out.println();
 			System.out.println("--menu--");
-			System.out.println("1. ÇĞ»ı µî·Ï | 2. ÇĞ»ı ¸®½ºÆ® Ãâ·Â | 3. ÇĞ»ı °Ë»ö | 4. ¼ö°­ ½ÅÃ» | 5. ¼ö°­ ½ÅÃ» Ãë¼Ò | 6. Á¾·á");
+			System.out.println("1. í•™ìƒ ë“±ë¡ | 2. í•™ìƒ ë¦¬ìŠ¤íŠ¸ ì¶œë ¥ | 3. í•™ìƒ ê²€ìƒ‰ | 4. ìˆ˜ê°• ì‹ ì²­ | 5. ìˆ˜ê°• ì‹ ì²­ ì·¨ì†Œ | 6. ì¢…ë£Œ");
 			System.out.print("> ");
 			input = scan.nextInt();
 			scan.nextLine();
@@ -37,7 +37,7 @@ public class Main {
 				case 6:
 					break;
 				default:
-					System.out.println("Àß¸øµÈ ÀÔ·Â");
+					System.out.println("ì˜ëª»ëœ ì…ë ¥");
 			}
 		}
 

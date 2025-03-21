@@ -3,32 +3,32 @@ package day12;
 public class Polymorphism {
 
 	public static void main(String[] args) {
-		/* °´Ã¼ÁöÇâ ÇÁ·Î±×·¥ÀÇ 4°¡Áö Æ¯Â¡
-		 * - ÇÁ·Î±×·¥ : µ¶¸³ÀûÀÎ ´ÜÀ§ÀÎ °´Ã¼µéÀ» ¸ð¾Æ¼­ Ã³¸®ÇÏ´Â ¸ðÀÓ
-		 * - °¢°¢ÀÇ °´Ã¼´Â ¸Þ½ÃÁö¸¦ ÁÖ°í¹ÞÀ¸¸é¼­ µ¥ÀÌÅÍ¸¦ Ã³¸®
-		 * - Ãß»óÈ­, Ä¸½¶È­(Á¤º¸Àº´Ð), »ó¼Ó, ´ÙÇü¼º
+		/* ê°ì²´ì§€í–¥ í”„ë¡œê·¸ëž¨ì˜ 4ê°€ì§€ íŠ¹ì§•
+		 * - í”„ë¡œê·¸ëž¨ : ë…ë¦½ì ì¸ ë‹¨ìœ„ì¸ ê°ì²´ë“¤ì„ ëª¨ì•„ì„œ ì²˜ë¦¬í•˜ëŠ” ëª¨ìž„
+		 * - ê°ê°ì˜ ê°ì²´ëŠ” ë©”ì‹œì§€ë¥¼ ì£¼ê³ ë°›ìœ¼ë©´ì„œ ë°ì´í„°ë¥¼ ì²˜ë¦¬
+		 * - ì¶”ìƒí™”, ìº¡ìŠí™”(ì •ë³´ì€ë‹‰), ìƒì†, ë‹¤í˜•ì„±
 		 * 
-		 * - Ãß»óÈ­(Abstraction) : °øÅëÀûÀÎ ÄÚµå¸¸ Á¦°ø
-		 *	- ±¸ÇöµÈ ºÎºÐ°ú(°øÅëÄÚµå), ±¸ÇöµÇÁö ¾ÊÀº ºÎºÐ(°³º°ÄÚµå)À» ºÐ¸®
-		 *	- °³º°ÀûÀÎ ºÎºÐÀº Ç¥ÇöµÇÁö ¾Ê´Â ±â´É
+		 * - ì¶”ìƒí™”(Abstraction) : ê³µí†µì ì¸ ì½”ë“œë§Œ ì œê³µ
+		 *	- êµ¬í˜„ëœ ë¶€ë¶„ê³¼(ê³µí†µì½”ë“œ), êµ¬í˜„ë˜ì§€ ì•Šì€ ë¶€ë¶„(ê°œë³„ì½”ë“œ)ì„ ë¶„ë¦¬
+		 *	- ê°œë³„ì ì¸ ë¶€ë¶„ì€ í‘œí˜„ë˜ì§€ ì•ŠëŠ” ê¸°ëŠ¥
 		 *
-		 * - Ä¸½¶È­(Encapsulation) : µ¥ÀÌÅÍ º¸È£(Á¤º¸Àº´Ð)
-		 * 	- ¸â¹öº¯¼ö´Â ¼û±â°í, ¸Þ¼­µå¸¦ ÅëÇØ Á¢±Ù
-		 * 	- ¸â¹öº¯¼ö¿Í ¸Þ¼­µå¸¦ ÇÏ³ª·Î ¹­¾î¼­ Ã³¸®
-		 * 	- Àº´Ð : °´Ã¼ ³»ºÎÀÇ Á¤º¸¸¦ ¼û°Ü¼­ ¿ÜºÎ·Î µå·¯³ªÁö ¾Ê°Ô ÇÏ´Â °Í
-		 * 	- Àº´ÐÀÇ ÀÌÀ¯ : ¿ÜºÎ¿¡¼­ µ¥ÀÌÅÍ¿¡ Á÷Á¢ Á¢±ÙÇÏ´Â °ÍÀ» ¸·À½
+		 * - ìº¡ìŠí™”(Encapsulation) : ë°ì´í„° ë³´í˜¸(ì •ë³´ì€ë‹‰)
+		 * 	- ë©¤ë²„ë³€ìˆ˜ëŠ” ìˆ¨ê¸°ê³ , ë©”ì„œë“œë¥¼ í†µí•´ ì ‘ê·¼
+		 * 	- ë©¤ë²„ë³€ìˆ˜ì™€ ë©”ì„œë“œë¥¼ í•˜ë‚˜ë¡œ ë¬¶ì–´ì„œ ì²˜ë¦¬
+		 * 	- ì€ë‹‰ : ê°ì²´ ë‚´ë¶€ì˜ ì •ë³´ë¥¼ ìˆ¨ê²¨ì„œ ì™¸ë¶€ë¡œ ë“œëŸ¬ë‚˜ì§€ ì•Šê²Œ í•˜ëŠ” ê²ƒ
+		 * 	- ì€ë‹‰ì˜ ì´ìœ  : ì™¸ë¶€ì—ì„œ ë°ì´í„°ì— ì§ì ‘ ì ‘ê·¼í•˜ëŠ” ê²ƒì„ ë§‰ìŒ
 		 * 
-		 * - »ó¼Ó(Inheritance) : ÄÚµå Àç»ç¿ë(È®Àå)
-		 * 	- Å¬·¡½º°¡ »ó¼Ó¹Þ¾Æ¼­ ÀÏºÎ¸¸ ¼öÁ¤ÇÏ¸é Áßº¹ ÄÚµå¸¦ ÁÙÀÏ ¼ö ÀÖÀ½
-		 * 	- À¯Áöº¸¼ö°¡ ÆíÇÔ
+		 * - ìƒì†(Inheritance) : ì½”ë“œ ìž¬ì‚¬ìš©(í™•ìž¥)
+		 * 	- í´ëž˜ìŠ¤ê°€ ìƒì†ë°›ì•„ì„œ ì¼ë¶€ë§Œ ìˆ˜ì •í•˜ë©´ ì¤‘ë³µ ì½”ë“œë¥¼ ì¤„ì¼ ìˆ˜ ìžˆìŒ
+		 * 	- ìœ ì§€ë³´ìˆ˜ê°€ íŽ¸í•¨
 		 * 
-		 * - ´ÙÇü¼º(Polymorphism) : °´Ã¼ÀÇ Çüº¯È¯
-		 * 	- ÇÏ³ªÀÇ ÄÚµå(ºÎ¸ð °´Ã¼)°¡ ¿©·¯ ÀÚ·á(ÀÚ½Ä °´Ã¼)ÇüÀ¸·Î ±¸ÇöµÇ¾î ½ÇÇàµÇ´Â °Í
-		 * 	- ÄÚµå´Â °°Àºµ¥ µé¾î¿À´Â °´Ã¼¿¡ µû¶ó ´Ù¸¥ ½ÇÇà°á°ú¸¦ ¾òÀ» ¼ö ÀÖÀ½
-		 * 	- À¯¿¬ÇÏ°í È®Àå¼º ÀÖ´Â, À¯Áöº¸¼ö°¡ Æí¸®ÇÑ ÇÁ·Î±×·¥À» ¸¸µé ¼öÀÖ´Ù.
+		 * - ë‹¤í˜•ì„±(Polymorphism) : ê°ì²´ì˜ í˜•ë³€í™˜
+		 * 	- í•˜ë‚˜ì˜ ì½”ë“œ(ë¶€ëª¨ ê°ì²´)ê°€ ì—¬ëŸ¬ ìžë£Œ(ìžì‹ ê°ì²´)í˜•ìœ¼ë¡œ êµ¬í˜„ë˜ì–´ ì‹¤í–‰ë˜ëŠ” ê²ƒ
+		 * 	- ì½”ë“œëŠ” ê°™ì€ë° ë“¤ì–´ì˜¤ëŠ” ê°ì²´ì— ë”°ë¼ ë‹¤ë¥¸ ì‹¤í–‰ê²°ê³¼ë¥¼ ì–»ì„ ìˆ˜ ìžˆìŒ
+		 * 	- ìœ ì—°í•˜ê³  í™•ìž¥ì„± ìžˆëŠ”, ìœ ì§€ë³´ìˆ˜ê°€ íŽ¸ë¦¬í•œ í”„ë¡œê·¸ëž¨ì„ ë§Œë“¤ ìˆ˜ìžˆë‹¤.
 		 * */
 
-		// Human, tiger, eagle, dog °´Ã¼¸¦ °¢ÀÚ »ý¼º
+		// Human, tiger, eagle, dog ê°ì²´ë¥¼ ê°ìž ìƒì„±
 //		Human h = new Human();
 //		h.move();
 //		h.readBook();
@@ -49,7 +49,7 @@ public class Polymorphism {
 //		System.out.println();
 
 		Animal[] animals = new Animal[5];
-		// up-casting : ÀÚµ¿À¸·Î Ã³¸®µÊ
+		// up-casting : ìžë™ìœ¼ë¡œ ì²˜ë¦¬ë¨
 		animals[0] = new Human();
 		animals[1] = new Tiger();
 		animals[2] = new Eagle();
@@ -63,13 +63,13 @@ public class Polymorphism {
 	}
 
 	public void moveAnimal(Animal animal) {
-		// Animal(ºÎ¸ð Å¬·¡½º)¿¡ ÀÖ´Â ¸Þ¼­µå¶ó °´Ã¼¿¡ »ó°ü¾øÀÌ °¡´É
+		// Animal(ë¶€ëª¨ í´ëž˜ìŠ¤)ì— ìžˆëŠ” ë©”ì„œë“œë¼ ê°ì²´ì— ìƒê´€ì—†ì´ ê°€ëŠ¥
 		animal.move();
 		
-		// ÀÚ½Ä °´Ã¼¸¸ °¡Áö°í ÀÖ´Â ±â´ÉÀº ´Ù¿îÄ³½ºÆÃ ÈÄ¿¡ »ç¿ë °¡´É
-		// ´Ù¿îÄ³½ºÆÃÀº ÀÚµ¿À¸·Î µÇÁö ¾Ê¾Æ, castingÀ» ¸í½ÃÇØÁà¾ß ÇÔ
-		// instanceof ¿¬»êÀÚ »ç¿ë
-		// ¡Ø Ä³½ºÆÃ ¿À·ù´Â ExceptionÀ¸·Î, ¹®¹ý ´Ü°è¿¡¼­´Â ¿À·ù¸¦ È®ÀÎÇÒ ¼ö ¾ø´Ù. 
+		// ìžì‹ ê°ì²´ë§Œ ê°€ì§€ê³  ìžˆëŠ” ê¸°ëŠ¥ì€ ë‹¤ìš´ìºìŠ¤íŒ… í›„ì— ì‚¬ìš© ê°€ëŠ¥
+		// ë‹¤ìš´ìºìŠ¤íŒ…ì€ ìžë™ìœ¼ë¡œ ë˜ì§€ ì•Šì•„, castingì„ ëª…ì‹œí•´ì¤˜ì•¼ í•¨
+		// instanceof ì—°ì‚°ìž ì‚¬ìš©
+		// â€» ìºìŠ¤íŒ… ì˜¤ë¥˜ëŠ” Exceptionìœ¼ë¡œ, ë¬¸ë²• ë‹¨ê³„ì—ì„œëŠ” ì˜¤ë¥˜ë¥¼ í™•ì¸í•  ìˆ˜ ì—†ë‹¤. 
 		if (animal instanceof Human) {
 			((Human) animal).readBook();
 		}
@@ -84,7 +84,7 @@ public class Polymorphism {
 
 class Animal {
 	public void move() {
-		System.out.println("µ¿¹°ÀÌ ¿òÁ÷ÀÔ´Ï´Ù.");
+		System.out.println("ë™ë¬¼ì´ ì›€ì§ìž…ë‹ˆë‹¤.");
 	}
 }
 
@@ -92,7 +92,7 @@ class Dog extends Animal {
 
 	@Override
 	public void move() {
-		System.out.println("°­¾ÆÁö°¡ ¾ÆÀå¾ÆÀå °È½À´Ï´Ù.");
+		System.out.println("ê°•ì•„ì§€ê°€ ì•„ìž¥ì•„ìž¥ ê±·ìŠµë‹ˆë‹¤.");
 	}
 }
 
@@ -100,11 +100,11 @@ class Tiger extends Animal {
 
 	@Override
 	public void move() {
-		System.out.println("È£¶ûÀÌ°¡ ³× ¹ß·Î ¾î½½··°Å¸³´Ï´Ù.");
+		System.out.println("í˜¸ëž‘ì´ê°€ ë„¤ ë°œë¡œ ì–´ìŠ¬ë ê±°ë¦½ë‹ˆë‹¤.");
 	}
 
 	public void hunt() {
-		System.out.println("È£¶ûÀÌ°¡ »ç³ÉÀ» ÇÕ´Ï´Ù.");
+		System.out.println("í˜¸ëž‘ì´ê°€ ì‚¬ëƒ¥ì„ í•©ë‹ˆë‹¤.");
 	}
 }
 
@@ -112,11 +112,11 @@ class Eagle extends Animal {
 
 	@Override
 	public void move() {
-		System.out.println("µ¶¼ö¸®°¡ ÇÏ´ÃÀ» ³³´Ï´Ù.");
+		System.out.println("ë…ìˆ˜ë¦¬ê°€ í•˜ëŠ˜ì„ ë‚©ë‹ˆë‹¤.");
 	}
 
 	public void fly() {
-		System.out.println("µ¶¼ö¸®°¡ ÇÏ´Ã¿¡¼­ »ç³ÉÀ» ÇÕ´Ï´Ù.");
+		System.out.println("ë…ìˆ˜ë¦¬ê°€ í•˜ëŠ˜ì—ì„œ ì‚¬ëƒ¥ì„ í•©ë‹ˆë‹¤.");
 	}
 }
 
@@ -124,10 +124,10 @@ class Human extends Animal {
 
 	@Override
 	public void move() {
-		System.out.println("»ç¶÷Àº µÎ ¹ß·Î °È½À´Ï´Ù.");
+		System.out.println("ì‚¬ëžŒì€ ë‘ ë°œë¡œ ê±·ìŠµë‹ˆë‹¤.");
 	}
 
 	public void readBook() {
-		System.out.println("»ç¶÷ÀÌ Ã¥À» ÀÐ½À´Ï´Ù.");
+		System.out.println("ì‚¬ëžŒì´ ì±…ì„ ì½ìŠµë‹ˆë‹¤.");
 	}
 }

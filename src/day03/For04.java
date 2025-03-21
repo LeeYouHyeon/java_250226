@@ -5,17 +5,17 @@ import java.util.Scanner;
 public class For04 {
 
 	public static void main(String[] args) {
-		/* ¾à¼ö : ³ª´©¾î¼­ ¶³¾îÁö´Â ¼öÀÇ ÁıÇÕ
-		 * 6ÀÇ ¾à¼ö : 1, 2, 3, 6
+		/* ì•½ìˆ˜ : ë‚˜ëˆ„ì–´ì„œ ë–¨ì–´ì§€ëŠ” ìˆ˜ì˜ ì§‘í•©
+		 * 6ì˜ ì•½ìˆ˜ : 1, 2, 3, 6
 		 * */
 		
-		System.out.println("¾à¼ö¸¦ ±¸ÇÏ°í ½ÍÀº ÀÚ¿¬¼ö¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+		System.out.println("ì•½ìˆ˜ë¥¼ êµ¬í•˜ê³  ì‹¶ì€ ìì—°ìˆ˜ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”.");
 		Scanner scan = new Scanner(System.in);
 		
 		while (true) {
 			int num = scan.nextInt();
 			if(num <= 0) {
-				System.out.println("ÀÚ¿¬¼ö¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä.");
+				System.out.println("ìì—°ìˆ˜ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”.");
 			} else {
 				for(int i = 1; i <= num; i++) {
 					if(num%i == 0) {

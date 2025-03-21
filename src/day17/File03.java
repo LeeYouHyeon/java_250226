@@ -5,18 +5,18 @@ import java.io.FileReader;
 
 public class File03 {
 	public static void main(String[] args) throws Exception {
-		// ÆÄÀÏ ÀĞ±â
-		/* º¸Á¶ ½ºÆ®¸² »ç¿ë. BufferedReader(FileReader)
-		 * ¶óÀÎ ´ÜÀ§·Î ÀĞ±â °¡´É
-		 * ´õ ÀÌ»ó ÀĞÀ» ¶óÀÎÀÌ ¾ø´Ù¸é(null) ±×¸¸
-		 * º¸Á¶ ½ºÆ®¸²Àº Á÷Á¢ ÀĞ°í ¾²´Â ±â´ÉÀÌ ¾ø±â ¶§¹®¿¡
-		 * ±â¹İ ½ºÆ®¸²À» ¸Å°³º¯¼ö·Î Æ÷ÇÔÇØ¾ß ÇÔ
+		// íŒŒì¼ ì½ê¸°
+		/* ë³´ì¡° ìŠ¤íŠ¸ë¦¼ ì‚¬ìš©. BufferedReader(FileReader)
+		 * ë¼ì¸ ë‹¨ìœ„ë¡œ ì½ê¸° ê°€ëŠ¥
+		 * ë” ì´ìƒ ì½ì„ ë¼ì¸ì´ ì—†ë‹¤ë©´(null) ê·¸ë§Œ
+		 * ë³´ì¡° ìŠ¤íŠ¸ë¦¼ì€ ì§ì ‘ ì½ê³  ì“°ëŠ” ê¸°ëŠ¥ì´ ì—†ê¸° ë•Œë¬¸ì—
+		 * ê¸°ë°˜ ìŠ¤íŠ¸ë¦¼ì„ ë§¤ê°œë³€ìˆ˜ë¡œ í¬í•¨í•´ì•¼ í•¨
 		 * */
 		BufferedReader br = new BufferedReader(
 				new FileReader("writer2.txt"));
 		
 		while (true) {
-			String line = br.readLine(); // ÇÑ ¶óÀÎÀ¸·Î ÀĞ¾îµéÀÌ±â
+			String line = br.readLine(); // í•œ ë¼ì¸ìœ¼ë¡œ ì½ì–´ë“¤ì´ê¸°
 			if(line == null) {
 				break;
 			}

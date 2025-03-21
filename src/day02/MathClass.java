@@ -3,10 +3,10 @@ package day02;
 public class MathClass {
 
 	public static void main(String[] args) {
-		// ¼öÇĞ °ü·Ã ±â´ÉÀÌ ÀÖ´Â Å¬·¡½º
-		// Math.(¸Ş¼­µå)
-		// Math.round() : ¹İ¿Ã¸² / Math.ceil() : ¿Ã¸² / Math.floor() : ¹ö¸²
-		// ¼Ò¼ö ÀÚ¸´¼ö´Â ¹«Á¶°Ç 0
+		// ìˆ˜í•™ ê´€ë ¨ ê¸°ëŠ¥ì´ ìˆëŠ” í´ë˜ìŠ¤
+		// Math.(ë©”ì„œë“œ)
+		// Math.round() : ë°˜ì˜¬ë¦¼ / Math.ceil() : ì˜¬ë¦¼ / Math.floor() : ë²„ë¦¼
+		// ì†Œìˆ˜ ìë¦¿ìˆ˜ëŠ” ë¬´ì¡°ê±´ 0
 		
 		double num = 3.14258;
 		//long roundNum = Math.round(num);
@@ -21,13 +21,13 @@ public class MathClass {
 		int floorNum = (int)Math.floor(num);
 		System.out.println(floorNum);
 		
-		//Math.max() : ÃÖ´ñ°ª / Math.min() : ÃÖ¼Ú°ª
+		//Math.max() : ìµœëŒ“ê°’ / Math.min() : ìµœì†Ÿê°’
 		System.out.println(Math.max(3, 5));
 		System.out.println(Math.min(6, 1));
 		
-		//Math.random() : [0, 1)ÀÇ ·£´ı°ª ¸®ÅÏ
+		//Math.random() : [0, 1)ì˜ ëœë¤ê°’ ë¦¬í„´
 		//(int)(Math.random()*count) + start
-		//(int)Math.random()*count == 0 : Çüº¯È¯ÀÌ °ö¼Àº¸´Ù ¸ÕÀúÀÌ¹Ç·Î ¹İµå½Ã °ıÈ£¸¦ ³Ö¾îÁà¾ß ÇÔ
+		//(int)Math.random()*count == 0 : í˜•ë³€í™˜ì´ ê³±ì…ˆë³´ë‹¤ ë¨¼ì €ì´ë¯€ë¡œ ë°˜ë“œì‹œ ê´„í˜¸ë¥¼ ë„£ì–´ì¤˜ì•¼ í•¨
 		System.out.println((int)(Math.random()*10)); //0~9
 		System.out.println((int)(Math.random()*10) + 1); //1~10
 		System.out.println((int)(Math.random()*6) + 1); //1~6

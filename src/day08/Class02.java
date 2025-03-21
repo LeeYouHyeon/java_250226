@@ -3,8 +3,8 @@ package day08;
 public class Class02 {
 	public static void main(String[] args) {
 		Car myCar = new Car();
-		myCar.setName("¸ğ´×");
-		myCar.setColor("°ËÁ¤");
+		myCar.setName("ëª¨ë‹");
+		myCar.setColor("ê²€ì •");
 		myCar.setYear("2025");
 		myCar.printCar();
 		myCar.power();
@@ -21,16 +21,16 @@ public class Class02 {
 }
 
 class Car {
-	// ¸â¹öº¯¼ö : name, color, year, power, speed => private
-	// year(Ãâ°í ¿¬µµ)´Â ¿¬»êÀ» ÇàÇÏÁö ¾ÊÀ¸¹Ç·Î String
+	// ë©¤ë²„ë³€ìˆ˜ : name, color, year, power, speed => private
+	// year(ì¶œê³  ì—°ë„)ëŠ” ì—°ì‚°ì„ í–‰í•˜ì§€ ì•Šìœ¼ë¯€ë¡œ String
 	private String name, color, year;
 
 	private boolean power = false;
 	private int speed;
 
-	// ¸Ş¼­µå => public
+	// ë©”ì„œë“œ => public
 
-	// ÇöÀç ¸â¹öº¯¼öÀÇ »óÅÂ Ãâ·Â
+	// í˜„ì¬ ë©¤ë²„ë³€ìˆ˜ì˜ ìƒíƒœ ì¶œë ¥
 	public void printCar() {
 		System.out.println(name + "(" + color + ") : " + year);
 	}
@@ -39,7 +39,7 @@ class Car {
 		System.out.println((power ? "ON" : "OFF") + " / " + speed);
 	}
 
-	// ½Ãµ¿ ÄÑ±â/²ô±â ¸Ş¼­µå (ÇÏ³ªÀÇ ¸Ş¼­µå·Î)
+	// ì‹œë™ ì¼œê¸°/ë„ê¸° ë©”ì„œë“œ (í•˜ë‚˜ì˜ ë©”ì„œë“œë¡œ)
 	public void power() {
 		if (speed == 0) {
 			power = !power;
@@ -48,7 +48,7 @@ class Car {
 		}
 	}
 
-	// ¼Óµµ¸¦ ¿Ã¸®´Â ¸Ş¼­µå speedUp()
+	// ì†ë„ë¥¼ ì˜¬ë¦¬ëŠ” ë©”ì„œë“œ speedUp()
 	public void speedUp() {
 		if (power) {
 			if (speed < 190)
@@ -59,7 +59,7 @@ class Car {
 		}
 	}
 
-	// ¼Óµµ¸¦ ³»¸®´Â ¸Ş¼­µå speedDown()
+	// ì†ë„ë¥¼ ë‚´ë¦¬ëŠ” ë©”ì„œë“œ speedDown()
 	public void speedDown() {
 		if (power) {
 			if (speed > 10)

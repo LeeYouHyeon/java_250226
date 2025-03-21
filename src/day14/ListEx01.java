@@ -6,17 +6,17 @@ import java.util.Scanner;
 
 public class ListEx01 {
 	public static void main(String[] args) {
-		/* ¼ıÀÚ¸¦ ÀÔ·Â¹Ş¾Æ¼­ list¸¦ ±¸¼º
-		 * ÀüÃ¼ Ãâ·Â => ÀüÃ¼ ÇÕ°è Ãâ·Â
-		 * ex) ÀÔ·Â > 45, 89, 78, 58, 96, 85, ... , 36 enter
-		 * Á¡¼ö°¡ 70Á¡ ÀÌ»óÀÎ ÀÎ¿ø ¼ö Ãâ·Â
+		/* ìˆ«ìë¥¼ ì…ë ¥ë°›ì•„ì„œ listë¥¼ êµ¬ì„±
+		 * ì „ì²´ ì¶œë ¥ => ì „ì²´ í•©ê³„ ì¶œë ¥
+		 * ex) ì…ë ¥ > 45, 89, 78, 58, 96, 85, ... , 36 enter
+		 * ì ìˆ˜ê°€ 70ì  ì´ìƒì¸ ì¸ì› ìˆ˜ ì¶œë ¥
 		 * */
 		
 		List<Integer> list = new ArrayList<Integer>();
 		Scanner scan = new Scanner(System.in);
 		int count = 0, sum = 0;
 		
-		System.out.println("Á¤¼ö¸¦ ½°Ç¥·Î ±¸ºĞÇÏ¿© ÀÔ·ÂÇÏ¼¼¿ä.");
+		System.out.println("ì •ìˆ˜ë¥¼ ì‰¼í‘œë¡œ êµ¬ë¶„í•˜ì—¬ ì…ë ¥í•˜ì„¸ìš”.");
 		System.out.print("> ");
 		try {
 			for(String s : scan.nextLine().split(",")) {
@@ -29,10 +29,10 @@ public class ListEx01 {
 			}
 			
 			System.out.println(list);
-			System.out.println("ÇÕ°è : " + sum);
-			System.out.println("Á¡¼ö°¡ 70Á¡ ÀÌ»óÀÎ ÀÎ¿ø ¼ö : " + count + "¸í");
+			System.out.println("í•©ê³„ : " + sum);
+			System.out.println("ì ìˆ˜ê°€ 70ì  ì´ìƒì¸ ì¸ì› ìˆ˜ : " + count + "ëª…");
 		} catch(NumberFormatException e) {
-			System.out.println("ÀÔ·Â ¿À·ù");
+			System.out.println("ì…ë ¥ ì˜¤ë¥˜");
 		}
 		
 		scan.close();

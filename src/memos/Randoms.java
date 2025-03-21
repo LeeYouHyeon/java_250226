@@ -1,8 +1,8 @@
 package memos;
 
 public class Randoms {
-	// arr¿¡¼­ numÀÌ ÀÖ´ÂÁö È®ÀÎÇÏ´Â ¸Ş¼­µå
-	// ÀÖÀ¸¸é true, ¾øÀ¸¸é false
+	// arrì—ì„œ numì´ ìˆëŠ”ì§€ í™•ì¸í•˜ëŠ” ë©”ì„œë“œ
+	// ìˆìœ¼ë©´ true, ì—†ìœ¼ë©´ false
 	public boolean contains(int[] arr, int num) {
 		for (int n : arr) {
 			if (num == n)
@@ -11,15 +11,15 @@ public class Randoms {
 		return false;
 	}
 
-	// start~end¿¡¼­ ·£´ıÇÑ Á¤¼ö ÇÏ³ª¸¦ return
+	// start~endì—ì„œ ëœë¤í•œ ì •ìˆ˜ í•˜ë‚˜ë¥¼ return
 	public int random(int start, int end) {
 		if (start > end)
 			return random(end, start);
 		return (int) (Math.random() * (end - start + 1) + start);
 	}
 
-	// ·£´ı ¼ö°¡ ¿©·¯ °³ ÇÊ¿äÇÒ ¶§
-	// Áßº¹ Çã¿ë
+	// ëœë¤ ìˆ˜ê°€ ì—¬ëŸ¬ ê°œ í•„ìš”í•  ë•Œ
+	// ì¤‘ë³µ í—ˆìš©
 	public int[] randoms(int n, int start, int end) {
 		if (start > end)
 			return randoms(n, end, start);
@@ -29,9 +29,9 @@ public class Randoms {
 		return arr;
 	}
 
-	// ·£´ı ¼ö°¡ ¿©·¯ °³ ÇÊ¿äÇÒ ¶§
-	// Áßº¹ ºÒÇã
-	// ¹üÀ§º¸´Ù ´õ ¸¹ÀÌ »ÌÀ¸·Á ÇÒ °æ¿ì nÀ» °­Á¦·Î ÁÙÀÓ
+	// ëœë¤ ìˆ˜ê°€ ì—¬ëŸ¬ ê°œ í•„ìš”í•  ë•Œ
+	// ì¤‘ë³µ ë¶ˆí—ˆ
+	// ë²”ìœ„ë³´ë‹¤ ë” ë§ì´ ë½‘ìœ¼ë ¤ í•  ê²½ìš° nì„ ê°•ì œë¡œ ì¤„ì„
 	public int[] randomsD(int n, int start, int end) {
 		if (start > end)
 			return randomsD(n, end, start);
@@ -45,7 +45,7 @@ public class Randoms {
 		return arr;
 	}
 
-	// ÀÌ¹Ì ÀÖ´Â ¹è¿­À» ¹ŞÀ» °æ¿ìÀÇ randoms
+	// ì´ë¯¸ ìˆëŠ” ë°°ì—´ì„ ë°›ì„ ê²½ìš°ì˜ randoms
 	public void randoms(int[] arr, int start, int end) {
 		if (start > end) {
 			randoms(arr, end, start);
@@ -57,8 +57,8 @@ public class Randoms {
 		}
 	}
 
-	// ÀÌ¹Ì ÀÖ´Â ¹è¿­À» ¹ŞÀ» °æ¿ìÀÇ randomsD
-	// arr°¡ ³Ê¹« ±æ´Ù¸é ¾Æ¹« ÀÏµµ ÇÏÁö ¾ÊÀ½
+	// ì´ë¯¸ ìˆëŠ” ë°°ì—´ì„ ë°›ì„ ê²½ìš°ì˜ randomsD
+	// arrê°€ ë„ˆë¬´ ê¸¸ë‹¤ë©´ ì•„ë¬´ ì¼ë„ í•˜ì§€ ì•ŠìŒ
 	public void randomsD(int[] arr, int start, int end) {
 		if (start > end) {
 			randomsD(arr, end, start);
@@ -69,12 +69,12 @@ public class Randoms {
 			return;
 		}
 
-		// ÃÊ±âÈ­
+		// ì´ˆê¸°í™”
 		for (int i = 0; i < arr.length; i++) {
 			arr[i] = start - 1;
 		}
 
-		// ·£´ı ¼ö Ã¤¿ì±â
+		// ëœë¤ ìˆ˜ ì±„ìš°ê¸°
 		for (int i = 0; i < arr.length; i++) {
 			int num;
 			do {

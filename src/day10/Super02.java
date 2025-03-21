@@ -3,12 +3,12 @@ package day10;
 public class Super02 {
 	public static void main(String[] args) {
 		
-		Dog d = new Dog("»Ç»ß", "°³°ú");
+		Dog d = new Dog("ë½€ì‚", "ê°œê³¼");
 		d.printInfo();
 		d.howl();
 		
 		System.out.println();
-		Cat c = new Cat("¼ÛÀÌ", "°í¾çÀÌ°ú");
+		Cat c = new Cat("ì†¡ì´", "ê³ ì–‘ì´ê³¼");
 		c.printInfo();
 		c.howl();
 	}
@@ -24,16 +24,16 @@ class Cat extends Animal {
 	public void howl() {
 		// TODO Auto-generated method stub
 		super.howl();
-		System.out.println("¾ß¿Ë");
+		System.out.println("ì•¼ì˜¹");
 	}
 }
 
 class Dog extends Animal {
 	public Dog(String name, String category) {
-		// 1) ºÎ¸ğÀÇ »ı¼ºÀÚ È£Ãâ
+		// 1) ë¶€ëª¨ì˜ ìƒì„±ì í˜¸ì¶œ
 		super(name, category);
 		
-		// 2) ºÎ¸ğÀÇ setter È£Ãâ
+		// 2) ë¶€ëª¨ì˜ setter í˜¸ì¶œ
 //		super.setName(name);
 //		super.setCategory(category);
 	}
@@ -41,15 +41,15 @@ class Dog extends Animal {
 	@Override
 	public void howl() {
 		super.howl();
-		System.out.println("¸Û¸Û");
+		System.out.println("ë©ë©");
 	}
 }
 
-class Animal { // ºÎ¸ğ
-	private String name; // ÀÌ¸§
-	private String category; // Á¾
+class Animal { // ë¶€ëª¨
+	private String name; // ì´ë¦„
+	private String category; // ì¢…
 
-	// »ı¼ºÀÚ
+	// ìƒì„±ì
 	public Animal() {
 	}
 	public Animal(String name, String category) {
@@ -57,14 +57,14 @@ class Animal { // ºÎ¸ğ
 		this.category = category;
 	}
 
-	// Ãâ·Â ¸Ş¼­µå
+	// ì¶œë ¥ ë©”ì„œë“œ
 	public void printInfo() {
-		System.out.println("ÀÌ¸§:" + name);
-		System.out.println("Á¾:" + category);
+		System.out.println("ì´ë¦„:" + name);
+		System.out.println("ì¢…:" + category);
 	}
-	// ¿ïÀ½¼Ò¸® ¸Ş¼­µå
+	// ìš¸ìŒì†Œë¦¬ ë©”ì„œë“œ
 	public void howl() {
-		System.out.println("--" + name + " ¿ïÀ½¼Ò¸®--");
+		System.out.println("--" + name + " ìš¸ìŒì†Œë¦¬--");
 	}
 	
 	public String getName() {

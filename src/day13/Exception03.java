@@ -4,30 +4,30 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Exception03 {
-	// mainµµ ¸Ş¼­µåÀÌ¹Ç·Î throws °¡´É
-	// ¸ğµç ¸Ş¼­µå´Â throws·Î ³»º¸³»°Å³ª try - catch·Î Ã³¸®ÇÏ°Å³ª µÑ Áß¿¡ ÇÏ³ª´Â ÇØ¾ß ÇÔ 
+	// mainë„ ë©”ì„œë“œì´ë¯€ë¡œ throws ê°€ëŠ¥
+	// ëª¨ë“  ë©”ì„œë“œëŠ” throwsë¡œ ë‚´ë³´ë‚´ê±°ë‚˜ try - catchë¡œ ì²˜ë¦¬í•˜ê±°ë‚˜ ë‘˜ ì¤‘ì— í•˜ë‚˜ëŠ” í•´ì•¼ í•¨ 
 	public static void main(String[] args) {
-		// 0À¸·Î ³ª´©¾úÀ» ¶§ ¹ß»ıÇÏ´Â ¿¹¿Ü Ã³¸®
+		// 0ìœ¼ë¡œ ë‚˜ëˆ„ì—ˆì„ ë•Œ ë°œìƒí•˜ëŠ” ì˜ˆì™¸ ì²˜ë¦¬
 		// ex) num1 = 1, num2 = 3, op = '+' => 4
-		// num1 = 3, num2 = 0, op = '/' => ¿À·ù ¸Ş¼¼Áö
+		// num1 = 3, num2 = 0, op = '/' => ì˜¤ë¥˜ ë©”ì„¸ì§€
 		Scanner sc = new Scanner(System.in);
 		int num1, num2;
 		char op;
 		for (int i = 0; i < 3; i++) {
 			try {
-				System.out.print("Ã¹¹øÂ° ¼ıÀÚ> ");
+				System.out.print("ì²«ë²ˆì§¸ ìˆ«ì> ");
 				num1 = sc.nextInt();
-				System.out.print("µÎ¹øÂ° ¼ıÀÚ> ");
+				System.out.print("ë‘ë²ˆì§¸ ìˆ«ì> ");
 				num2 = sc.nextInt();
-				System.out.print("¿¬»êÀÚ> ");
+				System.out.print("ì—°ì‚°ì> ");
 				sc.nextLine();
 				op = sc.nextLine().charAt(0);
 				System.out.println(new Exception03().cal(num1, num2, op));
 			} catch (InputMismatchException e){
-				System.out.println("Á¤¼ö°¡ ¾Æ´Õ´Ï´Ù.");
+				System.out.println("ì •ìˆ˜ê°€ ì•„ë‹™ë‹ˆë‹¤.");
 				sc.nextLine();
 			} catch (ArithmeticException e) {
-				System.out.println("0À¸·Î ³ª´­ ¼ö ¾ø½À´Ï´Ù.");
+				System.out.println("0ìœ¼ë¡œ ë‚˜ëˆŒ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 			} catch (RuntimeException e) {
 				System.out.println(e.getMessage());
 			}
@@ -35,19 +35,19 @@ public class Exception03 {
 		sc.close();
 	}
 
-	/* ¸Ş¼­µå¿¡¼­ ÀÓÀÇ·Î ¿¹¿Ü ¹ß»ı½ÃÅ°±â : throw new
-	 * - throw : ¿¹¿Ü¸¦ ¶°³Ñ±â±â (¿¹¿Ü¸¦ ³ª¸¦ È£ÃâÇÏ´Â ¸Ş¼­µå·Î ³Ñ±è)
-	 * - ¿¹¿Ü¸¦ ¹ß»ı½ÃÅ°°Ô µÇ¸é ¸Ş¼­µå ¼±¾ğºÎ ³¡¿¡ throws¸¦ Àû°í, ¹ß»ıÇÒ ¼ö ÀÖ´Â ¿¹¿Ü¸¦ ¹İµå½Ã Àû¾îÁà¾ß ÇÔ
-	 * - throws¹®¿¡¼­ RuntimeExceptionÀº »ı·« °¡´ÉÇÏ¸ç,
-	 * 		RuntimeException¸¸ ¹ß»ıÇÒ °æ¿ì throws¹®À» ÅëÂ°·Î »ı·« °¡´É
+	/* ë©”ì„œë“œì—ì„œ ì„ì˜ë¡œ ì˜ˆì™¸ ë°œìƒì‹œí‚¤ê¸° : throw new
+	 * - throw : ì˜ˆì™¸ë¥¼ ë– ë„˜ê¸°ê¸° (ì˜ˆì™¸ë¥¼ ë‚˜ë¥¼ í˜¸ì¶œí•˜ëŠ” ë©”ì„œë“œë¡œ ë„˜ê¹€)
+	 * - ì˜ˆì™¸ë¥¼ ë°œìƒì‹œí‚¤ê²Œ ë˜ë©´ ë©”ì„œë“œ ì„ ì–¸ë¶€ ëì— throwsë¥¼ ì ê³ , ë°œìƒí•  ìˆ˜ ìˆëŠ” ì˜ˆì™¸ë¥¼ ë°˜ë“œì‹œ ì ì–´ì¤˜ì•¼ í•¨
+	 * - throwsë¬¸ì—ì„œ RuntimeExceptionì€ ìƒëµ ê°€ëŠ¥í•˜ë©°,
+	 * 		RuntimeExceptionë§Œ ë°œìƒí•  ê²½ìš° throwsë¬¸ì„ í†µì§¸ë¡œ ìƒëµ ê°€ëŠ¥
 	 * */
-	/* ¸Ş¼­µå : µÎ ¼ö¸¦ ÀÔ·Â¹Ş°í ¿¬»êÀÚ¸¦ ÀÔ·Â¹Ş¾Æ »çÄ¢¿¬»êÀÇ °á°ú¸¦ ¸®ÅÏÇÏ´Â ¸Ş¼­µå
-	 * ¸Å°³º¯¼ö : int num1, int num2, char
-	 * op ¸®ÅÏÅ¸ÀÔ : double
+	/* ë©”ì„œë“œ : ë‘ ìˆ˜ë¥¼ ì…ë ¥ë°›ê³  ì—°ì‚°ìë¥¼ ì…ë ¥ë°›ì•„ ì‚¬ì¹™ì—°ì‚°ì˜ ê²°ê³¼ë¥¼ ë¦¬í„´í•˜ëŠ” ë©”ì„œë“œ
+	 * ë§¤ê°œë³€ìˆ˜ : int num1, int num2, char
+	 * op ë¦¬í„´íƒ€ì… : double
 	 */
-	/* calÀÇ Exception Á¾·ù
-	 * - ArithmeticException : 0À¸·Î ³ª´©·Á°í ÇÒ ¶§
-	 * - (ÀÓÀÇ)RuntimeException : ¿¬»êÀÚ ÀÔ·ÂÀÌ Àß¸øµÇ¾úÀ» ¶§
+	/* calì˜ Exception ì¢…ë¥˜
+	 * - ArithmeticException : 0ìœ¼ë¡œ ë‚˜ëˆ„ë ¤ê³  í•  ë•Œ
+	 * - (ì„ì˜)RuntimeException : ì—°ì‚°ì ì…ë ¥ì´ ì˜ëª»ë˜ì—ˆì„ ë•Œ
 	 * */
 //	public Num cal(int num1, int num2, char op) throws RuntimeException {
 	public Num cal(int num1, int num2, char op) {
@@ -74,7 +74,7 @@ public class Exception03 {
 			answer.setValue(num1 % num2);
 			break;
 		default:
-			throw new RuntimeException("À¯È¿ÇÏÁö ¾ÊÀº ¿¬»êÀÚÀÔ´Ï´Ù.");
+			throw new RuntimeException("ìœ íš¨í•˜ì§€ ì•Šì€ ì—°ì‚°ìì…ë‹ˆë‹¤.");
 		}
 		return answer;
 	}

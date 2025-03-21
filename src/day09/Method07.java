@@ -2,16 +2,16 @@ package day09;
 
 public class Method07 {
 	public static void main(String[] args) {
-		/* ¸Þ¼­µå ¿À¹ö·Îµù
-		 * 	- µ¿ÀÏÇÑ ÀÌ¸§ÀÇ ¸Þ¼­µå¸¦ ¿©·¯ °³ ¸¸µå´Â °Í
-		 * 	- ¿À¹ö·ÎµùÀÇ Á¶°Ç
-		 * 		1. ¸Å°³º¯¼öÀÇ °¹¼ö°¡ ´Ù¸£¸é °¡´É
-		 * 		2. ¸Å°³º¯¼öÀÇ Å¸ÀÔÀÌ ´Ù¸£¸é °¡´É
-		 * 	- ¸®ÅÏ Å¸ÀÔ, ¸Å°³º¯¼öÀÇ ÀÌ¸§Àº ¿µÇâÀ» ÁÖÁö ¾ÊÀ½.
+		/* ë©”ì„œë“œ ì˜¤ë²„ë¡œë”©
+		 * 	- ë™ì¼í•œ ì´ë¦„ì˜ ë©”ì„œë“œë¥¼ ì—¬ëŸ¬ ê°œ ë§Œë“œëŠ” ê²ƒ
+		 * 	- ì˜¤ë²„ë¡œë”©ì˜ ì¡°ê±´
+		 * 		1. ë§¤ê°œë³€ìˆ˜ì˜ ê°¯ìˆ˜ê°€ ë‹¤ë¥´ë©´ ê°€ëŠ¥
+		 * 		2. ë§¤ê°œë³€ìˆ˜ì˜ íƒ€ìž…ì´ ë‹¤ë¥´ë©´ ê°€ëŠ¥
+		 * 	- ë¦¬í„´ íƒ€ìž…, ë§¤ê°œë³€ìˆ˜ì˜ ì´ë¦„ì€ ì˜í–¥ì„ ì£¼ì§€ ì•ŠìŒ.
 		 * */
 		int num1 = 10, num2 = 20;
 
-		// ³» Å¬·¡½ºÀÇ °´Ã¼¸¦ »ý¼º
+		// ë‚´ í´ëž˜ìŠ¤ì˜ ê°ì²´ë¥¼ ìƒì„±
 		Method07 m7 = new Method07();
 		int hap = m7.sum(num1, num2);
 		System.out.println(hap);

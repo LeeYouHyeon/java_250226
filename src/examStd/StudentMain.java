@@ -8,7 +8,7 @@ public class StudentMain {
 
 		int menu = 0;
 		do {
-			// ¸Ş´º³Ö±â
+			// ë©”ë‰´ë„£ê¸°
 			try {
 				menu = sc.menuPrint();
 				switch (menu) {
@@ -43,10 +43,10 @@ public class StudentMain {
 					sc.printScore();
 					break;
 				case 11:
-					System.out.println("Á¾·á");
+					System.out.println("ì¢…ë£Œ");
 					break;
 				default:
-					System.out.println("Àß¸øµÈ ¸Ş´ºÀÔ´Ï´Ù.");
+					System.out.println("ì˜ëª»ëœ ë©”ë‰´ì…ë‹ˆë‹¤.");
 				}
 			} catch (Exception e) {
 				System.out.println(e.getMessage());

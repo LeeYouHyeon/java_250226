@@ -1,36 +1,36 @@
 package day09;
 
 public class Card {
-	// Ä«µå 1Àå
-	/* 1. ¸â¹öº¯¼ö
+	// ì¹´ë“œ 1ì¥
+	/* 1. ë©¤ë²„ë³€ìˆ˜
 	 * 	- int number = 1
-	 * 		- Ä«µåÀÇ ¹øÈ£¸¦ ¼ıÀÚ·Î ÀúÀå
+	 * 		- ì¹´ë“œì˜ ë²ˆí˜¸ë¥¼ ìˆ«ìë¡œ ì €ì¥
 	 * 		- A = 1, J = 11, Q = 12, K = 13
-	 * 		- ¹üÀ§ : 1 ~ 13
-	 * 	- char shape = '¢¾'
-	 * 		- Ä«µåÀÇ ¸ğ¾ç
-	 * 		- ¹üÀ§ : ¢¾, ¡ß, ¢¼, ¢À
+	 * 		- ë²”ìœ„ : 1 ~ 13
+	 * 	- char shape = 'â™¥'
+	 * 		- ì¹´ë“œì˜ ëª¨ì–‘
+	 * 		- ë²”ìœ„ : â™¥, â—†, â™ , â™£
 	 * 
-	 * 2. »ı¼ºÀÚ
-	 * 1) Card() : ±âº»»ı¼ºÀÚ
-	 * 2) Card(int, char) : Æ¯Á¤ÇÑ Ä«µå¸¦ »ı¼ºÇÏ°í ½ÍÀ» ¶§
-	 * 	- ¸â¹öº¯¼ö Ç×¸ñ¿¡¼­ ¼³¸íÇÑ ¹üÀ§¸¦ ¹ş¾î³ª´Â ÀÔ·ÂÀº ±âº»°ªÀ¸·Î ¼³Á¤
+	 * 2. ìƒì„±ì
+	 * 1) Card() : ê¸°ë³¸ìƒì„±ì
+	 * 2) Card(int, char) : íŠ¹ì •í•œ ì¹´ë“œë¥¼ ìƒì„±í•˜ê³  ì‹¶ì„ ë•Œ
+	 * 	- ë©¤ë²„ë³€ìˆ˜ í•­ëª©ì—ì„œ ì„¤ëª…í•œ ë²”ìœ„ë¥¼ ë²—ì–´ë‚˜ëŠ” ì…ë ¥ì€ ê¸°ë³¸ê°’ìœ¼ë¡œ ì„¤ì •
 	 * 
-	 * 3. ¸Ş¼­µå
-	 * 1) print() : Ä«µåÀÇ Á¤º¸¸¦ ÄÜ¼Ö¿¡ Ãâ·Â
-	 * 	- toString() ÂüÁ¶
+	 * 3. ë©”ì„œë“œ
+	 * 1) print() : ì¹´ë“œì˜ ì •ë³´ë¥¼ ì½˜ì†”ì— ì¶œë ¥
+	 * 	- toString() ì°¸ì¡°
 	 * 
 	 * 4. getter/setter
-	 * 	- getter´Â ÀÏ¹İÀûÀÎ getter
-	 * 	- setter´Â ¹üÀ§¸¦ ¹ş¾î³ª´Â ÀÔ·ÂÀº ¹«½Ã
-	 * 	- ½ºÄ³³ÊÀÇ next()¿ÍÀÇ È£È¯À» À§ÇØ setShape(String) Áö¿ø
+	 * 	- getterëŠ” ì¼ë°˜ì ì¸ getter
+	 * 	- setterëŠ” ë²”ìœ„ë¥¼ ë²—ì–´ë‚˜ëŠ” ì…ë ¥ì€ ë¬´ì‹œ
+	 * 	- ìŠ¤ìºë„ˆì˜ next()ì™€ì˜ í˜¸í™˜ì„ ìœ„í•´ setShape(String) ì§€ì›
 	 * */
 
-	// ¸â¹öº¯¼ö
+	// ë©¤ë²„ë³€ìˆ˜
 	private int number = 1;
-	private char shape = '¢¾';
+	private char shape = 'â™¥';
 
-	// »ı¼ºÀÚ
+	// ìƒì„±ì
 	public Card() {
 	}
 
@@ -40,7 +40,7 @@ public class Card {
 		setShape(shape);
 	}
 
-	// ¸Ş¼­µå
+	// ë©”ì„œë“œ
 	@Override
 	public String toString() {
 		String num = "";
@@ -87,7 +87,7 @@ public class Card {
 	}
 
 	public void setShape(char shape) {
-		if (shape == '¡ß' || shape == '¢À' || shape == '¢¼')
+		if (shape == 'â—†' || shape == 'â™£' || shape == 'â™ ')
 			this.shape = shape;
 	}
 	public void setShape(String shape) {

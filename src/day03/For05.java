@@ -5,15 +5,15 @@ import java.util.Scanner;
 public class For05 {
 
 	public static void main(String[] args) {
-		// ÃÖ´ë°ø¾à¼ö, ÃÖ¼Ò°ø¹è¼ö
+		// ìµœëŒ€ê³µì•½ìˆ˜, ìµœì†Œê³µë°°ìˆ˜
 		
 		Scanner scan = new Scanner(System.in);
 		int num1, num2, gcd = 1;
 		
-		System.out.println("ÃÖ´ë°ø¾à¼ö¿Í ÃÖ¼Ò°ø¹è¼ö¸¦ ±¸ÇÏ°í ½ÍÀº µÎ ÀÚ¿¬¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä.");
-		System.out.print("Ã¹ ¹øÂ° ÀÚ¿¬¼ö> ");
+		System.out.println("ìµœëŒ€ê³µì•½ìˆ˜ì™€ ìµœì†Œê³µë°°ìˆ˜ë¥¼ êµ¬í•˜ê³  ì‹¶ì€ ë‘ ìžì—°ìˆ˜ë¥¼ ìž…ë ¥í•˜ì„¸ìš”.");
+		System.out.print("ì²« ë²ˆì§¸ ìžì—°ìˆ˜> ");
 		num1 = scan.nextInt();
-		System.out.print("µÎ ¹øÂ° ÀÚ¿¬¼ö> ");
+		System.out.print("ë‘ ë²ˆì§¸ ìžì—°ìˆ˜> ");
 		num2 = scan.nextInt();
 		
 
@@ -30,8 +30,8 @@ public class For05 {
 			}
 		}
 		
-		System.out.println("ÃÖ´ë°ø¾à¼ö : " + gcd);
-		System.out.println("ÃÖ¼Ò°ø¹è¼ö : " + num1*num2/gcd);
+		System.out.println("ìµœëŒ€ê³µì•½ìˆ˜ : " + gcd);
+		System.out.println("ìµœì†Œê³µë°°ìˆ˜ : " + num1*num2/gcd);
 		
 		scan.close();
 	}

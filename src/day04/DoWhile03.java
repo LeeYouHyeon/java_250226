@@ -5,26 +5,26 @@ import java.util.Scanner;
 public class DoWhile03 {
 
 	public static void main(String[] args) {
-		/* ¼ıÀÚ 2°³¸¦ ÀÔ·Â¹Ş°í,
+		/* ìˆ«ì 2ê°œë¥¼ ì…ë ¥ë°›ê³ ,
 		 * num1 = 2, num2 = 3
 		 * menu 
-		 * 1. + | 2. - | 3. * | 4. / | 5. % | 6. Á¾·á
-		 * menu¿¡ µû¶ó µÎ ¼öÀÇ ¿¬»ê °á°ú¸¦ Ãâ·Â
+		 * 1. + | 2. - | 3. * | 4. / | 5. % | 6. ì¢…ë£Œ
+		 * menuì— ë”°ë¼ ë‘ ìˆ˜ì˜ ì—°ì‚° ê²°ê³¼ë¥¼ ì¶œë ¥
 		 * 1 => 2 + 3 = 5
 		 * 2 => 2 - 3 = -1
 		 * ...
-		 * 4 => 2/0 = num2¸¦ ´Ù½Ã ÀÔ·ÂÇØÁÖ¼¼¿ä.
-		 * 5 => 2%0 = num2¸¦ ´Ù½Ã ÀÔ·ÂÇØÁÖ¼¼¿ä.
+		 * 4 => 2/0 = num2ë¥¼ ë‹¤ì‹œ ì…ë ¥í•´ì£¼ì„¸ìš”.
+		 * 5 => 2%0 = num2ë¥¼ ë‹¤ì‹œ ì…ë ¥í•´ì£¼ì„¸ìš”.
 		 * */
 
 		Scanner scan = new Scanner(System.in);
 		int num1, num2;
 
-		// ¼ıÀÚ ÀÔ·Â
-		System.out.println("µÎ ¼ıÀÚ¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä.");
-		System.out.print("Ã¹ ¹øÂ° ¼ıÀÚ> ");
+		// ìˆ«ì ì…ë ¥
+		System.out.println("ë‘ ìˆ«ìë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”.");
+		System.out.print("ì²« ë²ˆì§¸ ìˆ«ì> ");
 		num1 = scan.nextInt();
-		System.out.print("µÎ ¹øÂ° ¼ıÀÚ> ");
+		System.out.print("ë‘ ë²ˆì§¸ ìˆ«ì> ");
 		num2 = scan.nextInt();
 
 		int menu;
@@ -32,9 +32,9 @@ public class DoWhile03 {
 			char cal = 0;
 			int answer = 0;
 
-			// ¸Ş´º ÀÔ·Â
+			// ë©”ë‰´ ì…ë ¥
 			System.out.println("menu");
-			System.out.println("1. + | 2. - | 3. * | 4. / | 5. % | 6. Á¾·á");
+			System.out.println("1. + | 2. - | 3. * | 4. / | 5. % | 6. ì¢…ë£Œ");
 			menu = scan.nextInt();
 
 			switch (menu) {
@@ -52,7 +52,7 @@ public class DoWhile03 {
 					break;
 				case 4:
 					if (num2 == 0) {
-						System.out.println("0À¸·Î ³ª´­ ¼ö ¾ø½À´Ï´Ù.");
+						System.out.println("0ìœ¼ë¡œ ë‚˜ëˆŒ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 						continue;
 					}
 					cal = '/';
@@ -60,23 +60,23 @@ public class DoWhile03 {
 					break;
 				case 5:
 					if (num2 == 0) {
-						System.out.println("0À¸·Î ³ª´­ ¼ö ¾ø½À´Ï´Ù.");
+						System.out.println("0ìœ¼ë¡œ ë‚˜ëˆŒ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 						continue;
 					}
 					cal = '%';
 					answer = num1 % num2;
 					break;
 				case 6:
-					System.out.println("Á¾·áÇÕ´Ï´Ù.");
+					System.out.println("ì¢…ë£Œí•©ë‹ˆë‹¤.");
 					continue;
 				default:
-					System.out.println("¸Ş´º¸¦ ´Ù½Ã ÀÔ·ÂÇÏ¼¼¿ä.");
+					System.out.println("ë©”ë‰´ë¥¼ ë‹¤ì‹œ ì…ë ¥í•˜ì„¸ìš”.");
 					continue;
 			}
 
-			// °á°ú Ãâ·Â
-			String strNum1 = (num1 >= 0) ? "" + num1 : "(" + num1 + ')'; // À½¼öÀÏ °æ¿ì ¼Ò°ıÈ£¸¦ ºÙÀÓ
-			String strNum2 = (num2 >= 0) ? "" + num2 : "(" + num2 + ')'; // À½¼öÀÏ °æ¿ì ¼Ò°ıÈ£¸¦ ºÙÀÓ
+			// ê²°ê³¼ ì¶œë ¥
+			String strNum1 = (num1 >= 0) ? "" + num1 : "(" + num1 + ')'; // ìŒìˆ˜ì¼ ê²½ìš° ì†Œê´„í˜¸ë¥¼ ë¶™ì„
+			String strNum2 = (num2 >= 0) ? "" + num2 : "(" + num2 + ')'; // ìŒìˆ˜ì¼ ê²½ìš° ì†Œê´„í˜¸ë¥¼ ë¶™ì„
 			System.out.println(strNum1 + ' ' + cal + ' ' + strNum2 + " = " + answer);
 
 		} while (menu != 6);
