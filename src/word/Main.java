@@ -54,11 +54,10 @@ public class Main {
 				case 7:
 					if (wc.quit()) {
 						System.out.println("종료합니다.");
-						break;
 					} else {
 						input = 0;
-						break;
 					}
+					break;
 				default:
 					throw new InputMismatchException();
 				}

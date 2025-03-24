@@ -22,17 +22,7 @@ public class WordController {
 		this.scan = scan;
 
 		// 저장된 단어 불러오기
-		/* 저장된 단어 형식 예시
-		 * smart
-		 * 형용사
-		 * 1. 눈치 빠른; 재치 있는, 영리한, 현명한; 조숙한(precocious); 건방진, 겉치레만의, 멋만의
-		 * 2. 맵시 있는, 스마트한, <옷차림이> 말쑥한, 단정한, 멋있는
-		 * 부사
-		 * 1. (=SMARTLY)
-		 * 자동사
-		 * 1. 아리다, 따끔따끔 쓰리다
-		 * 2. 괴로워하다, 상심하다; 양심에 찔리다 
-		 * */
+		// 저장 형식은 Word 클래스의 toString() 메서드 참고
 		try {
 			// 1. 파일 읽기
 			BufferedReader br = new BufferedReader(new FileReader("Words.txt"));
@@ -47,12 +37,13 @@ public class WordController {
 				}
 				Word word = new Word(text);
 
+				// 2-2. 뜻 등록
 				type: while (true) {
-					//2-2. 품사 읽기
+					// 2-2-1. 품사 읽기
 					String type = br.readLine();
 					String mean;
 
-					//2-3. 품사별 뜻 읽기
+					// 2-2-2. 품사별 뜻 읽기
 					while (true) {
 						// 하나의 뜻은 전부 한 줄로 저장됨
 						mean = br.readLine();
@@ -72,7 +63,7 @@ public class WordController {
 						// 뜻에서 번호는 떼고 품사에 저장
 						word.addMeaning(type, mean.substring(mean.indexOf(' ') + 1));
 					}
-					
+
 				}
 				// 3. 뜻을 전부 불러왔으면 단어장에 추가
 				words.add(word);
@@ -80,26 +71,40 @@ public class WordController {
 			br.close();
 		} catch (IOException e) {
 			// 파일이 없을 경우 아무 것도 하지 않음 
+		} catch (Exception e) {
+			// 파일에 에러가 있을 경우 이제까지 읽어온 데이터를 무시
+			System.out.println("Words.txt에 이상이 있어 불러오지 못했습니다.");
+			words.clear();
 		}
 	}
 
 	// 1. 단어 등록
-	public void addWord() {
+	public void addWord() throws Exception {
 		// 1. 등록할 단어 입력
 		System.out.print("단어> ");
 		String line = scan.nextLine();
-		// 1-1. 이미 등록한 단어는 받지 않음
-		if (words.contains(new Word(line))) {
-			System.out.println("이미 등록된 단어입니다.");
-			return;
-		} else if (line.indexOf(' ') > -1) {
+		// 1-1. 오류 처리
+		if (line.indexOf(' ') > -1) {
 			System.out.println("단어엔 공백이 있을 수 없습니다.");
 			return;
 		} else if (line.isBlank()) {
 			System.out.println("단어를 입력하지 않았습니다.");
 			return;
 		}
+		
+		// 1-2. 이미 등록된 단어면 뜻을 추가할 수 있음
 		Word word = new Word(line);
+		for(Word w : words) {
+			if (w.equals(word)) {
+				System.out.println("이미 등록된 단어입니다. 뜻을 추가하시겠습니까?");
+				if(askYN()) {
+					word = w;
+				} else {
+					return;
+				}
+				break;
+			}
+		}
 
 		// 2. 뜻 입력
 		System.out.println("뜻을 입력합니다. 그만두시려면 엔터를 눌러주세요.");
@@ -108,6 +113,10 @@ public class WordController {
 		String type = "";
 		type: while (true) {
 			// 2-1. 품사 입력
+			for (String t : Main.types) {
+				System.out.print(t + " ");
+			}
+			System.out.println();
 			System.out.print("품사 입력> ");
 			type = scan.nextLine();
 
@@ -142,7 +151,7 @@ public class WordController {
 				word.addMeaning(type, mean);
 			}
 		}
-		
+
 		// 3. 입력된 뜻이 없으면 에러, 있으면 등록
 		if (word.isEmpty()) {
 			System.out.println("뜻을 입력하지 않아 단어를 등록하지 못했습니다.");
@@ -177,38 +186,44 @@ public class WordController {
 	// 3. 단어 수정
 	public void updateWord() {
 		try {
+			// 3-1. 수정할 단어 입력
 			System.out.print("뜻을 수정할 단어> ");
 			Word word = findWord(scan.nextLine());
 
+			// 3-2. 단어의 뜻 출력
 			System.out.println(word);
 
+			// 3-3. 수정할 뜻을 지정(품사, 번호)
 			System.out.println("수정할 부분을 정해주세요.");
+			// 3-3-1. 품사 지정
 			System.out.print("품사> ");
 			String type = scan.nextLine();
 			ArrayList<String> meanings = word.getMeanings().getOrDefault(type, new ArrayList<String>());
-
+			// 지정한 품사에 뜻이 없으면 에러
 			if (meanings.isEmpty()) {
 				throw new InputMismatchException();
 			}
-
+			// 3-3-2. 뜻 번호 지정
 			System.out.print("뜻 번호> ");
 			int index = Integer.parseInt(scan.nextLine()) - 1;
+			// 지정한 번호에 뜻이 없으면 에러
 			if (index < 0 || index >= meanings.size()) {
 				throw new InputMismatchException();
 			}
 
+			// 3-4. 뜻 수정(삭제)
 			System.out.println("새로 등록할 뜻을 입력해주세요. 입력 없이 엔터만 누르면 해당 뜻이 삭제됩니다.");
 			System.out.print("> ");
 			String mean = scan.nextLine();
 
 			if (mean.isBlank()) {
 				meanings.remove(index);
+				System.out.println("삭제되었습니다.");
 			} else {
 				meanings.set(index, mean);
 				System.out.println("수정되었습니다.");
-				saved = false;
 			}
-
+			saved = false;
 		} catch (InputMismatchException e) {
 			System.out.println("해당하는 번호의 뜻이 없습니다.");
 		} catch (Exception e) {
@@ -242,7 +257,7 @@ public class WordController {
 			System.out.println(e.getMessage());
 		}
 	}
-	
+
 	// 6. 단어를 파일로 출력
 	public void saveWords() {
 		if (saved) {
@@ -252,7 +267,7 @@ public class WordController {
 
 		try {
 			FileWriter fw = new FileWriter("Words.txt");
-			
+
 			// 단어를 정렬해서 저장
 			for (Word word : words.stream().sorted(new Comparator<Word>() {
 
@@ -265,7 +280,7 @@ public class WordController {
 				fw.write("\n");
 			}
 			fw.close();
-			
+
 			System.out.println("저장 완료");
 			saved = true;
 		} catch (IOException e) {
@@ -277,10 +292,10 @@ public class WordController {
 	private boolean askYN() throws Exception {
 		System.out.print("> ");
 		String input = scan.nextLine().toLowerCase();
-		
-		if(input.equals("y")) {
+
+		if (input.equals("y")) {
 			return true;
-		} else if(input.equals("n")) {
+		} else if (input.equals("n")) {
 			return false;
 		} else {
 			throw new Exception("잘못된 입력");
@@ -293,10 +308,10 @@ public class WordController {
 		if (saved) {
 			return true;
 		}
-		
+
 		try {
 			System.out.println("저장되지 않은 변경사항이 있습니다. 저장하시겠습니까?(Y/N)");
-			if(askYN()) {
+			if (askYN()) {
 				saveWords();
 				return true;
 			} else {
