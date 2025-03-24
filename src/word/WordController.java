@@ -80,7 +80,7 @@ public class WordController {
 		}
 	}
 
-	// 이미 저장된 값을 불러오기 위한 메서드
+	// 이미 저장된 값을 불러올 때 쓰이는 보조 메서드
 	private void inputWord(Word word) {
 		words.add(word);
 	}
@@ -88,15 +88,19 @@ public class WordController {
 	public void addWord() {
 		// 1. 등록할 단어 입력
 		System.out.print("단어> ");
-		Word word = new Word(scan.nextLine());
+		String line = scan.nextLine();
 		// 1-1. 이미 등록한 단어는 받지 않음
-		if (words != null && words.contains(word)) {
+		if (words.contains(new Word(line))) {
 			System.out.println("이미 등록된 단어입니다.");
 			return;
-		} else if (word.getWord().indexOf(' ') > -1) {
+		} else if (line.indexOf(' ') > -1) {
 			System.out.println("단어엔 공백이 있을 수 없습니다.");
 			return;
+		} else if (line.isBlank()) {
+			System.out.println("단어를 입력하지 않았습니다.");
+			return;
 		}
+		Word word = new Word(line);
 
 		// 2. 뜻 입력
 		System.out.println("뜻을 입력합니다. 그만두시려면 엔터를 눌러주세요.");
