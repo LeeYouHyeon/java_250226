@@ -5,9 +5,11 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class WordController {
 	boolean saved = true; // 수정사항들이 전부 저장되었는가
@@ -250,11 +252,20 @@ public class WordController {
 
 		try {
 			FileWriter fw = new FileWriter("Words.txt");
-			for (Word word : words) {
+			
+			// 단어를 정렬해서 저장
+			for (Word word : words.stream().sorted(new Comparator<Word>() {
+
+				@Override
+				public int compare(Word o1, Word o2) {
+					return o1.getWord().compareTo(o2.getWord());
+				}
+			}).collect(Collectors.toList())) {
 				fw.write(word.toString());
 				fw.write("\n");
 			}
 			fw.close();
+			
 			System.out.println("저장 완료");
 			saved = true;
 		} catch (IOException e) {
