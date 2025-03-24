@@ -14,13 +14,18 @@ public class File05 {
 		File f = new File("D:\\web_0226_lyh\\memo\\test.txt");
 		System.out.println(File.separator);
 		String name = f.getName();
-		System.out.println(name); // 파일명.확장자
-		System.out.println(f.getPath()); // 경로 + 파일명 + 확장자
-		System.out.println(f.getParent()); // 경로만
+		System.out.println("name : " + name); // 파일명.확장자
+		System.out.println("getPath() : " + f.getPath()); // 경로 + 파일명 + 확장자
+		System.out.println("getParent() : " + f.getParent()); // 경로만
 		
-		System.out.println(f.toString()); // String 변환
 		String f2 = f.toString();
-		String filename = f2.substring(f2.indexOf(File.separator) + 1);
-		System.out.println(filename);
+		System.out.println("toString() : " + f2); // String 변환
+		String filename = f2.substring(f2.lastIndexOf(File.separator) + 1);
+		System.out.println("" + filename);
+		
+		String folder[] = f2.split("\\\\"); // 특수문자를 기준으로 나누려면 앞에 \\를 붙여줘야 한다.
+		for(String fold : folder) {
+			System.out.println(fold);
+		}
 	}
 }
