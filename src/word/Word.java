@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-public class Word {
+public class Word implements Comparable<Word> {
 	private String word;
 	private Map<String, ArrayList<String>> meanings = new HashMap<>();
 
@@ -82,6 +82,11 @@ public class Word {
 		return Objects.equals(word, other.word);
 	}
 
+	@Override
+	public int compareTo(Word other) {
+		return this.word.compareTo(other.word);
+	}
+	
 	public String getWord() {
 		return word;
 	}

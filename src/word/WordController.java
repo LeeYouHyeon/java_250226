@@ -5,7 +5,6 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
@@ -78,8 +77,10 @@ public class WordController {
 		}
 	}
 
-	// 1. 단어 등록
+	// 1. 단어 등록 / 뜻 추가
 	public void addWord() throws Exception {
+		boolean isUpdate = false, updated = false;
+		
 		// 1. 등록할 단어 입력
 		System.out.print("단어> ");
 		String line = scan.nextLine();
@@ -96,9 +97,10 @@ public class WordController {
 		Word word = new Word(line);
 		for(Word w : words) {
 			if (w.equals(word)) {
-				System.out.println("이미 등록된 단어입니다. 뜻을 추가하시겠습니까?");
+				System.out.println("이미 등록된 단어입니다. 뜻을 추가하시겠습니까?(Y/N)");
 				if(askYN()) {
 					word = w;
+					isUpdate = true;
 				} else {
 					return;
 				}
@@ -137,7 +139,7 @@ public class WordController {
 			}
 
 			// 2-2. 뜻 입력
-			System.out.println("뜻을 입력해주세요. 품사를 바꾸시려면 t를 입력해주세요.");
+			System.out.println("뜻을 입력해주세요. 다른 품사를 입력하시려면 t를 입력해주세요.");
 			while (true) {
 				// 입력이 빈칸이 아니면 전부 뜻으로 추가
 				System.out.print("> ");
@@ -149,16 +151,23 @@ public class WordController {
 				}
 
 				word.addMeaning(type, mean);
+				updated = true;
 			}
 		}
 
-		// 3. 입력된 뜻이 없으면 에러, 있으면 등록
-		if (word.isEmpty()) {
-			System.out.println("뜻을 입력하지 않아 단어를 등록하지 못했습니다.");
-		} else {
-			words.add(word);
-			System.out.println("등록되었습니다.");
+		// 3. 입력된 뜻이 있으면 등록, 없으면 에러
+		if(updated) {
+			if(isUpdate) {
+				System.out.println("뜻이 추가되었습니다.");
+			} else {
+				words.add(word);
+				// 신규 등록이면 등록 후 정렬
+				words = words.stream().sorted().collect(Collectors.toList());
+				System.out.println("등록되었습니다.");
+			}
 			saved = false;
+		} else {
+			System.out.println("뜻이 입력되지 않았습니다.");
 		}
 	}
 
@@ -183,7 +192,7 @@ public class WordController {
 		}
 	}
 
-	// 3. 단어 수정
+	// 3. 단어 뜻 수정/삭제
 	public void updateWord() {
 		try {
 			// 3-1. 수정할 단어 입력
@@ -219,6 +228,9 @@ public class WordController {
 			if (mean.isBlank()) {
 				meanings.remove(index);
 				System.out.println("삭제되었습니다.");
+				if(word.isEmpty()) {
+					System.out.println("뜻이 없어서 목록에서 삭제되었습니다.");
+				}
 			} else {
 				meanings.set(index, mean);
 				System.out.println("수정되었습니다.");
@@ -268,14 +280,7 @@ public class WordController {
 		try {
 			FileWriter fw = new FileWriter("Words.txt");
 
-			// 단어를 정렬해서 저장
-			for (Word word : words.stream().sorted(new Comparator<Word>() {
-
-				@Override
-				public int compare(Word o1, Word o2) {
-					return o1.getWord().compareTo(o2.getWord());
-				}
-			}).collect(Collectors.toList())) {
+			for (Word word : words) {
 				fw.write(word.toString());
 				fw.write("\n");
 			}
