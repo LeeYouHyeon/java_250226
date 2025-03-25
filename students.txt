@@ -1,0 +1,2 @@
+lyh;pass;이유현;010-;구리시;이메일;123456;COSE213;COSE211;
+ID;password;name;010-1111-1111;address;email;stdCode;COSE214;COSE213;

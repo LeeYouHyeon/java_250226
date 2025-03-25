@@ -1,6 +1,7 @@
 package word;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -271,6 +272,7 @@ public class WordController {
 	}
 
 	// 6. 단어를 파일로 출력
+	// BufferedWriter 사용
 	public void saveWords() {
 		if (saved) {
 			System.out.println("저장 완료");
@@ -279,11 +281,24 @@ public class WordController {
 
 		try {
 			FileWriter fw = new FileWriter("Words.txt");
-
+			BufferedWriter bw = new BufferedWriter(fw);
+			
+			StringBuffer sb = new StringBuffer();
+			
+			String data = null;
 			for (Word word : words) {
-				fw.write(word.toString());
-				fw.write("\n");
+				sb.append(word.toString());
+				sb.append("\r\n"); // 줄바꿈
 			}
+			
+			// 객체를 저장할 때는 String 객체로만 저장 가능
+			// StringBuffer 객체는 저장이 안 됨
+			// StringBuffer => String으로 변환
+			data = sb.toString();
+			System.out.println(data);
+			bw.write(data);
+			
+			bw.close();
 			fw.close();
 
 			System.out.println("저장 완료");
