@@ -1,2 +1,16 @@
-bsb;pass;박성빈;010-;주소;이메일;연구실;COSE214;COSE211;
+ltk;pass;이태규;010-;주소;이메일;연구실;COSE223;
+syj;pass;서예진;010-;주소;이메일;연구실;COSE218;
+kso;pass;김성오;010-;주소;이메일;연구실;COSE210;
+lys;pass;이영수;010-;주소;이메일;연구실;COSE229;COSE230;
+yjy;pass;이정이;010-;주소;이메일;연구실;COSE226;COSE227;
+hik;pass;한인경;010-;주소;이메일;연구실;COSE215;
 idg;pass;이도길;010-;주소;이메일;연구실;COSE213;
+shc;pass;서현창;010-;주소;이메일;연구실;COSE221;
+bsb;pass;박성빈;010-;주소;이메일;연구실;COSE214;COSE211;
+kch;pass;김창현;010-;주소;이메일;연구실;COSE219;COSE231;
+ymg;pass;윤문구;010-;주소;이메일;연구실;COSE228;
+cwj;pass;최욱진;010-;주소;이메일;연구실;COSE222;
+pmw;pass;박민욱;010-;주소;이메일;연구실;COSE224;COSE225;
+jwj;pass;정우진;010-;주소;이메일;연구실;COSE216;
+bhb;pass;배현빈;010-;주소;이메일;연구실;COSE220;
+jsh;pass;조수현;010-;주소;이메일;연구실;COSE212;COSE217;
