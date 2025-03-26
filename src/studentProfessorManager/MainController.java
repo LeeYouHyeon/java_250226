@@ -5,21 +5,21 @@ import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
-import java.util.stream.Collectors;
 
 public class MainController {
 	private Map<String, Professor> professors;
 	private Map<String, Subject> subjects;
 	private Map<String, Student> students;
-	Scanner scan = new Scanner(System.in);
-	private boolean valid, runned;
+	Scanner scan;
+	private boolean valid;
 
-	public MainController() {
+	public MainController(Scanner scan) {
+		this.scan = scan;
+
 		professors = new HashMap<String, Professor>();
 		subjects = new HashMap<String, Subject>();
 		students = new HashMap<String, Student>();
@@ -33,14 +33,13 @@ public class MainController {
 					subFile = new BufferedReader(new FileReader("subjects.txt")),
 					stdFile = new BufferedReader(new FileReader("students.txt"));
 
-			// 교수와 과목 정보 생성
+			// 2. 교수와 과목 정보 생성
 			while (true) {
 				// 1. 교수를 한 줄 읽음
 				String professorLine = proFile.readLine();
 				if (professorLine == null || professorLine.isBlank()) {
 					break;
 				}
-
 				// 2. 교수의 기본정보로 계정을 생성
 				//ID;password;name;phone;address;email;labAddress;과목코드;과목코드;...
 				String proInfo[] = professorLine.split(";");
@@ -48,26 +47,36 @@ public class MainController {
 						proInfo[6]);
 				professors.put(proInfo[0], curr);
 
-				// 3. 교수가 담당하는 강좌를 생성
+				// 3. 교수가 담당하는 강좌를 방금 생성한 교수에 입력
 				for (int i = 7; i < proInfo.length; i++) {
-					// 3-1. 강좌 생성
-					//subCode;subName;professorID;professorName;table;place;point;학생ID;학생점수;학생ID;학생점수;....
-					String subInfo[] = subFile.readLine().split(";");
-					Subject sub = new Subject(subInfo[0], subInfo[1], subInfo[2], subInfo[3], subInfo[4], subInfo[5],
-							Integer.parseInt(subInfo[6]));
-					curr.registerSubject(subInfo[0]);
-					subjects.put(subInfo[0], sub);
-
-					// 3-2. 학생별 점수 등록
-					for (int j = 7; j < subInfo.length; j += 2) {
-						sub.addStudent(subInfo[j], subInfo[j + 1]);
-					}
+					curr.registerSubject(proInfo[i]);
 				}
 			}
 			proFile.close();
+
+			// 3. 과목 정보 생성
+			while (true) {
+				// 1. 과목을 한 줄 읽음
+				String subjectLine = subFile.readLine();
+				if (subjectLine == null || subjectLine.isBlank()) {
+					break;
+				}
+
+				// 2. 과목의 기본정보로 계정을 생성
+				//subCode;subName;professorID;professorName;table;place;point;학번;평점;학번;평점;...
+				String subInfo[] = subjectLine.split(";");
+				Subject curr = new Subject(subInfo[0], subInfo[1], subInfo[2], subInfo[3], subInfo[4], subInfo[5],
+						Integer.parseInt(subInfo[6]));
+				subjects.put(subInfo[0], curr);
+
+				// 3. 과목에 학생별 평점 정보를 입력
+				for (int i = 7; i < subInfo.length; i += 2) {
+					curr.addStudent(subInfo[i], subInfo[i + 1]);
+				}
+			}
 			subFile.close();
 
-			// 학생 정보 생성
+			// 4. 학생 정보 생성
 			while (true) {
 				// 1. 학생을 한 줄 읽음
 				String stdLine = stdFile.readLine();
@@ -79,7 +88,7 @@ public class MainController {
 				//ID;password;name;phone;address;email;stdCode;과목코드;과목코드;...
 				String stdInfo[] = stdLine.split(";");
 				List<String> subList = new ArrayList<String>();
-				for(int i = 7; i < stdInfo.length; i++) {
+				for (int i = 7; i < stdInfo.length; i++) {
 					subList.add(stdInfo[i]);
 				}
 				Student curr = new Student(stdInfo[0], stdInfo[1], stdInfo[2], stdInfo[3], stdInfo[4], stdInfo[5],
@@ -97,10 +106,6 @@ public class MainController {
 	public void run() {
 		if (!valid) {
 			System.out.println("DB에 접근할 수 없습니다. 종료합니다.");
-			return;
-		}
-		if(runned) {
-			System.out.println("다시 시작해주세요.");
 			return;
 		}
 
@@ -139,16 +144,10 @@ public class MainController {
 					stdFile = new BufferedWriter(new FileWriter("students.txt"));
 			StringBuffer buffer = new StringBuffer();
 			String data = "";
-			
-			// 1. 교수 저장
-			//ID;password;name;phone;address;email;labAddress;과목코드;과목코드;...
-			for(Professor p : professors.values().stream().sorted(new Comparator<Professor>() {
 
-				@Override
-				public int compare(Professor o1, Professor o2) {
-					return o1.getID().compareTo(o2.getID());
-				}
-			}).collect(Collectors.toList())) {
+			// 1. 교수 저장
+			//ID;비밀번호;이름;휴대전화;주소;email;연구실;과목코드;과목코드;...
+			for (Professor p : professors.values()) {
 				data += p.ID + ";";
 				data += p.password + ";";
 				data += p.name + ";";
@@ -156,7 +155,7 @@ public class MainController {
 				data += p.address + ";";
 				data += p.email + ";";
 				data += p.labAddress + ";";
-				for(String s : p.getSubjects()) {
+				for (String s : p.getSubjects()) {
 					data += s + ";";
 				}
 				data += "\r\n";
@@ -164,18 +163,13 @@ public class MainController {
 				data = "";
 			}
 			proFile.write(buffer.toString());
+			proFile.close();
+
 			buffer = null;
 			buffer = new StringBuffer();
-			
 			// 2. 과목 저장
-			//subCode;subName;professor;professorName;table;place;point;학번;학생점수;학번;학생점수;....
-			for(Subject s : subjects.values().stream().sorted(new Comparator<Subject>() {
-
-				@Override
-				public int compare(Subject o1, Subject o2) {
-					return o1.getProfessor().compareTo(o2.getProfessor());
-				}
-			}).collect(Collectors.toList())) {
+			//과목코드;과목 이름;교수 ID;교수 이름;시간표;강의장;학점;학번;평점;학번;평점;....
+			for (Subject s : subjects.values()) {
 				data += s.getSubCode() + ";";
 				data += s.getSubName() + ";";
 				data += s.getProfessor() + ";";
@@ -184,7 +178,7 @@ public class MainController {
 				data += s.getPlace() + ";";
 				data += s.getPoint() + ";";
 				Map<String, String> scores = s.getStudents();
-				for(String stdCode : scores.keySet()) {
+				for (String stdCode : scores.keySet()) {
 					data += stdCode + ";";
 					data += scores.get(stdCode) + ";";
 				}
@@ -193,12 +187,13 @@ public class MainController {
 				data = "";
 			}
 			subFile.write(buffer.toString());
+			subFile.close();
+
 			buffer = null;
 			buffer = new StringBuffer();
-			
 			// 3. 학생 저장
-			//ID;password;name;phone;address;email;stdCode;과목코드;과목코드;...
-			for(Student s : students.values()) {
+			//ID;비밀번호;이름;휴대전화;주소;email;학번;과목코드;과목코드;...
+			for (Student s : students.values()) {
 				data += s.getID() + ";";
 				data += s.getPassword() + ";";
 				data += s.getName() + ";";
@@ -206,7 +201,7 @@ public class MainController {
 				data += s.getAddress() + ";";
 				data += s.getEmail() + ";";
 				data += s.getStdCode() + ";";
-				for(String subCode : s.getSubjectList()) {
+				for (String subCode : s.getSubjectList()) {
 					data += subCode + ";";
 				}
 				data += "\r\n";
@@ -214,65 +209,26 @@ public class MainController {
 				data = "";
 			}
 			stdFile.write(buffer.toString());
-			
-			proFile.close();
-			subFile.close();
 			stdFile.close();
-			scan.close();
-			runned = true;
 		} catch (Exception e) {
 			System.out.println("저장에 실패했습니다.");
-		} finally {
-			System.out.println("종료합니다.");
 		}
+		System.out.println("종료합니다.");
 	}
 
 	// 1. 학생 로그인
 	private void studentLogin() {
 		System.out.println("\t[학생 로그인을 선택하셨습니다.]");
 		try {
-			Thread.sleep(700);
-		} catch (InterruptedException e) {
-			System.out.println("시스템 에러가 발생했습니다. 다시 시도해주세요.");
-			return;
-		}
-
-		//ID, 비밀번호 입력
-		System.out.println();
-		System.out.print("\t>ID를 입력해주세요 : ");
-		String id = scan.nextLine();
-		System.out.print("\t>비밀번호를 입력해주세요 : ");
-		String pw = scan.nextLine();
-
-		try {
-			// 로딩중(가짜)
-			Thread.sleep(150);
-			System.out.print("\t로");
-			Thread.sleep(150);
-			System.out.print("그");
-			Thread.sleep(150);
-			System.out.print("인 ");
-			Thread.sleep(150);
-			System.out.print("중");
-			Thread.sleep(150);
-			System.out.print("입");
-			Thread.sleep(150);
-			System.out.print("니");
-			Thread.sleep(150);
-			System.out.print("다");
-			Thread.sleep(150);
-			System.out.print(".");
-			Thread.sleep(150);
-			System.out.print(".");
-			Thread.sleep(150);
-			System.out.print(".  ");
-			Thread.sleep(100);
-
+			//ID, 비밀번호 입력
+			String[] IDpass = getInput();
+			String id = IDpass[0], pw = IDpass[1];
+			
 			// 로그인 체크
 			Student current = students.get(id);
 			if (current.passCheck(pw)) {
 				System.out.println("로그인 완료!");
-				new StudentController(current, professors, subjects, scan).run();
+				new StudentController(current, subjects, scan).run();
 			} else {
 				throw new NullPointerException();
 			}
@@ -287,49 +243,15 @@ public class MainController {
 	private void professorLogin() {
 		System.out.println("\t[교수 로그인을 선택하셨습니다.]");
 		try {
-			Thread.sleep(700);
-		} catch (InterruptedException e) {
-			System.out.println("시스템 에러가 발생했습니다. 다시 시도해주세요.");
-			return;
-		}
-
-		//ID, 비밀번호 입력
-		System.out.println();
-		System.out.print("\t>ID를 입력해주세요 : ");
-		String id = scan.nextLine();
-		System.out.print("\t>비밀번호를 입력해주세요 : ");
-		String pw = scan.nextLine();
-
-		try {
-			// 로딩중(가짜)
-			Thread.sleep(150);
-			System.out.print("\t로");
-			Thread.sleep(150);
-			System.out.print("그");
-			Thread.sleep(150);
-			System.out.print("인 ");
-			Thread.sleep(150);
-			System.out.print("중");
-			Thread.sleep(150);
-			System.out.print("입");
-			Thread.sleep(150);
-			System.out.print("니");
-			Thread.sleep(150);
-			System.out.print("다");
-			Thread.sleep(150);
-			System.out.print(".");
-			Thread.sleep(150);
-			System.out.print(".");
-			Thread.sleep(150);
-			System.out.print(".  ");
-			Thread.sleep(100);
+			//ID, 비밀번호 입력
+			String[] IDpass = getInput();
+			String id = IDpass[0], pw = IDpass[1];
 
 			// 로그인 체크
 			Professor current = professors.get(id);
 			if (current.passCheck(pw)) {
 				System.out.println("로그인 완료!");
 				new ProfessorController(current, subjects, scan).run();
-				;
 			} else {
 				throw new NullPointerException();
 			}
@@ -338,6 +260,42 @@ public class MainController {
 		} catch (InterruptedException e) {
 			System.out.println("시스템 에러가 발생했습니다. 다시 시도해주세요.");
 		}
+	}
+	
+	// ID와 비밀번호를 입력받는 보조 메서드
+	private String[] getInput() throws InterruptedException {
+		Thread.sleep(700);
+		
+		System.out.println();
+		System.out.print("\t>ID를 입력해주세요 : ");
+		String id = scan.nextLine();
+		System.out.print("\t>비밀번호를 입력해주세요 : ");
+		String pw = scan.nextLine();
+		
+		// 로딩중(가짜)
+		Thread.sleep(150);
+		System.out.print("\t로");
+		Thread.sleep(150);
+		System.out.print("그");
+		Thread.sleep(150);
+		System.out.print("인 ");
+		Thread.sleep(150);
+		System.out.print("중");
+		Thread.sleep(150);
+		System.out.print("입");
+		Thread.sleep(150);
+		System.out.print("니");
+		Thread.sleep(150);
+		System.out.print("다");
+		Thread.sleep(150);
+		System.out.print(".");
+		Thread.sleep(150);
+		System.out.print(".");
+		Thread.sleep(150);
+		System.out.print(".  ");
+		Thread.sleep(100);
+		
+		return new String[] {id, pw};
 	}
 
 }

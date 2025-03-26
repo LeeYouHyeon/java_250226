@@ -108,4 +108,10 @@ public class Subject {
 	public void setProfessorName(String professorName) {
 		this.professorName = professorName;
 	}
+	public void printScores() {
+		System.out.println(subCode + "의 평점 목록");
+		for(String stdCode : students.keySet()) {
+			System.out.println("(학번)" + stdCode + " : " + students.get(stdCode));
+		}
+	}
 }

@@ -1,2 +1,3 @@
-lyh;pass;이유현;010-;구리시;이메일;123456;COSE213;COSE211;
+lyh;pass;이유현;010-;경기도;이메일;123456;COSE213;COSE211;
 ID;password;name;010-1111-1111;address;email;stdCode;COSE214;COSE213;
+ohg;pass;오현경;010-;역삼역;이메일;123457;COSE211;
